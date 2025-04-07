@@ -27,7 +27,7 @@
 <meta property="og:description" content="无">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-04-07T07:19:42.000Z">
-<meta property="article:modified_time" content="2025-04-07T07:45:25.982Z">
+<meta property="article:modified_time" content="2025-04-07T08:33:22.644Z">
 <meta property="article:author" content="shaton">
 <meta property="article:tag" content="Git &amp; GitHub">
 <meta property="article:tag" content="GitHubPages">
@@ -373,18 +373,18 @@
 
 <p>完成安装后，可以在<code>themes</code>文件夹中看到<code>fluid</code>文件夹，说明安装成功。官方给出了非常详细的<a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/guide/">配置文档</a>，想要配置最适合自己风格的主题，建议自己阅读文档。接下来一节将给出一些重要的配置。</p>
 <h2 id="5-3-一些重要的配置"><a href="#5-3-一些重要的配置" class="headerlink" title="5.3 一些重要的配置"></a>5.3 一些重要的配置</h2><h3 id="5-3-1-初始化后的必要步骤"><a href="#5-3-1-初始化后的必要步骤" class="headerlink" title="5.3.1 初始化后的必要步骤"></a>5.3.1 初始化后的必要步骤</h3><p>首先，安装Fluid后，需要在根目录下新建一个<code>_config.fluid.yml</code>文件，并将<code>themes/fluid/_config.yml</code>中的所有内容复制过去。<br>然后，在<code>_config.yml</code>文件中指定主题和语言：</p>
-<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs avrasm"><span class="hljs-symbol">theme:</span> fluid  <span class="hljs-meta"># 指定主题</span><br><span class="hljs-symbol">language:</span> <span class="hljs-built_in">zh</span>-CN  <span class="hljs-meta"># 指定语言</span><br><br>POWERSHELL<br></code></pre></td></tr></table></figure>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs avrasm"><span class="hljs-symbol">theme:</span> fluid  <span class="hljs-meta"># 指定主题</span><br><span class="hljs-symbol">language:</span> <span class="hljs-built_in">zh</span>-CN  <span class="hljs-meta"># 指定语言</span><br></code></pre></td></tr></table></figure>
 
 <p>最后，可以选择设置主题的自动更新，在根目录下输入以下命令：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sql">npm <span class="hljs-keyword">update</span> <span class="hljs-comment">--save hexo-theme-fluid</span><br><br>POWERSHELL<br></code></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">npm <span class="hljs-keyword">update</span> <span class="hljs-comment">--save hexo-theme-fluid</span><br></code></pre></td></tr></table></figure>
 
 <h3 id="5-3-2-创建关于页"><a href="#5-3-2-创建关于页" class="headerlink" title="5.3.2 创建关于页"></a>5.3.2 创建关于页</h3><p>关于页可以展示你的基本信息、兴趣、联系方式等，首次使用时需要先进行创建，在根目录输入以下命令：</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs actionscript">hexo <span class="hljs-keyword">new</span> page about<br><br>POWERSHELL<br></code></pre></td></tr></table></figure>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs actionscript">hexo <span class="hljs-keyword">new</span> page about<br></code></pre></td></tr></table></figure>
 
 <p>创建成功后修改 <code>/source/about/index.md</code>，添加 <code>layout</code> 属性：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">title:</span> <span class="hljs-string">关于我</span><br><span class="hljs-attr">layout:</span> <span class="hljs-string">about</span>  <span class="hljs-comment"># 必须存在且不能修改</span><br><span class="hljs-meta">---</span><br><span class="hljs-meta"></span><br><span class="hljs-string">YAML</span><br></code></pre></td></tr></table></figure>
 
-<h3 id="5-3-3-覆盖配置"><a href="#5-3-3-覆盖配置" class="headerlink" title="5.3.3 覆盖配置"></a>5.3.3 覆盖配置</h3><p>当主题更新时可能导致原有配置丢失，因此在初始化后我们建立了<code>_config.fluid.yml</code>，<strong>之后所有的配置都只需要在根目录下的_config.fluid.yml文件中修改</strong>，而<code>themes/fluid/_config.yml</code>中的修改则无效、被覆盖。<br>注意：以下的所有配置也都是在<code>_config.fluid.yml</code>中修改！</p>
+<h3 id="5-3-3-覆盖配置"><a href="#5-3-3-覆盖配置" class="headerlink" title="5.3.3 覆盖配置"></a>5.3.3 覆盖配置</h3><p>当主题更新时可能导致原有配置丢失，因此在初始化后我们建立了<code>_config.fluid.yml</code>，<strong>之后所有的配置都只需要在根目录下的_config.fluid.yml文件中修改</strong>，而<code>themes/fluid/_config.yml</code>中的修改则无效、被覆盖。<br>注意：以下的所有配置也都是在<code>_config.fluid.yml</code>中修改！打开该配置文件时编码方式必须为UTF-8，否则中文会出现乱码问题！</p>
 <h3 id="5-3-4-显示网站数据统计"><a href="#5-3-4-显示网站数据统计" class="headerlink" title="5.3.4 显示网站数据统计"></a>5.3.4 显示网站数据统计</h3><p>推荐采用leancloud实现显示网站的访客人数和总访问量，配置如下：</p>
 <figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs nix"><span class="hljs-params">footer:</span><br>  <span class="hljs-params">statistics:</span><br>    <span class="hljs-params">enable:</span> <span class="hljs-literal">false</span><br>    <span class="hljs-params">source:</span> <span class="hljs-string">&quot;leancloud&quot;</span>  <span class="hljs-comment"># 在此处输入leancloud</span><br>    <span class="hljs-params">pv_format:</span> <span class="hljs-string">&quot;总访问量 &#123;&#125; 次&quot;</span>  <span class="hljs-comment"># 显示的文本，&#123;&#125;是数字的占位符（必须包含)，下同</span><br>    <span class="hljs-params">uv_format:</span> <span class="hljs-string">&quot;总访客数 &#123;&#125; 人&quot;</span><br><br>POWERSHELL<br></code></pre></td></tr></table></figure>
 
