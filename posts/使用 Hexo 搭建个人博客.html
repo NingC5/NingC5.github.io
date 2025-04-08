@@ -27,7 +27,7 @@
 <meta property="og:description" content="无">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-04-07T07:19:42.000Z">
-<meta property="article:modified_time" content="2025-04-08T18:10:38.382Z">
+<meta property="article:modified_time" content="2025-04-08T18:50:44.689Z">
 <meta property="article:author" content="shaton">
 <meta property="article:tag" content="Git">
 <meta property="article:tag" content="GitHub">
@@ -234,7 +234,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          6.4k 字
+          6.5k 字
         
       </span>
     
@@ -245,7 +245,7 @@
         
         
         
-          54 分钟
+          55 分钟
         
       </span>
     
@@ -580,6 +580,7 @@
 <p>本人使用 Typora 编写 md 文档，并设置插入图片时复制图片到 <code>./$&#123;filename&#125;.assets</code> （Typora 默认提供的选项）文件夹下，以方法管理每个文档及其图片。其效果如下：复制图片到 md 文档时就会在该文档所在目录下创建 <code>filename.assets</code> 文件夹，并将图片复制到该文件夹下；图片在该文档的引用方式采用相对路径，例如 <code>![]filename.assert/imageName</code>。</p>
 <p>执行 <code>hexo g</code> 指令后，会将 source 目录下的资源文件转化并输出到 public 目录下。其中，<code>/source/_posts/</code> 目录下的 md 格式博文会转化成 html 文件并输出到 <code>/public/posts/</code> 目录下。</p>
 <h1 id="待更新内容"><a href="# 待更新内容" class="headerlink" title="待更新内容"></a>待更新内容 </h1><p> 暂未使用 Github Actions 插件：<a target="_blank" rel="noopener" href="https://dzq88.github.io/2024/02/23/%E5%85%B3%E4%BA%8E%E9%85%8D%E7%BD%AEhexo-fluid%E4%B8%BB%E9%A2%98%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91/">利用 Github Actions 自动部署 Hexo 博客时，fluid 的配置失效，因为 node_modules 文件夹没有被推送到博客源码仓库</a></p>
+<p>本人编写文档时，中英文数字等连接处的符号会自行处理，比如中英文间空格。执行 <code>hexo g</code> 指令时发现：filename 中预留的空格被格式化去除。为解决这一问题，偷懒地使用了 <code>hexo-filter-auto-spacing</code> 插件。该插件是在博文的所有中英文之间自动空格</p>
 
                 
               </div>
