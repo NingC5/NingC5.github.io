@@ -26,8 +26,9 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="无">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2.assets/image-20250408195925672.png">
 <meta property="article:published_time" content="2025-04-07T07:19:42.000Z">
-<meta property="article:modified_time" content="2025-04-07T22:46:22.312Z">
+<meta property="article:modified_time" content="2025-04-08T12:01:07.140Z">
 <meta property="article:author" content="shaton">
 <meta property="article:tag" content="Git">
 <meta property="article:tag" content="GitHub">
@@ -35,6 +36,7 @@
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Fluid">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2.assets/image-20250408195925672.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -234,7 +236,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4.7k 字
+          5.4k 字
         
       </span>
     
@@ -245,7 +247,7 @@
         
         
         
-          40 分钟
+          46 分钟
         
       </span>
     
@@ -301,6 +303,37 @@
 <li>GithubPages：</li>
 <li><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a>：一个快速、简洁且高效的博客框架。 它使用 Markdown（或其他标记语言）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</li>
 <li>Fluid：基于 Hexo 的一款 Material Design 风格的主题，Hexo 默认的主题比较朴素。</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://swiftsiqi.com/posts/A-Guide-Of-Making-Your-Personal-Blog-Part-1">《A Guide Of Making Your Personal Blog》</a> 系列文章</p>
+<h1 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="1. 准备工作"></a>1. 准备工作</h1><p>个人博客是一个 Web 网站，允许用户在浏览器地址栏键入地址来打开。Web 网站有静态和动态之分，静态指用户和网站不能进行交互，动态则相反。</p>
+<p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> 是一个快速、简洁且高效的博客框架，它能够解析 Markdown 格式的文档来生成 html 静态资源文件，并利用主题渲染来形成具有特色样式的静态网页。</p>
+<p>使用 Hexo + GitHubPages 搭建的个人博客类似于静态 Web 网站，但能实现一些动态效果。</p>
+<blockquote>
+<p>notes：html、js、css 等编程语言的学习比较繁杂，而 Markdown 较为简易 。当然，如果想使网页具有个人色彩，还需对编程语言具有一定的了解。</p>
+</blockquote>
+<p>要使用 Hexo，首先要确保计算机上已经安装了 Node.js 和 Git。Git 是版本控制系统；安装它是为了管理本地博客数据并将博客项目托管到 GitHub。Node.js 是一个运行环境，使得 JavaScript 代码能够在服务器端运行；安装它主要是为了使用其包管理工具 npm，所以暂时不需要系统地学习其知识。</p>
+<h2 id="1-1-安装-Git"><a href="#1-1-安装-Git" class="headerlink" title="1.1 安装 Git"></a>1.1 安装 Git</h2><p>链接</p>
+<h2 id="1-2-安装-Node-js"><a href="#1-2-安装-Node-js" class="headerlink" title="1.2 安装 Node.js"></a>1.2 安装 Node.js</h2><blockquote>
+<p> <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42006801/article/details/124830995">Node.js安装与配置（详细步骤）-CSDN博客</a> </p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/xuezhe5212/article/details/138576464">node.js安装及环境配置超详细教程【Windows系统安装包方式】-CSDN博客</a></p>
+</blockquote>
+<h3 id="1-2-1-安装及配置"><a href="#1-2-1-安装及配置" class="headerlink" title="1.2.1 安装及配置"></a>1.2.1 安装及配置</h3><p>关于<strong>环境变量</strong>的配置，在此重新说明。</p>
+<p>在 <a target="_blank" rel="noopener" href="https://nodejs.org/en">Node.js官网</a> 下载与操作系统所匹配的最新的 <code>.msi</code> 长期稳定版，然后按步骤安装。默认安装的路径在 <code>C:\Program Files</code> 下，因 C 盘空间不足修改为 <code>E:\APP</code> 下。安装完后，<code>msi</code> 格式的安装包会自动将 node 启动程序添加到环境变量 path 中，因此命令提示符窗口能够在任意路径执行 node 程序。</p>
+<blockquote>
+<p>查看环境变量进行验证：【个人电脑】右键→【属性】→【高级系统设置】→【高级-环境变量】→【系统变量-Path】，发现已配置 <code>E:\APP\nodejs\</code>。</p>
+</blockquote>
+<p>分别执行指令 <code>node -v</code> 和 <code>npm -v</code> 查看 node 版本和 npm 版本。</p>
+<p><img src="/%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2.assets/image-20250408195925672.png" srcset="/img/loading.gif" lazyload alt="image-20250408195925672"></p>
+<h3 id="1-2-2-版本升级"><a href="#1-2-2-版本升级" class="headerlink" title="1.2.2 版本升级"></a>1.2.2 版本升级</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7161634586824212488">如何更新NodeJs到最新版本？ - 掘金</a></p>
+</blockquote>
+<p>适用于 Windows 和 macOS 的通用方式：官网下载最新 LTS 版本，然后重新安装在原安装路径下（这样无需重新配置环境变量）。</p>
+<p>操作步骤如下：</p>
+<ol>
+<li>执行命令 <code>node -v</code>，查看当前版本是否为最新版。</li>
+<li>执行命令 <code>where node</code>，查看之前的安装路径。</li>
+<li>在 <a target="_blank" rel="noopener" href="https://nodejs.org/en">Node.js官网</a> 下载与操作系统所匹配的最新的 <code>.mis</code> 长期稳定版，然后按步骤安装在原安装路径下。</li>
+<li>最后测试是否安装成功：执行命令 <code>node -v</code>，打印版本信息。</li>
 </ol>
 <h1 id="1-配置GitHubPages"><a href="#1-配置GitHubPages" class="headerlink" title="1. 配置GitHubPages"></a>1. 配置GitHubPages</h1><p>简单来说，GitHubPages的作用是提供免费的静态网站托管服务，我们只需要把自己写的html文档保存在其仓库中，该服务就会对这些文件进行处理并展示为网页的样式，即近似实现了<strong>Web服务器</strong>的功能，创建GitHubPages需要在GitHub上完成（注册GitHub账号以及配置SSH公钥可见<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42310154/article/details/118340458">这篇博文</a>），具体步骤为：<br>(1) 点击GitHub首页右上角的“+”按钮，在弹出窗口选择“New respository”；<br>(2) 在新页面中的“Repository name”一栏输入<strong>你GitHub的用户名</strong>。注意：必须输入用户名，否则创建的将不是GitHubPages而是一个普通的仓库；<br>(3) 勾选“Initialize this repository with a README”选项，并点击“Create Respository”按钮。<br>此时在浏览器输入https:&#x2F;&#x2F;你GitHub的用户名.github.io后，已经可以看到一个简陋的界面，这就说明你已经成功开启GithubPages服务了。</p>
 <h1 id="2-安装Hexo并初始化博客"><a href="#2-安装Hexo并初始化博客" class="headerlink" title="2. 安装Hexo并初始化博客"></a>2. 安装Hexo并初始化博客</h1><p>Hexo是一个快速且简洁的博客框架，用户可以通过Hexo快速生成一个完整的博客页面。Hexo使用Node.js来对页面进行快速渲染，因此需要同时安装Node.js和Hexo：</p>
