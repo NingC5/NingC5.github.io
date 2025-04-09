@@ -26,8 +26,9 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="无">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/posts/%E4%BD%BF%E7%94%A8%20Hexo%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20250409171310908.png">
 <meta property="article:published_time" content="2025-04-07T07:19:42.000Z">
-<meta property="article:modified_time" content="2025-04-08T18:50:44.689Z">
+<meta property="article:modified_time" content="2025-04-09T10:47:46.936Z">
 <meta property="article:author" content="shaton">
 <meta property="article:tag" content="Git">
 <meta property="article:tag" content="GitHub">
@@ -35,6 +36,7 @@
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Fluid">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/posts/%E4%BD%BF%E7%94%A8%20Hexo%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20250409171310908.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -234,7 +236,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          6.5k 字
+          7.5k 字
         
       </span>
     
@@ -245,7 +247,7 @@
         
         
         
-          55 分钟
+          63 分钟
         
       </span>
     
@@ -297,7 +299,7 @@
 <p>本博文将介绍如何从零开始一步一步搭建出属于自己的个人博客网站，使用到的有 Git、GitHub、GithubPages、Hexo &amp; Fluid。</p>
 <ol>
 <li>Git：分布式版本控制系统。建立本地仓库，用于管理本地数据。</li>
-<li>GitHub：在线软件源代码托管服务平台。建立远程仓库，使用 Git 关联 GitHub，将本地仓库中管理的数据推送到远程仓库。</li>
+<li>GitHub：在线软件源代码托管服务平台。建立远程仓库，使用 Git 关联 GitHub，将本地仓库管理的数据推送到远程仓库。</li>
 <li>GithubPages：</li>
 <li><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a>：一个快速、简洁且高效的博客框架。 它使用 Markdown（或其他标记语言）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</li>
 <li>Fluid：基于 Hexo 的一款 Material Design 风格的主题，Hexo 默认的主题比较朴素。</li>
@@ -312,26 +314,27 @@
 <blockquote>
 <p>notes：html、js、css 等编程语言的学习比较繁杂，而 Markdown 较为简易 。当然，如果想使网页具有个人色彩，还需对编程语言具有一定的了解。</p>
 </blockquote>
-<p>要使用 Hexo，首先要确保计算机上已经安装了 Node.js 和 Git。Git 是版本控制系统；安装它是为了管理本地博客数据并将博客项目托管到 GitHub。Node.js 是一个运行环境，使得 JavaScript 代码能够在服务器端运行；安装它主要是为了使用其包管理工具 npm，所以暂时不需要系统地学习其知识。</p>
+<p>要使用 Hexo，首先要确保计算机上已经安装了 Node.js 和 Git。Git 是版本控制系统；安装它是为了管理本地博客数据并将博客项目托管到 GitHub。Node.js 是一个运行环境，使得 JavaScript 代码能够在服务器端运行；安装它主要是为了使用其包管理系统 npm（Node Package Manager），所以暂时不需要系统地学习其知识。</p>
 <h2 id="1-1- 安装 -Git"><a href="#1-1- 安装 -Git" class="headerlink" title="1.1 安装 Git"></a>1.1 安装 Git</h2><p>链接</p>
 <h2 id="1-2- 安装 -Node-js"><a href="#1-2- 安装 -Node-js" class="headerlink" title="1.2 安装 Node.js"></a>1.2 安装 Node.js</h2><blockquote>
 <p> 参考，可删除：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42006801/article/details/124830995">Node.js 安装与配置（详细步骤）-CSDN 博客</a> </p>
 <p>npm 常用指令仍可参考，待删除：<a target="_blank" rel="noopener" href="https://blog.csdn.net/xuezhe5212/article/details/138576464">node.js 安装及环境配置超详细教程【Windows 系统安装包方式】-CSDN 博客</a></p>
 </blockquote>
 <p>关于 <strong> 安装 </strong>、<strong> 路径 &amp; 环境变量 </strong> 和 <strong>registry</strong> 的内容在此重新说明，参考链接暂时有部分参考价值。</p>
-<h3 id="1-2-1- 安装"><a href="#1-2-1- 安装" class="headerlink" title="1.2.1 安装"></a>1.2.1 安装 </h3><p> 在 <a target="_blank" rel="noopener" href="https://nodejs.org/en">Node.js 官网</a> 下载与操作系统所匹配的最新的 <code>.msi</code> 长期稳定版，然后按步骤安装。默认安装的路径在 <code>C:\Program Files</code> 目录下，因 C 盘空间不足修改为 <code>E:\APP</code> 目录下。安装完后，<code>msi</code> 格式的安装包会自动将 node 启动程序添加到 path 环境变量中，因此命令提示符窗口能够在任意路径执行 node 程序。</p>
+<h3 id="1-2-1- 安装"><a href="#1-2-1- 安装" class="headerlink" title="1.2.1 安装"></a>1.2.1 安装 </h3><p> 在 <a target="_blank" rel="noopener" href="https://nodejs.org/en">Node.js 官网 </a> 下载与操作系统所匹配的最新的 <code>.msi</code> 长期稳定版，然后按步骤安装。<strong> 默认安装的路径在 <code>C:\Program Files</code> 目录下，因 C 盘空间不足修改为 <code>E:\APP</code> 目录下。</strong></p>
+<p>安装完后，<code>msi</code> 格式的安装包会自动将 node 启动程序添加到 path 环境变量中，因此命令提示符窗口能够在任意路径执行 node 程序。</p>
 <blockquote>
 <p>查看环境变量进行验证：【个人电脑】右键→【属性】→【高级系统设置】→【高级 - 环境变量】→【系统变量 -Path】，发现已配置 <code>E:\APP\nodejs\</code>。</p>
 </blockquote>
-<p>分别执行指令 <code>node -v</code> 和 <code>npm -v</code>，查看 node 和 npm 版本。如下图显示，则安装成功。</p>
+<p>命令提示符窗口执行指令 <code>node -v</code> 和 <code>npm -v</code>，若显示对应版本号，则说明安装成功。</p>
 <p>![查看 node 和 npm 的版本](使用 Hexo 搭建个人博客 &#x2F;image-20250408195925672.png)</p>
-<h3 id="1-2-2- 路径 - 环境变量"><a href="#1-2-2- 路径 - 环境变量" class="headerlink" title="1.2.2 路径 &amp; 环境变量"></a>1.2.2 路径 &amp; 环境变量</h3><p>npm 的全局模块安装路径和 npm 的缓存路径默认都在 C 盘下，执行如下指令进行查看。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">查看 npm 的全局模块安装路径。默认：C:\Users\shaton\AppData\Roaming\npm</span><br>npm get prefix<br><span class="hljs-meta prompt_"># </span><span class="language-bash">查看 npm 的缓存路径。默认：C:\Users\shaton\AppData\Local\npm-cache</span><br>npm get cache<br></code></pre></td></tr></table></figure>
+<h3 id="1-2-2- 路径 - 环境变量"><a href="#1-2-2- 路径 - 环境变量" class="headerlink" title="1.2.2 路径 &amp; 环境变量"></a>1.2.2 路径 &amp; 环境变量</h3><p>npm 的全局模块安装路径和缓存路径默认都在 C 盘下，执行如下指令进行查看。</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cmd"># 查看 npm 的全局模块安装路径。默认：C:\Users\shaton\AppData\Roaming\npm<br>npm get prefix<br># 查看 npm 的缓存路径。默认：C:\Users\shaton\AppData\Local\npm-cache<br>npm get cache<br></code></pre></td></tr></table></figure>
 
-<p>因 C 盘空间不足，将两者改到 <code>Node.js</code> 的自定义安装目录下（<code>E:\APP\nodejs\</code>）。先在该目录下新建 “node_global” 和 “node_cache” 两个文件夹，然后执行如下指令进行修改。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">设置 npm 的全局模块安装路径为 “node_global” 文件夹 </span><br>npm config set prefix &quot;E:\APP\nodejs\node_global&quot;<br><span class="hljs-meta prompt_"># </span><span class="language-bash"> 设置 npm 的缓存路径为 “node_cache” 文件夹</span><br>npm config set cache &quot;E:\APP\nodejs\node_cache&quot;<br></code></pre></td></tr></table></figure>
+<p>因 C 盘空间不足，将两者改到 <code>Node.js</code> 的自定义安装目录下（<code>E:\APP\nodejs\</code>）。<strong>先在该目录下新建 “node_global” 和 “node_cache” 两个文件夹，然后执行如下指令进行修改。</strong></p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cmd"># 设置 npm 的全局模块安装路径为 “node_global” 文件夹<br>npm config <span class="hljs-built_in">set</span> prefix &quot;E:\APP\nodejs\node_global&quot;<br># 设置 npm 的缓存路径为 “node_cache” 文件夹<br>npm config <span class="hljs-built_in">set</span> cache &quot;E:\APP\nodejs\node_cache&quot;<br></code></pre></td></tr></table></figure>
 
-<p>将【node_global】的路径添加到 path 环境变量中，方便命令行在任意路径执行 node 全局模块的指令。在【系统变量 -Path】中添加 <code>E:\APP\nodejs\node_global</code> 即可。</p>
+<p>将【node_global】的路径添加到 path 环境变量中，方便命令行在任意路径执行 node 全局模块的指令。<strong>在【系统变量 -Path】中添加 <code>E:\APP\nodejs\node_global</code> 即可。</strong></p>
 <blockquote>
 <p>除了上一配置外，我还在很多教程中看到下面两项配置：</p>
 <ol>
@@ -345,20 +348,20 @@
 </blockquote>
 <p>npm 默认的源仓库地址为：<a href="http://registry.npmjs.org, 可使用指令 /">http://registry.npmjs.org，可使用指令</a> <code>npm config get registry</code> 查看当前源仓库地址。npm 安装插件是从源仓库下载对应的插件包，而默认源仓库的服务器在国外，在国内使用时会经常出现下载缓慢或模块安装失败等问题。有两种方式解决该问题，如下所示：</p>
 <ol>
-<li>npm 的源仓库改为使用阿里维护的淘宝镜像地址</li>
+<li><strong>npm 的源仓库改为使用阿里维护的淘宝镜像地址</strong></li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">修改 npm 的源仓库地址为阿里维护的淘宝镜像地址：https://registry.npmmirror.com</span><br>npm config set registry https://registry.npmmirror.com<br></code></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cmd"># 修改 npm 的源仓库地址为阿里维护的淘宝镜像地址：https://registry.npmmirror.com<br>npm config <span class="hljs-built_in">set</span> registry https://registry.npmmirror.com<br></code></pre></td></tr></table></figure>
 
 <ol start="2">
-<li>使用 cnpm 代替 npm 来安装插件</li>
+<li><strong>使用 cnpm 代替 npm 来安装插件</strong></li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">npm 安装 cnpm 插件到全局模块安装路径，并设置 cnpm 的源仓库地址为国内的淘宝镜像地址</span><br>npm install -g cnpm --registry=https://registry.npmmirror.com<br></code></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cmd"># npm 安装 cnpm 插件到全局模块安装路径，并设置 cnpm 的源仓库地址为国内的淘宝镜像地址<br>npm install -g cnpm --registry=https://registry.npmmirror.com<br></code></pre></td></tr></table></figure>
 
 <p>npm 是 node 官方的包管理器，<a target="_blank" rel="noopener" href="https://github.com/cnpm/cnpm">cnpm</a>（gzip 压缩支持）是淘宝定制的中国版 npm 插件。安装模块时可使用 cnpm 来代替 npm，两者指令基本一致。</p>
 <h3 id="1-2-4- 版本升级"><a href="#1-2-4- 版本升级" class="headerlink" title="1.2.4 版本升级"></a>1.2.4 版本升级</h3><blockquote>
 <p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7161634586824212488">如何更新 NodeJs 到最新版本？ - 掘金</a></p>
 </blockquote>
-<p>适用于 Windows 和 macOS 的通用方式：官网下载最新 LTS 版本，然后重新安装在原安装路径下（这样无需重新配置环境变量）。</p>
+<p>适用于 Windows 和 macOS 的通用方式：<strong>官网下载最新 LTS 版本，然后重新安装在原安装路径下</strong>（这样无需重新配置环境变量）。</p>
 <p>操作步骤如下：</p>
 <ol>
 <li>执行命令 <code>node -v</code>，查看当前版本是否为最新版。</li>
@@ -366,7 +369,69 @@
 <li>在 <a target="_blank" rel="noopener" href="https://nodejs.org/en">Node.js 官网</a> 下载与操作系统所匹配的最新的 <code>.mis</code> 长期稳定版，然后按步骤安装在原安装路径下。</li>
 <li>最后测试是否安装成功：执行命令 <code>node -v</code>，打印版本信息。</li>
 </ol>
-<h2 id="1-3- 安装 -Hexo"><a href="#1-3- 安装 -Hexo" class="headerlink" title="1.3 安装 Hexo"></a>1.3 安装 Hexo</h2><h1 id="1- 配置 GitHubPages"><a href="#1- 配置 GitHubPages" class="headerlink" title="1. 配置 GitHubPages"></a>1. 配置 GitHubPages</h1><p>简单来说，GitHubPages 的作用是提供免费的静态网站托管服务，我们只需要把自己写的 html 文档保存在其仓库中，该服务就会对这些文件进行处理并展示为网页的样式，即近似实现了 <strong>Web 服务器</strong> 的功能，创建 GitHubPages 需要在 GitHub 上完成（注册 GitHub 账号以及配置 SSH 公钥可见 <a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42310154/article/details/118340458"> 这篇博文 </a>），具体步骤为：<br>(1) 点击 GitHub 首页右上角的“+”按钮，在弹出窗口选择“New respository”；<br>(2) 在新页面中的“Repository name”一栏输入<strong> 你 GitHub 的用户名 </strong>。注意：必须输入用户名，否则创建的将不是 GitHubPages 而是一个普通的仓库；<br>(3) 勾选“Initialize this repository with a README”选项，并点击“Create Respository”按钮。<br> 此时在浏览器输入 https:&#x2F;&#x2F; 你 GitHub 的用户名.github.io 后，已经可以看到一个简陋的界面，这就说明你已经成功开启 GithubPages 服务了。</p>
+<h2 id="1-3- 安装 -Hexo"><a href="#1-3- 安装 -Hexo" class="headerlink" title="1.3 安装 Hexo"></a>1.3 安装 Hexo</h2><p> npm 安装 Hexo 模块到全局模块安装路径：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">npm install -g hexo-cli<br></code></pre></td></tr></table></figure>
+
+<h2 id="1-4-GitHub- 账号"><a href="#1-4-GitHub- 账号" class="headerlink" title="1.4 GitHub 账号"></a>1.4 GitHub 账号</h2><p><a target="_blank" rel="noopener" href="https://github.com/">GitHub 官网</a> 注册账号</p>
+<h1 id="2- 网络博客的初体验"><a href="#2- 网络博客的初体验" class="headerlink" title="2. 网络博客的初体验"></a>2. 网络博客的初体验 </h1><h2 id="2-1-GitHub 仓库 -GitHubPages"><a href="#2-1-GitHub 仓库 -GitHubPages" class="headerlink" title="2.1 GitHub 仓库 &amp; GitHubPages"></a>2.1 GitHub 仓库 &amp; GitHubPages</h2><h2 id="2-2- 使用 -Hexo- 建立本地博客"><a href="#2-2- 使用 -Hexo- 建立本地博客" class="headerlink" title="2.2 使用 Hexo 建立本地博客"></a>2.2 使用 Hexo 建立本地博客</h2><p> 任选位置新建文件夹【custom_folderName1】，本人是：<code>E:\ningc5-blog</code>，与博客相关的文件都可以丢在该目录下。在该目录下新建文件夹【custom_folderName2】，本人是：<code>E:\ningc5-blog\blogRoot</code>，我将以 <code>E:\ningc5-blog\blogRoot</code> 目录作为本地博客项目的站点根目录。</p>
+<p>具体操作步骤如下：</p>
+<ol>
+<li><p>** 在 <code>E:\ningc5-blog\hexo</code> 目录下执行 <code>hexo init</code> 指令，Hexo 默认在当前的文件夹建立网站，即以当前目录（<code>E:\ningc5-blog\hexo</code>）为博客的站点根目录。** 该指令执行后站点根目录下存在一系列文件，可用于将博客文件（<code>.md</code>）转换为静态文件（<code>.html</code>）。</p>
+</li>
+<li><p><strong>在站点根目录下执行 <code>npm install</code> 指令。</strong></p>
+<blockquote>
+<p><code>npm install</code> 指令的作用：<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_73531461/article/details/136399322">深入理解 package.json 文件与 package-lock.json 文件 -CSDN 博客</a></p>
+</blockquote>
+</li>
+</ol>
+<p>![执行 <code>hexo init</code> 和 <code>npm install</code> 指令，初始化本地博客](使用 Hexo 搭建个人博客 &#x2F;image-20250409102402277.png)</p>
+<ul>
+<li><p>_config.landscape.yml：默认的主题配置文件。</p>
+</li>
+<li><p>node_modules：博客项目的模块安装目录。</p>
+</li>
+<li><p>package.json 和 package-lock.json：博客项目的依赖项配置文件。</p>
+</li>
+<li><p><strong>_config.yml</strong>：站点配置文件。</p>
+</li>
+<li><p>themes：主题文件夹。Hexo 会根据主题来生成静态页面。</p>
+</li>
+<li><p><strong>source</strong>：<u>资源文件夹，用于存放用户资源。除 <code>_posts</code> 文件夹之外，以 <code>_</code> 开头命名的文件 &#x2F; 文件夹和隐藏的文件将会被忽略。Markdown 和 HTML 文件会被解析并放到 public 文件夹，而其他文件会被拷贝过去。</u></p>
+</li>
+<li><p><strong>scaffolds</strong>：<u>模版文件夹。新建文章时，Hexo 会根据 scaffold 来创建文件。</u></p>
+</li>
+</ul>
+<ol start="3">
+<li><strong>在站点根目录下执行 <code>hexo g </code> 指令，将 <code>/source/_posts</code> 目录下的博文转化为静态文件。</strong></li>
+</ol>
+<p>![执行 <code>hexo g </code> 指令](使用 Hexo 搭建个人博客 &#x2F;image-20250409170817066.png)</p>
+<ol start="4">
+<li><strong>在站点根目录下执行 <code>hexo s </code> 指令，启动服务器。</strong></li>
+</ol>
+<p>![执行 <code>hexo s </code> 指令](使用 Hexo 搭建个人博客 &#x2F;image-20250409170916050.png)</p>
+<ol start="5">
+<li><strong>浏览器键入 <a target="_blank" rel="noopener" href="http://localhost:4000/%EF%BC%8C%E8%8B%A5%E5%87%BA%E7%8E%B0%E5%A6%82%E4%B8%8B%E7%95%8C%E9%9D%A2%EF%BC%8C%E5%88%99">http://localhost:4000/，若出现如下界面，则</a> Hexo 本地博客建立成功。</strong></li>
+</ol>
+<img src="/posts/%E4%BD%BF%E7%94%A8%20Hexo%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20250409171310908.png" srcset="/img/loading.gif" lazyload alt="本地博客首页">
+
+<blockquote>
+<p>小提示：步骤 1 和 2 执行后，<code>/source/_posts</code> 目录下自带一篇博客 <code>hello-world.md</code>。步骤 3 执行后，hexo 将该博文转换为 <code>hello-world.html</code> 输出的 <code>/public</code> 目录下。</p>
+</blockquote>
+<h2 id="2-3- 将本地博客部署到 -GItHub"><a href="#2-3- 将本地博客部署到 -GItHub" class="headerlink" title="2.3 将本地博客部署到 GItHub"></a>2.3 将本地博客部署到 GItHub</h2><h1 id="3-Fluid- 主题的私人色彩"><a href="#3-Fluid- 主题的私人色彩" class="headerlink" title="3. Fluid 主题的私人色彩"></a>3. Fluid 主题的私人色彩 </h1><p>Hexo 的默认主题比较朴素，官网提供了丰富的<a target="_blank" rel="noopener" href="https://hexo.io/themes/"> 主题样式</a>，常用有 Fluid、Butterfly、Next 等。本博客暂时使用 Fluid 主题。</p>
+<h2 id="3-1- 切换为 -Fluid- 主题"><a href="#3-1- 切换为 -Fluid- 主题" class="headerlink" title="3.1 切换为 Fluid 主题"></a>3.1 切换为 Fluid 主题</h2><ol>
+<li><p><strong>在站点根目录下执行 <code>npm install --save hexo-theme-fluid</code> 指令来下载 Fluid 主题包。</strong></p>
+</li>
+<li><p>移动 fluid 主题文件夹并改名：<code>/node_modules/hexo-theme-fluid</code> ——&gt; <code>/themes/fluid</code>。（本人移动并改名只是方便找到，可能后期换主题？）</p>
+</li>
+<li><p><strong>在 <code>_config.yml</code>文件中指定主题和语言：</strong></p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">theme:</span> <span class="hljs-string">fluid</span>  		<span class="hljs-comment"># 指定主题为 Fluid，默认的主题是 landscape</span><br><span class="hljs-attr">language:</span> <span class="hljs-string">zh-CN</span>  	<span class="hljs-comment"># 指定语言为中文</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>执行 <code>hexo g</code>  和 <code>hexo s</code> 指令后，浏览器键入 <a target="_blank" rel="noopener" href="http://localhost:4000/%EF%BC%8C%E6%9F%A5%E7%9C%8B">http://localhost:4000/，查看</a> fluid 主题效果。</p>
+</li>
+</ol>
+<p>![fluid 主题默认格式界面](使用 Hexo 搭建个人博客 &#x2F;image-20250409175218454.png)</p>
+<h2 id="3-2- 个性化配置"><a href="#3-2- 个性化配置" class="headerlink" title="3.2 个性化配置"></a>3.2 个性化配置 </h2><p><strong> 在站点博客目录下创建 <code>_config.fluid.yml</code>，将 fluid 主题的 <code>_config.yml</code> 内容复制过去。</strong></p>
+<h1 id="1- 配置 GitHubPages"><a href="#1- 配置 GitHubPages" class="headerlink" title="1. 配置 GitHubPages"></a>1. 配置 GitHubPages</h1><p>简单来说，GitHubPages 的作用是提供免费的静态网站托管服务，我们只需要把自己写的 html 文档保存在其仓库中，该服务就会对这些文件进行处理并展示为网页的样式，即近似实现了 <strong>Web 服务器</strong> 的功能，创建 GitHubPages 需要在 GitHub 上完成（注册 GitHub 账号以及配置 SSH 公钥可见 <a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42310154/article/details/118340458"> 这篇博文 </a>），具体步骤为：<br>(1) 点击 GitHub 首页右上角的“+”按钮，在弹出窗口选择“New respository”；<br>(2) 在新页面中的“Repository name”一栏输入<strong> 你 GitHub 的用户名 </strong>。注意：必须输入用户名，否则创建的将不是 GitHubPages 而是一个普通的仓库；<br>(3) 勾选“Initialize this repository with a README”选项，并点击“Create Respository”按钮。<br> 此时在浏览器输入 https:&#x2F;&#x2F; 你 GitHub 的用户名.github.io 后，已经可以看到一个简陋的界面，这就说明你已经成功开启 GithubPages 服务了。</p>
 <h1 id="2- 安装 Hexo 并初始化博客"><a href="#2- 安装 Hexo 并初始化博客" class="headerlink" title="2. 安装 Hexo 并初始化博客"></a>2. 安装 Hexo 并初始化博客</h1><p>Hexo 是一个快速且简洁的博客框架，用户可以通过 Hexo 快速生成一个完整的博客页面。Hexo 使用 Node.js 来对页面进行快速渲染，因此需要同时安装 Node.js 和 Hexo：</p>
 <h2 id="2-1- 安装 Node-js"><a href="#2-1- 安装 Node-js" class="headerlink" title="2.1 安装 Node.js"></a>2.1 安装 Node.js</h2><p>可在 <a target="_blank" rel="noopener" href="https://nodejs.org/en/"> 官网 </a> 直接安装 Node.js，建议使用 Node.js 10.0 及以上版本。可以在 cmd 中输入以下命令检查自己是否安装成功：</p>
 <figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs crmsh"><span class="hljs-keyword">node</span> <span class="hljs-title">--version</span><br><br>POWERSHELL<br></code></pre></td></tr></table></figure>
@@ -580,7 +645,21 @@
 <p>本人使用 Typora 编写 md 文档，并设置插入图片时复制图片到 <code>./$&#123;filename&#125;.assets</code> （Typora 默认提供的选项）文件夹下，以方法管理每个文档及其图片。其效果如下：复制图片到 md 文档时就会在该文档所在目录下创建 <code>filename.assets</code> 文件夹，并将图片复制到该文件夹下；图片在该文档的引用方式采用相对路径，例如 <code>![]filename.assert/imageName</code>。</p>
 <p>执行 <code>hexo g</code> 指令后，会将 source 目录下的资源文件转化并输出到 public 目录下。其中，<code>/source/_posts/</code> 目录下的 md 格式博文会转化成 html 文件并输出到 <code>/public/posts/</code> 目录下。</p>
 <h1 id="待更新内容"><a href="# 待更新内容" class="headerlink" title="待更新内容"></a>待更新内容 </h1><p> 暂未使用 Github Actions 插件：<a target="_blank" rel="noopener" href="https://dzq88.github.io/2024/02/23/%E5%85%B3%E4%BA%8E%E9%85%8D%E7%BD%AEhexo-fluid%E4%B8%BB%E9%A2%98%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91/">利用 Github Actions 自动部署 Hexo 博客时，fluid 的配置失效，因为 node_modules 文件夹没有被推送到博客源码仓库</a></p>
-<p>本人编写文档时，中英文数字等连接处的符号会自行处理，比如中英文间空格。执行 <code>hexo g</code> 指令时发现：filename 中预留的空格被格式化去除。为解决这一问题，偷懒地使用了 <code>hexo-filter-auto-spacing</code> 插件。该插件是在博文的所有中英文之间自动空格</p>
+<h2 id="中英文空格"><a href="# 中英文空格" class="headerlink" title="中英文空格"></a>中英文空格 </h2><p> 本人编写文档时，中英文数字等连接处的符号会自行处理，比如中英文间空格。执行 <code>hexo g</code> 指令时发现：在 <code>index.html</code> 中，博文 filename 预留的空格被格式化去除。为解决这一问题，偷懒地使用了 <code>hexo-filter-auto-spacing</code> 插件。该插件是在博文的所有中英文之间自动空格，虽然不是很符合本人要求。</p>
+<hr>
+<p>安装插件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">npm install hexo-filter-auto-spacing --save<br></code></pre></td></tr></table></figure>
+
+<p>在 <code>_config.yml</code> 文件中配置：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># hexo-filter-auto-spacing 插件，实现中英文之间自动加空格</span><br><span class="hljs-attr">auto_spacing:</span><br>    <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
+
+<hr>
+<p>problem：uninstall 该插件并删除插件模块后，<code>hexo g</code> 还是原问题。但是重新安装该插件后，无需配置，甚至设置为 false，仍然实现空格，bug 吗？</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://hsyac.github.io/posts/870f2d70.html">Hexo 删除插件的命令与使用办法 | Hsyac</a></p>
+</blockquote>
+<p>暂未遇到的问题：<code>hexo-filter-auto-spacing</code> 插件会导致脚注插件不能正常运行。</p>
+<p>【待实现】：删除该插件，实现原有的小要求。</p>
 
                 
               </div>
