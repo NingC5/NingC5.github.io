@@ -26,14 +26,14 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="无">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/posts/%E4%BD%BF%E7%94%A8%20Hexo%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20250408195925672.png">
-<meta property="og:image" content="http://example.com/posts/%E4%BD%BF%E7%94%A8%20Hexo%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20250409102402277.png">
-<meta property="og:image" content="http://example.com/posts/%E4%BD%BF%E7%94%A8%20Hexo%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20250409170817066.png">
-<meta property="og:image" content="http://example.com/posts/%E4%BD%BF%E7%94%A8%20Hexo%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20250409170916050.png">
-<meta property="og:image" content="http://example.com/posts/%E4%BD%BF%E7%94%A8%20Hexo%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20250409171310908.png">
-<meta property="og:image" content="http://example.com/posts/%E4%BD%BF%E7%94%A8%20Hexo%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20250409175218454.png">
+<meta property="og:image" content="http://example.com/image-20250408195925672.png">
+<meta property="og:image" content="http://example.com/image-20250409102402277.png">
+<meta property="og:image" content="http://example.com/image-20250409170817066.png">
+<meta property="og:image" content="http://example.com/image-20250409170916050.png">
+<meta property="og:image" content="http://example.com/image-20250409171310908.png">
+<meta property="og:image" content="http://example.com/image-20250409175218454.png">
 <meta property="article:published_time" content="2025-04-07T07:19:42.000Z">
-<meta property="article:modified_time" content="2025-04-09T11:47:07.344Z">
+<meta property="article:modified_time" content="2025-04-10T02:24:55.981Z">
 <meta property="article:author" content="shaton">
 <meta property="article:tag" content="Git">
 <meta property="article:tag" content="GitHub">
@@ -41,7 +41,7 @@
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Fluid">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/posts/%E4%BD%BF%E7%94%A8%20Hexo%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20250408195925672.png">
+<meta name="twitter:image" content="http://example.com/image-20250408195925672.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -241,7 +241,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          7.4k 字
+          7.5k 字
         
       </span>
     
@@ -252,7 +252,7 @@
         
         
         
-          62 分钟
+          63 分钟
         
       </span>
     
@@ -325,14 +325,14 @@
 <p> 参考，可删除：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42006801/article/details/124830995">Node.js安装与配置（详细步骤）-CSDN博客</a> </p>
 <p>npm 常用指令仍可参考，待删除：<a target="_blank" rel="noopener" href="https://blog.csdn.net/xuezhe5212/article/details/138576464">node.js安装及环境配置超详细教程【Windows系统安装包方式】-CSDN博客</a></p>
 </blockquote>
-<p>关于<strong>安装</strong>、<strong>路径&amp;环境变量</strong>和 <strong>registry</strong> 的内容在此重新说明，参考链接暂时有部分参考价值。</p>
+<p>关于<strong>安装</strong>、<strong>路径&amp;环境变量</strong>和 <strong>registry</strong> 的内容在此重新说明，链接的部分内容暂时仍有参考价值。</p>
 <h3 id="1-2-1-安装"><a href="#1-2-1-安装" class="headerlink" title="1.2.1 安装"></a>1.2.1 安装</h3><p>在 <a target="_blank" rel="noopener" href="https://nodejs.org/en">Node.js官网</a> 下载与操作系统所匹配的最新的 <code>.msi</code> 长期稳定版，然后按步骤安装。<strong>默认安装的路径在 <code>C:\Program Files</code> 目录下，因 C 盘空间不足修改为 <code>E:\APP</code> 目录下。</strong></p>
 <p>安装完后，<code>msi</code> 格式的安装包会自动将 node 启动程序添加到 path 环境变量中，因此命令提示符窗口能够在任意路径执行 node 程序。</p>
 <blockquote>
 <p>查看环境变量进行验证：【个人电脑】右键→【属性】→【高级系统设置】→【高级-环境变量】→【系统变量-Path】，发现已配置 <code>E:\APP\nodejs\</code>。</p>
 </blockquote>
 <p>命令提示符窗口执行指令 <code>node -v</code> 和 <code>npm -v</code>，若显示对应版本号，则说明安装成功。</p>
-<p><img src="/posts/%E4%BD%BF%E7%94%A8%20Hexo%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20250408195925672.png" srcset="/img/loading.gif" lazyload alt="查看 node 和 npm 的版本号"></p>
+<p><img src="/image-20250408195925672.png" srcset="/img/loading.gif" lazyload alt="执行指令，查看 node 和 npm 的版本号"></p>
 <h3 id="1-2-2-路径-环境变量"><a href="#1-2-2-路径-环境变量" class="headerlink" title="1.2.2 路径&amp;环境变量"></a>1.2.2 路径&amp;环境变量</h3><p>npm 的全局模块安装路径和缓存路径默认都在 C 盘下，执行如下指令进行查看。</p>
 <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cmd"># 查看npm的全局模块安装路径。默认：C:\Users\shaton\AppData\Roaming\npm<br>npm get prefix<br># 查看npm的缓存路径。默认：C:\Users\shaton\AppData\Local\npm-cache<br>npm get cache<br></code></pre></td></tr></table></figure>
 
@@ -389,7 +389,7 @@
 </blockquote>
 </li>
 </ol>
-<p><img src="/posts/%E4%BD%BF%E7%94%A8%20Hexo%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20250409102402277.png" srcset="/img/loading.gif" lazyload alt="执行 hexo init 和 npm install 指令，初始化本地博客"></p>
+<p><img src="/image-20250409102402277.png" srcset="/img/loading.gif" lazyload alt="hexo init 和 npm install 指令执行结果，初始化本地博客"></p>
 <ul>
 <li><p>_config.landscape.yml：默认的主题配置文件。</p>
 </li>
@@ -409,15 +409,15 @@
 <ol start="3">
 <li><strong>在站点根目录下执行 <code>hexo g </code> 指令，将 <code>/source/_posts</code> 目录下的博文转化为静态文件。</strong></li>
 </ol>
-<p><img src="/posts/%E4%BD%BF%E7%94%A8%20Hexo%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20250409170817066.png" srcset="/img/loading.gif" lazyload alt="执行 hexo g 指令"></p>
+<p><img src="/image-20250409170817066.png" srcset="/img/loading.gif" lazyload alt="hexo g 指令执行结果"></p>
 <ol start="4">
 <li><strong>在站点根目录下执行 <code>hexo s </code> 指令，启动服务器。</strong></li>
 </ol>
-<p><img src="/posts/%E4%BD%BF%E7%94%A8%20Hexo%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20250409170916050.png" srcset="/img/loading.gif" lazyload alt="执行 hexo s 指令"></p>
+<p><img src="/image-20250409170916050.png" srcset="/img/loading.gif" lazyload alt="hexo s 指令执行结果"></p>
 <ol start="5">
 <li><strong>浏览器键入 <a target="_blank" rel="noopener" href="http://localhost:4000/%EF%BC%8C%E8%8B%A5%E5%87%BA%E7%8E%B0%E5%A6%82%E4%B8%8B%E7%95%8C%E9%9D%A2%EF%BC%8C%E5%88%99">http://localhost:4000/，若出现如下界面，则</a> Hexo 本地博客建立成功。</strong></li>
 </ol>
-<p><img src="/posts/%E4%BD%BF%E7%94%A8%20Hexo%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20250409171310908.png" srcset="/img/loading.gif" lazyload alt="本地博客默认首页"></p>
+<p><img src="/image-20250409171310908.png" srcset="/img/loading.gif" lazyload alt="本地博客默认首页"></p>
 <blockquote>
 <p>小提示：步骤 1 和 2 执行后，<code>/source/_posts</code> 目录下自带一篇博客 <code>hello-world.md</code>。步骤 3 执行后，hexo 将该博文转换为 <code>hello-world.html</code> 输出的 <code>/public</code> 目录下。</p>
 </blockquote>
@@ -433,7 +433,7 @@
 <li><p>执行 <code>hexo g</code>  和 <code>hexo s</code> 指令后，浏览器键入 <a target="_blank" rel="noopener" href="http://localhost:4000/%EF%BC%8C%E6%9F%A5%E7%9C%8B">http://localhost:4000/，查看</a> fluid 主题效果。</p>
 </li>
 </ol>
-<p><img src="/posts/%E4%BD%BF%E7%94%A8%20Hexo%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20250409175218454.png" srcset="/img/loading.gif" lazyload alt="fluid 主题的默认格式界面"></p>
+<p><img src="/image-20250409175218454.png" srcset="/img/loading.gif" lazyload alt="fluid 主题的默认格式界面"></p>
 <h2 id="3-2-个性化配置"><a href="#3-2-个性化配置" class="headerlink" title="3.2 个性化配置"></a>3.2 个性化配置</h2><p><strong>在站点博客目录下创建 <code>_config.fluid.yml</code>，将 fluid 主题的 <code>_config.yml</code> 内容复制过去。</strong></p>
 <h1 id="1-配置GitHubPages"><a href="#1-配置GitHubPages" class="headerlink" title="1. 配置GitHubPages"></a>1. 配置GitHubPages</h1><p>简单来说，GitHubPages的作用是提供免费的静态网站托管服务，我们只需要把自己写的html文档保存在其仓库中，该服务就会对这些文件进行处理并展示为网页的样式，即近似实现了<strong>Web服务器</strong>的功能，创建GitHubPages需要在GitHub上完成（注册GitHub账号以及配置SSH公钥可见<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42310154/article/details/118340458">这篇博文</a>），具体步骤为：<br>(1) 点击GitHub首页右上角的“+”按钮，在弹出窗口选择“New respository”；<br>(2) 在新页面中的“Repository name”一栏输入<strong>你GitHub的用户名</strong>。注意：必须输入用户名，否则创建的将不是GitHubPages而是一个普通的仓库；<br>(3) 勾选“Initialize this repository with a README”选项，并点击“Create Respository”按钮。<br>此时在浏览器输入https:&#x2F;&#x2F;你GitHub的用户名.github.io后，已经可以看到一个简陋的界面，这就说明你已经成功开启GithubPages服务了。</p>
 <h1 id="2-安装Hexo并初始化博客"><a href="#2-安装Hexo并初始化博客" class="headerlink" title="2. 安装Hexo并初始化博客"></a>2. 安装Hexo并初始化博客</h1><p>Hexo是一个快速且简洁的博客框架，用户可以通过Hexo快速生成一个完整的博客页面。Hexo使用Node.js来对页面进行快速渲染，因此需要同时安装Node.js和Hexo：</p>
@@ -640,14 +640,37 @@
 
 <h1 id="10-结语"><a href="#10-结语" class="headerlink" title="10. 结语"></a>10. 结语</h1><p>以上就是基于Hexo+Fluid的个人博客系统搭建与使用的完整教程了。从第七步中我们可以看出来，如果你的目的是想要博文被大家看到，那么个人博客系统远远不如一些主流的平台，如微信、知乎、掘金等。但是从零搭建起只属于自己的网站还是非常有成就感的，祝大家都能找到人生的意义所在。</p>
 <h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>tips：配置项的 key 和 value 之间用 <code>英文冒号+空格</code> 连接，否则 hexo 清理或部署时会报错：<code>can not read a block mapping entry</code>。当前，也可能是报错点之前格式错误。</p>
-<h1 id="md-文档的图片显示"><a href="#md-文档的图片显示" class="headerlink" title="md 文档的图片显示"></a>md 文档的图片显示</h1><blockquote>
+<h1 id="md-文档和博客正确显示图片"><a href="#md-文档和博客正确显示图片" class="headerlink" title="md 文档和博客正确显示图片"></a>md 文档和博客正确显示图片</h1><blockquote>
 <p><a target="_blank" rel="noopener" href="https://www.larscheng.com/hexo-principle/">Hexo的工作原理探究 | Java技术经验分享</a></p>
-<p>暂时使用 <code>hexo-asset-image</code> 插件，暂未转向使用 hexo 新版本的 <code>hexo-renderer-marked</code>：<a target="_blank" rel="noopener" href="https://bingbytebard.com/2024/11/08/Hexo%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E7%9A%84%E6%96%B9%E6%B3%95/">Hexo中插入图片的方法 - Hazel</a></p>
-<p>暂未转向使用 <code>hexo-asset-img</code> 插件：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/443980981">hexo-asset-img | Hexo 本地图片插件: 转换 图片相对路径 为 asset_img - 知乎</a></p>
-<p>暂未出现该问题：<a target="_blank" rel="noopener" href="https://smallsquare.github.io/Solution-to-insert-pics-in-Hexo/">安装hexo-asset-image导致Hexo插入图片无法显示的解决办法 Solution to insert pics in Hexo when hexo-asset-image is installed - SmallSquare’s Blog</a></p>
 </blockquote>
+<ol>
+<li>使用 <code>hexo-asset-image</code> 插件（供 hexo 老版本使用，现已不兼容）</li>
+</ol>
+<blockquote>
+<p>解决已废弃的 <code>hexo-asset-image</code> 插件不兼容 hexo 新版本的问题：<a target="_blank" rel="noopener" href="https://blog.csdn.net/kurapika_030/article/details/130598712">【Hexo】hexo-asset-image在hexo6.3.0下的使用以及与abbrlink插件的修改-CSDN博客</a></p>
+</blockquote>
+<ol start="2">
+<li>hexo 新版本支持 md 语法的相对路径引用图片，而无需使用 <code>asset_img</code> 标签插件进行转化。</li>
+</ol>
+<blockquote>
+<p>参考官方文档的博文：<a target="_blank" rel="noopener" href="https://bingbytebard.com/2024/11/08/Hexo%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E7%9A%84%E6%96%B9%E6%B3%95/">Hexo中插入图片的方法 - Hazel</a></p>
+<p>使用图床：<a target="_blank" rel="noopener" href="https://dettry.github.io/2024/05/09/hexo-asset-image-note/">hexo使用Hexo-asset-image图片无法正常显示的一些解决方案 | CodeCook</a></p>
+</blockquote>
+<ol start="3">
+<li>使用 <code>hexo-asset-img</code> 插件（推荐，本人使用）</li>
+</ol>
+<blockquote>
+<p><code>hexo-asset-img</code> 插件及插件开发：<a target="_blank" rel="noopener" href="https://github.com/yiyungent/hexo-asset-img">yiyungent&#x2F;hexo-asset-img: 🍰 Hexo local image plugin. | Hexo 本地图片插件: 转换 图片相对路径 为 asset_img</a></p>
+</blockquote>
+<p>post_asset_folder: true</p>
 <p>本人使用 Typora 编写 md 文档，并设置插入图片时复制图片到 <code>./$&#123;filename&#125;.assets</code> （Typora 默认提供的选项）文件夹下，以方法管理每个文档及其图片。其效果如下：复制图片到 md 文档时就会在该文档所在目录下创建 <code>filename.assets</code> 文件夹，并将图片复制到该文件夹下；图片在该文档的引用方式采用相对路径，例如 <code>![]filename.assert/imageName</code>。</p>
 <p>执行 <code>hexo g</code> 指令后，会将 source 目录下的资源文件转化并输出到 public 目录下。其中，<code>/source/_posts/</code> 目录下的 md 格式博文会转化成 html 文件并输出到 <code>/public/posts/</code> 目录下。</p>
+<h2 id="卸载插件"><a href="#卸载插件" class="headerlink" title="卸载插件"></a>卸载插件</h2><p>以卸载 <code>hexo-asset-image</code> 插件为例：</p>
+<ol>
+<li>执行 <code>npm uninstall hexo-asset-image</code> 指令。</li>
+<li>删除 &#x2F;node_modules 目录下该插件包。</li>
+<li>主题配置文件、<code>package.json</code> 和 <code>package-lock.json</code> 删除与 <code>hexo-asset-image</code> 插件相关的配置信息。</li>
+</ol>
 <h1 id="待更新内容"><a href="#待更新内容" class="headerlink" title="待更新内容"></a>待更新内容</h1><p>暂未使用 Github Actions 插件：<a target="_blank" rel="noopener" href="https://dzq88.github.io/2024/02/23/%E5%85%B3%E4%BA%8E%E9%85%8D%E7%BD%AEhexo-fluid%E4%B8%BB%E9%A2%98%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91/">利用 Github Actions 自动部署 Hexo 博客时，fluid 的配置失效，因为 node_modules 文件夹没有被推送到博客源码仓库</a></p>
 <h2 id="中英文空格"><a href="#中英文空格" class="headerlink" title="中英文空格"></a>中英文空格</h2><p>本人编写文档时，中英文数字等连接处的符号会自行处理，比如中英文间空格。执行 <code>hexo g</code> 指令时发现：在 <code>index.html</code> 中，博文 filename 预留的空格被格式化去除。为解决这一问题，偷懒地使用了 <code>hexo-filter-auto-spacing</code> 插件。该插件是在博文的所有中英文之间自动空格，虽然不是很符合本人要求。</p>
 <hr>
