@@ -22,18 +22,12 @@
     <meta name="description" content="无">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用Hexo搭建个人博客">
-<meta property="og:url" content="http://example.com/posts/%E4%BD%BF%E7%94%A8%20Hexo%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:url" content="http://example.com/2025/04/07/%E4%BD%BF%E7%94%A8%20Hexo%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:site_name" content="fluid">
 <meta property="og:description" content="无">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/image-20250408195925672.png">
-<meta property="og:image" content="http://example.com/image-20250409102402277.png">
-<meta property="og:image" content="http://example.com/image-20250409170817066.png">
-<meta property="og:image" content="http://example.com/image-20250409170916050.png">
-<meta property="og:image" content="http://example.com/image-20250409171310908.png">
-<meta property="og:image" content="http://example.com/image-20250409175218454.png">
 <meta property="article:published_time" content="2025-04-07T07:19:42.000Z">
-<meta property="article:modified_time" content="2025-04-11T06:31:22.748Z">
+<meta property="article:modified_time" content="2025-04-12T12:23:04.192Z">
 <meta property="article:author" content="shaton">
 <meta property="article:tag" content="Git">
 <meta property="article:tag" content="GitHub">
@@ -41,13 +35,12 @@
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Fluid">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/image-20250408195925672.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>使用Hexo搭建个人博客 - Hexo</title>
+  <title>使用Hexo搭建个人博客 - fluid</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -241,7 +234,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          8.5k 字
+          9.3k 字
         
       </span>
     
@@ -252,7 +245,7 @@
         
         
         
-          72 分钟
+          78 分钟
         
       </span>
     
@@ -332,7 +325,7 @@
 <p>查看环境变量进行验证：【个人电脑】右键 →【属性】→【高级系统设置】→【高级-环境变量】→【系统变量-Path】，发现已配置 <code>E:\APP\nodejs\</code>。</p>
 </blockquote>
 <p>命令提示符窗口执行指令 <code>node -v</code> 和 <code>npm -v</code>，若显示对应版本号，则说明安装成功。</p>
-<p><img src="/image-20250408195925672.png" srcset="/img/loading.gif" lazyload alt="执行指令，查看 node 和 npm 的版本号"></p>
+<p>![执行指令，查看 node 和 npm 的版本号](使用 Hexo 搭建个人博客&#x2F;image-20250408195925672.png)</p>
 <h3 id="1-2-2-路径-环境变量"><a href="#1-2-2-路径-环境变量" class="headerlink" title="1.2.2 路径&amp;环境变量"></a>1.2.2 路径&amp;环境变量</h3><p>npm 的全局模块安装路径和缓存路径默认都在 C 盘下，执行如下指令进行查看。</p>
 <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cmd"># 查看npm的全局模块安装路径。默认：C:\Users\shaton\AppData\Roaming\npm<br>npm get prefix<br># 查看npm的缓存路径。默认：C:\Users\shaton\AppData\Local\npm-cache<br>npm get cache<br></code></pre></td></tr></table></figure>
 
@@ -378,11 +371,9 @@
 <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">npm install -g hexo-cli<br></code></pre></td></tr></table></figure>
 
 <h2 id="1-4-GitHub-账号"><a href="#1-4-GitHub-账号" class="headerlink" title="1.4 GitHub 账号"></a>1.4 GitHub 账号</h2><p><a target="_blank" rel="noopener" href="https://github.com/">GitHub官网</a> 注册账号</p>
-<h1 id="2-博客的初体验"><a href="#2-博客的初体验" class="headerlink" title="2. 博客的初体验"></a>2. 博客的初体验</h1><h2 id="2-1-GitHub仓库-GitHubPages"><a href="#2-1-GitHub仓库-GitHubPages" class="headerlink" title="2.1 GitHub仓库 &amp; GitHubPages"></a>2.1 GitHub仓库 &amp; GitHubPages</h2><h2 id="2-2-建立本地博客"><a href="#2-2-建立本地博客" class="headerlink" title="2.2 建立本地博客"></a>2.2 建立本地博客</h2><blockquote>
-<p>说明：建立本地博客是指使用 Hexo 在本地建博客项目。</p>
-</blockquote>
-<p>任选位置新建文件夹，本人选择 <code>E:\ningc5-blog\blogRoot\</code> 文件夹。其中，<code>E:\ningc5-blog\</code> 目录用于存放与博客相关的内容，<u><code>E:\ningc5-blog\blogRoot\</code> 目录专门作为博客项目文件夹。</u></p>
-<p><strong>在博客项目根路径（<code>E:\ningc5-blog\blogRoot\</code>）下执行以下指令：</strong></p>
+<h1 id="2-本地博客初体验"><a href="#2-本地博客初体验" class="headerlink" title="2. 本地博客初体验"></a>2. 本地博客初体验</h1><p>本地博客是指 Hexo 本地项目；使用 Hexo 初始化文件夹，以之作为本地博客项目。</p>
+<h2 id="2-1-建立本地博客"><a href="#2-1-建立本地博客" class="headerlink" title="2.1 建立本地博客"></a>2.1 建立本地博客</h2><p>任选位置新建文件夹，本人选择 <code>E:\ningc5-blog\blogRoot\</code> 文件夹。其中：<code>E:\ningc5-blog\</code> 目录用于存放与博客相关的内容；<code>blogRoot</code> 文件夹单独存放博客项目文件，<code>blogRoot\</code> 简称为<strong>站点根目录</strong>。</p>
+<p><strong>在站点根目录下执行以下指令：</strong></p>
 <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cmd">hexo init		# Git clone hexo-starter 和 hexo-theme-landscape 主题，包管理器下载依赖。<br>npm install		# 比对依赖项配置文件，然后更新依赖（如果需要）。<br></code></pre></td></tr></table></figure>
 
 <p><strong>执行完后，本地博客项目初始化完成。</strong></p>
@@ -391,23 +382,23 @@
 <p><code>npm install</code> 指令的作用：<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_73531461/article/details/136399322">深入理解 package.json 文件与 package-lock.json 文件-CSDN博客</a></p>
 </blockquote>
 <p>此时，博客项目文件夹下存在一系列文件，如下图所示：</p>
-<p><img src="/image-20250409102402277.png" srcset="/img/loading.gif" lazyload></p>
+<p>![](使用 Hexo 搭建个人博客&#x2F;image-20250409102402277.png)</p>
 <hr>
 <p><strong>在博客项目根路径下执行以下指令：</strong></p>
 <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cmd">hexo g		# 生成博客。<br>hexo s		# 启动服务器。默认情况下，访问网址为： http://localhost:<span class="hljs-number">4000</span>/。<br></code></pre></td></tr></table></figure>
 
-<p><img src="/image-20250409170817066.png" srcset="/img/loading.gif" lazyload alt="执行 hexo g 指令"></p>
-<p><img src="/image-20250409170916050.png" srcset="/img/loading.gif" lazyload alt="执行 hexo s 指令"></p>
+<p>![执行 hexo g 指令](使用 Hexo 搭建个人博客&#x2F;image-20250409170817066.png)</p>
+<p>![执行 hexo s 指令](使用 Hexo 搭建个人博客&#x2F;image-20250409170916050.png)</p>
 <p>浏览器键入 <a target="_blank" rel="noopener" href="http://localhost:4000/%EF%BC%8C%E8%8B%A5%E5%87%BA%E7%8E%B0%E5%A6%82%E4%B8%8B%E7%95%8C%E9%9D%A2%EF%BC%8C%E5%88%99%E6%9C%AC%E5%9C%B0%E5%8D%9A%E5%AE%A2%E5%BB%BA%E7%AB%8B%E6%88%90%E5%8A%9F%E3%80%82">http://localhost:4000/，若出现如下界面，则本地博客建立成功。</a></p>
-<p><img src="/image-20250409171310908.png" srcset="/img/loading.gif" lazyload alt="本地博客默认首页"></p>
-<h2 id="2-3-关于博客项目文件夹的说明"><a href="#2-3-关于博客项目文件夹的说明" class="headerlink" title="2.3 关于博客项目文件夹的说明"></a>2.3 关于博客项目文件夹的说明</h2><blockquote>
+<p>![本地博客默认首页](使用 Hexo 搭建个人博客&#x2F;image-20250409171310908.png)</p>
+<h2 id="2-2-关于博客项目文件夹的说明"><a href="#2-2-关于博客项目文件夹的说明" class="headerlink" title="2.2 关于博客项目文件夹的说明"></a>2.2 关于博客项目文件夹的说明</h2><blockquote>
 <p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/cfd05c35833c">Hexo文件结构 - 简书</a></p>
 <p>暂未遇到的问题：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/41444638">hexo博客文件夹下删除了db.json之后，之前的分类（categories）还在？ - 知乎</a></p>
 </blockquote>
 <ul>
-<li><p>node_modules：博客项目的模块安装目录。</p>
+<li><p><code>node_modules/</code>：博客项目的模块安装目录。</p>
 </li>
-<li><p>themes：主题文件夹。Hexo 会根据主题来生成静态页面。</p>
+<li><p><code>themes/</code>：主题文件夹。Hexo 会根据主题来生成静态页面。</p>
 </li>
 <li><p>_config.landscape.yml：默认主题的配置文件。默认主题包在 node_modules&#x2F; 目录下。</p>
 </li>
@@ -415,16 +406,16 @@
 </li>
 <li><p><strong>_config.yml</strong>：网站的配置文件。</p>
 </li>
-<li><p><strong>scaffolds</strong>：模版文件夹。hexo 指令新建文章时，Hexo 会根据 scaffold 来创建文件。</p>
+<li><p><code>scaffolds/</code>：模版文件夹。hexo 指令新建文章时，Hexo 会根据 scaffold 来创建文件。</p>
 </li>
-<li><p><strong>source</strong>：资源文件夹；用于存放用户资源，比如 Markdown 文档、静态资源等。</p>
+<li><p><strong><code>source/</code></strong>：资源文件夹；用于存放用户资源，比如 Markdown 文档、静态资源等。</p>
 <ol>
 <li><strong>source&#x2F;_posts&#x2F;</strong>：专门用于存放博文的原始 md 文档。</li>
 <li>source&#x2F;images&#x2F;：自建的图片文件夹。</li>
 <li>…</li>
 </ol>
 </li>
-<li><p><strong>public</strong>：静态站点的位置，“相当于博客网站根路径”。</p>
+<li><p><strong><code>public/</code></strong>：<code>hexo g</code> 指令的输出目录，一般不直接操作里面的文件。<u>静态站点的位置，相当于“博客网站根目录”，访问博客就是访问 public 目录下的资源文件。</u></p>
 </li>
 </ul>
 <p>执行 <code>hexo g</code> 指令时：Hexo 会解析资源文件夹下的 Markdown 和 HTML 文件（以 <code>_</code>开头命名的文件&#x2F;文件夹和隐藏的文件将会被忽略 ，不包括 <code>_posts</code> 文件夹），解析渲染得到的 html 文件会输出到 public 文件夹，此外还会在博客项目根目录下生成一份缓存文件（db.json）；而其他文件会被拷贝到 public 文件夹（不包括以 <code>_</code>开头命名的文件&#x2F;文件夹和隐藏的文件）。</p>
@@ -434,20 +425,158 @@
 <blockquote>
 <p>解释：上节浏览器所展示的 <code>hello-world</code> 博文的原始 md 文档是执行 <code>hexo init</code> 指令时下载的。执行 <code>hexo g</code> 执行时，<code>/source/_posts/hello-world.md</code> 文档被渲染成 <code>hello-world.html</code> 文件并输出到 public 文件夹。</p>
 </blockquote>
-<h2 id="2-3-将本地博客部署到-GItHub"><a href="#2-3-将本地博客部署到-GItHub" class="headerlink" title="2.3 将本地博客部署到 GItHub"></a>2.3 将本地博客部署到 GItHub</h2><h1 id="3-Fluid-主题"><a href="#3-Fluid-主题" class="headerlink" title="3. Fluid 主题"></a>3. Fluid 主题</h1><p>Hexo 的默认主题（landscape）比较朴素，官网提供了丰富的<a target="_blank" rel="noopener" href="https://hexo.io/themes/">主题样式</a>，常用有 Fluid、Butterfly、Next 等。本博客暂时使用 Fluid 主题。</p>
-<h2 id="3-1-切换为-Fluid-主题"><a href="#3-1-切换为-Fluid-主题" class="headerlink" title="3.1 切换为 Fluid 主题"></a>3.1 切换为 Fluid 主题</h2><ol>
+<h1 id="3-网络博客"><a href="#3-网络博客" class="headerlink" title="3. 网络博客"></a>3. 网络博客</h1><h2 id="2-1-GitHub仓库-GitHubPages"><a href="#2-1-GitHub仓库-GitHubPages" class="headerlink" title="2.1 GitHub仓库 &amp; GitHubPages"></a>2.1 GitHub仓库 &amp; GitHubPages</h2><h2 id="2-2-将本地博客部署到-GItHub"><a href="#2-2-将本地博客部署到-GItHub" class="headerlink" title="2.2 将本地博客部署到 GItHub"></a>2.2 将本地博客部署到 GItHub</h2><h1 id="4-Fluid-主题"><a href="#4-Fluid-主题" class="headerlink" title="4. Fluid 主题"></a>4. Fluid 主题</h1><p>Hexo 的默认主题（landscape）比较朴素，官网提供了丰富的<a target="_blank" rel="noopener" href="https://hexo.io/themes/">主题样式</a>，常用有 Fluid、Butterfly、Next 等。本博客暂时使用 Fluid 主题。</p>
+<h2 id="4-1-切换为-Fluid-主题"><a href="#4-1-切换为-Fluid-主题" class="headerlink" title="4.1 切换为 Fluid 主题"></a>4.1 切换为 Fluid 主题</h2><ol>
 <li><p><strong>在站点根目录下执行 <code>npm install --save hexo-theme-fluid</code> 指令来下载 Fluid 主题包。</strong></p>
 </li>
-<li><p>移动 fluid 主题文件夹并改名：<code>/node_modules/hexo-theme-fluid</code> ——&gt; <code>/themes/fluid</code>。（本人移动并改名只是方便找到，可能后期换主题？）</p>
+<li><p>移动 fluid 主题文件夹并改名：<code>/node_modules/hexo-theme-fluid</code> ——&gt; <code>/themes/fluid</code>。（本人移动并改名只是为了方便找到它。后期可能想换主题？）</p>
 </li>
-<li><p><strong>在 <code>_config.yml</code>文件中指定主题和语言：</strong></p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">theme:</span> <span class="hljs-string">fluid</span>  		<span class="hljs-comment"># 指定主题为 Fluid，默认的主题是 landscape</span><br><span class="hljs-attr">language:</span> <span class="hljs-string">zh-CN</span>  	<span class="hljs-comment"># 指定语言为中文</span><br></code></pre></td></tr></table></figure>
+<li><p><strong><code>_config.yml</code>配置文件中指定主题和语言：</strong></p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">theme:</span> <span class="hljs-string">fluid</span>  		<span class="hljs-comment"># 指定主题为 Fluid。默认主题是 landscape。</span><br><span class="hljs-attr">language:</span> <span class="hljs-string">zh-CN</span>  	<span class="hljs-comment"># 指定语言为中文。</span><br></code></pre></td></tr></table></figure>
 </li>
 <li><p>执行 <code>hexo g</code>  和 <code>hexo s</code> 指令后，浏览器键入 <a target="_blank" rel="noopener" href="http://localhost:4000/%EF%BC%8C%E6%9F%A5%E7%9C%8B">http://localhost:4000/，查看</a> fluid 主题效果。</p>
 </li>
 </ol>
-<p><img src="/image-20250409175218454.png" srcset="/img/loading.gif" lazyload alt="fluid 主题的默认格式界面"></p>
-<h2 id="3-2-个性化配置"><a href="#3-2-个性化配置" class="headerlink" title="3.2 个性化配置"></a>3.2 个性化配置</h2><p><strong>在站点博客目录下创建 <code>_config.fluid.yml</code>，将 fluid 主题的 <code>_config.yml</code> 内容复制过去。</strong></p>
+<p>![fluid 主题的默认格式界面](使用 Hexo 搭建个人博客&#x2F;image-20250409175218454.png)</p>
+<h2 id="4-2-配置文件"><a href="#4-2-配置文件" class="headerlink" title="4.2 配置文件"></a>4.2 配置文件</h2><p><strong>在站点根目录下创建 <code>_config.fluid.yml</code>，将 fluid 主题配置文件（<code>fluid/_config.yml</code>）的内容复制过去。</strong></p>
+<p>**hexo 支持多配置文件合并覆盖生效；配置文件的优先级从高到低：<code>_config.yml</code>、<code>_config.[theme].yml</code>、主题目录下的<code>_config.yml</code>。**主题更新后，主题目录下的 <code>_config.yml</code> 会被替换。</p>
+<p><strong>强烈建议将所有的主题配置集中在独立的 <code>_config.[theme].yml</code> 配置文件种，以方便管理。</strong></p>
+<p>**【注意】：配置项的 key 和 value 之间用 <code>英文冒号+空格</code> 连接。**否则清理或部署时会报错：<code>can not read a block mapping entry</code>。当然，也可能是报错点之前存在格式错误。</p>
+<h1 id="5-博客的撰写与发布"><a href="#5-博客的撰写与发布" class="headerlink" title="5. 博客的撰写与发布"></a>5. 博客的撰写与发布</h1><p>在站点根目录下执行以下指令来创建一篇新文章或新页面：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">hexo new [layout] &lt;<span class="hljs-built_in">title</span>&gt;<br></code></pre></td></tr></table></figure>
+
+<p>Hexo 有三种 layout（布局|排版）：<code>post</code>、<code>page</code> 和 <code>draft</code>。 每个布局创建的文件会被保存到不同的路径。</p>
+<table>
+<thead>
+<tr>
+<th align="left">布局</th>
+<th align="left">路径</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>post</code>（文章）</td>
+<td align="left"><code>source/_posts/</code></td>
+</tr>
+<tr>
+<td align="left"><code>page</code>（分页）</td>
+<td align="left"><code>source/</code></td>
+</tr>
+<tr>
+<td align="left"><code>draft</code>（草稿）</td>
+<td align="left"><code>source/_drafts/</code></td>
+</tr>
+</tbody></table>
+<h2 id="5-1-撰写文章"><a href="#5-1-撰写文章" class="headerlink" title="5.1 撰写文章"></a>5.1 撰写文章</h2><p><code>_config.yml</code> 配置文件：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">new_post_name:</span> <span class="hljs-string">:title.md</span> 	<span class="hljs-comment"># 新文章的文件名，默认值为 title.md。</span><br><span class="hljs-attr">default_layout:</span> <span class="hljs-string">post</span>		<span class="hljs-comment"># 布局，默认值为 post。</span><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>:title</code> 是占位符，它是文件名称（相对于 “source&#x2F;_posts&#x2F;“ 文件夹）。<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/permalinks">永久链接（Permalinks） | Hexo</a> 开头有这些占位符的描述说明。</p>
+</blockquote>
+<ol>
+<li><code>default_layout: post</code>：默认布局为 post；即 layout 缺省时，执行 <code>hexo new  &lt;title&gt;</code> 指令，会在 <code>source/_posts/</code> 目录下生成一篇文章——html 博文的原始 md 文档。</li>
+<li><code>new_post_name: :title.md</code>：默认新文章的文件名为 <code>title.md</code>；即生成的 md 文档的文件名为 <code>title.md</code>。</li>
+</ol>
+<p>**需要注意的是，<code>new_post_name</code> 配置项还涉及目录结构。**例如：该配置项设置为 <code>:year/:title.md</code> 时，执行 <code>hexo new &lt;title&gt;</code> 指令，会生成 <code>source/_posts/文章的发表年份（4 位数）/title.md</code>。<u>一般不修改该配置项；</u>除非博客需要 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/permalinks#%E5%A4%9A%E8%AF%AD%E7%A7%8D%E6%94%AF%E6%8C%81">多语种支持</a>。</p>
+<p>**如果需要更好地管理文章的目录结构，new 文章时可以添加 path 选项。**例如：<code>hexo new &lt;title&gt; </code></p>
+<ol>
+<li><title>`</li>
+</ol>
+<p> 新创建的帖子被保存到 <code>source/_post</code> 文件夹。</p>
+<p>使用 <code>hexo new post &lt;title&gt;</code> </p>
+<p>hexo new [layout] <title></p>
+<h1 id="文档和博客同时显示图片"><a href="#文档和博客同时显示图片" class="headerlink" title="文档和博客同时显示图片"></a>文档和博客同时显示图片</h1><blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.larscheng.com/hexo-principle/">Hexo的工作原理探究 | Java技术经验分享</a></p>
+</blockquote>
+<hr>
+<p>md 文档显示图片很容易实现。</p>
+<p>通常采用 Typora 程序编写 md 文档，常使用 md 语法：<code>![](imageLocation)</code> 引用本地图片。</p>
+<p><strong>为了方便管理每个 md 文档及其图片，进行偏好设置，【图像】→ 【插入图片时…】→ 【复制到指定路径：<code>./$&#123;filename&#125;</code> 】。</strong></p>
+<p><strong>相关说明：</strong></p>
+<ul>
+<li>Typora 当然也支持 html 语法引用图片： <code>&lt;img src=&quot;imageLocation&quot;/&gt;</code>，缩放图片时 md 语法就会转换成 html 语法。</li>
+<li><u>为了与 hexo 适配，Typora 设置插入图片时复制到指定路径 <code>./$&#123;filename&#125;</code></u>，而不是它默认提供的选项：<code>复制图片到 ./$&#123;filename&#125;.assets 文件夹</code>。</li>
+<li>编写 md 文档时，经常使用截图软件截屏并复制粘贴到 md 文档。如果进行上述设置，Typora 会进行如下操作：<ol>
+<li>在文档所在目录下创建与文档同名的文件夹 <code>filename/</code>，并将图片复制到该文件夹下。</li>
+<li>文档中插入该图片，格式为： <code>![](filename/imageFullName</code>。imageLocation 为图片的<strong>相对路径</strong>。</li>
+</ol>
+</li>
+</ul>
+<hr>
+<p>访问博客就是访问  <code>public/</code> 目录下的 html 文件。博客显示图片意味着**【html 文件中图片的引用路径】<strong>与</strong>【图片在 <code>public/</code> 目录下的真实路径】**一致。这两者都与 <code>hexo g</code> 指令的执行有关，涉及到网站配置文件（<code>_config.yml</code>）中的如下配置项：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># 默认值</span><br><span class="hljs-attr">permalink:</span> <span class="hljs-string">:year/:month/:day/:title/</span>      	<span class="hljs-comment"># 文章的永久链接格式</span><br><span class="hljs-attr">post_asset_folder:</span> <span class="hljs-literal">false</span>					<span class="hljs-comment"># 启用资源文件夹</span><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration">配置 | Hexo</a></p>
+</blockquote>
+<p>**第一步是设置 <code>post_asset_folder: true</code>。**这有两个作用：① 执行 <code>hexo new post &lt;title&gt;</code> 指令时，Hexo 在 <code>source/_posts/</code> 目录下生成博文的原始 md 文档时，还会同步创建同名的资源文件夹； ② 执行 <code>hexo g</code> 指令时，Hexo 会将文档的资源文件夹复制到 <code>public/</code> 目录下。（Hexo 复制无法渲染的文件时，默认是忽略 <code>_post/</code> 目录的。）</p>
+<p>然后，聚焦于【执行 <code>hexo g</code> 指令时，Hexo 的默认行为】：</p>
+<ol>
+<li><strong>md 文档渲染成 html 文件，输出到【<code>public/</code> 目录下的 permalink 目录下】。图片的引用路径 【<code>imageLocation</code>】（文档）被渲染成 【<code>/imageLoaction</code>】（博文）。</strong></li>
+<li><strong>复制 md 文档的图片到【<code>public/</code> 目录下的 permalink 目录下】。</strong></li>
+</ol>
+<hr>
+<p>若设置 <code>permalink: :title/</code>，则【html 文件中图片的引用路径】与【图片在 <code>public/</code> 目录下的真实路径】一致，文档和博文同时显示图片。</p>
+<p>图示说明：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs stylus">blogRoot   <br>├── <span class="hljs-selector-tag">source</span><br>│   └── _posts<br>│       ├── filename<br>│       │   └── 图片<span class="hljs-selector-class">.jpg</span><br>│       ├── filename<span class="hljs-selector-class">.md</span> 	【!<span class="hljs-selector-attr">[]</span>(filename/图片.jgp)】<br><br>【执行 hexo <span class="hljs-selector-tag">g</span> 指令】<br><br>blogRoot   <br>├── public<br>│   └── _filename<br>│       ├── 图片<span class="hljs-selector-class">.jpg</span><br>│       ├── index<span class="hljs-selector-class">.html</span> 		【&lt;<span class="hljs-selector-tag">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-string">&quot;/filename/图片.jpg&quot;</span>&gt;】<br></code></pre></td></tr></table></figure>
+
+<hr>
+<p>【Hexo 的默认处理方式】：Hexo 默认将图片路径渲染成 【<code>/imageLoaction</code>】。这与【图片在 <code>public/</code> 目录下的真实路径】不一致，因而博文无法显示该图片。</p>
+<blockquote>
+<p>示例：<code>![](filename/图片.jpg)</code> 渲染成 <code>&lt;p&gt;&lt;img src=&quot;/filename/图片.jpg&quot; srcset=&quot;/img/loading.gif&quot; lazyload&gt;&lt;/p&gt;</code>，而图片在 <code>public/</code> 目录下的真实路径为 <code>/posts/filename/图片.jpg</code>。</p>
+</blockquote>
+<p><strong>能否正确地获取图片取决于 hexo 对博客项目的解析和输出结果。</strong></p>
+<p><strong>为了更好地管理博客项目，博主将资源文件夹分为两个部分。</strong></p>
+<ol>
+<li><strong>第一部分是博客全局资源文件夹。比如：自建的 <code>source/images/</code> 目录，在里面存放博客的背景图、小图标等。</strong></li>
+<li><strong>第二部分是博文资源文件夹，专供每个 md 文档使用。比如：<code>/source/_post/test.md</code> 文档的资源文件夹 <code>/source/_post/test</code>，在里面存放此文档的图片等资源。</strong></li>
+</ol>
+<p>【测试：】</p>
+<figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs tcl">blogRoot   <br>├── <span class="hljs-keyword">source</span><br>│   └── _posts<br>│       ├── <span class="hljs-keyword">filename</span><br>│       │   └── 图片.jpg<br>│       ├── <span class="hljs-keyword">filename</span>.md<br></code></pre></td></tr></table></figure>
+
+
+
+<p>【思路】<a target="_blank" rel="noopener" href="https://leay.net/2019/12/25/hexo/">Hexo 引用本地图片以及引用本地任意位置图片的一点思路 | 养恐龙</a></p>
+<p>【Hexo 的默认处理方式】：Hexo 默认将图片路径渲染成 【<code>/imageLoaction</code>】。这与【图片在 <code>public/</code> 目录下的真实路径】不一致，因而博文无法显示该图片。</p>
+<blockquote>
+<p>示例：<code>![](filename/图片.jpg)</code> 渲染成 <code>&lt;p&gt;&lt;img src=&quot;/filename/图片.jpg&quot; srcset=&quot;/img/loading.gif&quot; lazyload&gt;&lt;/p&gt;</code>，而图片在 <code>public/</code> 目录下的真实路径为 <code>/posts/filename/图片.jpg</code>。</p>
+</blockquote>
+<p>【新选项的限制】：虽然官网提到—— hexo 新版本的 <code>hexo-renderer-marked</code> 默认插件引入一个新选项，支持 md 文档使用 md 格式（<code>![]()</code> ）嵌入图片而无需使用 <code>asset_img</code> 标签插件。很多博文也转向使用这种新方式。但它仅支持 imageLoaction 为纯文件名，而不允许其存在路径，否则不会进行任何处理。 当然你也可以将文档与其图片都放在同一目录下，这样文档和博文都能显示图片。</p>
+<blockquote>
+<p>参考官方文档的博文：<a target="_blank" rel="noopener" href="https://bingbytebard.com/2024/11/08/Hexo%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E7%9A%84%E6%96%B9%E6%B3%95/">Hexo中插入图片的方法 - Hazel</a></p>
+<p>使用图床：<a target="_blank" rel="noopener" href="https://dettry.github.io/2024/05/09/hexo-asset-image-note/">hexo使用Hexo-asset-image图片无法正常显示的一些解决方案 | CodeCook</a></p>
+</blockquote>
+<p>【已归档的插件】：很多博文中提到的 <code>hexo-asset-image</code> 插件早已被作者归档，无法适配新版本 Hexo。它会将图片路径渲染成 【<code>/.xxx//图片全名称</code>】；其中：xxx 是域名后缀，图片路径也只截取了图片全名称。</p>
+<blockquote>
+<p>私改 <code>hexo-asset-image</code> 插件来兼容 Hexo 新版本：<a target="_blank" rel="noopener" href="https://blog.csdn.net/kurapika_030/article/details/130598712">【Hexo】hexo-asset-image在hexo6.3.0下的使用以及与abbrlink插件的修改-CSDN博客</a></p>
+</blockquote>
+<ol start="3">
+<li>使用 <code>hexo-asset-img</code> 插件（推荐，本人使用）</li>
+</ol>
+<blockquote>
+<p><code>hexo-asset-img</code> 插件及插件开发：<a target="_blank" rel="noopener" href="https://github.com/yiyungent/hexo-asset-img">yiyungent&#x2F;hexo-asset-img: 🍰 Hexo local image plugin. | Hexo 本地图片插件: 转换 图片相对路径 为 asset_img</a></p>
+</blockquote>
+<h2 id="卸载插件"><a href="#卸载插件" class="headerlink" title="卸载插件"></a>卸载插件</h2><p>以卸载 <code>hexo-asset-image</code> 插件为例：</p>
+<ol>
+<li>执行 <code>npm uninstall hexo-asset-image</code> 指令。</li>
+<li>如果 <code>/node_modules</code> 目录下仍有该插件包，删除。</li>
+<li>如果主题配置文件、<code>package.json</code> 和 <code>package-lock.json</code> 仍有与该插件相关的配置信息，删除。</li>
+</ol>
+<h1 id="待更新内容"><a href="#待更新内容" class="headerlink" title="待更新内容"></a>待更新内容</h1><p>暂未使用 Github Actions 插件：<a target="_blank" rel="noopener" href="https://dzq88.github.io/2024/02/23/%E5%85%B3%E4%BA%8E%E9%85%8D%E7%BD%AEhexo-fluid%E4%B8%BB%E9%A2%98%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91/">利用 Github Actions 自动部署 Hexo 博客时，fluid 的配置失效，因为 node_modules 文件夹没有被推送到博客源码仓库</a></p>
+<h2 id="中英文空格"><a href="#中英文空格" class="headerlink" title="中英文空格"></a>中英文空格</h2><p>【问题】：本人编写文档时，中英文数字等连接处的符号会自行处理，比如中英文间空格。执行 <code>hexo g</code> 指令时发现：在 <code>index.html</code> 中，博文 filename 预留的空格被格式化去除。为解决这一问题，偷懒地使用了 <code>hexo-filter-auto-spacing</code> 插件。该插件是在博文的所有中英文之间自动空格，虽然不是很符合本人要求。</p>
+<hr>
+<p>安装插件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">npm install hexo-filter-auto-spacing --save<br></code></pre></td></tr></table></figure>
+
+<p>在 <code>_config.yml</code> 文件中配置：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># hexo-filter-auto-spacing 插件，实现中英文之间自动加空格</span><br><span class="hljs-attr">auto_spacing:</span><br>    <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
+
+<hr>
+<p>【困惑】：卸载该插件后，<code>hexo g</code> 还是原问题；但是重新安装该插件后，无需配置，甚至设置为 false，仍然实现空格，这是 bug 吗？</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://hsyac.github.io/posts/870f2d70.html">Hexo删除插件的命令与使用办法 | Hsyac</a></p>
+</blockquote>
+<p>暂未遇到的问题：<code>hexo-filter-auto-spacing</code> 插件会导致脚注插件不能正常运行。</p>
+<p>【待实现】：删除该插件，实现原有的小要求。</p>
 <h1 id="1-配置GitHubPages"><a href="#1-配置GitHubPages" class="headerlink" title="1. 配置GitHubPages"></a>1. 配置GitHubPages</h1><p>简单来说，GitHubPages的作用是提供免费的静态网站托管服务，我们只需要把自己写的html文档保存在其仓库中，该服务就会对这些文件进行处理并展示为网页的样式，即近似实现了<strong>Web服务器</strong>的功能，创建GitHubPages需要在GitHub上完成（注册GitHub账号以及配置SSH公钥可见<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42310154/article/details/118340458">这篇博文</a>），具体步骤为：<br>(1) 点击GitHub首页右上角的“+”按钮，在弹出窗口选择“New respository”；<br>(2) 在新页面中的“Repository name”一栏输入<strong>你GitHub的用户名</strong>。注意：必须输入用户名，否则创建的将不是GitHubPages而是一个普通的仓库；<br>(3) 勾选“Initialize this repository with a README”选项，并点击“Create Respository”按钮。<br>此时在浏览器输入https:&#x2F;&#x2F;你GitHub的用户名.github.io后，已经可以看到一个简陋的界面，这就说明你已经成功开启GithubPages服务了。</p>
 <h1 id="2-安装Hexo并初始化博客"><a href="#2-安装Hexo并初始化博客" class="headerlink" title="2. 安装Hexo并初始化博客"></a>2. 安装Hexo并初始化博客</h1><p>Hexo是一个快速且简洁的博客框架，用户可以通过Hexo快速生成一个完整的博客页面。Hexo使用Node.js来对页面进行快速渲染，因此需要同时安装Node.js和Hexo：</p>
 <h2 id="2-1-安装Node-js"><a href="#2-1-安装Node-js" class="headerlink" title="2.1 安装Node.js"></a>2.1 安装Node.js</h2><p>可在<a target="_blank" rel="noopener" href="https://nodejs.org/en/">官网</a>直接安装Node.js，建议使用Node.js 10.0及以上版本。可以在cmd中输入以下命令检查自己是否安装成功：</p>
@@ -521,8 +650,7 @@
 </tbody></table>
 <p>这样的目的是能够同时添加顶级域名（通过A解析）和子域名（通过CNAME解析），这也是GitHubPages推荐的方式，详细说明可见<a target="_blank" rel="noopener" href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site">官方文档</a>。<br>之后，在GitHub中打开该项目（即名称为“你GitHub的用户名.github.io”的仓库，需要注意此时必须关闭vpn，否则会弹出404无法进入），在<code>Settings-Pages-Custom domain</code>中输入你购买的域名，并点击<code>Save</code>保存。注意：只需要输入域名，<strong>不要添加www</strong>！例如你的域名是<code>abc.com</code>，则不要输入<code>www.abc.com</code>，否则以后在输入网址访问博客时必须带有www。<br>现在，你用三种域名都可以访问到你的博客：<code>www.abc.com</code>、<code>abc.com</code>和<code>你GitHub的用户名.github.io</code>。</p>
 <h2 id="4-3-配置CNAME文件"><a href="#4-3-配置CNAME文件" class="headerlink" title="4.3 配置CNAME文件"></a>4.3 配置CNAME文件</h2><p>设置<code>Custom domain</code>的步骤在每次执行<code>hexo d</code>后都会重置失效，为了一劳永逸，需要在站点根目录的<code>source</code>文件夹内新建一个txt文件，在其中<strong>输入你购买的域名</strong>（仍然不带www），并将txt文件<strong>重命名为CNAME</strong>（要把.txt删掉！）。这样就可以解决每次都需要修改<code>Custom domain</code>的问题。</p>
-<h1 id="5-更换主题"><a href="#5-更换主题" class="headerlink" title="5. 更换主题"></a>5. 更换主题</h1><h2 id="5-1-选择你喜欢的主题"><a href="#5-1-选择你喜欢的主题" class="headerlink" title="5.1 选择你喜欢的主题"></a>5.1 选择你喜欢的主题</h2><p>个人认为Hexo默认的主题不够好看，可以选择不同类型的主题，官网提供了丰富的<a target="_blank" rel="noopener" href="https://hexo.io/themes/">主题样式</a>，常用的包括Fluid、Next等。本博客将以<strong>Fluid</strong>为主题进行讲解。</p>
-<h2 id="5-2-主题安装"><a href="#5-2-主题安装" class="headerlink" title="5.2 主题安装"></a>5.2 主题安装</h2><p>在站点根目录下输入以下命令就可以完成Fluid的安装：</p>
+<h1 id="5-更换主题"><a href="#5-更换主题" class="headerlink" title="5. 更换主题"></a>5. 更换主题</h1><h2 id="5-1-选择你喜欢的主题"><a href="#5-1-选择你喜欢的主题" class="headerlink" title="5.1 选择你喜欢的主题"></a>5.1 选择你喜欢的主题</h2><h2 id="5-2-主题安装"><a href="#5-2-主题安装" class="headerlink" title="5.2 主题安装"></a>5.2 主题安装</h2><p>在站点根目录下输入以下命令就可以完成Fluid的安装：</p>
 <figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs ada">npm install <span class="hljs-comment">--save hexo-theme-fluid</span><br><br>POWERSHELL<br></code></pre></td></tr></table></figure>
 
 <p>完成安装后，可以在<code>themes</code>文件夹中看到<code>fluid</code>文件夹，说明安装成功。官方给出了非常详细的<a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/guide/">配置文档</a>，想要配置最适合自己风格的主题，建议自己阅读文档。接下来一节将给出一些重要的配置。</p>
@@ -652,96 +780,6 @@
 <figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs vbnet">The authenticity <span class="hljs-keyword">of</span> host <span class="hljs-comment">&#x27;github.com&#x27; can&#x27;t be established.</span><br>This <span class="hljs-keyword">key</span> <span class="hljs-built_in">is</span> <span class="hljs-built_in">not</span> known <span class="hljs-keyword">by</span> any other names.<br>Are you sure you want <span class="hljs-keyword">to</span> <span class="hljs-keyword">continue</span> connecting (yes/no/[fingerprint])?<br><br>VBNET<br></code></pre></td></tr></table></figure>
 
 <h1 id="10-结语"><a href="#10-结语" class="headerlink" title="10. 结语"></a>10. 结语</h1><p>以上就是基于Hexo+Fluid的个人博客系统搭建与使用的完整教程了。从第七步中我们可以看出来，如果你的目的是想要博文被大家看到，那么个人博客系统远远不如一些主流的平台，如微信、知乎、掘金等。但是从零搭建起只属于自己的网站还是非常有成就感的，祝大家都能找到人生的意义所在。</p>
-<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>tips：配置项的 key 和 value 之间用 <code>英文冒号+空格</code> 连接，否则 hexo 清理或部署时会报错：<code>can not read a block mapping entry</code>。当前，也可能是报错点之前格式错误。</p>
-<h1 id="文档和博客正确显示图片"><a href="#文档和博客正确显示图片" class="headerlink" title="文档和博客正确显示图片"></a>文档和博客正确显示图片</h1><blockquote>
-<p><a target="_blank" rel="noopener" href="https://www.larscheng.com/hexo-principle/">Hexo的工作原理探究 | Java技术经验分享</a></p>
-</blockquote>
-<hr>
-<p>md 文档正确显示图片很容易实现。</p>
-<p>通常采用 Typora 程序编写 md 文档，其常用的引用本地图片的格式为 <code>![](imageLocation)</code> 和 <code>&lt;img src=&quot;imageLocation&quot;/&gt;</code> 。<strong>为了方便管理每个 md 文档及其图片，进行偏好设置，【图像】→ 【插入图片时…】→ 【复制到指定路径：<code>./$&#123;filename&#125;</code> 】。</strong></p>
-<blockquote>
-<p>tips：<u>为了与 hexo 适配</u>，Typora 设置插入图片时复制到指定路径，而不是它默认提供的选项：<code>复制图片到 ./$&#123;filename&#125;.assets 文件夹</code>。</p>
-<p>tips：设置完后，<u>使用截图软件截屏，然后直接复制粘贴到 md 文档（<strong>经常这么操作</strong>）</u>时，Typora 会进行如下操作：</p>
-<ol>
-<li>在文档所在目录下创建与文档同名的文件夹，并将图片复制到该文件夹下。</li>
-<li>文档中插入该图片，格式为： <code>![](filename/imageFullName</code>。imageLocation 采用图片的<strong>相对路径</strong>。</li>
-</ol>
-</blockquote>
-<hr>
-<p>访问博客就是访问  <code>public/</code> 目录下的 html 文件。博客能正确显示图片意味着 html 页面中的链接能获取到资源文件；进一步说，<strong>【html 文件中图片的引用路径】与【图片在 <code>public/</code> 目录下的真实路径】一致</strong>。</p>
-<p>而**【html 文件中图片的引用路径】<strong>与</strong>【图片在 <code>public/</code> 目录下的真实路径】**都与 <code>hexo g</code> 指令的执行有关。</p>
-<p><strong>能否正确地获取图片取决于 hexo 对博客项目的解析和输出结果。</strong></p>
-<p><strong>为了更好地管理博客项目，博主将资源文件夹分为两个部分。</strong></p>
-<ol>
-<li><strong>第一部分是博客全局资源文件夹。比如：自建的 <code>source/images/</code> 目录，在里面存放博客的背景图、小图标等。</strong></li>
-<li><strong>第二部分是博文资源文件夹，专供每个 md 文档使用。比如：<code>/source/_post/test.md</code> 文档的资源文件夹 <code>/source/_post/test</code>，在里面存放此文档的图片等资源。</strong></li>
-</ol>
-<ul>
-<li>【图片的引用路径】 hexo 对</li>
-</ul>
-<p>【图片在 <code>/public</code> 目录下的真实路径】</p>
-<p><code>_config.yml</code> 主题配置文件中配置<code>post_asset_folder: true</code></p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">permalink:</span> <span class="hljs-string">:year/:month/:day/:title/</span><br><span class="hljs-attr">post_asset_folder:</span> <span class="hljs-literal">false</span><br></code></pre></td></tr></table></figure>
-
-
-
-<p>以 <code>![](图片.jpg)</code> 为例，Hexo 对此格式相对路径的默认渲染结果为：<br><code>&lt;p&gt;&lt;img src=&quot;/图片.jpg&quot; srcset=&quot;/img/loading.gif&quot; lazyload&gt;&lt;/p&gt;</code>。这与【图片在 <code>public/</code> 目录下的真实路径】不一致，因而博文无法正确显示该图片。</p>
-<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">blogRoot   <br>├── <span class="hljs-built_in">source</span><br>│   └── _posts<br>│       ├── <span class="hljs-built_in">test</span><br>│       │   └── 11.jpg<br>│       ├── test.md<br></code></pre></td></tr></table></figure>
-
-
-
-
-
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;测试图片路径&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#测试图片路径&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;headerlink&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;测试图片路径&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>测试图片路径<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>引用格式：<span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span>[](test/11.jpg)<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;/test/11.jpg&quot;</span> <span class="hljs-attr">srcset</span>=<span class="hljs-string">&quot;/img/loading.gif&quot;</span> <span class="hljs-attr">lazyload</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>引用格式：<span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span>[](11.jpg)<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;/11.jpg&quot;</span> <span class="hljs-attr">srcset</span>=<span class="hljs-string">&quot;/img/loading.gif&quot;</span> <span class="hljs-attr">lazyload</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>引用格式：<span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span>[](11.jpg)<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;/test1/test2/11.jpg&quot;</span> <span class="hljs-attr">srcset</span>=<span class="hljs-string">&quot;/img/loading.gif&quot;</span> <span class="hljs-attr">lazyload</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>引用格式：<span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span><span class="hljs-symbol">&amp;lt;</span>img src=<span class="hljs-symbol">&amp;quot;</span>test/11.jpg<span class="hljs-symbol">&amp;quot;</span>/<span class="hljs-symbol">&amp;gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;test/11.jpg&quot;</span> <span class="hljs-attr">srcset</span>=<span class="hljs-string">&quot;/img/loading.gif&quot;</span> <span class="hljs-attr">lazyload</span>/&gt;</span><br></code></pre></td></tr></table></figure>
-
-
-
-
-
-<p>【疑惑】：虽然官网提到—— hexo 新版本的 <code>hexo-renderer-marked</code> 插件引入一个新选项，支持 md 文档使用 <code>![]()</code>  格式嵌入图片而无需使用 <code>asset_img</code> 标签插件。很多博文转向使用这种新方式。但是，博主使用时发现：只有它只支持单路径 <code>![](图片.jpg)</code> ；如果 imageLocation 为  <code>目录/图片.jpg</code> ，该插件并不会进行任何处理。</p>
-<blockquote>
-<p>参考官方文档的博文：<a target="_blank" rel="noopener" href="https://bingbytebard.com/2024/11/08/Hexo%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E7%9A%84%E6%96%B9%E6%B3%95/">Hexo中插入图片的方法 - Hazel</a></p>
-<p>使用图床：<a target="_blank" rel="noopener" href="https://dettry.github.io/2024/05/09/hexo-asset-image-note/">hexo使用Hexo-asset-image图片无法正常显示的一些解决方案 | CodeCook</a></p>
-</blockquote>
-<ol>
-<li>使用 <code>hexo-asset-image</code> 插件（供 hexo 老版本使用，现已不兼容）</li>
-</ol>
-<blockquote>
-<p>解决已废弃的 <code>hexo-asset-image</code> 插件不兼容 hexo 新版本的问题：<a target="_blank" rel="noopener" href="https://blog.csdn.net/kurapika_030/article/details/130598712">【Hexo】hexo-asset-image在hexo6.3.0下的使用以及与abbrlink插件的修改-CSDN博客</a></p>
-</blockquote>
-<ol start="2">
-<li>hexo 新版本支持 md 语法的相对路径引用图片，而无需使用 <code>asset_img</code> 标签插件进行转化。</li>
-</ol>
-<blockquote>
-</blockquote>
-<ol start="3">
-<li>使用 <code>hexo-asset-img</code> 插件（推荐，本人使用）</li>
-</ol>
-<blockquote>
-<p><code>hexo-asset-img</code> 插件及插件开发：<a target="_blank" rel="noopener" href="https://github.com/yiyungent/hexo-asset-img">yiyungent&#x2F;hexo-asset-img: 🍰 Hexo local image plugin. | Hexo 本地图片插件: 转换 图片相对路径 为 asset_img</a></p>
-</blockquote>
-<h2 id="卸载插件"><a href="#卸载插件" class="headerlink" title="卸载插件"></a>卸载插件</h2><p>以卸载 <code>hexo-asset-image</code> 插件为例：</p>
-<ol>
-<li>执行 <code>npm uninstall hexo-asset-image</code> 指令。</li>
-<li>如果 <code>/node_modules</code> 目录下仍有该插件包，删除。</li>
-<li>如果主题配置文件、<code>package.json</code> 和 <code>package-lock.json</code> 仍有与该插件相关的配置信息，删除。</li>
-</ol>
-<h1 id="待更新内容"><a href="#待更新内容" class="headerlink" title="待更新内容"></a>待更新内容</h1><p>暂未使用 Github Actions 插件：<a target="_blank" rel="noopener" href="https://dzq88.github.io/2024/02/23/%E5%85%B3%E4%BA%8E%E9%85%8D%E7%BD%AEhexo-fluid%E4%B8%BB%E9%A2%98%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91/">利用 Github Actions 自动部署 Hexo 博客时，fluid 的配置失效，因为 node_modules 文件夹没有被推送到博客源码仓库</a></p>
-<h2 id="中英文空格"><a href="#中英文空格" class="headerlink" title="中英文空格"></a>中英文空格</h2><p>本人编写文档时，中英文数字等连接处的符号会自行处理，比如中英文间空格。执行 <code>hexo g</code> 指令时发现：在 <code>index.html</code> 中，博文 filename 预留的空格被格式化去除。为解决这一问题，偷懒地使用了 <code>hexo-filter-auto-spacing</code> 插件。该插件是在博文的所有中英文之间自动空格，虽然不是很符合本人要求。</p>
-<hr>
-<p>安装插件：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">npm install hexo-filter-auto-spacing --save<br></code></pre></td></tr></table></figure>
-
-<p>在 <code>_config.yml</code> 文件中配置：</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># hexo-filter-auto-spacing 插件，实现中英文之间自动加空格</span><br><span class="hljs-attr">auto_spacing:</span><br>    <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
-
-<hr>
-<p>problem：uninstall 该插件并删除插件模块后，<code>hexo g</code> 还是原问题。但是重新安装该插件后，无需配置，甚至设置为 false，仍然实现空格，bug 吗？</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://hsyac.github.io/posts/870f2d70.html">Hexo删除插件的命令与使用办法 | Hsyac</a></p>
-</blockquote>
-<p>暂未遇到的问题：<code>hexo-filter-auto-spacing</code> 插件会导致脚注插件不能正常运行。</p>
-<p>【待实现】：删除该插件，实现原有的小要求。</p>
 
                 
               </div>
@@ -796,7 +834,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>使用Hexo搭建个人博客</div>
-      <div>http://example.com/posts/使用 Hexo 搭建个人博客.html</div>
+      <div>http://example.com/2025/04/07/使用 Hexo 搭建个人博客/</div>
     </div>
     <div class="license-meta">
       
@@ -840,7 +878,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/test2.html" title="test2">
+                      <a href="/2025/04/08/test2/" title="test2">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">test2</span>
                         <span class="visible-mobile">上一篇</span>
