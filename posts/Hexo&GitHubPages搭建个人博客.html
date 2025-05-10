@@ -42,7 +42,7 @@
 <meta property="og:image" content="http://ningc5.github.io/posts/Hexo&GitHubPages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20250421162215205.png">
 <meta property="og:image" content="http://ningc5.github.io/posts/Hexo&GitHubPages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20250412210601319.png">
 <meta property="article:published_time" content="2025-04-09T07:19:42.000Z">
-<meta property="article:modified_time" content="2025-05-09T20:14:58.194Z">
+<meta property="article:modified_time" content="2025-05-10T16:54:21.107Z">
 <meta property="article:author" content="shaton">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Fluid">
@@ -384,7 +384,7 @@
     
       
       
-        <a href="/posts/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D.html" title="自定义域名"
+        <a href="/posts/GitHubPages%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D.html" title="自定义域名"
            class="list-group-item list-group-item-action
            ">
           <span class="category-post">自定义域名</span>
@@ -441,7 +441,7 @@
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年5月10日 凌晨
+                    本文最后更新于 2025年5月11日 凌晨
                   
                 
               </p>
@@ -610,7 +610,7 @@
 <h2 id="3-1-GitHub-Pages"><a href="#3-1-GitHub-Pages" class="headerlink" title="3.1 GitHub Pages"></a>3.1 GitHub Pages</h2><p>按官方文档操作即可。</p>
 <p><a target="_blank" rel="noopener" href="https://docs.github.com/zh/pages/getting-started-with-github-pages/creating-a-github-pages-site">创建 GitHub Pages 站点 - GitHub 文档</a> ，public GitHub Pages 仓库</p>
 <p><a target="_blank" rel="noopener" href="https://docs.github.com/zh/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site">配置 GitHub Pages 站点的发布源 - GitHub 文档</a> </p>
-<h2 id="3-2-将本地博客部署到-GitHub-Pages"><a href="#3-2-将本地博客部署到-GitHub-Pages" class="headerlink" title="3.2 将本地博客部署到 GitHub Pages"></a>3.2 将本地博客部署到 GitHub Pages</h2><blockquote>
+<h2 id="3-2-Git-部署博客到-GitHub-Pages"><a href="#3-2-Git-部署博客到-GitHub-Pages" class="headerlink" title="3.2 Git 部署博客到 GitHub Pages"></a>3.2 Git 部署博客到 GitHub Pages</h2><blockquote>
 <p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/one-command-deployment">一键部署 | Hexo</a></p>
 </blockquote>
 <blockquote>
@@ -619,7 +619,7 @@
 <p>Hexo 提供快速、简便的部署策略。在安装 与服务器&#x2F;存储库提供的部署方法兼容的必要插件 的情况下，进行相关配置后，只需要一条命令（<code>hexo deploy</code>）即可将网站部署到服务器上。</p>
 <p>使用 Git 将本地博客部署到 GitHub Pages，直白地说，就是将 <code>public/</code> 目录下的所有文件，而不是 <code>public/</code> 目录，push 到 GitHub Pages 仓库。</p>
 <ol>
-<li>安装 hexo-deployer-git</li>
+<li>安装 hexo-deployer-git 插件</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install hexo-deployer-git --save<br></code></pre></td></tr></table></figure>
 
@@ -636,7 +636,7 @@
 <ol start="4">
 <li>验证</li>
 </ol>
-<p>浏览器键入 <code>https://username.github.io</code> 查看个人博客网站。</p>
+<p>浏览器键入 <code>https://&lt;username&gt;.github.io</code> 查看个人博客网站。</p>
 <h1 id="4-选择主题"><a href="#4-选择主题" class="headerlink" title="4. 选择主题"></a>4. 选择主题</h1><p>Hexo 的默认主题（landscape）比较朴素，官网提供了丰富的 <a target="_blank" rel="noopener" href="https://hexo.io/themes/">主题样式</a>，常用有 Next、Butterfly、Fluid 等。可以查看不同主题的 Demo，自行做出选择。不同主题的差异主要在生态建设及插件集成，外在表现是页面布局。</p>
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://pengtech.net/hexo/hexo_theme_recommendation.html">16 款精美的hexo 博客主题推荐 - 鹏叔的技术博客</a></p>
@@ -663,7 +663,7 @@
 </blockquote>
 <p>hexo 支持多配置文件合并覆盖生效；配置文件的优先级从高到低：<code>_config.yml</code>、<code>_config.[theme].yml</code>、主题目录下的<code>_config.yml</code>。主题更新后，主题目录下的 <code>_config.yml</code> 会被替换。</p>
 <p>【<strong>强烈建议</strong>】：将所有的主题配置集中在独立的 <code>_config.[theme].yml</code> 配置文件中，以方便管理。</p>
-<p><strong>在站点根目录下创建 <code>_config.fluid.yml</code>，然后复制 Fluid 主题配置文件（<code>fluid/_config.yml</code>）的内容。</strong></p>
+<p>在站点根目录下创建 <code>_config.fluid.yml</code>，然后复制 Fluid 主题配置文件（<code>fluid/_config.yml</code>）的内容。</p>
 <p>【<strong>注意</strong>】：<u>配置项的 key 和 value 之间用 <code>英文冒号+空格</code> 连接。</u> 否则清理或部署时会报错：<code>can not read a block mapping entry</code>。当然，也可能是报错点之前存在格式错误。</p>
 <h1 id="5-博客的撰写"><a href="#5-博客的撰写" class="headerlink" title="5. 博客的撰写"></a>5. 博客的撰写</h1><p>在站点根目录下执行 <code>hexo new [layout] &lt;title&gt;</code> 命令来创建一篇新文章或新页面。</p>
 <h2 id="5-1-布局"><a href="#5-1-布局" class="headerlink" title="5.1 布局"></a>5.1 布局</h2><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># _config.yml</span><br><span class="hljs-attr">default_layout:</span> <span class="hljs-string">post</span>	<span class="hljs-comment"># 默认值。</span><br></code></pre></td></tr></table></figure>
@@ -743,9 +743,10 @@
 </ol>
 <p>覆盖文章的永久链接（覆盖配置文件中的该配置）。永久链接应该以 <code>/</code> 或 <code>.html</code> 结尾。</p>
 <h3 id="5-4-2-文章模板"><a href="#5-4-2-文章模板" class="headerlink" title="5.4.2 文章模板"></a>5.4.2 文章模板</h3><p>修改文章模板文件：<code>scaffolds/post.md</code></p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">title:</span> &#123;&#123; <span class="hljs-string">title</span> &#125;&#125;		 <span class="hljs-comment"># 读取 new命令的title参数值 作为文章主题</span><br><span class="hljs-attr">excerpt:</span> 				 <span class="hljs-comment"># 摘要</span><br><span class="hljs-attr">author:</span> <span class="hljs-string">shaton沙桐</span>		<span class="hljs-comment"># custom auther&#x27;s name</span><br><span class="hljs-attr">date:</span> &#123;&#123; <span class="hljs-string">date</span> &#125;&#125;		 <span class="hljs-comment"># 读取 new命令的执行时间 作为文章date</span><br><span class="hljs-attr">categories:</span>				 <span class="hljs-comment"># 自定义层级目录</span><br><span class="hljs-attr">tags:</span> 					 <span class="hljs-comment"># 自定义标签</span><br><span class="hljs-meta">---</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs md">---<br>title: &#123;&#123; title &#125;&#125;		 # 读取 new命令的title参数值 作为文章主题<br>excerpt: 				 # 摘要<br>author: shaton沙桐		# custom auther&#x27;s name<br>date: &#123;&#123; date &#125;&#125;		 # 读取 new命令的执行时间 作为文章date<br>categories:				 # 自定义层级目录<br><span class="hljs-section">tags: 					 # 自定义标签</span><br><span class="hljs-section">---</span><br></code></pre></td></tr></table></figure>
 
 <p>按需删改。</p>
+<p>【注意】：如果文档 Front-matter 部分的属性无值，则删除该属性。否则执行 generate 命令时，Hexo 可能会报错： <code>ValidationError: ‘null’ is not a string!</code> 。这是属性缺失造成的。</p>
 <h2 id="5-6-永久链接"><a href="#5-6-永久链接" class="headerlink" title="5.6 永久链接"></a>5.6 永久链接</h2><p><strong>permalink 是文章的永久链接。可以在配置文件（<code>config.yml</code>）中统一设置所有博文的永久链接格式。或者在每篇文档的 Front-matter 部分单独设置每篇博文的永久链接。</strong></p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># _config.yml</span><br><span class="hljs-attr">permalink:</span> <span class="hljs-string">:year/:month/:day/:title/</span>      <span class="hljs-comment"># 默认值。</span><br><br><span class="hljs-comment"># permalink 推荐以 `/` 或 `.html` 结尾。</span><br><span class="hljs-comment"># permalink: posts/:title/		# 推荐。占位符&quot;:title&quot;是相对于&quot;source/_posts/&quot;文件夹的文件名称</span><br><span class="hljs-comment"># permalink: posts/:name/		# 推荐。占位符&quot;:name&quot;仅是文件名称。</span><br><span class="hljs-comment"># permalink: posts/:title.html	# 推荐</span><br><span class="hljs-comment"># permalink: posts/:name.html	# 推荐</span><br></code></pre></td></tr></table></figure>
 
@@ -753,7 +754,7 @@
 <p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/permalinks">永久链接（Permalinks） | Hexo</a> 有占位符的描述说明。</p>
 </blockquote>
 <p><strong>注意！对 permalink 而言，占位符 <code>:title</code> 是相对于 “source&#x2F;_posts&#x2F;“ 文件夹的文件名称。</strong> 例如，<code>source/_posts/test/test3.md</code> 文档的 <code>:title</code> 对 permalink 而言为 <code>test/test3</code>。</p>
-<p><strong>此外，【permalink结构】还与 generate 命令的输出目录有关。</strong>（在 ”<code>public\</code> 目录下图片的真实路径“ 章节讲解）</p>
+<p><strong>此外，【permalink结构】还与 generate 命令的输出目录有关。</strong>（在 ”<code>public/</code> 目录下图片的真实路径“ 章节讲解）</p>
 <h1 id="6-工作流与命令（待改）"><a href="#6-工作流与命令（待改）" class="headerlink" title="6. 工作流与命令（待改）"></a>6. 工作流与命令（待改）</h1><p><a target="_blank" rel="noopener" href="https://hzr0709.github.io/2024/05/17/Hexo-Commands/">Hexo-常用命令详解 | 个人博客</a></p>
 <p>操作流程如下：</p>
 <ol>
@@ -829,7 +830,8 @@
 <p>Tip：使用 new 命令和 path 选项需要知晓它的执行结果。当然，也可以直接通过手动创建目录结构和文档的方式来达到同样的效果。</p>
 </blockquote>
 <hr>
-<p>当博文产出不多时，可采用按年月划分。但私以为该结构比较死板。本人习惯按文章类别划分。当博客需要 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/permalinks#%E5%A4%9A%E8%AF%AD%E7%A7%8D%E6%94%AF%E6%8C%81">多语种支持</a> 时，也可以修改该 <code>new_post_name</code> 配置项。</p>
+<p>当博文产出不多时，可采用按年月划分。但私以为该结构比较死板。本人习惯按文章类别划分。</p>
+<p>当博客需要 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/permalinks#%E5%A4%9A%E8%AF%AD%E7%A7%8D%E6%94%AF%E6%8C%81">多语种支持</a> 时，也可以修改该 <code>new_post_name</code> 配置项。</p>
 <h2 id="7-4-public-目录下图片的真实路径"><a href="#7-4-public-目录下图片的真实路径" class="headerlink" title="7.4 public/ 目录下图片的真实路径"></a>7.4 <code>public/</code> 目录下图片的真实路径</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs tree">blogRoot<br>├── source<br>│   ├── _posts<br>│   │   ├── filename【文章资源文件夹】<br>│   │   │   └── 图片.jpg【文章引用的图片】<br>│   │   └── filename.md【文章，该文章引用”1.jpg“的语法：![](filename/图片.jpg)】<br>│   ├── images【全局资源文件夹：图片】<br>│   │	├── 背景图.jpg<br>|	│	└── 小图标.ico<br>|	├── css【全局资源文件夹：css】<br>|	└── js【全局资源文件夹：js】<br></code></pre></td></tr></table></figure>
 
 <p>执行 generate 命令时，Hexo 的默认行为：</p>
@@ -932,7 +934,7 @@
 </ol>
 <p>其中，slug 是<strong>图片全名</strong>，[title] 是鼠标悬停提示。若 slug 包含空格，请使用引号括起来。</p>
 <p><strong>启动文章资源文件夹后，在文章中引用【文章资源文件夹中的图片】。</strong> 若采用此方式，博文能显示图片，而 md 文档中只是字符串。执行 generate 命令时，Hexo 会将其转换成路径正确的 <code>&lt;img&gt;</code> 标签。</p>
-<p>示例：在 <code>source/_posts/test/1.jgp</code>  和 <code>permalink=posts/:title.html</code> 的情况下，<code>&#123;% asset_img "1.jpg" %&#125;</code>  转换成 <code>&lt;img src=&quot;/posts/test/1.jpg&quot;&gt;</code> 。</p>
+<p>示例：在 <code>source/_posts/test/1.jgp</code> 和 <code>permalink=posts/:title.html</code> 的情况下，<code>source/_posts/test.md</code> 文档中的 <code>&#123;% asset_img "1.jpg" %&#125;</code>，<br>被转换成 <code>&lt;img src=&quot;/posts/test/1.jpg&quot;&gt;</code> 。</p>
 <ol start="2">
 <li><code>&#123;% asset_link slug [title] %&#125;</code></li>
 </ol>
@@ -962,6 +964,7 @@
 <p>【marked 插件的渲染问题 | 错误】：若文档中直接出现 http(s) 链接地址，链接地址必须与后面的符号或字词空一格，否则链接地址渲染出错。</p>
 <p>【marked 插件的渲染问题 | 美观】：md 文档使用 <code>**内容**</code> 格式加粗文字；当内容的顶端和尾部为符号时，若前后要与数字、字母或汉字连接，则必须空一格；否则博文显示不美观。</p>
 <p><img src="Hexo&GitHubPages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20250412210601319.png" srcset="/img/loading.gif" lazyload></p>
+<p>【marked 插件的渲染问题 | 错误】：当文档中采用内置标签时，若 slug 出错，执行 generate 命令会报错。因此不能随便改名。</p>
 <h2 id="8-2-卸载插件"><a href="#8-2-卸载插件" class="headerlink" title="8.2 卸载插件"></a>8.2 卸载插件</h2><blockquote>
 <p><a target="_blank" rel="noopener" href="https://hsyac.github.io/posts/870f2d70.html">Hexo删除插件的命令与使用办法 | Hsyac</a></p>
 </blockquote>
@@ -1061,7 +1064,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年5月10日</div>
+          <div>2025年5月11日</div>
         </div>
       
       
