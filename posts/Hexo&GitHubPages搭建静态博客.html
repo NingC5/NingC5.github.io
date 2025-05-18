@@ -42,7 +42,7 @@
 <meta property="og:image" content="http://ningc5.github.io/posts/Hexo&GitHubPages%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/image-20250421162215205.png">
 <meta property="og:image" content="http://ningc5.github.io/posts/Hexo&GitHubPages%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/image-20250412210601319.png">
 <meta property="article:published_time" content="2025-04-09T07:19:42.000Z">
-<meta property="article:modified_time" content="2025-05-13T08:20:08.512Z">
+<meta property="article:modified_time" content="2025-05-13T19:50:00.288Z">
 <meta property="article:author" content="shaton">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Fluid">
@@ -266,7 +266,7 @@
         
         
         
-          87 分钟
+          88 分钟
         
       </span>
     
@@ -325,7 +325,7 @@
         aria-expanded="true"
       >
         博客搭建与运维指南
-        <span class="list-group-count">(9)</span>
+        <span class="list-group-count">(10)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -384,6 +384,15 @@
     
       
       
+        <a href="/posts/GitHub%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E4%B8%8EGit%E8%BF%9E%E6%8E%A5GitHubPages%E4%BB%93%E5%BA%93.html" title="GitHub身份验证与Git连接GitHubPages仓库"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">GitHub身份验证与Git连接GitHubPages仓库</span>
+        </a>
+      
+    
+      
+      
         <a href="/posts/GitHubPages%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D.html" title="GitHubPages自定义域名"
            class="list-group-item list-group-item-action
            ">
@@ -393,10 +402,10 @@
     
       
       
-        <a href="/posts/GitHub%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E4%B8%8EGit%E8%BF%9E%E6%8E%A5GitHubPages%E4%BB%93%E5%BA%93.html" title="GitHub身份验证与Git连接GitHubPages仓库"
+        <a href="/posts/GitHubPages%E8%AE%BF%E9%97%AE%E4%BC%98%E5%8C%96.html" title="GitHubPages访问优化"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">GitHub身份验证与Git连接GitHubPages仓库</span>
+          <span class="category-post">GitHubPages访问优化</span>
         </a>
       
     
@@ -441,7 +450,7 @@
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年5月13日 下午
+                    本文最后更新于 2025年5月14日 凌晨
                   
                 
               </p>
@@ -562,15 +571,16 @@
 <p><code>hexo init</code> 命令的具体作用：<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/commands#init">int 命令 | Hexo</a></p>
 <p><code>npm install</code> 命令的作用：<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_73531461/article/details/136399322">深入理解 package.json 文件与 package-lock.json 文件-CSDN博客</a></p>
 </blockquote>
-<p>此时，博客项目文件夹下存在一系列文件，如下图所示：</p>
+<p>此时，站点根目录下存在一系列文件，如下图所示：</p>
 <p><img src="Hexo&GitHubPages%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/image-20250409102402277.png" srcset="/img/loading.gif" lazyload></p>
 <hr>
 <p><strong>在站点根目录下执行以下命令：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo g		<span class="hljs-comment"># 生成博客。【hexo generate】</span><br>hexo s		<span class="hljs-comment"># 启动服务器。默认情况下，访问网址为：http://localhost:4000/。【hexo server】</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo g		<span class="hljs-comment"># 生成博客。【hexo generate】</span><br>hexo s		<span class="hljs-comment"># 启动服务器。默认情况下，访问地址为：http://localhost:4000/。【hexo server】</span><br></code></pre></td></tr></table></figure>
 
 <p><img src="Hexo&GitHubPages%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/image-20250409170817066.png" srcset="/img/loading.gif" lazyload alt="执行 hexo g 命令"></p>
 <p><img src="Hexo&GitHubPages%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/image-20250409170916050.png" srcset="/img/loading.gif" lazyload alt="执行 hexo s 命令"></p>
-<p>浏览器键入 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a> ，若出现如下界面，则本地博客建立成功。本地预览完后，命令行【ctrl + c】关闭服务器，避免 4000 端口被一直占用。</p>
+<hr>
+<p>浏览器键入 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a> ，若出现如下界面，则本地博客建立成功。本地预览完后，命令行【Ctrl + c】关闭服务器，避免 4000 端口被一直占用。</p>
 <p><img src="Hexo&GitHubPages%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/image-20250409171310908.png" srcset="/img/loading.gif" lazyload alt="本地博客默认首页"></p>
 <h2 id="2-2-关于博客项目文件夹的说明"><a href="#2-2-关于博客项目文件夹的说明" class="headerlink" title="2.2 关于博客项目文件夹的说明"></a>2.2 关于博客项目文件夹的说明</h2><blockquote>
 <p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/cfd05c35833c">Hexo文件结构 - 简书</a></p>
@@ -618,6 +628,9 @@
 </blockquote>
 <p>Hexo 提供快速、简便的部署策略。在安装 与服务器&#x2F;存储库提供的部署方法兼容的必要插件 的情况下，进行相关配置后，只需要一条命令（<code>hexo deploy</code>）即可将网站部署到服务器上。</p>
 <p>使用 Git 将本地博客部署到 GitHub Pages，直白地说，就是将 <code>public/</code> 目录下的所有文件，而不是 <code>public/</code> 目录，push 到 GitHub Pages 仓库。</p>
+<blockquote>
+<p>Tip：<code>hexo deploy</code> 命令的具体作用——先将静态站点（<code>public/</code>）的内容复制到 <code>.deploy_git/</code> 目录下，然后在 <code>.deploy_git/</code> 目录下执行 Git 命令（init、add、commit、push）。</p>
+</blockquote>
 <ol>
 <li>安装 hexo-deployer-git 插件</li>
 </ol>
@@ -1064,7 +1077,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年5月13日</div>
+          <div>2025年5月14日</div>
         </div>
       
       

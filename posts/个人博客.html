@@ -29,7 +29,7 @@
 <meta property="og:description" content="Web Log（网络日志），简称 Blog（博客）。 笔者使用 Typora 做学习记录。苦恼的是，md 文档的大量开启会导致计算机运行内存占用陡增，遂产生了建立博客的念头——在网站上浏览自己的记录。 【注】：只看前两章即可。 1. Personal Choices记录可以使用笔记软件&#x2F;工具，也可以发布在平台社区或个人博客网站上，方式各有优劣。  笔记工具，诸如 Notion、Wolai">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-04-27T09:15:38.000Z">
-<meta property="article:modified_time" content="2025-05-12T19:06:38.492Z">
+<meta property="article:modified_time" content="2025-05-14T23:58:58.910Z">
 <meta property="article:author" content="shaton">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -308,7 +308,7 @@
         aria-expanded="true"
       >
         博客搭建与运维指南
-        <span class="list-group-count">(9)</span>
+        <span class="list-group-count">(10)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -367,6 +367,15 @@
     
       
       
+        <a href="/posts/GitHub%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E4%B8%8EGit%E8%BF%9E%E6%8E%A5GitHubPages%E4%BB%93%E5%BA%93.html" title="GitHub身份验证与Git连接GitHubPages仓库"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">GitHub身份验证与Git连接GitHubPages仓库</span>
+        </a>
+      
+    
+      
+      
         <a href="/posts/GitHubPages%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D.html" title="GitHubPages自定义域名"
            class="list-group-item list-group-item-action
            ">
@@ -376,10 +385,10 @@
     
       
       
-        <a href="/posts/GitHub%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E4%B8%8EGit%E8%BF%9E%E6%8E%A5GitHubPages%E4%BB%93%E5%BA%93.html" title="GitHub身份验证与Git连接GitHubPages仓库"
+        <a href="/posts/GitHubPages%E8%AE%BF%E9%97%AE%E4%BC%98%E5%8C%96.html" title="GitHubPages访问优化"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">GitHub身份验证与Git连接GitHubPages仓库</span>
+          <span class="category-post">GitHubPages访问优化</span>
         </a>
       
     
@@ -424,7 +433,7 @@
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年5月13日 凌晨
+                    本文最后更新于 2025年5月15日 早上
                   
                 
               </p>
@@ -500,21 +509,21 @@
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/gitblog_00061/article/details/137219220">探索微博客平台：<code>microblog</code>——一个轻量级、强大的个人博客系统-CSDN博客</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_48191864/article/details/141039166">如何使用Next.js和GitHub Issues构建个人博客:从零到上线的完整指南-CSDN博客</a></p>
 </blockquote>
-<h1 id="2-建站流程与-Github-Pages"><a href="#2-建站流程与-Github-Pages" class="headerlink" title="2. 建站流程与 Github Pages"></a>2. 建站流程与 Github Pages</h1><p>个人网站的一般建站流程如下：</p>
+<h1 id="2-建站流程与-Github-Pages"><a href="#2-建站流程与-Github-Pages" class="headerlink" title="2. 建站流程与 Github Pages"></a>2. 建站流程与 Github Pages</h1><blockquote>
+<p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%9F%9F%E5%90%8D%E7%B3%BB%E7%BB%9F">域名系统 - 维基百科，自由的百科全书</a></p>
+</blockquote>
+<p>个人网站的一般建站流程如下：</p>
 <ol>
-<li>注册域名（Domain Name）。域名注册商一般也提供域名解析服务。 </li>
+<li>注册域名（Domain Name）。（域名注册商一般也提供域名解析服务。 ）</li>
 <li>获取服务器。</li>
-<li>将个人网站部署到服务器上，服务器分配独立 IP（通过独立 IP 可直接定位到个人网站）。</li>
-<li>DNS（Domain Name System，域名系统）解析域名，绑定域名和服务器分配的独立 IP。</li>
-<li>通过域名访问部署在服务器上的个人网站。</li>
+<li>将个人网站部署到服务器上，服务器分配独立 IP。（通过独立 IP 可直接定位到个人 Web 网站。）</li>
+<li>DNS（Domain Name System，域名系统）解析域名——名称服务器（Name Server，简称 NS）添加 DNS 记录，绑定个人域名和服务器分配的独立 IP。</li>
+<li>通过个人域名访问部署在服务器上的个人网站。</li>
+<li>注册数字证书，并部署到服务器的个人网站上 balabala ……</li>
 </ol>
 <p>服务器也可能分配的是域名，而不是独立 IP。可以使用服务器分配的域名访问个人网站；或者 DNS 将个人域名指向服务器分配的域名，然后使用个人域名访问个人网站。</p>
 <blockquote>
-<p>Tips：</p>
-<ul>
-<li>很多博文经常用 ”NS“（Name Server）一词来表示域名解析服务或域名解析服务商。</li>
-<li>若服务器分配域名，意味者用户使用的是服务器提供的公用 IP，服务器通过域名部分定位特定用户的资源。Github Pages 就是采用该模式。</li>
-</ul>
+<p>Tips：若服务器分配域名，意味者用户使用的是服务器提供的公用 IP，服务器必须通过域名部分定位特定用户的资源。Github Pages 就是采用该模式。</p>
 </blockquote>
 <h2 id="2-1-域名与-IP-地址"><a href="#2-1-域名与-IP-地址" class="headerlink" title="2.1 域名与 IP 地址"></a>2.1 域名与 IP 地址</h2><blockquote>
 <p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%9F%9F%E5%90%8D">域名 - 维基百科，自由的百科全书</a></p>
@@ -523,7 +532,7 @@
 <p><strong>域名</strong>（Domain Name，简称 Domain）是互联网中用来唯一标识网站或资源的字符地址，更便于人类记忆和使用。</p>
 <p>域名通过 DNS 映射到对应的 IP 地址，用户通过域名访问网站，背后由 DNS 将其解析为实际的 IP 地址，完成与目标服务器的通信。</p>
 <hr>
-<p>**域名是一个由字母、数字和连字符组成的字符串，用点（.）分隔。域名从右到左依次是顶级域、二级域、子域（可选）。**以 <code>www.google.com</code> 为例 ，<code>.com</code> 是顶级域，google 是二级域，www 是子域。</p>
+<p><strong>域名是一个由字母、数字和连字符组成的字符串，用点（.）分隔。域名从右到左依次是顶级域、二级域、子域（可选）。</strong> 以 <code>www.google.com</code> 为例 ，<code>.com</code> 是顶级域，google 是二级域，www 是子域。</p>
 <p><strong>顶级域</strong>（Top-Level Domain，简称 TLD）位于域名的最右端部分，用于划分互联网域名的类别或区域。顶级域主要分为以下几类：</p>
 <ol>
 <li>通用顶级域（gTLD，generic TLD），适用于各种用途。例如：<code>.com</code>（商业），<code>.org</code>（组织），<code>.net</code>（网络相关），<code>.info</code>（信息），<code>.biz</code>（商务） 等。</li>
@@ -541,16 +550,19 @@
 </blockquote>
 <p>完整的域名由【子域（可选）+ 二级域 + 顶级域】组成。这三者结合起来，构成了完整的互联网域名体系，方便用户访问、组织和管理网站资源。</p>
 <h2 id="2-2-服务器"><a href="#2-2-服务器" class="headerlink" title="2.2 服务器"></a>2.2 服务器</h2><p>（没空整理！）</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%9C%8D%E5%8A%A1%E5%99%A8">服务器 - 维基百科，自由的百科全书</a></p>
+</blockquote>
 <p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-cn/%E7%B6%B2%E9%A0%81%E5%AF%84%E5%AD%98%E6%9C%8D%E5%8B%99">网页托管服务 - 维基百科，自由的百科全书</a></p>
 <h2 id="2-3-Github-Pages"><a href="#2-3-Github-Pages" class="headerlink" title="2.3 Github Pages"></a>2.3 Github Pages</h2><blockquote>
 <p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/GitHub">GitHub - 维基百科，自由的百科全书</a></p>
 <p><a target="_blank" rel="noopener" href="https://docs.github.com/zh/pages">GitHub Pages 文档 - GitHub 文档</a></p>
 </blockquote>
-<p>GitHub 是一个在线软件源代码托管服务平台，开源免费。<u>GitHub Pages 是 GitHub 提供的一个<strong>静态</strong>网站托管服务，它直接从 GitHub Pages 仓库获取 HTML、CSS 和 JavaScript 文件。</u></p>
+<p>GitHub 是一个在线软件源代码托管服务平台，开源免费。<u>GitHub Pages 是 GitHub 提供的一个<strong>静态</strong>网站托管服务，它直接从 GitHub Pages 仓库获取 HTML、CSS 和 JavaScript 静态资源文件。</u></p>
 <blockquote>
 <p>Note：GitHub Pages 仓库是指 name 固定的 GitHub 仓库——<code>&lt;username&gt;.github.io</code>。</p>
 </blockquote>
-<p>GitHub Pages 提供固定的子域名 <code>&lt;username&gt;.github.io</code>。用户可以通过该域名访问 GitHub Pages 仓库的静态资源文件。GitHub Pages 支持自定义域名。</p>
+<p>GitHub Pages 提供固定的子域名 <code>&lt;username&gt;.github.io</code> 。用户可以通过该域名访问 GitHub Pages 仓库的静态资源文件。GitHub Pages 支持自定义域名。</p>
 <hr>
 <p>GitHub Pages 网站受以下使用限制的约束：</p>
 <ol>
@@ -562,7 +574,7 @@
 </ol>
 <hr>
 <p>“Hexo - Git -  Github Pages 仓库（public）” 是一种常用的静态博客架构，简单、免费（$: SAY NO!），但公开。</p>
-<p>先使用 Hexo 生成本地静态博客，再使用 Git 将静态站点 push 到 Github Pages 仓库。这样，一个网络静态博客就构建好了。你可以通过 <code>https://&lt;username&gt;.github.io</code> 访问自己的网络博客。</p>
+<p>先使用 Hexo 生成本地静态博客，再使用 Git 将静态站点 push 到 Github Pages 仓库。这样，一个静态网络博客就构建好了。你可以通过 <code>https://&lt;username&gt;.github.io</code> 访问自己的博客。</p>
 <blockquote>
 <p>Add：早期，很多站主&#x2F;博主考虑到个人网站&#x2F;博客在国内的可访性和访问速度，使用 coding pages 而不是  Github Pages 来部署源站（个人网站&#x2F;博客）。后来，coding pages 项目终止，由此产生的数据丢失及其他问题致使不少博主终止博客，很多有价值的博文也随之消散。部分博文因为 CSDN 的偷取而保留了下来，后来者几乎只能付费从 CSDN 获取早期博主的智慧结晶，见 <a target="_blank" rel="noopener" href="https://linux.do/t/topic/494834">如何获取CSDN付费文件？ - 开发调优 - LINUX DO</a> 评论区。如果你想要自己的博文还附带分享价值——首先，请备份好数据（Git 是个好选择，Github 勉强够用）；其次，分享精神不懈怠（Github Pages 免去烦恼，Cloudflare Pages 也推荐）。</p>
 </blockquote>
@@ -677,7 +689,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年5月13日</div>
+          <div>2025年5月15日</div>
         </div>
       
       
