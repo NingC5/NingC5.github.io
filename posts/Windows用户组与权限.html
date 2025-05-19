@@ -21,25 +21,23 @@
   <meta name="author" content="shaton沙桐">
   <meta name="keywords" content="">
   
-    <meta name="description" content="简陋是 Hexo 的优势也是其劣势。想要符合要求的博客样式，需要能力去发现，也需要精力去改造；但这些还符合建立博客的初衷吗？ Hexo 静态博客框架自 2013 年发布以来维护至今，最新版本为 7.3.0。笔者很荣幸能够享用到这一开源果实，但笔者却有意放弃它。原因见 Hexo+GitHubPages搭建静态博客：文件管理与附属资源显示——shit 小节的彩蛋。bug 经年无人识，只能说年轻永远是大">
+    <meta name="description" content="在 Windows 操作系统中，用户组（组）具有预定义的权限和角色，主要用于管理和控制不同用户的权限。 Windows 用户组（组）    组名称 说明 主要权限和特点    System（系统）账户 这是一个特殊的账户（不是用户组），由操作系统内部使用，运行系统服务，拥有最高权限。 由操作系统内部管理，不是普通用户组成员。   Administrators（管理员） 拥有最高权限的用户组，能够进">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo与Fluidの碎语">
-<meta property="og:url" content="https://cornst.com/posts/Hexo&Fluid%E3%81%AE%E7%A2%8E%E8%AF%AD.html">
+<meta property="og:title" content="Windows用户组与权限">
+<meta property="og:url" content="https://cornst.com/posts/Windows%E7%94%A8%E6%88%B7%E7%BB%84%E4%B8%8E%E6%9D%83%E9%99%90.html">
 <meta property="og:site_name" content="shaton沙桐">
-<meta property="og:description" content="简陋是 Hexo 的优势也是其劣势。想要符合要求的博客样式，需要能力去发现，也需要精力去改造；但这些还符合建立博客的初衷吗？ Hexo 静态博客框架自 2013 年发布以来维护至今，最新版本为 7.3.0。笔者很荣幸能够享用到这一开源果实，但笔者却有意放弃它。原因见 Hexo+GitHubPages搭建静态博客：文件管理与附属资源显示——shit 小节的彩蛋。bug 经年无人识，只能说年轻永远是大">
+<meta property="og:description" content="在 Windows 操作系统中，用户组（组）具有预定义的权限和角色，主要用于管理和控制不同用户的权限。 Windows 用户组（组）    组名称 说明 主要权限和特点    System（系统）账户 这是一个特殊的账户（不是用户组），由操作系统内部使用，运行系统服务，拥有最高权限。 由操作系统内部管理，不是普通用户组成员。   Administrators（管理员） 拥有最高权限的用户组，能够进">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-05-03T07:43:12.000Z">
-<meta property="article:modified_time" content="2025-05-18T13:30:24.632Z">
+<meta property="article:published_time" content="2025-05-18T14:43:56.000Z">
+<meta property="article:modified_time" content="2025-05-18T20:16:27.609Z">
 <meta property="article:author" content="shaton">
-<meta property="article:tag" content="Hexo">
-<meta property="article:tag" content="Fluid">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Hexo与Fluidの碎语 - shaton沙桐</title>
+  <title>Windows用户组与权限 - shaton沙桐</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -212,7 +210,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Hexo与Fluidの碎语"></span>
+            <span id="subtitle" data-typed-text="Windows用户组与权限"></span>
           
         </div>
 
@@ -228,8 +226,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-05-03 15:43" pubdate>
-          2025年5月3日 下午
+        <time datetime="2025-05-18 22:43" pubdate>
+          2025年5月18日 晚上
         </time>
       </span>
     
@@ -240,7 +238,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          218 字
+          577 字
         
       </span>
     
@@ -251,7 +249,7 @@
         
         
         
-          2 分钟
+          5 分钟
         
       </span>
     
@@ -290,139 +288,6 @@
   <div class="row nomargin-x">
     <div class="side-col d-none d-lg-block col-lg-2">
       
-  <aside class="sidebar category-bar" style="margin-right: -1rem">
-    
-
-
-
-
-
-<div class="category-list">
-  
-  
-    
-    
-    
-    <div class="category row nomargin-x">
-      <a class="category-item 
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="博客搭建与运维指南"
-        id="heading-fea7a4583b0dce4c2adcc9d00a4f05e7" role="tab" data-toggle="collapse" href="#collapse-fea7a4583b0dce4c2adcc9d00a4f05e7"
-        aria-expanded="true"
-      >
-        博客搭建与运维指南
-        <span class="list-group-count">(10)</span>
-        <i class="iconfont icon-arrowright"></i>
-      </a>
-      
-      <div class="category-collapse collapse show" id="collapse-fea7a4583b0dce4c2adcc9d00a4f05e7"
-           role="tabpanel" aria-labelledby="heading-fea7a4583b0dce4c2adcc9d00a4f05e7">
-        
-        
-          
-  <div class="category-post-list">
-    
-    
-      
-      
-        <a href="/posts/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2.html" title="个人博客"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">个人博客</span>
-        </a>
-      
-    
-      
-      
-        <a href="/posts/Hexo&amp;GitHubPages%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2.html" title="Hexo+GitHubPages搭建静态博客"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">Hexo+GitHubPages搭建静态博客</span>
-        </a>
-      
-    
-      
-      
-        <a href="/posts/Fluid%E4%B8%BB%E9%A2%98%E3%81%AE%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96.html" title="Fluid主题の博客美化"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">Fluid主题の博客美化</span>
-        </a>
-      
-    
-      
-      
-        <a href="/posts/Hexo%E6%A1%86%E6%9E%B6renderer%E6%BA%90%E4%BB%A3%E7%A0%81%E7%9A%84%E9%83%A8%E5%88%86%E6%B3%A8%E9%87%8A.html" title="Hexo框架renderer源代码的部分注释"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">Hexo框架renderer源代码的部分注释</span>
-        </a>
-      
-    
-      
-      
-        <a href="/posts/Hexo&amp;Fluid%E3%81%AE%E7%A2%8E%E8%AF%AD.html" title="Hexo与Fluidの碎语"
-           class="list-group-item list-group-item-action
-           active">
-          <span class="category-post">Hexo与Fluidの碎语</span>
-        </a>
-      
-    
-      
-      
-        <a href="/posts/GitHub%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E4%B8%8EGit%E8%BF%9E%E6%8E%A5GitHubPages%E4%BB%93%E5%BA%93.html" title="GitHub身份验证与Git连接GitHubPages仓库"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">GitHub身份验证与Git连接GitHubPages仓库</span>
-        </a>
-      
-    
-      
-      
-        <a href="/posts/GitHubPages%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D.html" title="GitHubPages自定义域名"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">GitHubPages自定义域名</span>
-        </a>
-      
-    
-      
-      
-        <a href="/posts/GitHubPages%E8%AE%BF%E9%97%AE%E4%BC%98%E5%8C%96.html" title="GitHubPages访问优化"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">GitHubPages访问优化</span>
-        </a>
-      
-    
-      
-      
-        <a href="/posts/%E5%B7%A5%E4%BD%9C%E6%B5%81%EF%BC%9A%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2.html" title="工作流：备份与自动部署"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">工作流：备份与自动部署</span>
-        </a>
-      
-    
-      
-      
-        <a href="/posts/%E5%BE%85%E5%AE%9E%E7%8E%B0.html" title="待实现"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">待实现</span>
-        </a>
-      
-    
-  </div>
-
-        
-      </div>
-    </div>
-  
-</div>
-
-
-  </aside>
-
 
     </div>
 
@@ -430,12 +295,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Hexo与Fluidの碎语</h1>
+            <h1 id="seo-header">Windows用户组与权限</h1>
             
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年5月18日 晚上
+                    本文最后更新于 2025年5月19日 凌晨
                   
                 
               </p>
@@ -443,9 +308,55 @@
             
               <div class="markdown-body">
                 
-                <p>简陋是 Hexo 的优势也是其劣势。想要符合要求的博客样式，需要能力去发现，也需要精力去改造；但这些还符合建立博客的初衷吗？</p>
-<p>Hexo 静态博客框架自 2013 年发布以来维护至今，最新版本为 7.3.0。笔者很荣幸能够享用到这一开源果实，但笔者却有意放弃它。原因见 <a href="/posts/Hexo&GitHubPages%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2.html" title="Hexo+GitHubPages搭建静态博客">Hexo+GitHubPages搭建静态博客</a>：文件管理与附属资源显示——shit 小节的彩蛋。bug 经年无人识，只能说年轻永远是大众倾向的目标。</p>
-<p>至于 Fluid 主题，它除了简陋，和别的通用主题没差。如果想注入静态代码片段到生成的 html，Fluid 主题需要使用 Hexo 框架提供的钩子函数，而 Butterfly 主题可以在主题配置文件中设置。</p>
+                <p>在 Windows 操作系统中，用户组（组）具有预定义的权限和角色，主要用于管理和控制不同用户的权限。</p>
+<p><strong>Windows 用户组（组）</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">组名称</th>
+<th align="left">说明</th>
+<th align="left">主要权限和特点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>System（系统）账户</strong></td>
+<td align="left">这是一个特殊的账户（不是用户组），由操作系统内部使用，运行系统服务，拥有最高权限。</td>
+<td align="left">由操作系统内部管理，不是普通用户组成员。</td>
+</tr>
+<tr>
+<td align="left"><strong>Administrators（管理员）</strong></td>
+<td align="left">拥有最高权限的用户组，能够进行所有系统管理操作，包括安装软件、修改系统设置、创建和删除用户等。</td>
+<td align="left">完全控制系统，几乎没有限制，是系统管理员的主要组。</td>
+</tr>
+<tr>
+<td align="left"><strong>Authenticated Users（已验证用户）</strong></td>
+<td align="left">所有经过验证登录的用户（包括普通用户和管理员）。</td>
+<td align="left">具有登录权限，可以访问系统资源，权限视具体组而定。</td>
+</tr>
+<tr>
+<td align="left"><strong>Users（用户）</strong></td>
+<td align="left">普通用户组，成员具有基本使用权限，但不能进行系统级的更改。</td>
+<td align="left">可以运行应用程序、访问自己的文件，但不能修改系统设置或安装软件。</td>
+</tr>
+<tr>
+<td align="left"><strong>Guests（访客）</strong></td>
+<td align="left">临时或有限权限的用户组，权限非常受限，主要用于临时访问。</td>
+<td align="left">限制访问权限，不能安装软件或更改系统设置。</td>
+</tr>
+<tr>
+<td align="left"><strong>Everyone（每个人）</strong></td>
+<td align="left">所有试图访问计算机的用户（包括匿名访问）。</td>
+<td align="left">包括所有用户（已登录或未登录），权限较广，但实际权限由共享和安全设置控制。</td>
+</tr>
+<tr>
+<td align="left">……</td>
+<td align="left">……</td>
+<td align="left">……</td>
+</tr>
+</tbody></table>
+<p>在域环境（比如公司网络，通过域控制器管理多个电脑和用户）中，Authenticated Users 比 Users 更广泛，包含所有验证过身份的用户（包括普通用户、管理员、甚至一些特殊用户）。只要他们成功登录到域中，就会成为这个组的成员。</p>
+<p>在本地环境中，Users 和 Authenticated Users 的成员基本一致。普通用户同属于这两个组。</p>
+<p><strong>在本地计算机上，以普通用户运行程序时，权限由 Users 和 Authenticated Users 共同决定。如果程序或文件夹需要更高的权限，可以修改文件&#x2F;文件夹的 Users&#x2F;Authenticated Users 权限（永久提升权限）；或者，“以管理员身份运行”程序（临时提升权限）。</strong></p>
 
                 
               </div>
@@ -464,8 +375,15 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B8%8E%E8%BF%90%E7%BB%B4%E6%8C%87%E5%8D%97/" class="category-chain-item">博客搭建与运维指南</a>
+  <a href="/categories/%E7%94%B5%E8%84%91/" class="category-chain-item">电脑</a>
   
+  
+    <span>></span>
+    
+  <a href="/categories/%E7%94%B5%E8%84%91/Windows%E7%B3%BB%E7%BB%9F/" class="category-chain-item">Windows系统</a>
+  
+  
+
   
 
       </span>
@@ -476,15 +394,6 @@
     </div>
   
   
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/Hexo/" class="print-no-link">#Hexo</a>
-      
-        <a href="/tags/Fluid/" class="print-no-link">#Fluid</a>
-      
-    </div>
-  
 </div>
 
 
@@ -493,8 +402,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hexo与Fluidの碎语</div>
-      <div>https://cornst.com/posts/Hexo&amp;Fluidの碎语.html</div>
+      <div>Windows用户组与权限</div>
+      <div>https://cornst.com/posts/Windows用户组与权限.html</div>
     </div>
     <div class="license-meta">
       
@@ -506,13 +415,13 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年5月3日</div>
+          <div>2025年5月18日</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年5月18日</div>
+          <div>2025年5月19日</div>
         </div>
       
       
@@ -543,18 +452,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/%E5%B7%A5%E4%BD%9C%E6%B5%81%EF%BC%9A%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2.html" title="工作流：备份与自动部署">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">工作流：备份与自动部署</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/GitHubPages%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D.html" title="GitHubPages自定义域名">
-                        <span class="hidden-mobile">GitHubPages自定义域名</span>
+                      <a href="/posts/GitHubPages%E8%AE%BF%E9%97%AE%E4%BC%98%E5%8C%96.html" title="GitHubPages访问优化">
+                        <span class="hidden-mobile">GitHubPages访问优化</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
