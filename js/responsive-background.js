@@ -1,42 +1,22 @@
+// 在手机端显示的背景图片链接
+const mobileBgImageUrl = "url('/images/bg/和泉纱雾mob1.avif')";
 
-
-
-// ���屳��ͼƬ����
-const mobileBgImageUrl = "url('/images/bg/��Ȫɴ��mob1.avif')";
+// 在电脑端显示的背景图片链接
 const desktopBgImageUrl = "url('/images/bg/bg.webp')";
 
-// ��ȡԪ��
-const webBg = document.querySelector('#web_bg');
-const banner = document.querySelector('#banner');
-const bannerMask = document.querySelector('#banner .mask');
-
-// ���ñ���ͼƬ�ĺ���
-function setBackground() {
-  if (window.innerWidth < 768) {
-    // �ֻ��˱���
-    webBg.style.backgroundImage = mobileBgImageUrl;
-  } else {
-    // ���Զ˱���
-    webBg.style.backgroundImage = desktopBgImageUrl;
-  }
-  // ����������ʽ
-  webBg.style.position = 'fixed';
-  webBg.style.width = '100%';
-  webBg.style.height = '100%';
-  webBg.style.zIndex = '-1';
-  webBg.style.backgroundSize = 'cover';
-
-  // ����banner����Ϊ��
-  if (banner) {
-    banner.style.backgroundImage = 'none';
-  }
-
-  // ����banner .mask ������ɫ͸��
-  if (bannerMask) {
-    bannerMask.style.backgroundColor = 'rgba(0,0,0,0)';
-  }
+// 在手机端设置背景图片
+if (window.innerWidth < 768) {
+  document.querySelector('#web_bg').setAttribute('style', `background-image: ${mobileBgImageUrl};position: fixed;width: 100%;height: 100%;z-index: -1;background-size: cover;`);
+} else {
+  // 在电脑端设置背景图片
+  document.querySelector('#web_bg').setAttribute('style', `background-image: ${desktopBgImageUrl};position: fixed;width: 100%;height: 100%;z-index: -1;background-size: cover;`);
 }
 
-// ҳ����غʹ��ڱ仯ʱ����
-window.addEventListener('load', setBackground);
-window.addEventListener('resize', setBackground);
+
+// 设置banner的背景图片为空
+document.querySelector("#banner").setAttribute('style', 'background-image: none');
+
+// 设置banner的.mask背景颜色透明
+document.querySelector("#banner .mask").setAttribute('style', 'background-color: rgba(0,0,0,0)');
+
+
