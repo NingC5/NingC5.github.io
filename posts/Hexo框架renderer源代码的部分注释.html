@@ -5,11 +5,11 @@
 
 
 
-<head>
+<head><!-- hexo injector head_begin start --><meta name="head_begin" content="value"><!-- hexo injector head_begin end -->
   <meta charset="UTF-8">
 
-  <link rel="apple-touch-icon" sizes="76x76" href="/images/favicon/shaton.ico">
-  <link rel="icon" href="/images/favicon/shaton.ico">
+  <link rel="apple-touch-icon" sizes="76x76" href="/image/favicon/shaton.ico">
+  <link rel="icon" href="/image/favicon/shaton.ico">
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
@@ -37,6 +37,8 @@
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
+  
+     <meta name="key" content="value"> 
   
   <title>Hexo框架renderer源代码的部分注释 - shaton沙桐</title>
 
@@ -77,13 +79,14 @@
 <link rel="stylesheet" href="https://jsd.cdn.zzko.cn/gh/EmoryHuang/BlogBeautify@1.1/gradient.css">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/shubiao.css">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/gundongtiao.css">
+<link rel="stylesheet" href="//lib.baomitu.com/aplayer/1.10.1/APlayer.min.css">
 
 
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"cornst.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"cornst.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":true,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -91,16 +94,18 @@
     }
   </script>
   <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
+  <script data-pjax src="/js/color-schema.js" ></script>
   
 
-
+ 
   
-<meta name="generator" content="Hexo 7.3.0"></head>
+<!-- hexo injector head_end start --><meta name="head_end" content="value"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
 
 
 <body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
   
+
+<div id="container-pjax">
 
   <header>
     
@@ -111,7 +116,7 @@
     <a class="navbar-brand" href="/">
       <strong>shaton沙桐的乐色桶</strong>
     </a>
-
+	
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -205,7 +210,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/images/banner/%E7%B2%89%E5%A5%B3.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/image/banner/%E7%B2%89%E5%A5%B3.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -309,7 +314,7 @@
         aria-expanded="true"
       >
         博客搭建与运维指南
-        <span class="list-group-count">(10)</span>
+        <span class="list-group-count">(12)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -320,6 +325,15 @@
           
   <div class="category-post-list">
     
+    
+      
+      
+        <a href="/posts/%E8%BF%9B%E5%BA%A6%E8%AF%B4%E6%98%8E.html" title="进度说明"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">进度说明</span>
+        </a>
+      
     
       
       
@@ -363,6 +377,15 @@
            class="list-group-item list-group-item-action
            ">
           <span class="category-post">Hexo与Fluidの碎语</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E6%B7%BB%E5%8A%A0%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8APlayer.html" title="添加音乐播放器APlayer"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">添加音乐播放器APlayer</span>
         </a>
       
     
@@ -648,6 +671,12 @@
     
 
     
+      <div class="col-lg-7 mx-auto nopadding-x-md">
+        <div class="container custom mx-auto">
+           <link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css"> 
+        </div>
+      </div>
+    
   </main>
 
   <footer>
@@ -689,6 +718,8 @@
 </div>
 
   </footer>
+  
+</div>
 
   <!-- Scripts -->
   
@@ -696,7 +727,7 @@
   <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
 
   <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.configure({"showSpinner":true,"trickleSpeed":100})
     NProgress.start()
     window.addEventListener('load', function() {
       NProgress.done();
@@ -711,7 +742,7 @@
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
-  <script>
+  <script data-pjax>
     (function (window, document) {
       var typing = Fluid.plugins.typing;
       var subtitle = document.getElementById('subtitle');
@@ -729,15 +760,26 @@
 
 
   
-    <script  src="/js/img-lazyload.js" ></script>
+    <script data-pjax src="/js/img-lazyload.js" ></script>
   
 
 
 
 
   
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+<script data-pjax>
+  /*
+  创建script元素，回调函数绑定onload事件（IE是直接执行回调函数）。
+  发起pjax请求，该元素会再次被新建。为了避免元素堆叠，移除已存在的该元素。
+	为了方便获取该元素，创建该元素时添加属性func="tocbot"
+	更改原函数，添加参数，用于设置该元素的属性func="tocbot"
+  */
+  var tocbotElem = document.querySelector('script[func="tocbot"]')
+  if (tocbotElem) {
+    // tocbotElem.remove(); // 现代浏览器支持（IE进垃圾堆吧）
+    tocbotElem.parentNode.removeChild(tocbotElem); // 兼容IE
+  }
+  Fluid.utils.createScriptST('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', 'tocbot', function() {
     var toc = jQuery('#toc');
     if (toc.length === 0 || !window.tocbot) { return; }
     var boardCtn = jQuery('#board-ctn');
@@ -777,12 +819,16 @@
 
   <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
 
-  <script>Fluid.plugins.codeWidget();</script>
+  <script data-pjax>Fluid.plugins.codeWidget();</script>
 
 
   
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+<script data-pjax>
+  var tocbotElem = document.querySelector('script[func="anchor"]')
+  if (tocbotElem) {
+    tocbotElem.parentNode.removeChild(tocbotElem);
+  }
+  Fluid.utils.createScriptST('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', 'anchor', function() {
     window.anchors.options = {
       placement: CONFIG.anchorjs.placement,
       visible  : CONFIG.anchorjs.visible
@@ -819,7 +865,9 @@
 
 
   
-<script>
+<script data-pjax>
+  //var fancyboxElem = document.querySelector('script[func="fancybox"]')
+  //if (fancyboxElem) fancyboxElem.remove();
   Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
     Fluid.plugins.fancyBox();
   });
@@ -828,7 +876,7 @@
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/js/local-search.js" ></script>
+  <script data-pjax src="/js/local-search.js" ></script>
 
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
@@ -839,12 +887,15 @@
 <script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/love.js"></script>
 <script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/Cherry.min.js"></script>
 <script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/DynamicLine.min.js"></script>
+<script src="//lib.baomitu.com/aplayer/1.10.1/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
+<script src="//lib.baomitu.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
 
 
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
+<script data-pjax src="/js/boot.js" ></script>
 
 
   
@@ -852,5 +903,27 @@
   <noscript>
     <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
-<!-- hexo injector body_end start --><script src="/js/responsive-background.js"></script><!-- hexo injector body_end end --></body>
+
+<!-- hexo injector body_end start --><script src="/js/responsive-background.js" data-pjax></script>
+  <div id="aplayer"></div>
+  <script defer src="/js/aplayer.js"></script>
+
+<script>
+// 点击<a>链接在当前窗口打开时，通过AJAX请求对应页面的内容。
+// 提取请求返回内容中的#container-pjax部分，插入到当前页面的#container-pjax容器内，8秒请求超时。
+$(document).pjax("a[target!=_blank]", "#container-pjax", {
+  fragment: "#container-pjax",
+  timeout: 8000
+});
+
+// PJAX请求结束后，重新加载必要的scripts
+$(document).on("pjax:end", function () {
+    // reload necessary scripts（麻烦！）
+	// 通过函数集中设置必要的scripts，该函数定义在pjax-reload.js文件中。
+    pjax_reload();
+});
+</script>
+
+<script src="/js/pjax-reload.js"></script>
+<!-- hexo injector body_end end --></body>
 </html>

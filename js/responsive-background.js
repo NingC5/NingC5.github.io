@@ -1,8 +1,8 @@
 // 响应式背景：根据窗口尺寸区分手机端和电脑端，实时切换背景。当 banner 占据页面小于一定比例，则显示背景；否则隐藏背景。
-
+(function() {
 // 定义背景图片链接（your bg address）
-const mobileBgImageUrl = "url('/images/bg/和泉纱雾mob5.jpg')";
-const desktopBgImageUrl = "url('/images/bg/bg.webp')";
+const mobileBgImageUrl = "url('/image/bg/和泉纱雾mob5.jpg')";
+const desktopBgImageUrl = "url('/image/bg/white.webp')";
 
 // 获取元素
 const webBg = document.querySelector('#web_bg');
@@ -74,3 +74,4 @@ window.addEventListener('scroll', () => {
     window.requestAnimationFrame(updateVisibility);
   }
 });
+})();

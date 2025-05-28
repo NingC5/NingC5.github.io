@@ -147,6 +147,31 @@ Fluid.utils = {
     var e = ss.length > 0 ? ss[ss.length - 1] : document.head || document.documentElement;
     e.parentNode.insertBefore(s, e.nextSibling);
   },
+  
+  createScriptST: function(url, funcParam, onload) {
+    var s = document.createElement('script');
+    s.setAttribute('src', url);
+    s.setAttribute('type', 'text/javascript');
+    s.setAttribute('charset', 'UTF-8');
+    s.async = false;
+	if (funcParam) s.setAttribute('func', funcParam);
+    if (typeof onload === 'function') {
+      if (window.attachEvent) {
+        s.onreadystatechange = function() {
+          var e = s.readyState;
+          if (e === 'loaded' || e === 'complete') {
+            s.onreadystatechange = null;
+            onload();
+          }
+        };
+      } else {
+        s.onload = onload;
+      }
+    }
+    var ss = document.getElementsByTagName('script');
+    var e = ss.length > 0 ? ss[ss.length - 1] : document.head || document.documentElement;
+    e.parentNode.insertBefore(s, e.nextSibling);
+  },
 
   createCssLink: function(url) {
     var l = document.createElement('link');

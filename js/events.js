@@ -87,7 +87,13 @@ Fluid.events = {
     var scrollDisplay = false;
     // Position
     var setTopArrowPos = function() {
-      var boardRight = board[0].getClientRects()[0].right;
+      if (board.length > 0 && board[0].getClientRects().length > 0) {
+        var boardRight = board[0].getClientRects()[0].right;
+      } else {
+        // 可能元素隐藏或未渲染，避免访问
+        return;
+      }
+      // var boardRight = board[0].getClientRects()[0].right;
       var bodyWidth = document.body.offsetWidth;
       var right = bodyWidth - boardRight;
       posDisplay = right >= 50;

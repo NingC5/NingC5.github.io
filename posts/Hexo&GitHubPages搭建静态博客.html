@@ -5,11 +5,11 @@
 
 
 
-<head>
+<head><!-- hexo injector head_begin start --><meta name="head_begin" content="value"><!-- hexo injector head_begin end -->
   <meta charset="UTF-8">
 
-  <link rel="apple-touch-icon" sizes="76x76" href="/images/favicon/shaton.ico">
-  <link rel="icon" href="/images/favicon/shaton.ico">
+  <link rel="apple-touch-icon" sizes="76x76" href="/image/favicon/shaton.ico">
+  <link rel="icon" href="/image/favicon/shaton.ico">
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
@@ -45,7 +45,7 @@
 <meta property="og:image" content="https://cornst.com/posts/Hexo&GitHubPages%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/image-20250421162215205.png">
 <meta property="og:image" content="https://cornst.com/posts/Hexo&GitHubPages%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/image-20250412210601319.png">
 <meta property="article:published_time" content="2025-04-09T07:19:42.000Z">
-<meta property="article:modified_time" content="2025-05-20T03:12:37.606Z">
+<meta property="article:modified_time" content="2025-05-21T09:01:44.902Z">
 <meta property="article:author" content="shaton">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Fluid">
@@ -56,6 +56,8 @@
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
+  
+     <meta name="key" content="value"> 
   
   <title>Hexo+GitHubPages搭建静态博客 - shaton沙桐</title>
 
@@ -96,13 +98,14 @@
 <link rel="stylesheet" href="https://jsd.cdn.zzko.cn/gh/EmoryHuang/BlogBeautify@1.1/gradient.css">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/shubiao.css">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/gundongtiao.css">
+<link rel="stylesheet" href="//lib.baomitu.com/aplayer/1.10.1/APlayer.min.css">
 
 
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"cornst.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"cornst.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":true,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -110,16 +113,18 @@
     }
   </script>
   <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
+  <script data-pjax src="/js/color-schema.js" ></script>
   
 
-
+ 
   
-<meta name="generator" content="Hexo 7.3.0"></head>
+<!-- hexo injector head_end start --><meta name="head_end" content="value"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
 
 
 <body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
   
+
+<div id="container-pjax">
 
   <header>
     
@@ -130,7 +135,7 @@
     <a class="navbar-brand" href="/">
       <strong>shaton沙桐的乐色桶</strong>
     </a>
-
+	
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -224,7 +229,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/images/banner/%E7%B2%89%E5%A5%B3.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/image/banner/%E7%B2%89%E5%A5%B3.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -328,7 +333,7 @@
         aria-expanded="true"
       >
         博客搭建与运维指南
-        <span class="list-group-count">(10)</span>
+        <span class="list-group-count">(12)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -339,6 +344,15 @@
           
   <div class="category-post-list">
     
+    
+      
+      
+        <a href="/posts/%E8%BF%9B%E5%BA%A6%E8%AF%B4%E6%98%8E.html" title="进度说明"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">进度说明</span>
+        </a>
+      
     
       
       
@@ -382,6 +396,15 @@
            class="list-group-item list-group-item-action
            ">
           <span class="category-post">Hexo与Fluidの碎语</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E6%B7%BB%E5%8A%A0%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8APlayer.html" title="添加音乐播放器APlayer"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">添加音乐播放器APlayer</span>
         </a>
       
     
@@ -453,7 +476,7 @@
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年5月20日 上午
+                    本文最后更新于 2025年5月21日 下午
                   
                 
               </p>
@@ -499,9 +522,9 @@
 </blockquote>
 <p>Hexo 框架依赖于 Node.js 提供的运行环境和功能。npm（Node Package Manager）是 Node.js 默认安装和使用的包管理器，Hexo 可以使用 npm 或其他包管理器来安装和管理各种插件、主题和依赖包。</p>
 <blockquote>
-<p>Tip：Node.js 是一个运行环境，它能够使 JavaScript 代码在服务器端运行。一般地，用户只需使用其包管理器，而无需系统学习其知识。</p>
+<p>Tip：Node.js 是一个运行环境，它能够使 JavaScript 代码在服务器端运行。我们只是显示地使用其包管理器，无需系统学习其知识。</p>
 </blockquote>
-<p>Git 是版本控制系统。通过它，用户可以很方便地管理本地博客数据，并将本地博客部署到 Github Pages 仓库。</p>
+<p>Git 是版本控制系统。通过它，用户可以很方便地管理本地博客数据，并将本地博客推送到 Github Pages 仓库。</p>
 <h2 id="1-1-安装-Git"><a href="#1-1-安装-Git" class="headerlink" title="1.1 安装 Git"></a>1.1 安装 Git</h2><blockquote>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/mukes/article/details/115693833">Git 详细安装教程（详解 Git 安装过程的每一个步骤）_git安装-CSDN博客</a></p>
 </blockquote>
@@ -646,15 +669,15 @@
 </li>
 <li><p><strong><code>source/</code></strong>：资源文件夹；用于存放用户资源，比如 Markdown 文档、静态资源等。</p>
 <ol>
-<li><strong>source&#x2F;_posts&#x2F;</strong>：专门用于存放博文（html）的原始文档（md）。</li>
-<li>source&#x2F;images&#x2F;：自建的图片文件夹。</li>
+<li><strong><code>source/_posts/</code></strong>：专门用于存放博文（html）的原始文档（md）。</li>
+<li><code>source/images/</code>：自建的图片文件夹。</li>
 <li>…</li>
 </ol>
 </li>
 <li><p><strong><code>public/</code></strong>：generate 命令的输出目录，一般不直接操作里面的文件。<u>静态站点的位置，相当于“博客网站根目录”，访问博客就是访问 public 目录下的资源文件。</u></p>
 </li>
 </ul>
-<p>执行 generate 命令时：Hexo 会解析资源文件夹下的 Markdown 和 HTML 文件（以 <code>_</code>开头命名的文件&#x2F;文件夹和隐藏的文件将会被忽略 ，不包括 <code>_posts</code> 文件夹），渲染得到的 html 文件会输出到 public 文件夹，此外还会在站点根目录下生成一份缓存文件（db.json）；而其他文件会被直接拷贝到 public 文件夹（不包括以 <code>_</code>开头命名的文件&#x2F;文件夹和隐藏的文件）。</p>
+<p>执行 generate 命令时：Hexo 会解析资源文件夹下的 Markdown 和 HTML 文件（以 <code>_</code>开头命名的文件&#x2F;文件夹和隐藏的文件将会被忽略 ，不包括 <code>_posts</code> 文件夹），渲染得到的 html 文件会输出到 public 文件夹，此外还会在站点根目录下生成一份缓存文件（<code>db.json</code>）；而其他文件会被直接拷贝到 public 文件夹（不包括以 <code>_</code>开头命名的文件&#x2F;文件夹和隐藏的文件）。</p>
 <blockquote>
 <p>Tip：执行 generate 命令时，Hexo 渲染的主要目标就是 <code>source/_posts/</code> 目录下的 md 文件，生成的 html 文件就是所说的博文。</p>
 </blockquote>
@@ -813,22 +836,36 @@
 </blockquote>
 <p><strong>注意！对 permalink 而言，占位符 <code>:title</code> 是相对于 “source&#x2F;_posts&#x2F;“ 文件夹的文件名称。</strong> 例如，<code>source/_posts/test/test3.md</code> 文档的 <code>:title</code> 对 permalink 而言为 <code>test/test3</code>。</p>
 <p><strong>此外，【permalink结构】还与 generate 命令的输出目录有关。</strong>（在”<code>public/</code> 目录下图片的真实路径“章节讲解）</p>
-<h1 id="6-工作流与命令（待改）"><a href="#6-工作流与命令（待改）" class="headerlink" title="6. 工作流与命令（待改）"></a>6. 工作流与命令（待改）</h1><p><a target="_blank" rel="noopener" href="https://hzr0709.github.io/2024/05/17/Hexo-Commands/">Hexo-常用命令详解 | 个人博客</a></p>
-<p>操作流程如下：</p>
-<ol>
-<li>首先，创建 md 文档并编写内容。一般使用【new 命令】创建 md 文档，此文档带有模板设置的一些 Front-matter 内容，然后补充 Front-matter 部分。当然也可以直接创建 md 文档，但是需要从头到尾设置 Front-matter。</li>
-<li>文档编写完后，使用【generate 命令】生成博客。</li>
-<li>接着，使用【server 命令】启动服务器。在本地预览博客：<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a> 。如果本地预览没问题，【ctrl + c】关闭服务器，避免端口被一直占用。</li>
-<li>然后，使用【deploy 命令】部署到远程仓库。浏览网络博客：<a target="_blank" rel="noopener" href="https://ningc5.github.io/">https://ningc5.github.io/</a> 。</li>
-<li>如果博文需要修改，则修改 md 文档内容；然后，使用【clean 命令】清楚缓存文件和 <code>public/</code> 文件夹；接着，继续执行【步骤2】、【步骤3】和【步骤4】。</li>
-<li>如果博文需要删除，则删除 <code>source/_posts/</code> 目录下的 md 文档及其文章资源文件夹；接着，继续执行【步骤2】、【步骤3】和【步骤4】。</li>
-</ol>
-<blockquote>
-<p>？<a target="_blank" rel="noopener" href="https://zsyyblog.com/5d2076b3.html">Hexo 如何删除已经发布的文章 | 竹山一叶</a></p>
-<p>？若使用 Github Actions 自动部署，只需要删除 md 文档，然后 push 即可。</p>
+<h1 id="6-常用工作命令与脚本"><a href="#6-常用工作命令与脚本" class="headerlink" title="6. 常用工作命令与脚本"></a>6. 常用工作命令与脚本</h1><blockquote>
+<p><a target="_blank" rel="noopener" href="https://hzr0709.github.io/2024/05/17/Hexo-Commands/">Hexo-常用命令详解 | 个人博客</a></p>
+<p>？若使用 Github Actions 自动部署，只需要删除 md 文档，然后 push 即可。？（待用）</p>
 </blockquote>
-<p>【clean 命令】：该命令的执行是必要的。如果修改 md 文档的内容而不执行该命令，Hexo 并不会重新渲染 md 文档，这意味者博文还是旧内容。如果删除 md 文档而不执行该命令，Hexo 并不会删除 <code>public/</code> 目录下的博文，这意味着博客中仍然存在需要被删除的博文。</p>
-<p>【server 命令】：如果嫌麻烦，可以跳过该命令。不过，本地预览能够立即浏览到博客的变化，而网络博客需要等待。此外，如果文档仅更改文字，博文的变化也能在本地预览实时跟进。</p>
+<p>常用工作命令：</p>
+<ol>
+<li><code>hexo new post &lt;title&gt; </code>：创建文档。</li>
+<li><code>hexo generate</code>：生成本地博客。简写为 <code>hexo g</code> 。</li>
+<li><code>hexo server</code>：启动本地服务器。简写为 <code>hexo s</code> 。如果 <a target="_blank" rel="noopener" href="http://localhost:4000/">本地预览</a> 没问题，【ctrl + c】关闭服务器，避免端口被一直占用。</li>
+<li><code>hexo deploy</code>：部署。简写为 <code>hexo d</code> 。比如，推送到 GitHub Pages 仓库，等待 gp 部署。</li>
+<li><code>hexo clean</code>：清理缓存文件（<code>db.json</code>）和 <code>public/</code> 目录。</li>
+<li><code>hexo g -d</code> or <code>hexo d -g</code>：先生成，后部署。</li>
+</ol>
+<p>一些说明：</p>
+<ul>
+<li>可以使用 new 命令按照模板创建文档。也可以手动创建文档，自行添加 Front-matter。两者效果一样。</li>
+<li>server 命令方便本地调试和预览。网络博客需要等待，而本地博客是实时的。此外，文档修改保存后，本地博客刷新后能实时预览（仅文字变更）。</li>
+<li>clean 命令的执行是必要的。md 文档的修改&#x2F;删除都需要 clean，否则执行 generate 命令时，Hexo 不会渲染&#x2F;删除对应的 html 博文。</li>
+</ul>
+<hr>
+<p><code>.bat</code> 脚本，双击运行。（CLI 执行的 <code>.sh</code> 脚本，略。）</p>
+<p><code>一键预览.bat</code>：</p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bat">:: 一键预览（注释）<br>:: @隐藏自身。<span class="hljs-built_in">echo</span> on 显示脚本中的后续命令。<span class="hljs-built_in">echo</span> off 隐藏后续命令。 <br>@<span class="hljs-built_in">echo</span> on<br>:: 切换到E盘<br><span class="hljs-function">E:</span><br><span class="hljs-function">:: 进入本地博客项目目录</span><br><span class="hljs-function"><span class="hljs-title">cd</span> <span class="hljs-title">E</span>:\<span class="hljs-title">ningc5</span>-<span class="hljs-title">blog</span>\<span class="hljs-title">hexo</span></span><br><span class="hljs-function">:: 依次执行 <span class="hljs-title">hexo</span> 命令</span><br><span class="hljs-function">:: &amp;&amp; 表示前一条命令成功执行后再执行下一条命令；如果某步失败，后续步骤不会执行。</span><br><span class="hljs-function"><span class="hljs-title">hexo</span> <span class="hljs-title">clean</span> &amp;&amp; <span class="hljs-title">hexo</span> <span class="hljs-title">g</span> &amp;&amp; <span class="hljs-title">hexo</span> <span class="hljs-title">s</span></span><br></code></pre></td></tr></table></figure>
+
+<p><code>一键部署.bat</code>：</p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bat">:: 一键部署<br>@<span class="hljs-built_in">echo</span> off<br>:: /d 选项切换盘符；然后进入本地博客项目目录<br><span class="hljs-built_in">cd</span> /d E:\ningc5-blog\hexo<br>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d<br>:: 窗口暂停<br><span class="hljs-built_in">pause</span><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>【参考连接可能有价值】<a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/posts/hexo-server/#%E4%B8%80%E9%94%AE%E4%B8%89%E8%BF%9E">Hexo 云服务备份与使用 Jupyter - Hexo Theme Fluid</a></p>
+</blockquote>
 <h1 id="7-文件管理与附属资源显示"><a href="#7-文件管理与附属资源显示" class="headerlink" title="7. 文件管理与附属资源显示"></a>7. 文件管理与附属资源显示</h1><p>使用 <code>hexo new post &lt;title&gt;</code> 命令时，Hexo 会在 <code>source/_posts/</code> 目录下创建一篇文章，具体地说是一份  md 文档，它就是博文的原始文件。该文档除了文字信息外，还可以包含图片（主要）、gif、视频等附属资源。这些文件需要组织化管理，以避免数量过多而混乱。</p>
 <p>Hexo 提供了 <code>post_asset_folder</code> 选项以启用文章资源文件夹，这解决了部分文件管理的问题。当然，这些文件的目录结构除了在 <code>source/_posts/</code> 目录下可以被设计，在 <code>public/</code> 目录下也能被设置。</p>
 <p>附属资源显示是指 md 文档和博客页面同时显示附属资源（比如图片、gif、视频等）。当然，博客页面本身也是一种资源文件（html）。<code>public/</code> 目录是静态站点的位置，相当于“博客网站根目录”（类似于 Tomcat 类路径）。访问博客页面就是访问 <code>public/</code> 目录下的 html 文件。博客页面能够显示意味着地址与 html 文件的路径是一致的。Hexo 的默认处理即可使博客页面显示，我们关注的焦点是博客页面中附属资源的显示。 <strong>若附属资源在博客页面中能够显示，这意味着【html 文件中附属资源的引用路径】与【<code>public/</code> 目录下附属资源的真实路径】是一致的，而这两者都与 generate 命令的执行有关。</strong> </p>
@@ -1020,9 +1057,9 @@
 </blockquote>
 <h1 id="8-其他"><a href="#8-其他" class="headerlink" title="8. 其他"></a>8. 其他</h1><h2 id="8-1-困惑-处理"><a href="#8-1-困惑-处理" class="headerlink" title="8.1 困惑 &amp; 处理"></a>8.1 困惑 &amp; 处理</h2><p>【marked 插件的渲染问题 | 错误】：文档中直接出现 <code>hexo new [layout] &lt;title&gt;</code> 字符串时，博文的后续内容、右侧目录栏和特效都失踪。</p>
 <p>【marked 插件的渲染问题 | 错误】：若文档中直接出现 http(s) 链接地址，链接地址必须与后面的符号或字词空一格，否则链接地址渲染出错。</p>
-<p>【marked 插件的渲染问题 | 美观】：md 文档使用 <code>**内容**</code> 格式加粗文字；当内容的顶端和尾部为符号时，若前后要与数字、字母或汉字连接，则必须空一格；否则博文显示不美观。</p>
+<p>【marked 插件的渲染问题 | 美观】：md 文档使用 <code>**内容**</code> 格式加粗文字；当内容的开头和结尾为符号时，若前后要与数字、字母或汉字连接，则必须空一格；否则博文显示不美观。</p>
 <p><img src="Hexo&GitHubPages%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/image-20250412210601319.png" srcset="/img/loading.gif" lazyload></p>
-<p>【marked 插件的渲染问题 | 错误】：当文档中采用内置标签时，若 slug 出错，执行 generate 命令会报错。因此不能随便改名。（不推荐使用内置标签 asset_link 引用本地博文。）</p>
+<p>【marked 插件的渲染问题 | 错误】：当文档中采用内置标签 <code>post_link</code> 时，若 filename（文档 Format-matter 部分的 title 值）出错，执行 generate 命令会报错。若采用该内置标签，则不能随意博文 title。不推荐使用该内置标签引用本地博文。</p>
 <p>【marked 插件的渲染问题 |问题】：限制 Front-matter 部分的 title 属性值。&amp; 符号及之后的值，不会被渲染为 HTML 元素的内容。</p>
 <h2 id="8-2-卸载插件"><a href="#8-2-卸载插件" class="headerlink" title="8.2 卸载插件"></a>8.2 卸载插件</h2><blockquote>
 <p><a target="_blank" rel="noopener" href="https://hsyac.github.io/posts/870f2d70.html">Hexo删除插件的命令与使用办法 | Hsyac</a></p>
@@ -1123,7 +1160,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年5月20日</div>
+          <div>2025年5月21日</div>
         </div>
       
       
@@ -1256,6 +1293,12 @@
     
 
     
+      <div class="col-lg-7 mx-auto nopadding-x-md">
+        <div class="container custom mx-auto">
+           <link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css"> 
+        </div>
+      </div>
+    
   </main>
 
   <footer>
@@ -1297,6 +1340,8 @@
 </div>
 
   </footer>
+  
+</div>
 
   <!-- Scripts -->
   
@@ -1304,7 +1349,7 @@
   <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
 
   <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.configure({"showSpinner":true,"trickleSpeed":100})
     NProgress.start()
     window.addEventListener('load', function() {
       NProgress.done();
@@ -1319,7 +1364,7 @@
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
-  <script>
+  <script data-pjax>
     (function (window, document) {
       var typing = Fluid.plugins.typing;
       var subtitle = document.getElementById('subtitle');
@@ -1337,15 +1382,26 @@
 
 
   
-    <script  src="/js/img-lazyload.js" ></script>
+    <script data-pjax src="/js/img-lazyload.js" ></script>
   
 
 
 
 
   
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+<script data-pjax>
+  /*
+  创建script元素，回调函数绑定onload事件（IE是直接执行回调函数）。
+  发起pjax请求，该元素会再次被新建。为了避免元素堆叠，移除已存在的该元素。
+	为了方便获取该元素，创建该元素时添加属性func="tocbot"
+	更改原函数，添加参数，用于设置该元素的属性func="tocbot"
+  */
+  var tocbotElem = document.querySelector('script[func="tocbot"]')
+  if (tocbotElem) {
+    // tocbotElem.remove(); // 现代浏览器支持（IE进垃圾堆吧）
+    tocbotElem.parentNode.removeChild(tocbotElem); // 兼容IE
+  }
+  Fluid.utils.createScriptST('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', 'tocbot', function() {
     var toc = jQuery('#toc');
     if (toc.length === 0 || !window.tocbot) { return; }
     var boardCtn = jQuery('#board-ctn');
@@ -1385,12 +1441,16 @@
 
   <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
 
-  <script>Fluid.plugins.codeWidget();</script>
+  <script data-pjax>Fluid.plugins.codeWidget();</script>
 
 
   
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+<script data-pjax>
+  var tocbotElem = document.querySelector('script[func="anchor"]')
+  if (tocbotElem) {
+    tocbotElem.parentNode.removeChild(tocbotElem);
+  }
+  Fluid.utils.createScriptST('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', 'anchor', function() {
     window.anchors.options = {
       placement: CONFIG.anchorjs.placement,
       visible  : CONFIG.anchorjs.visible
@@ -1427,7 +1487,9 @@
 
 
   
-<script>
+<script data-pjax>
+  //var fancyboxElem = document.querySelector('script[func="fancybox"]')
+  //if (fancyboxElem) fancyboxElem.remove();
   Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
     Fluid.plugins.fancyBox();
   });
@@ -1436,7 +1498,7 @@
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/js/local-search.js" ></script>
+  <script data-pjax src="/js/local-search.js" ></script>
 
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
@@ -1447,12 +1509,15 @@
 <script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/love.js"></script>
 <script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/Cherry.min.js"></script>
 <script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/DynamicLine.min.js"></script>
+<script src="//lib.baomitu.com/aplayer/1.10.1/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
+<script src="//lib.baomitu.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
 
 
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
+<script data-pjax src="/js/boot.js" ></script>
 
 
   
@@ -1460,5 +1525,27 @@
   <noscript>
     <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
-<!-- hexo injector body_end start --><script src="/js/responsive-background.js"></script><!-- hexo injector body_end end --></body>
+
+<!-- hexo injector body_end start --><script src="/js/responsive-background.js" data-pjax></script>
+  <div id="aplayer"></div>
+  <script defer src="/js/aplayer.js"></script>
+
+<script>
+// 点击<a>链接在当前窗口打开时，通过AJAX请求对应页面的内容。
+// 提取请求返回内容中的#container-pjax部分，插入到当前页面的#container-pjax容器内，8秒请求超时。
+$(document).pjax("a[target!=_blank]", "#container-pjax", {
+  fragment: "#container-pjax",
+  timeout: 8000
+});
+
+// PJAX请求结束后，重新加载必要的scripts
+$(document).on("pjax:end", function () {
+    // reload necessary scripts（麻烦！）
+	// 通过函数集中设置必要的scripts，该函数定义在pjax-reload.js文件中。
+    pjax_reload();
+});
+</script>
+
+<script src="/js/pjax-reload.js"></script>
+<!-- hexo injector body_end end --></body>
 </html>
