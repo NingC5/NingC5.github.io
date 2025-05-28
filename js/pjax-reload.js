@@ -14,4 +14,5 @@ function pjax_reload() {
   Fluid.events.registerScrollTopArrowEvent();
   // 在页面加载过程中，通过监听背景图和非懒加载图片的加载状态，逐步更新加载进度条（NProgress）。
   Fluid.events.registerImageLoadedEvent();
+  $.getScript("https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
 } 

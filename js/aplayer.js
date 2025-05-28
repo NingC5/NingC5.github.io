@@ -10,7 +10,7 @@
       order: 'random',
       theme: '#b7daff',
       preload: 'none',	// 不预加载
-	  volume: '0.3', // 音量0.3
+	  volume: '0.1', // 音量0.1
       audio: [
         {
           name: 'Hoping She Would Be There',
