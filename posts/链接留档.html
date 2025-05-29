@@ -5,7 +5,7 @@
 
 
 
-<head><!-- hexo injector head_begin start --><meta name="head_begin" content="value"><!-- hexo injector head_begin end -->
+<head>
   <meta charset="UTF-8">
 
   <link rel="apple-touch-icon" sizes="76x76" href="/image/favicon/shaton.ico">
@@ -49,7 +49,7 @@
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
 
-  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+  <link func="fancybox" rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
 
 
 
@@ -98,7 +98,7 @@
 
  
   
-<!-- hexo injector head_end start --><meta name="head_end" content="value"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+<meta name="generator" content="Hexo 7.3.0"></head>
 
 
 <body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
@@ -612,7 +612,7 @@
 
 
   
-<script data-pjax>
+<script data-pjax func="tocbot">
   /*
   创建script元素，回调函数绑定onload事件（IE是直接执行回调函数）。
   发起pjax请求，该元素会再次被新建。为了避免元素堆叠，移除已存在的该元素。
@@ -624,7 +624,7 @@
     // tocbotElem.remove(); // 现代浏览器支持（IE进垃圾堆吧）
     tocbotElem.parentNode.removeChild(tocbotElem); // 兼容IE
   }
-  Fluid.utils.createScriptST('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', 'tocbot', function() {
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
     var toc = jQuery('#toc');
     if (toc.length === 0 || !window.tocbot) { return; }
     var boardCtn = jQuery('#board-ctn');
@@ -662,9 +662,9 @@
 </script>
 
 
-  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+  <script func="clipboard" src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
 
-  <script data-pjax>Fluid.plugins.codeWidget();</script>
+  <script data-pjax func="codeWidget">Fluid.plugins.codeWidget();</script>
 
 
   
@@ -710,10 +710,11 @@
 
 
   
-<script data-pjax>
+<script data-pjax func="fancyBox">
   //var fancyboxElem = document.querySelector('script[func="fancybox"]')
   //if (fancyboxElem) fancyboxElem.remove();
-  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+  Fluid.utils.createScriptST('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', 'fancyBox', function() {
+    console.log("onload再次触发");
     Fluid.plugins.fancyBox();
   });
 </script>

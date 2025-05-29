@@ -154,7 +154,7 @@ Fluid.utils = {
     s.setAttribute('type', 'text/javascript');
     s.setAttribute('charset', 'UTF-8');
     s.async = false;
-	if (funcParam) s.setAttribute('func', funcParam);
+	  if (funcParam) s.setAttribute('func', funcParam);
     if (typeof onload === 'function') {
       if (window.attachEvent) {
         s.onreadystatechange = function() {
