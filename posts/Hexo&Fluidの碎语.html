@@ -23,13 +23,13 @@
   
     <meta name="description" content="简陋是 Hexo 的优势也是其劣势。想要符合要求的博客样式，需要能力去发现，也需要精力去改造；但这些还符合建立博客的初衷吗？ Hexo 静态博客框架自 2013 年发布以来维护至今，最新版本为 7.3.0，笔者很荣幸能够享用到这一开源果实。这里给出一个建议，可以使用其他功能更强大的 Markdown 渲染插件替换默认的插件——marked。marked 插件在图片路径处理方面存在逻辑错误，笔者在">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo与Fluidの碎语">
+<meta property="og:title" content="Hexo与Fluidの碎语（弃Fluid or 弃AJAX）">
 <meta property="og:url" content="https://cornst.com/posts/Hexo&Fluid%E3%81%AE%E7%A2%8E%E8%AF%AD.html">
 <meta property="og:site_name" content="shaton沙桐">
 <meta property="og:description" content="简陋是 Hexo 的优势也是其劣势。想要符合要求的博客样式，需要能力去发现，也需要精力去改造；但这些还符合建立博客的初衷吗？ Hexo 静态博客框架自 2013 年发布以来维护至今，最新版本为 7.3.0，笔者很荣幸能够享用到这一开源果实。这里给出一个建议，可以使用其他功能更强大的 Markdown 渲染插件替换默认的插件——marked。marked 插件在图片路径处理方面存在逻辑错误，笔者在">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-05-03T07:43:12.000Z">
-<meta property="article:modified_time" content="2025-05-26T15:00:38.047Z">
+<meta property="article:modified_time" content="2025-05-29T15:46:49.559Z">
 <meta property="article:author" content="shaton">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Fluid">
@@ -41,7 +41,7 @@
   
      <meta name="key" content="value"> 
   
-  <title>Hexo与Fluidの碎语 - shaton沙桐</title>
+  <title>Hexo与Fluidの碎语（弃Fluid or 弃AJAX） - shaton沙桐</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -217,7 +217,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Hexo与Fluidの碎语"></span>
+            <span id="subtitle" data-typed-text="Hexo与Fluidの碎语（弃Fluid or 弃AJAX）"></span>
           
         </div>
 
@@ -245,7 +245,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          230 字
+          267 字
         
       </span>
     
@@ -256,7 +256,7 @@
         
         
         
-          2 分钟
+          3 分钟
         
       </span>
     
@@ -315,7 +315,7 @@
         aria-expanded="true"
       >
         博客搭建与运维指南
-        <span class="list-group-count">(11)</span>
+        <span class="list-group-count">(13)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -365,19 +365,19 @@
     
       
       
-        <a href="/posts/Hexo%E6%A1%86%E6%9E%B6renderer%E6%BA%90%E4%BB%A3%E7%A0%81%E7%9A%84%E9%83%A8%E5%88%86%E6%B3%A8%E9%87%8A.html" title="Hexo框架renderer源代码的部分注释"
+        <a href="/posts/marked%EF%BC%88Hexo%E9%BB%98%E8%AE%A4%E7%9A%84Markdown%E6%B8%B2%E6%9F%93%E6%8F%92%E4%BB%B6%EF%BC%89%E7%9A%84%E9%83%A8%E5%88%86%E6%BA%90%E7%A0%81%E6%B3%A8%E9%87%8A.html" title="marked（Hexo默认的Markdown渲染插件）的部分源码注释"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">Hexo框架renderer源代码的部分注释</span>
+          <span class="category-post">marked（Hexo默认的Markdown渲染插件）的部分源码注释</span>
         </a>
       
     
       
       
-        <a href="/posts/Hexo&amp;Fluid%E3%81%AE%E7%A2%8E%E8%AF%AD.html" title="Hexo与Fluidの碎语"
+        <a href="/posts/Hexo&amp;Fluid%E3%81%AE%E7%A2%8E%E8%AF%AD.html" title="Hexo与Fluidの碎语（弃Fluid or 弃AJAX）"
            class="list-group-item list-group-item-action
            active">
-          <span class="category-post">Hexo与Fluidの碎语</span>
+          <span class="category-post">Hexo与Fluidの碎语（弃Fluid or 弃AJAX）</span>
         </a>
       
     
@@ -401,19 +401,37 @@
     
       
       
-        <a href="/posts/GitHubPages%E8%AE%BF%E9%97%AE%E4%BC%98%E5%8C%96.html" title="GitHubPages访问优化"
+        <a href="/posts/%E5%B7%A5%E4%BD%9C%E6%B5%81%EF%BC%9A%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2.html" title="工作流：备份与自动部署"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">GitHubPages访问优化</span>
+          <span class="category-post">工作流：备份与自动部署</span>
         </a>
       
     
       
       
-        <a href="/posts/%E5%B7%A5%E4%BD%9C%E6%B5%81%EF%BC%9A%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2.html" title="工作流：备份与自动部署"
+        <a href="/posts/%E6%B7%BB%E5%8A%A0%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8APlayer.html" title="添加音乐播放器APlayer"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">工作流：备份与自动部署</span>
+          <span class="category-post">添加音乐播放器APlayer</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/PJAX%E4%B8%8EFluid.html" title="PJAX与Fluid"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">PJAX与Fluid</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/GitHubPages%E8%AE%BF%E9%97%AE%E4%BC%98%E5%8C%96.html" title="GitHubPages访问优化"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">GitHubPages访问优化</span>
         </a>
       
     
@@ -444,12 +462,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Hexo与Fluidの碎语</h1>
+            <h1 id="seo-header">Hexo与Fluidの碎语（弃Fluid or 弃AJAX）</h1>
             
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年5月26日 晚上
+                    本文最后更新于 2025年5月29日 晚上
                   
                 
               </p>
@@ -460,6 +478,7 @@
                 <p>简陋是 Hexo 的优势也是其劣势。想要符合要求的博客样式，需要能力去发现，也需要精力去改造；但这些还符合建立博客的初衷吗？</p>
 <p>Hexo 静态博客框架自 2013 年发布以来维护至今，最新版本为 7.3.0，笔者很荣幸能够享用到这一开源果实。这里给出一个建议，可以使用其他功能更强大的 Markdown 渲染插件替换默认的插件——marked。marked 插件在图片路径处理方面存在逻辑错误，笔者在  <a href="/posts/Hexo&GitHubPages%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2.html" title="Hexo+GitHubPages搭建静态博客">Hexo+GitHubPages搭建静态博客</a>：文件管理与附属资源显示—— shit 小节的彩蛋中指出。</p>
 <p>至于 Fluid 主题，它除了简陋，和别的通用主题没差。如果需要注入静态代码片段到生成的 HTML 文件，可以使用 Hexo 框架提供的 Injector（注入器）钩子函数。</p>
+<p>P.S.：Fluid 主题不支持 PJAX，详情见链接：<a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid/issues/189">https://github.com/fluid-dev/hexo-theme-fluid/issues/189</a> 。如果想要使用 AJAX，请选择其他主题。</p>
 
                 
               </div>
@@ -507,7 +526,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hexo与Fluidの碎语</div>
+      <div>Hexo与Fluidの碎语（弃Fluid or 弃AJAX）</div>
       <div>https://cornst.com/posts/Hexo&amp;Fluidの碎语.html</div>
     </div>
     <div class="license-meta">
@@ -526,7 +545,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年5月26日</div>
+          <div>2025年5月29日</div>
         </div>
       
       
@@ -761,19 +780,21 @@
 
 
   
-<script data-pjax func="tocbot">
+<script data-pjax>
   /*
   创建script元素，回调函数绑定onload事件（IE是直接执行回调函数）。
   发起pjax请求，该元素会再次被新建。为了避免元素堆叠，移除已存在的该元素。
 	为了方便获取该元素，创建该元素时添加属性func="tocbot"
 	更改原函数，添加参数，用于设置该元素的属性func="tocbot"
   */
-  var tocbotElem = document.querySelector('script[func="tocbot"]')
+  var tocbotElem = document.querySelector('script[func="tocbot-js-func"]')
   if (tocbotElem) {
-    // tocbotElem.remove(); // 现代浏览器支持（IE进垃圾堆吧）
-    tocbotElem.parentNode.removeChild(tocbotElem); // 兼容IE
+    // tocbotElem.parentNode.removeChild(tocbotElem); // 兼容IE
+    tocbotElem.remove(); // 现代浏览器支持（IE！我兼容你的那个！给我进垃圾堆吧！）
+    console.log("移除tocbotElem");
   }
-  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+  Fluid.utils.createScriptST('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', 'tocbot-js-func', function() {
+    
     var toc = jQuery('#toc');
     if (toc.length === 0 || !window.tocbot) { return; }
     var boardCtn = jQuery('#board-ctn');
@@ -808,6 +829,7 @@
       }
     });
   });
+  console.log("刷新页为post页：tocbot-js-func");
 </script>
 
 
@@ -859,11 +881,10 @@
 
 
   
-<script data-pjax func="fancyBox">
+<script func="fancyBox-js">
   //var fancyboxElem = document.querySelector('script[func="fancybox"]')
   //if (fancyboxElem) fancyboxElem.remove();
-  Fluid.utils.createScriptST('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', 'fancyBox', function() {
-    console.log("onload再次触发");
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
     Fluid.plugins.fancyBox();
   });
 </script>

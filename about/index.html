@@ -507,11 +507,10 @@
 
 
   
-<script data-pjax func="fancyBox">
+<script func="fancyBox-js">
   //var fancyboxElem = document.querySelector('script[func="fancybox"]')
   //if (fancyboxElem) fancyboxElem.remove();
-  Fluid.utils.createScriptST('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', 'fancyBox', function() {
-    console.log("onload再次触发");
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
     Fluid.plugins.fancyBox();
   });
 </script>

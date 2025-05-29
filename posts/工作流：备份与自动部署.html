@@ -315,7 +315,7 @@
         aria-expanded="true"
       >
         博客搭建与运维指南
-        <span class="list-group-count">(11)</span>
+        <span class="list-group-count">(13)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -365,19 +365,19 @@
     
       
       
-        <a href="/posts/Hexo%E6%A1%86%E6%9E%B6renderer%E6%BA%90%E4%BB%A3%E7%A0%81%E7%9A%84%E9%83%A8%E5%88%86%E6%B3%A8%E9%87%8A.html" title="Hexo框架renderer源代码的部分注释"
+        <a href="/posts/marked%EF%BC%88Hexo%E9%BB%98%E8%AE%A4%E7%9A%84Markdown%E6%B8%B2%E6%9F%93%E6%8F%92%E4%BB%B6%EF%BC%89%E7%9A%84%E9%83%A8%E5%88%86%E6%BA%90%E7%A0%81%E6%B3%A8%E9%87%8A.html" title="marked（Hexo默认的Markdown渲染插件）的部分源码注释"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">Hexo框架renderer源代码的部分注释</span>
+          <span class="category-post">marked（Hexo默认的Markdown渲染插件）的部分源码注释</span>
         </a>
       
     
       
       
-        <a href="/posts/Hexo&amp;Fluid%E3%81%AE%E7%A2%8E%E8%AF%AD.html" title="Hexo与Fluidの碎语"
+        <a href="/posts/Hexo&amp;Fluid%E3%81%AE%E7%A2%8E%E8%AF%AD.html" title="Hexo与Fluidの碎语（弃Fluid or 弃AJAX）"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">Hexo与Fluidの碎语</span>
+          <span class="category-post">Hexo与Fluidの碎语（弃Fluid or 弃AJAX）</span>
         </a>
       
     
@@ -401,19 +401,37 @@
     
       
       
-        <a href="/posts/GitHubPages%E8%AE%BF%E9%97%AE%E4%BC%98%E5%8C%96.html" title="GitHubPages访问优化"
+        <a href="/posts/%E5%B7%A5%E4%BD%9C%E6%B5%81%EF%BC%9A%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2.html" title="工作流：备份与自动部署"
            class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">GitHubPages访问优化</span>
+           active">
+          <span class="category-post">工作流：备份与自动部署</span>
         </a>
       
     
       
       
-        <a href="/posts/%E5%B7%A5%E4%BD%9C%E6%B5%81%EF%BC%9A%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2.html" title="工作流：备份与自动部署"
+        <a href="/posts/%E6%B7%BB%E5%8A%A0%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8APlayer.html" title="添加音乐播放器APlayer"
            class="list-group-item list-group-item-action
-           active">
-          <span class="category-post">工作流：备份与自动部署</span>
+           ">
+          <span class="category-post">添加音乐播放器APlayer</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/PJAX%E4%B8%8EFluid.html" title="PJAX与Fluid"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">PJAX与Fluid</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/GitHubPages%E8%AE%BF%E9%97%AE%E4%BC%98%E5%8C%96.html" title="GitHubPages访问优化"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">GitHubPages访问优化</span>
         </a>
       
     
@@ -566,8 +584,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/Hexo&amp;Fluid%E3%81%AE%E7%A2%8E%E8%AF%AD.html" title="Hexo与Fluidの碎语">
-                        <span class="hidden-mobile">Hexo与Fluidの碎语</span>
+                      <a href="/posts/Hexo&amp;Fluid%E3%81%AE%E7%A2%8E%E8%AF%AD.html" title="Hexo与Fluidの碎语（弃Fluid or 弃AJAX）">
+                        <span class="hidden-mobile">Hexo与Fluidの碎语（弃Fluid or 弃AJAX）</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -760,19 +778,21 @@
 
 
   
-<script data-pjax func="tocbot">
+<script data-pjax>
   /*
   创建script元素，回调函数绑定onload事件（IE是直接执行回调函数）。
   发起pjax请求，该元素会再次被新建。为了避免元素堆叠，移除已存在的该元素。
 	为了方便获取该元素，创建该元素时添加属性func="tocbot"
 	更改原函数，添加参数，用于设置该元素的属性func="tocbot"
   */
-  var tocbotElem = document.querySelector('script[func="tocbot"]')
+  var tocbotElem = document.querySelector('script[func="tocbot-js-func"]')
   if (tocbotElem) {
-    // tocbotElem.remove(); // 现代浏览器支持（IE进垃圾堆吧）
-    tocbotElem.parentNode.removeChild(tocbotElem); // 兼容IE
+    // tocbotElem.parentNode.removeChild(tocbotElem); // 兼容IE
+    tocbotElem.remove(); // 现代浏览器支持（IE！我兼容你的那个！给我进垃圾堆吧！）
+    console.log("移除tocbotElem");
   }
-  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+  Fluid.utils.createScriptST('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', 'tocbot-js-func', function() {
+    
     var toc = jQuery('#toc');
     if (toc.length === 0 || !window.tocbot) { return; }
     var boardCtn = jQuery('#board-ctn');
@@ -807,6 +827,7 @@
       }
     });
   });
+  console.log("刷新页为post页：tocbot-js-func");
 </script>
 
 
@@ -858,11 +879,10 @@
 
 
   
-<script data-pjax func="fancyBox">
+<script func="fancyBox-js">
   //var fancyboxElem = document.querySelector('script[func="fancybox"]')
   //if (fancyboxElem) fancyboxElem.remove();
-  Fluid.utils.createScriptST('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', 'fancyBox', function() {
-    console.log("onload再次触发");
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
     Fluid.plugins.fancyBox();
   });
 </script>

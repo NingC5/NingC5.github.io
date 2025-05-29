@@ -457,9 +457,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/%E8%BF%9B%E5%BA%A6%E8%AF%B4%E6%98%8E.html" title="进度说明">
+                      <a href="/posts/%E6%B7%BB%E5%8A%A0%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8APlayer.html" title="添加音乐播放器APlayer">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">进度说明</span>
+                        <span class="hidden-mobile">添加音乐播放器APlayer</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -661,19 +661,21 @@
 
 
   
-<script data-pjax func="tocbot">
+<script data-pjax>
   /*
   创建script元素，回调函数绑定onload事件（IE是直接执行回调函数）。
   发起pjax请求，该元素会再次被新建。为了避免元素堆叠，移除已存在的该元素。
 	为了方便获取该元素，创建该元素时添加属性func="tocbot"
 	更改原函数，添加参数，用于设置该元素的属性func="tocbot"
   */
-  var tocbotElem = document.querySelector('script[func="tocbot"]')
+  var tocbotElem = document.querySelector('script[func="tocbot-js-func"]')
   if (tocbotElem) {
-    // tocbotElem.remove(); // 现代浏览器支持（IE进垃圾堆吧）
-    tocbotElem.parentNode.removeChild(tocbotElem); // 兼容IE
+    // tocbotElem.parentNode.removeChild(tocbotElem); // 兼容IE
+    tocbotElem.remove(); // 现代浏览器支持（IE！我兼容你的那个！给我进垃圾堆吧！）
+    console.log("移除tocbotElem");
   }
-  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+  Fluid.utils.createScriptST('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', 'tocbot-js-func', function() {
+    
     var toc = jQuery('#toc');
     if (toc.length === 0 || !window.tocbot) { return; }
     var boardCtn = jQuery('#board-ctn');
@@ -708,6 +710,7 @@
       }
     });
   });
+  console.log("刷新页为post页：tocbot-js-func");
 </script>
 
 
@@ -759,11 +762,10 @@
 
 
   
-<script data-pjax func="fancyBox">
+<script func="fancyBox-js">
   //var fancyboxElem = document.querySelector('script[func="fancybox"]')
   //if (fancyboxElem) fancyboxElem.remove();
-  Fluid.utils.createScriptST('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', 'fancyBox', function() {
-    console.log("onload再次触发");
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
     Fluid.plugins.fancyBox();
   });
 </script>
