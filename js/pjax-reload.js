@@ -22,50 +22,101 @@ function pjax_reload() {
   如果页面没有此元素，则创建此元素并插入到页面。
   在刷新页非post页的情况下使用。非post页面是无此元素的，而PJAX请求的替换内容无此必要script。
   */
-  if ($('script[func="tocbot-js-func"]').length === 0) {
-	var script = $('<script src="https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js" type="text/javascript" charset="UTF-8" func="tocbot-js-func"></script>');
-	script.onload = function(){
-	  var toc = jQuery('#toc');
-      if (toc.length === 0 || !window.tocbot) { return; }
-      var boardCtn = jQuery('#board-ctn');
-      var boardTop = boardCtn.offset().top;
-      
-      window.tocbot.init(Object.assign({
-        tocSelector     : '#toc-body',
-        contentSelector : '.markdown-body',
-        linkClass       : 'tocbot-link',
-        activeLinkClass : 'tocbot-active-link',
-        listClass       : 'tocbot-list',
-        isCollapsedClass: 'tocbot-is-collapsed',
-        collapsibleClass: 'tocbot-is-collapsible',
-        scrollSmooth    : true,
-        includeTitleTags: true,
-        headingsOffset  : -boardTop,
-      }, CONFIG.toc));
-      if (toc.find('.toc-list-item').length > 0) {
-        toc.css('visibility', 'visible');
+
+
+
+
+
+ 
+function loadTocbot() {
+  Fluid.utils.createScriptST(
+    "https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js",
+    "tocbot-js-func",
+    function () {
+      var toc = jQuery("#toc");
+      if (toc.length === 0 || !window.tocbot) {
+        return;
       }
-      
-      Fluid.events.registerRefreshCallback(function() {
-        if ('tocbot' in window) {
+      var boardCtn = jQuery("#board-ctn");
+      var boardTop = boardCtn.offset().top;
+
+      window.tocbot.init(
+        Object.assign(
+          {
+            tocSelector: "#toc-body",
+            contentSelector: ".markdown-body",
+            linkClass: "tocbot-link",
+            activeLinkClass: "tocbot-active-link",
+            listClass: "tocbot-list",
+            isCollapsedClass: "tocbot-is-collapsed",
+            collapsibleClass: "tocbot-is-collapsible",
+            scrollSmooth: true,
+            includeTitleTags: true,
+            headingsOffset: -boardTop,
+          },
+          CONFIG.toc,
+        ),
+      );
+      if (toc.find(".toc-list-item").length > 0) {
+        toc.css("visibility", "visible");
+      }
+
+      Fluid.events.registerRefreshCallback(function () {
+        if ("tocbot" in window) {
           tocbot.refresh();
-          var toc = jQuery('#toc');
+          var toc = jQuery("#toc");
           if (toc.length === 0 || !tocbot) {
             return;
           }
-          if (toc.find('.toc-list-item').length > 0) {
-            toc.css('visibility', 'visible');
+          if (toc.find(".toc-list-item").length > 0) {
+            toc.css("visibility", "visible");
           }
         }
       });
-	};
-    $("body").append(script);
-    console.log("刷新页非post页：tocbot-js-func");
-  }
-    
+    },
+  );
+}
+var tocbot_js_func = $('script[func="tocbot-js-func"]');
+if (tocbot_js_func.length === 0) {
+  loadTocbot();
+} else {
+  tocbot_js_func.remove();
+  loadTocbot();
+}
+
+
+
+
+
+
+function loadFancybox() {
+  Fluid.utils.createScriptST(
+    "https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js",
+    "fancybox-js-func",
+    function () {
+      Fluid.plugins.fancyBox();
+    },
+  );
+}
+
+var fancybox_js_func = $('script[func="fancybox-js-func"]');
+if (fancybox_js_func.length === 0) {
+  console.log("刷新页非post页：第一次fancybox-js-func生效");
+  loadFancybox();
+  // 刷新页非post页，第一次发起PJAX请求时添加CSS
+  var css = $('<link rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css">');
+  $("head").append(css);
+} else {
+  console.log("每次PJAX请求，fancybox-js-func都会生效。正常情况是只有文章页才有此脚本。");
+  fancybox_js_func.remove();
+  loadFancybox();
+}
+
+	
   if ($('script[func="clipboard"]').length === 0) {
     console.log("clipboard");
-    var script = $('<script src="https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js"></script>');
+	// var css = $('<link rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css">');
+    var script = $('<script func="clipboard" src="https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js"></script>');
     $("body").append(script);
   }
 
@@ -77,5 +128,5 @@ function pjax_reload() {
   }
 
   
-  // <link rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css">
+  // 
 } 

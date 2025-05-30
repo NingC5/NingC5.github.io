@@ -50,7 +50,7 @@
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
 
-  <link func="fancybox" rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
 
 
 
@@ -776,19 +776,21 @@
 
 
   
-<script data-pjax>
+<script>
   /*
   创建script元素，回调函数绑定onload事件（IE是直接执行回调函数）。
   发起pjax请求，该元素会再次被新建。为了避免元素堆叠，移除已存在的该元素。
 	为了方便获取该元素，创建该元素时添加属性func="tocbot"
 	更改原函数，添加参数，用于设置该元素的属性func="tocbot"
   */
+  /*
   var tocbotElem = document.querySelector('script[func="tocbot-js-func"]')
   if (tocbotElem) {
     // tocbotElem.parentNode.removeChild(tocbotElem); // 兼容IE
     tocbotElem.remove(); // 现代浏览器支持（IE！我兼容你的那个！给我进垃圾堆吧！）
     console.log("移除tocbotElem");
   }
+  */
   Fluid.utils.createScriptST('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', 'tocbot-js-func', function() {
     
     var toc = jQuery('#toc');
@@ -877,9 +879,7 @@
 
 
   
-<script func="fancyBox-js">
-  //var fancyboxElem = document.querySelector('script[func="fancybox"]')
-  //if (fancyboxElem) fancyboxElem.remove();
+<script>
   Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
     Fluid.plugins.fancyBox();
   });
@@ -919,23 +919,5 @@
 <!-- hexo injector body_end start --><script src="/js/responsive-background.js" data-pjax></script>
   <div id="aplayer"></div>
   <script defer src="/js/aplayer.js"></script>
-
-<script>
-// 点击<a>链接在当前窗口打开时，通过AJAX请求对应页面的内容。
-// 提取请求返回内容中的#container-pjax部分，插入到当前页面的#container-pjax容器内，8秒请求超时。
-$(document).pjax("a[target!=_blank]", "#container-pjax", {
-  fragment: "#container-pjax",
-  timeout: 8000
-});
-
-// PJAX请求结束后，重新加载必要的scripts
-$(document).on("pjax:end", function () {
-    // reload necessary scripts（麻烦！）
-	// 通过函数集中设置必要的scripts，该函数定义在pjax-reload.js文件中。
-    pjax_reload();
-});
-</script>
-
-<script src="/js/pjax-reload.js"></script>
 <!-- hexo injector body_end end --></body>
 </html>

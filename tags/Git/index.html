@@ -420,23 +420,5 @@
 <!-- hexo injector body_end start --><script src="/js/responsive-background.js" data-pjax></script>
   <div id="aplayer"></div>
   <script defer src="/js/aplayer.js"></script>
-
-<script>
-// 点击<a>链接在当前窗口打开时，通过AJAX请求对应页面的内容。
-// 提取请求返回内容中的#container-pjax部分，插入到当前页面的#container-pjax容器内，8秒请求超时。
-$(document).pjax("a[target!=_blank]", "#container-pjax", {
-  fragment: "#container-pjax",
-  timeout: 8000
-});
-
-// PJAX请求结束后，重新加载必要的scripts
-$(document).on("pjax:end", function () {
-    // reload necessary scripts（麻烦！）
-	// 通过函数集中设置必要的scripts，该函数定义在pjax-reload.js文件中。
-    pjax_reload();
-});
-</script>
-
-<script src="/js/pjax-reload.js"></script>
 <!-- hexo injector body_end end --></body>
 </html>
