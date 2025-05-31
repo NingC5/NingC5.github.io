@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>网站防护：Cloudflare</title>
+    <link href="/posts/%E7%BD%91%E7%AB%99%E9%98%B2%E6%8A%A4%EF%BC%9ACloudflare.html"/>
+    <url>/posts/%E7%BD%91%E7%AB%99%E9%98%B2%E6%8A%A4%EF%BC%9ACloudflare.html</url>
+    
+    <content type="html"><![CDATA[<p>Cloudflare 作为反代理服务器能够增强网站安全性，如果你使用 Cloudflare 代理你的网站。</p><blockquote><p>Tip：在 Cloudflare 上添加 DNS 记录时勾选小黄云，就是使用 Cloudflare 代理你的网站。如果你不想更改主域名的 NS 为 Cloudflare，那就只能在 Cloudflare 上牺牲备用域名，然后主域名 CNAME 副域名。</p></blockquote><blockquote><p>代理服务器是请求发起方与目标资源之间的中介。正向与反向只是概念上的差异——架设者与架设目的。正向代理服务器着重于监管（保护|控制）前者，由监管者架设；反向代理服务器聚焦于保护后者所在的 Web 服务器，由站主架设。</p><ol><li>随便看看：<a href="https://zhuanlan.zhihu.com/p/163948996">一文帮你梳理清楚「正向代理和反向代理的区别与联系」 - 知乎</a></li><li>比上个链接详细点：<a href="https://www.cnblogs.com/wzh2010/p/18031168">图文总结：正向代理与反向代理 - Hello-Brand - 博客园</a></li><li>直接 WIKI 吧：<a href="https://zh.wikipedia.org/wiki/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86">反向代理 - 维基百科，自由的百科全书</a></li></ol></blockquote><p>请参考以下链接：</p><ol><li><a href="https://www.chia1104.dev/posts/website-attack-cloudflare-protection">我的網站被攻擊了，該怎麼透過 Cloudflare 來保護網站 | Chia1104</a></li><li><a href="https://blog.dejavu.moe/posts/cloudflare-waf-set-up-guide/">Cloudflare WAF 防护策略简易指南 · Dejavu’s Blog</a></li><li>Cloudflare 官方文档，设置界面也有部分参数说明。</li></ol><blockquote><p><a href="https://jamesqi.com/%E5%8D%9A%E5%AE%A2/Cloudflare%E7%9A%84%E6%B5%81%E9%87%8F%E9%A1%BA%E5%BA%8F">Cloudflare的流量顺序 | 祁劲松的博客👨‍💻</a></p></blockquote><p>知道 Cloudflare 在 proxy 流量时的顺序后，就按照个人需求搜索文章进行设置吧！</p><h1 id="Part-1"><a href="#Part-1" class="headerlink" title="Part 1"></a>Part 1</h1><p>……</p><h1 id="Part-2"><a href="#Part-2" class="headerlink" title="Part 2"></a>Part 2</h1><p>……</p><h1 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h1><p><a href="https://tool.lu/ip/">IP归属地查询 - 在线工具</a></p><blockquote><p><a href="https://medium.com/chouhsiang/cloudflare-30-days/home">系列文章：30 天入門 Cloudflare</a></p></blockquote><blockquote><p><a href="https://im88.tw/50261/cloudflare-bot-mode.html">Cloudflare 機器人對抗模式 預防網站被爬蟲佔據所有資源 - 小博數位生活</a></p><p><a href="https://im88.tw/50266/cloudways-antibot.html">如何防止惡意機器人導致 Cloudways 主機當機？小博的經驗分享 - 小博數位生活</a></p></blockquote><blockquote><p>【添加白名单啊！】<a href="https://carlos.mynet.tw/%E9%97%9C%E9%96%89Cloudflare%E7%9A%84%E6%A9%9F%E5%99%A8%E4%BA%BA%E5%B0%8D%E6%8A%97%E6%A8%A1%E5%BC%8F/">關閉Cloudflare的機器人對抗模式 | Carlos Life Book</a></p></blockquote><blockquote><p><a href="https://www.cnblogs.com/kjcy8/articles/17034342.html">Cloudflare 防 CC 攻击设置 - kjcy8 - 博客园</a></p></blockquote><blockquote><p><a href="https://www.sakamoto.blog/cloudflare-setup-ddos/">Cloudflare 設定防禦 DDoS 方法 – Sakamoto.blog – 探究科技未知領域</a></p></blockquote><blockquote><p><a href="https://cloudflare.zendesk.com/hc/en-us/categories/200276257">Page Rules – Cloudflare Help Center</a></p><p><a href="https://justyy.com/archives/3393">CloudFlare页面规则终级使用指南 | 小赖子的英国生活和资讯</a></p><p><a href="https://hostloc.com/thread-619429-1-1.html">已解决：CloudFlare 的页面规则 Page Rules 规则顺序-美国VPS综合讨论-全球主机交流论坛 - Powered by Discuz!</a></p></blockquote><blockquote><p><a href="https://jamesqi.com/comment/2839#comment-2839">关于Cloudflare的2a06:98c0:3600::103这个IPv6地址 | 祁劲松的博客👨‍💻</a></p><p><a href="https://bbs.itzmx.com/thread-100054-1-1.html">Cloudflare cf使用workers搭建一个简单的免费页面反代系统，不符合HTTP协议标准规范但是能凑合用，腾讯云函数已经收费 - 各类教程 - ZMX - IT技术交流论坛 - 无限Perfect，追求梦想 - itzmx.com</a></p></blockquote><blockquote><p><a href="https://tech.imydl.com/ty/1082.html">分享一个Typecho博客系统专用的CloudFlare缓存规则，优化加速一下下！ - 明月的运维学习笔记Blog</a></p><p><a href="https://tech.imydl.com/ty/1107.html">自己写了个Typecho博客自动清理CloudFlare缓存插件 - 明月的运维学习笔记Blog</a></p></blockquote><p>……</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>博客搭建与运维指南</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Cloudflare</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>PJAX与Fluid</title>
     <link href="/posts/PJAX%E4%B8%8EFluid.html"/>
     <url>/posts/PJAX%E4%B8%8EFluid.html</url>

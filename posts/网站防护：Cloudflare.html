@@ -18,27 +18,21 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="shaton沙桐">
+  <meta name="author" content="shaton">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1. GitHub Authentication 身份验证文档 - GitHub 文档  GitHub 支持不同的身份验证方式，供用户远程连接。（认证）  username &amp; password | passkey personal access token（个人访问令牌） SSH key  SSH 协议（Secure Shell Protocol，安全外壳协议）可在不安全的网络上提供安全">
+    <meta name="description" content="Cloudflare 作为反代理服务器能够增强网站安全性，如果你使用 Cloudflare 代理你的网站。  Tip：在 Cloudflare 上添加 DNS 记录时勾选小黄云，就是使用 Cloudflare 代理你的网站。如果你不想更改主域名的 NS 为 Cloudflare，那就只能在 Cloudflare 上牺牲备用域名，然后主域名 CNAME 副域名。   代理服务器是请求发起方与目标资源">
 <meta property="og:type" content="article">
-<meta property="og:title" content="GitHub身份验证与Git连接GitHubPages仓库">
-<meta property="og:url" content="https://cornst.com/posts/GitHub%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E4%B8%8EGit%E8%BF%9E%E6%8E%A5GitHubPages%E4%BB%93%E5%BA%93.html">
+<meta property="og:title" content="网站防护：Cloudflare">
+<meta property="og:url" content="https://cornst.com/posts/%E7%BD%91%E7%AB%99%E9%98%B2%E6%8A%A4%EF%BC%9ACloudflare.html">
 <meta property="og:site_name" content="shaton沙桐">
-<meta property="og:description" content="1. GitHub Authentication 身份验证文档 - GitHub 文档  GitHub 支持不同的身份验证方式，供用户远程连接。（认证）  username &amp; password | passkey personal access token（个人访问令牌） SSH key  SSH 协议（Secure Shell Protocol，安全外壳协议）可在不安全的网络上提供安全">
+<meta property="og:description" content="Cloudflare 作为反代理服务器能够增强网站安全性，如果你使用 Cloudflare 代理你的网站。  Tip：在 Cloudflare 上添加 DNS 记录时勾选小黄云，就是使用 Cloudflare 代理你的网站。如果你不想更改主域名的 NS 为 Cloudflare，那就只能在 Cloudflare 上牺牲备用域名，然后主域名 CNAME 副域名。   代理服务器是请求发起方与目标资源">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cornst.com/posts/GitHub%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E4%B8%8EGit%E8%BF%9E%E6%8E%A5GitHubPages%E4%BB%93%E5%BA%93/image-20250507224534623.png">
-<meta property="og:image" content="https://cornst.com/posts/GitHub%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E4%B8%8EGit%E8%BF%9E%E6%8E%A5GitHubPages%E4%BB%93%E5%BA%93/image-20250507232428459.png">
-<meta property="og:image" content="https://cornst.com/posts/GitHub%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E4%B8%8EGit%E8%BF%9E%E6%8E%A5GitHubPages%E4%BB%93%E5%BA%93/image-20250508143719078.png">
-<meta property="og:image" content="https://cornst.com/posts/GitHub%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E4%B8%8EGit%E8%BF%9E%E6%8E%A5GitHubPages%E4%BB%93%E5%BA%93/image-20250508163319117.png">
-<meta property="article:published_time" content="2025-05-08T05:28:08.000Z">
-<meta property="article:modified_time" content="2025-05-18T09:50:08.076Z">
+<meta property="article:published_time" content="2025-05-31T04:00:00.000Z">
+<meta property="article:modified_time" content="2025-05-31T12:22:00.745Z">
 <meta property="article:author" content="shaton">
-<meta property="article:tag" content="GitHub">
-<meta property="article:tag" content="Git">
+<meta property="article:tag" content="Cloudflare">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cornst.com/posts/GitHub%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E4%B8%8EGit%E8%BF%9E%E6%8E%A5GitHubPages%E4%BB%93%E5%BA%93/image-20250507224534623.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -46,7 +40,7 @@
   
      <meta name="key" content="value"> 
   
-  <title>GitHub身份验证与Git连接GitHubPages仓库 - shaton沙桐</title>
+  <title>网站防护：Cloudflare - shaton沙桐</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -222,7 +216,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="GitHub身份验证与Git连接GitHubPages仓库"></span>
+            <span id="subtitle" data-typed-text="网站防护：Cloudflare"></span>
           
         </div>
 
@@ -232,14 +226,14 @@
     
       <span class="post-meta mr-2">
         <i class="iconfont icon-author" aria-hidden="true"></i>
-        shaton沙桐
+        shaton
       </span>
     
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-05-08 13:28" pubdate>
-          2025年5月8日 下午
+        <time datetime="2025-05-31 12:00" pubdate>
+          2025年5月31日 中午
         </time>
       </span>
     
@@ -250,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.1k 字
+          659 字
         
       </span>
     
@@ -261,7 +255,7 @@
         
         
         
-          9 分钟
+          6 分钟
         
       </span>
     
@@ -390,7 +384,7 @@
       
         <a href="/posts/GitHub%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E4%B8%8EGit%E8%BF%9E%E6%8E%A5GitHubPages%E4%BB%93%E5%BA%93.html" title="GitHub身份验证与Git连接GitHubPages仓库"
            class="list-group-item list-group-item-action
-           active">
+           ">
           <span class="category-post">GitHub身份验证与Git连接GitHubPages仓库</span>
         </a>
       
@@ -408,7 +402,7 @@
       
         <a href="/posts/%E7%BD%91%E7%AB%99%E9%98%B2%E6%8A%A4%EF%BC%9ACloudflare.html" title="网站防护：Cloudflare"
            class="list-group-item list-group-item-action
-           ">
+           active">
           <span class="category-post">网站防护：Cloudflare</span>
         </a>
       
@@ -476,12 +470,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">GitHub身份验证与Git连接GitHubPages仓库</h1>
+            <h1 id="seo-header">网站防护：Cloudflare</h1>
             
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年5月18日 下午
+                    本文最后更新于 2025年5月31日 晚上
                   
                 
               </p>
@@ -489,95 +483,61 @@
             
               <div class="markdown-body">
                 
-                <h1 id="1-GitHub-Authentication"><a href="#1-GitHub-Authentication" class="headerlink" title="1. GitHub Authentication"></a>1. GitHub Authentication</h1><blockquote>
-<p><a target="_blank" rel="noopener" href="https://docs.github.com/zh/authentication">身份验证文档 - GitHub 文档</a></p>
-</blockquote>
-<p>GitHub 支持不同的身份验证方式，供用户远程连接。（认证）</p>
-<ul>
-<li>username &amp; password | passkey</li>
-<li>personal access token（个人访问令牌）</li>
-<li>SSH key</li>
-</ul>
-<p>SSH 协议（Secure Shell Protocol，安全外壳协议）可在不安全的网络上提供安全通道。推荐使用 SSH 连接到 GitHub，实现免密登录，且相对更安全。</p>
-<h2 id="1-1-username-password"><a href="#1-1-username-password" class="headerlink" title="1.1 username &amp; password"></a>1.1 username &amp; password</h2><p>略。</p>
-<h2 id="1-2-personal-access-token"><a href="#1-2-personal-access-token" class="headerlink" title="1.2 personal access token"></a>1.2 personal access token</h2><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/401978754">2021.8.13起，Github要求使用基于令牌的身份验证 - 知乎</a></p>
-<p>（按链接前半部分操作即可，token 权限设置为 repo。下方可略。）</p>
-<p>Git 连接远程仓库，转为使用 token 进行认证：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 列出当前仓库中已配置的远程仓库，并显示它们的 URL。</span><br>git remote -v<br><br><span class="hljs-comment"># 修改指定远程仓库的 URL，添加 token 信息。</span><br><span class="hljs-comment"># 例如：origin https://&lt;token&gt;@github.com/&lt;username&gt;/&lt;repo&gt;.git</span><br>git remote set-url &lt;remote_name&gt; &lt;new_url&gt;<br><br><span class="hljs-comment"># or</span><br><br><span class="hljs-comment"># 从当前仓库中删除指定的远程仓库。</span><br>git remote remove &lt;remote_name&gt;<br><span class="hljs-comment"># 添加一个新的远程仓库。指定一个远程仓库的名称和 URL，将其添加到当前仓库中。</span><br>git remote add &lt;remote_name&gt; &lt;remote_url&gt;<br></code></pre></td></tr></table></figure>
-
-
-
-<h2 id="1-3-SSH-key"><a href="#1-3-SSH-key" class="headerlink" title="1.3 SSH key"></a>1.3 SSH key</h2><blockquote>
-<p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Secure_Shell">Secure Shell - 维基百科，自由的百科全书</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42310154/article/details/118340458">Github配置ssh key的步骤（大白话+包含原理解释）-CSDN博客</a></p>
-</blockquote>
-<p>按 <a target="_blank" rel="noopener" href="https://docs.github.com/zh/authentication/connecting-to-github-with-ssh">通过 SSH 连接到 GitHub - GitHub 文档</a> 操作即可。</p>
-<ol>
-<li><strong>检查本地主机是否已有 SSH 密钥</strong></li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># Git Bash 执行该命令，以查看是否存在现有的 SSH 密钥。</span><br><span class="hljs-built_in">ls</span> -al ~/.ssh<br></code></pre></td></tr></table></figure>
-
-<p><img src="GitHub%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E4%B8%8EGit%E8%BF%9E%E6%8E%A5GitHubPages%E4%BB%93%E5%BA%93/image-20250507224534623.png" srcset="/img/loading.gif" lazyload></p>
-<p>默认情况下，GitHub 支持的公钥的文件名有：<code>id_rsa.pub</code> ，<code>id_ecdsa.pub</code> ，<code>id_ed25519.pub</code> 。如果没有，则创建新的 SSH 密钥对。</p>
-<ol start="2">
-<li><strong>生成新 SSH 密钥</strong></li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># Git Bash 执行该命令，以生成新 SSH 密钥。将电子邮件替换为 GitHub 电子邮件地址。</span><br><span class="hljs-comment"># -t 选项指定要生成的密钥的类型（type）。rsa、ecdsa、ed25519。</span><br><span class="hljs-comment"># -C 选项用于为生成的密钥添加一个注释（comment）。</span><br>ssh-keygen -t ed25519 -C <span class="hljs-string">&quot;your_email@example.com&quot;</span><br></code></pre></td></tr></table></figure>
-
-<p>该命令执行后，连按三次回车（跳过设置密钥文件路径、设置密钥密码、再次输入密钥密码），即可生成密钥对。</p>
-<p>默认情况下，<code>ssh-keygen</code> 会在用户的主目录下的 <code>.ssh/</code> 目录中（<code>C:\Users\用户\.ssh\</code>）生成密钥对。默认的文件名取决于你选择的密钥类型：<code>id_type</code>（私钥）和 <code>id_type.pub</code>（公钥）。</p>
-<p>如果需要管理多个密钥，可以添加 <code>-f</code> 选项来覆盖默认行为，指定生成的密钥文件的路径和文件名。</p>
+                <p>Cloudflare 作为反代理服务器能够增强网站安全性，如果你使用 Cloudflare 代理你的网站。</p>
 <blockquote>
-<p>Tip：建议将密钥保存在 <code>.ssh/</code> 目录中，确保其权限，以保护你的私钥。私钥文件通常应该只有所有者有读写权限（<code>chmod 600</code>）。</p>
+<p>Tip：在 Cloudflare 上添加 DNS 记录时勾选小黄云，就是使用 Cloudflare 代理你的网站。如果你不想更改主域名的 NS 为 Cloudflare，那就只能在 Cloudflare 上牺牲备用域名，然后主域名 CNAME 副域名。</p>
 </blockquote>
-<ol start="3">
-<li><strong>新增 SSH 密钥到 GitHub 帐户</strong></li>
+<blockquote>
+<p>代理服务器是请求发起方与目标资源之间的中介。正向与反向只是概念上的差异——架设者与架设目的。正向代理服务器着重于监管（保护|控制）前者，由监管者架设；反向代理服务器聚焦于保护后者所在的 Web 服务器，由站主架设。</p>
+<ol>
+<li>随便看看：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/163948996">一文帮你梳理清楚「正向代理和反向代理的区别与联系」 - 知乎</a></li>
+<li>比上个链接详细点：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/wzh2010/p/18031168">图文总结：正向代理与反向代理 - Hello-Brand - 博客园</a></li>
+<li>直接 WIKI 吧：<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86">反向代理 - 维基百科，自由的百科全书</a></li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># Git Bash 执行该命令，以显示 SSH 公钥内容（或者使用文本编辑器打开公钥文件），将公钥复制到剪贴板。</span><br><span class="hljs-built_in">cat</span> ~/.ssh/id_ed25519.pub<br></code></pre></td></tr></table></figure>
-
-<p>点击右上角个人资料照片 → Settings → SSH 和 GPG keys → New SSH key。</p>
-<p><img src="GitHub%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E4%B8%8EGit%E8%BF%9E%E6%8E%A5GitHubPages%E4%BB%93%E5%BA%93/image-20250507232428459.png" srcset="/img/loading.gif" lazyload></p>
-<ol start="4">
-<li><strong>测试 SSH 连接</strong></li>
+</blockquote>
+<p>请参考以下链接：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://www.chia1104.dev/posts/website-attack-cloudflare-protection">我的網站被攻擊了，該怎麼透過 Cloudflare 來保護網站 | Chia1104</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.dejavu.moe/posts/cloudflare-waf-set-up-guide/">Cloudflare WAF 防护策略简易指南 · Dejavu’s Blog</a></li>
+<li>Cloudflare 官方文档，设置界面也有部分参数说明。</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">Git Bash 执行该命令，用于测试本地 SSH 连接到 GitHub 是否成功。</span><br>ssh -T git@github.com<br></code></pre></td></tr></table></figure>
-
-<p>如果 SSH 连接成功，GitHub 会返回一个欢迎信息。</p>
-<p><img src="GitHub%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E4%B8%8EGit%E8%BF%9E%E6%8E%A5GitHubPages%E4%BB%93%E5%BA%93/image-20250508143719078.png" srcset="/img/loading.gif" lazyload></p>
-<h1 id="2-Git-连接-GitHub-Pages-仓库"><a href="#2-Git-连接-GitHub-Pages-仓库" class="headerlink" title="2. Git 连接 GitHub Pages 仓库"></a>2. Git 连接 GitHub Pages 仓库</h1><p>之前，基于 hexo-deployer-git 部署本地静态博客到 GitHub Pages 时，Git 采用【HTTPS+密码】的方式连接 GitHub Pages 仓库。现在，连接方式可改为【HTTPS+token】或【SSH】，推荐【SSH】。</p>
-<hr>
-<p>【HTTPS+密码】</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># _config.yml</span><br><span class="hljs-attr">deploy:</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>  <span class="hljs-attr">repo:</span> <span class="hljs-string">https://github.com/NingC5/NingC5.github.io.git</span>			<span class="hljs-comment"># 采用【HTTPS+密码】</span><br>  <span class="hljs-attr">branch:</span> <span class="hljs-string">main</span><br></code></pre></td></tr></table></figure>
-
-<hr>
-<p>【HTTPS+token】</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># _config.yml</span><br><span class="hljs-attr">deploy:</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>  <span class="hljs-attr">repo:</span> <span class="hljs-string">https://&lt;token&gt;@github.com/NingC5/NingC5.github.io.git</span>	<span class="hljs-comment"># 采用【HTTPS+token】</span><br>  <span class="hljs-attr">branch:</span> <span class="hljs-string">main</span><br></code></pre></td></tr></table></figure>
-
-<hr>
-<p>【SSH】</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># _config.yml</span><br><span class="hljs-attr">deploy:</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>  <span class="hljs-attr">repo:</span> <span class="hljs-string">git@github.com:NingC5/NingC5.github.io.git</span>			<span class="hljs-comment"># 采用【SSH】，SSH见下图</span><br>  <span class="hljs-attr">branch:</span> <span class="hljs-string">main</span><br></code></pre></td></tr></table></figure>
-
-<p><img src="GitHub%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E4%B8%8EGit%E8%BF%9E%E6%8E%A5GitHubPages%E4%BB%93%E5%BA%93/image-20250508163319117.png" srcset="/img/loading.gif" lazyload></p>
-<h1 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h1><ol>
-<li>SSH</li>
-</ol>
-<p><a target="_blank" rel="noopener" href="https://info.support.huawei.com/info-finder/encyclopedia/zh/SSH.html">什么是SSH？SSH是如何工作的？ - 华为</a></p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/323322650">【科普】SSH都不懂，还搞什么网络 - 知乎</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/li528405176/article/details/82810342">SSH简介及两种远程登录的方法-CSDN博客</a></p>
-<ol start="2">
-<li>加密算法</li>
-</ol>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/librarookie/p/15389876.html">RSA、DSA、ECDSA、EdDSA 和 Ed25519 的区别 - Librarookie - 博客园</a></p>
-<p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000039055271">奇妙的安全旅行之RSA算法 - 个人文章 - SegmentFault 思否</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/MuXinu/p/17199443.html">非对称加密算法与数字签名 - MuXinu - 博客园</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/bonelee/p/13035489.html">常用的数字签名算法包括：MD5withRSA／SHA1withRSA／SHA256withRSA／SHA1withDSA／SHA256withDSA／SHA512withDSA／ECDSA等 - bonelee - 博客园</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/junxuezheng/article/details/109478466">加密算法(DES,AES,RSA,ECC,MD5,SHA1)简介_des aes rsa-CSDN博客</a></p>
-<ol start="3">
-<li>本机能通过 SSH 连接 GitHub 的原因——双方都集成 SSH 客户端。</li>
-</ol>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/sparkdev/p/10166061.html">Windows 支持 OpenSSH 了！ - sparkdev - 博客园</a></p>
-<p>[<a target="_blank" rel="noopener" href="https://www.itblogcn.com/article/2266.html">CMD] Windows SSH 连接服务器教程(系统自带方式)</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42310154/article/details/118340458">Github配置ssh key的步骤（大白话+包含原理解释）_github生成ssh key-CSDN博客</a></p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://jamesqi.com/%E5%8D%9A%E5%AE%A2/Cloudflare%E7%9A%84%E6%B5%81%E9%87%8F%E9%A1%BA%E5%BA%8F">Cloudflare的流量顺序 | 祁劲松的博客👨‍💻</a></p>
+</blockquote>
+<p>知道 Cloudflare 在 proxy 流量时的顺序后，就按照个人需求搜索文章进行设置吧！</p>
+<h1 id="Part-1"><a href="#Part-1" class="headerlink" title="Part 1"></a>Part 1</h1><p>……</p>
+<h1 id="Part-2"><a href="#Part-2" class="headerlink" title="Part 2"></a>Part 2</h1><p>……</p>
+<h1 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h1><p><a target="_blank" rel="noopener" href="https://tool.lu/ip/">IP归属地查询 - 在线工具</a></p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://medium.com/chouhsiang/cloudflare-30-days/home">系列文章：30 天入門 Cloudflare</a></p>
+</blockquote>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://im88.tw/50261/cloudflare-bot-mode.html">Cloudflare 機器人對抗模式 預防網站被爬蟲佔據所有資源 - 小博數位生活</a></p>
+<p><a target="_blank" rel="noopener" href="https://im88.tw/50266/cloudways-antibot.html">如何防止惡意機器人導致 Cloudways 主機當機？小博的經驗分享 - 小博數位生活</a></p>
+</blockquote>
+<blockquote>
+<p>【添加白名单啊！】<a target="_blank" rel="noopener" href="https://carlos.mynet.tw/%E9%97%9C%E9%96%89Cloudflare%E7%9A%84%E6%A9%9F%E5%99%A8%E4%BA%BA%E5%B0%8D%E6%8A%97%E6%A8%A1%E5%BC%8F/">關閉Cloudflare的機器人對抗模式 | Carlos Life Book</a></p>
+</blockquote>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/kjcy8/articles/17034342.html">Cloudflare 防 CC 攻击设置 - kjcy8 - 博客园</a></p>
+</blockquote>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.sakamoto.blog/cloudflare-setup-ddos/">Cloudflare 設定防禦 DDoS 方法 – Sakamoto.blog – 探究科技未知領域</a></p>
+</blockquote>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://cloudflare.zendesk.com/hc/en-us/categories/200276257">Page Rules – Cloudflare Help Center</a></p>
+<p><a target="_blank" rel="noopener" href="https://justyy.com/archives/3393">CloudFlare页面规则终级使用指南 | 小赖子的英国生活和资讯</a></p>
+<p><a target="_blank" rel="noopener" href="https://hostloc.com/thread-619429-1-1.html">已解决：CloudFlare 的页面规则 Page Rules 规则顺序-美国VPS综合讨论-全球主机交流论坛 - Powered by Discuz!</a></p>
+</blockquote>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://jamesqi.com/comment/2839#comment-2839">关于Cloudflare的2a06:98c0:3600::103这个IPv6地址 | 祁劲松的博客👨‍💻</a></p>
+<p><a target="_blank" rel="noopener" href="https://bbs.itzmx.com/thread-100054-1-1.html">Cloudflare cf使用workers搭建一个简单的免费页面反代系统，不符合HTTP协议标准规范但是能凑合用，腾讯云函数已经收费 - 各类教程 - ZMX - IT技术交流论坛 - 无限Perfect，追求梦想 - itzmx.com</a></p>
+</blockquote>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://tech.imydl.com/ty/1082.html">分享一个Typecho博客系统专用的CloudFlare缓存规则，优化加速一下下！ - 明月的运维学习笔记Blog</a></p>
+<p><a target="_blank" rel="noopener" href="https://tech.imydl.com/ty/1107.html">自己写了个Typecho博客自动清理CloudFlare缓存插件 - 明月的运维学习笔记Blog</a></p>
+</blockquote>
+<p>……</p>
 
                 
               </div>
@@ -611,9 +571,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/GitHub/" class="print-no-link">#GitHub</a>
-      
-        <a href="/tags/Git/" class="print-no-link">#Git</a>
+        <a href="/tags/Cloudflare/" class="print-no-link">#Cloudflare</a>
       
     </div>
   
@@ -625,26 +583,26 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>GitHub身份验证与Git连接GitHubPages仓库</div>
-      <div>https://cornst.com/posts/GitHub身份验证与Git连接GitHubPages仓库.html</div>
+      <div>网站防护：Cloudflare</div>
+      <div>https://cornst.com/posts/网站防护：Cloudflare.html</div>
     </div>
     <div class="license-meta">
       
         <div class="license-meta-item">
           <div>作者</div>
-          <div>shaton沙桐</div>
+          <div>shaton</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年5月8日</div>
+          <div>2025年5月31日</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年5月18日</div>
+          <div>2025年5月31日</div>
         </div>
       
       
@@ -675,18 +633,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/%E8%87%AA%E5%AE%9A%E4%B9%89Chrome%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E8%B7%AF%E5%BE%84.html" title="自定义Chrome浏览器的路径">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">自定义Chrome浏览器的路径</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/%E5%B7%A5%E4%BD%9C%E6%B5%81%EF%BC%9A%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2.html" title="工作流：备份与自动部署">
-                        <span class="hidden-mobile">工作流：备份与自动部署</span>
+                      <a href="/posts/PJAX%E4%B8%8EFluid.html" title="PJAX与Fluid">
+                        <span class="hidden-mobile">PJAX与Fluid</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
