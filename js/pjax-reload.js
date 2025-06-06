@@ -1,5 +1,3 @@
-
-  
 function pjax_reload() {
 
   $("script[data-pjax]").each(function () {
@@ -23,68 +21,8 @@ function pjax_reload() {
   在刷新页非post页的情况下使用。非post页面是无此元素的，而PJAX请求的替换内容无此必要script。
   */
 
-
-
-
-
- 
-function loadTocbot() {
-  Fluid.utils.createScriptST(
-    "https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js",
-    "tocbot-js-func",
-    function () {
-      var toc = jQuery("#toc");
-      if (toc.length === 0 || !window.tocbot) {
-        return;
-      }
-      var boardCtn = jQuery("#board-ctn");
-      var boardTop = boardCtn.offset().top;
-
-      window.tocbot.init(
-        Object.assign(
-          {
-            tocSelector: "#toc-body",
-            contentSelector: ".markdown-body",
-            linkClass: "tocbot-link",
-            activeLinkClass: "tocbot-active-link",
-            listClass: "tocbot-list",
-            isCollapsedClass: "tocbot-is-collapsed",
-            collapsibleClass: "tocbot-is-collapsible",
-            scrollSmooth: true,
-            includeTitleTags: true,
-            headingsOffset: -boardTop,
-          },
-          CONFIG.toc,
-        ),
-      );
-      if (toc.find(".toc-list-item").length > 0) {
-        toc.css("visibility", "visible");
-      }
-
-      Fluid.events.registerRefreshCallback(function () {
-        if ("tocbot" in window) {
-          tocbot.refresh();
-          var toc = jQuery("#toc");
-          if (toc.length === 0 || !tocbot) {
-            return;
-          }
-          if (toc.find(".toc-list-item").length > 0) {
-            toc.css("visibility", "visible");
-          }
-        }
-      });
-    },
-  );
-}
-var tocbot_js_func = $('script[func="tocbot-js-func"]');
-if (tocbot_js_func.length === 0) {
-  loadTocbot();
-} else {
-  tocbot_js_func.remove();
-  loadTocbot();
-}
-
-
+// var fancybox_js_func = $('script[func="fancybox-js-func"]');
+// if(fancybox-js-func) fancybox-js-func.remove();
 
 
 
@@ -115,7 +53,6 @@ if (fancybox_js_func.length === 0) {
 	
   if ($('script[func="clipboard"]').length === 0) {
     console.log("clipboard");
-	// var css = $('<link rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css">');
     var script = $('<script func="clipboard" src="https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js"></script>');
     $("body").append(script);
   }
@@ -127,6 +64,5 @@ if (fancybox_js_func.length === 0) {
     // Fluid.plugins.codeWidget();
   }
 
-  
-  // 
+ 
 } 

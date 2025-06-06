@@ -51,8 +51,8 @@ function updateVisibility() {
   isUpdating = false; // 允许下一帧更新
 }
 
-// 绑定 load 事件，页面加载时调用。
-window.addEventListener('load', () => {
+// 绑定 load 事件，页面加载完成后调用。
+window.addEventListener('DOMContentLoaded', () => {
   setBackground();       // 页面加载时设置背景
   updateVisibility();    // 初次检测
 });

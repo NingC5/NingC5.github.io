@@ -8,8 +8,8 @@
 <head>
   <meta charset="UTF-8">
 
-  <link rel="apple-touch-icon" sizes="76x76" href="/image/favicon/shaton.ico">
-  <link rel="icon" href="/image/favicon/shaton.ico">
+  <link rel="apple-touch-icon" sizes="76x76" href="/image/favicon/ST.ico">
+  <link rel="icon" href="/image/favicon/ST.ico">
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
@@ -30,7 +30,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cornst.com/image/post/girl.jpg">
 <meta property="article:published_time" content="2025-04-26T09:02:22.000Z">
-<meta property="article:modified_time" content="2025-05-29T20:44:19.069Z">
+<meta property="article:modified_time" content="2025-06-06T00:49:32.430Z">
 <meta property="article:author" content="shaton">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Fluid">
@@ -108,8 +108,8 @@
 <body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
   
 
-<div id="container-pjax">
 
+<div id="container-pjax">
   <header>
     
 
@@ -285,7 +285,7 @@
   </div>
 </div>
 
-</div>
+</>
 
   </header>
 
@@ -317,7 +317,7 @@
         aria-expanded="true"
       >
         博客搭建与运维指南
-        <span class="list-group-count">(14)</span>
+        <span class="list-group-count">(13)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -430,15 +430,6 @@
     
       
       
-        <a href="/posts/PJAX%E4%B8%8EFluid.html" title="PJAX与Fluid"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">PJAX与Fluid</span>
-        </a>
-      
-    
-      
-      
         <a href="/posts/GitHubPages%E8%AE%BF%E9%97%AE%E4%BC%98%E5%8C%96.html" title="GitHubPages访问优化"
            class="list-group-item list-group-item-action
            ">
@@ -478,7 +469,7 @@
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年5月30日 凌晨
+                    本文最后更新于 2025年6月6日 早上
                   
                 
               </p>
@@ -732,7 +723,7 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 嫌弃模板（$&#123;siteRoot&#125;）使用麻烦就去掉这个，暂时不关键。</span><br><span class="hljs-keyword">const</span> &#123; <span class="hljs-attr">root</span>: siteRoot  =  <span class="hljs-string">&quot;/&quot;</span> &#125; =  hexo.<span class="hljs-property">config</span>;<br><br><span class="hljs-comment">// &lt;div&gt; 注入到所有页面的 &lt;body&gt; 之后，用于 responsive-background.js 自适应背景切换。</span><br>hexo.<span class="hljs-property">extend</span>.<span class="hljs-property">injector</span>.<span class="hljs-title function_">register</span>(<span class="hljs-string">&#x27;body_begin&#x27;</span>, <span class="hljs-string">&#x27;&lt;div id=&quot;web_bg&quot;&gt;&lt;/div&gt;&#x27;</span>);<br><span class="hljs-comment">// &lt;script&gt; 注入到所有页面的 &lt;/body&gt; 之前</span><br>hexo.<span class="hljs-property">extend</span>.<span class="hljs-property">injector</span>.<span class="hljs-title function_">register</span>(<span class="hljs-string">&#x27;body_end&#x27;</span>,<span class="hljs-string">`&lt;script src=&quot;<span class="hljs-subst">$&#123;siteRoot&#125;</span>js/responsive-background.js&quot;&gt;&lt;/script&gt;`</span>);<br></code></pre></td></tr></table></figure>
 
 <p><code>source/js/responsive-background.js</code>：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">/* 响应式背景程序 */</span><br><br><span class="hljs-comment">// 定义背景图片链接，url(&#x27;your background address&#x27;)</span><br><span class="hljs-keyword">const</span> mobileBgImageUrl = <span class="hljs-string">&quot;url(&#x27;/image/bg/和泉纱雾mob5.jpg&#x27;)&quot;</span>;<br><span class="hljs-keyword">const</span> desktopBgImageUrl = <span class="hljs-string">&quot;url(&#x27;/image/bg/white.webp&#x27;)&quot;</span>;<br><br><span class="hljs-comment">// 获取元素</span><br><span class="hljs-keyword">const</span> webBg = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;#web_bg&#x27;</span>);<br><span class="hljs-keyword">const</span> banner = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;#banner&#x27;</span>);<br><br><span class="hljs-comment">// 控制是否在请求动画帧中执行</span><br><span class="hljs-keyword">let</span> isUpdating = <span class="hljs-literal">false</span>;<br><br><span class="hljs-comment">// 设置背景图片的函数</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">setBackground</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-comment">// window.innerWidth &lt; 768，用来区分手机端和电脑端。</span><br>  <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">window</span>.<span class="hljs-property">innerWidth</span> &lt; <span class="hljs-number">768</span>) &#123;<br>    <span class="hljs-comment">// 手机端背景</span><br>    webBg.<span class="hljs-property">style</span>.<span class="hljs-property">backgroundImage</span> = mobileBgImageUrl;<br>  &#125; <span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-comment">// 电脑端背景</span><br>    webBg.<span class="hljs-property">style</span>.<span class="hljs-property">backgroundImage</span> = desktopBgImageUrl;<br>  &#125;<br>  <span class="hljs-comment">// 保持其他样式</span><br>  webBg.<span class="hljs-property">style</span>.<span class="hljs-property">position</span> = <span class="hljs-string">&#x27;fixed&#x27;</span>;<br>  webBg.<span class="hljs-property">style</span>.<span class="hljs-property">top</span> = <span class="hljs-string">&#x27;0&#x27;</span>;<br>  webBg.<span class="hljs-property">style</span>.<span class="hljs-property">left</span> = <span class="hljs-string">&#x27;0&#x27;</span>;<br>  webBg.<span class="hljs-property">style</span>.<span class="hljs-property">width</span> = <span class="hljs-string">&#x27;100%&#x27;</span>;<br>  webBg.<span class="hljs-property">style</span>.<span class="hljs-property">height</span> = <span class="hljs-string">&#x27;100%&#x27;</span>;<br>  webBg.<span class="hljs-property">style</span>.<span class="hljs-property">zIndex</span> = <span class="hljs-string">&#x27;-1&#x27;</span>;<br>  webBg.<span class="hljs-property">style</span>.<span class="hljs-property">backgroundSize</span> = <span class="hljs-string">&#x27;cover&#x27;</span>;<br>  webBg.<span class="hljs-property">style</span>.<span class="hljs-property">backgroundRepeat</span> = <span class="hljs-string">&#x27;no-repeat&#x27;</span>;<br>&#125;<br><br><span class="hljs-comment">// 根据 banner 在页面的占比，决定显示/隐藏 web_bg（背景）。</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">updateVisibility</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-comment">// 每次滚动时获取元素在视口中的位置和尺寸。</span><br>  <span class="hljs-comment">// bottom：元素底部距离视口顶部的距离。top：元素顶部距离视口顶部的距离。height：元素高度。</span><br>  <span class="hljs-keyword">const</span> rect = banner.<span class="hljs-title function_">getBoundingClientRect</span>();<br><br>  <span class="hljs-comment">// 设置阈值。比如：视口高度（界面高度）的20%。</span><br>  <span class="hljs-keyword">const</span> threshold = <span class="hljs-variable language_">window</span>.<span class="hljs-property">innerHeight</span> * <span class="hljs-number">0.2</span>;<br><br>  <span class="hljs-keyword">if</span> (rect.<span class="hljs-property">bottom</span> &gt; threshold) &#123;<br>    <span class="hljs-comment">// 若 banner 底部距离视口顶部大于阈值，则隐藏背景。</span><br>    webBg.<span class="hljs-property">style</span>.<span class="hljs-property">display</span> = <span class="hljs-string">&#x27;none&#x27;</span>;<br>  &#125; <span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-comment">// 否则显示背景。</span><br>    webBg.<span class="hljs-property">style</span>.<span class="hljs-property">display</span> = <span class="hljs-string">&#x27;block&#x27;</span>;<br>  &#125;<br>  isUpdating = <span class="hljs-literal">false</span>; <span class="hljs-comment">// 允许下一帧更新</span><br>&#125;<br><br><span class="hljs-comment">// 绑定 load 事件，页面加载时调用。</span><br><span class="hljs-variable language_">window</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;load&#x27;</span>, <span class="hljs-function">() =&gt;</span> &#123;<br>  <span class="hljs-title function_">setBackground</span>();       <span class="hljs-comment">// 页面加载时设置背景</span><br>  <span class="hljs-title function_">updateVisibility</span>();    <span class="hljs-comment">// 初次检测</span><br>&#125;);<br><br><span class="hljs-comment">// 绑定 resize 事件，窗口变化时调用。</span><br><span class="hljs-variable language_">window</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;resize&#x27;</span>, <span class="hljs-function">() =&gt;</span> &#123;<br>  <span class="hljs-title function_">setBackground</span>();       <span class="hljs-comment">// 改变窗口时设置背景</span><br>  <span class="hljs-comment">// 立即检测 banner 位置，调整背景显示状态。</span><br>  <span class="hljs-keyword">if</span> (!isUpdating) &#123;<br>    isUpdating = <span class="hljs-literal">true</span>;<br>    <span class="hljs-variable language_">window</span>.<span class="hljs-title function_">requestAnimationFrame</span>(updateVisibility);<br>  &#125;<br>&#125;);<br><br><span class="hljs-comment">// 绑定滚动事件，鼠标滚动时调用。</span><br><span class="hljs-variable language_">window</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;scroll&#x27;</span>, <span class="hljs-function">() =&gt;</span> &#123;<br>  <span class="hljs-keyword">if</span> (!isUpdating) &#123;<br>    isUpdating = <span class="hljs-literal">true</span>;<br>    <span class="hljs-variable language_">window</span>.<span class="hljs-title function_">requestAnimationFrame</span>(updateVisibility);<br>  &#125;<br>&#125;);<br></code></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">/* 响应式背景程序 */</span><br><br><span class="hljs-comment">// 定义背景图片链接，url(&#x27;your background address&#x27;)</span><br><span class="hljs-keyword">const</span> mobileBgImageUrl = <span class="hljs-string">&quot;url(&#x27;/image/bg/和泉纱雾mob5.jpg&#x27;)&quot;</span>;<br><span class="hljs-keyword">const</span> desktopBgImageUrl = <span class="hljs-string">&quot;url(&#x27;/image/bg/white.webp&#x27;)&quot;</span>;<br><br><span class="hljs-comment">// 获取元素</span><br><span class="hljs-keyword">const</span> webBg = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;#web_bg&#x27;</span>);<br><span class="hljs-keyword">const</span> banner = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;#banner&#x27;</span>);<br><br><span class="hljs-comment">// 控制是否在请求动画帧中执行</span><br><span class="hljs-keyword">let</span> isUpdating = <span class="hljs-literal">false</span>;<br><br><span class="hljs-comment">// 设置背景图片的函数</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">setBackground</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-comment">// window.innerWidth &lt; 768，用来区分手机端和电脑端。</span><br>  <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">window</span>.<span class="hljs-property">innerWidth</span> &lt; <span class="hljs-number">768</span>) &#123;<br>    <span class="hljs-comment">// 手机端背景</span><br>    webBg.<span class="hljs-property">style</span>.<span class="hljs-property">backgroundImage</span> = mobileBgImageUrl;<br>  &#125; <span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-comment">// 电脑端背景</span><br>    webBg.<span class="hljs-property">style</span>.<span class="hljs-property">backgroundImage</span> = desktopBgImageUrl;<br>  &#125;<br>  <span class="hljs-comment">// 保持其他样式</span><br>  webBg.<span class="hljs-property">style</span>.<span class="hljs-property">position</span> = <span class="hljs-string">&#x27;fixed&#x27;</span>;<br>  webBg.<span class="hljs-property">style</span>.<span class="hljs-property">top</span> = <span class="hljs-string">&#x27;0&#x27;</span>;<br>  webBg.<span class="hljs-property">style</span>.<span class="hljs-property">left</span> = <span class="hljs-string">&#x27;0&#x27;</span>;<br>  webBg.<span class="hljs-property">style</span>.<span class="hljs-property">width</span> = <span class="hljs-string">&#x27;100%&#x27;</span>;<br>  webBg.<span class="hljs-property">style</span>.<span class="hljs-property">height</span> = <span class="hljs-string">&#x27;100%&#x27;</span>;<br>  webBg.<span class="hljs-property">style</span>.<span class="hljs-property">zIndex</span> = <span class="hljs-string">&#x27;-1&#x27;</span>;<br>  webBg.<span class="hljs-property">style</span>.<span class="hljs-property">backgroundSize</span> = <span class="hljs-string">&#x27;cover&#x27;</span>;<br>  webBg.<span class="hljs-property">style</span>.<span class="hljs-property">backgroundRepeat</span> = <span class="hljs-string">&#x27;no-repeat&#x27;</span>;<br>&#125;<br><br><span class="hljs-comment">// 根据 banner 在页面的占比，决定显示/隐藏 web_bg（背景）。</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">updateVisibility</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-comment">// 每次滚动时获取元素在视口中的位置和尺寸。</span><br>  <span class="hljs-comment">// bottom：元素底部距离视口顶部的距离。top：元素顶部距离视口顶部的距离。height：元素高度。</span><br>  <span class="hljs-keyword">const</span> rect = banner.<span class="hljs-title function_">getBoundingClientRect</span>();<br><br>  <span class="hljs-comment">// 设置阈值。比如：视口高度（界面高度）的20%。</span><br>  <span class="hljs-keyword">const</span> threshold = <span class="hljs-variable language_">window</span>.<span class="hljs-property">innerHeight</span> * <span class="hljs-number">0.2</span>;<br><br>  <span class="hljs-keyword">if</span> (rect.<span class="hljs-property">bottom</span> &gt; threshold) &#123;<br>    <span class="hljs-comment">// 若 banner 底部距离视口顶部大于阈值，则隐藏背景。</span><br>    webBg.<span class="hljs-property">style</span>.<span class="hljs-property">display</span> = <span class="hljs-string">&#x27;none&#x27;</span>;<br>  &#125; <span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-comment">// 否则显示背景。</span><br>    webBg.<span class="hljs-property">style</span>.<span class="hljs-property">display</span> = <span class="hljs-string">&#x27;block&#x27;</span>;<br>  &#125;<br>  isUpdating = <span class="hljs-literal">false</span>; <span class="hljs-comment">// 允许下一帧更新</span><br>&#125;<br><br><span class="hljs-comment">// 绑定 load 事件，页面加载完成后调用。</span><br><span class="hljs-variable language_">window</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;load&#x27;</span>, <span class="hljs-function">() =&gt;</span> &#123;<br>  <span class="hljs-title function_">setBackground</span>();       <span class="hljs-comment">// 页面加载完成后设置背景</span><br>  <span class="hljs-title function_">updateVisibility</span>();    <span class="hljs-comment">// 初次检测</span><br>&#125;);<br><br><span class="hljs-comment">// 绑定 resize 事件，窗口变化时调用。</span><br><span class="hljs-variable language_">window</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;resize&#x27;</span>, <span class="hljs-function">() =&gt;</span> &#123;<br>  <span class="hljs-title function_">setBackground</span>();       <span class="hljs-comment">// 改变窗口时设置背景</span><br>  <span class="hljs-comment">// 立即检测 banner 位置，调整背景显示状态。</span><br>  <span class="hljs-keyword">if</span> (!isUpdating) &#123;<br>    isUpdating = <span class="hljs-literal">true</span>;<br>    <span class="hljs-variable language_">window</span>.<span class="hljs-title function_">requestAnimationFrame</span>(updateVisibility);<br>  &#125;<br>&#125;);<br><br><span class="hljs-comment">// 绑定滚动事件，鼠标滚动时调用。</span><br><span class="hljs-variable language_">window</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;scroll&#x27;</span>, <span class="hljs-function">() =&gt;</span> &#123;<br>  <span class="hljs-keyword">if</span> (!isUpdating) &#123;<br>    isUpdating = <span class="hljs-literal">true</span>;<br>    <span class="hljs-variable language_">window</span>.<span class="hljs-title function_">requestAnimationFrame</span>(updateVisibility);<br>  &#125;<br>&#125;);<br></code></pre></td></tr></table></figure>
 
 <p>说明：</p>
 <ul>
@@ -824,7 +815,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年5月30日</div>
+          <div>2025年6月6日</div>
         </div>
       
       
@@ -911,6 +902,7 @@
 
 
   
+
 
 
 
@@ -1010,8 +1002,9 @@
 </div>
 
   </footer>
-  
+
 </div>
+
 
   <!-- Scripts -->
   
@@ -1031,6 +1024,36 @@
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+<script  src="https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -1060,22 +1083,8 @@
 
   
 <script>
-  /*
-  创建script元素，回调函数绑定onload事件（IE是直接执行回调函数）。
-  发起pjax请求，该元素会再次被新建。为了避免元素堆叠，移除已存在的该元素。
-	为了方便获取该元素，创建该元素时添加属性func="tocbot"
-	更改原函数，添加参数，用于设置该元素的属性func="tocbot"
-  */
-  /*
-  var tocbotElem = document.querySelector('script[func="tocbot-js-func"]')
-  if (tocbotElem) {
-    // tocbotElem.parentNode.removeChild(tocbotElem); // 兼容IE
-    tocbotElem.remove(); // 现代浏览器支持（IE！我兼容你的那个！给我进垃圾堆吧！）
-    console.log("移除tocbotElem");
-  }
-  */
-  Fluid.utils.createScriptST('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', 'tocbot-js-func', function() {
-    
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+  
     var toc = jQuery('#toc');
     if (toc.length === 0 || !window.tocbot) { return; }
     var boardCtn = jQuery('#board-ctn');
@@ -1121,11 +1130,11 @@
 
   
 <script data-pjax>
-  var tocbotElem = document.querySelector('script[func="anchor"]')
-  if (tocbotElem) {
-    tocbotElem.parentNode.removeChild(tocbotElem);
-  }
-  Fluid.utils.createScriptST('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', 'anchor', function() {
+  
+  var anchorElem = document.querySelector('script[funcDesc="anchor-js-api"]')
+  if (anchorElem) anchorElem.remove();
+
+  Fluid.utils.createScriptST('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', 'anchor-js-api', function() {
     window.anchors.options = {
       placement: CONFIG.anchorjs.placement,
       visible  : CONFIG.anchorjs.visible
@@ -1162,14 +1171,27 @@
 
 
   
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+<script data-pjax>
+
+  /*
+  创建script元素，回调函数绑定onload事件（IE是直接执行回调函数）。
+  发起pjax请求，该元素会再次被新建。为了避免元素堆叠，移除已存在的该元素。
+	为了方便获取该元素，创建该元素时添加属性funcDesc="fancybox-js-api"
+	为了方便获取该元素，创建该元素时添加属性funcDesc="fancybox-js-api"
+  */
+  var fancyboxElem = document.querySelector('script[funcDesc="fancybox-js-api"]')
+  if (fancyboxElem) {
+    // fancyboxElem.parentNode.removeChild(tocbotElem); // 兼容IE
+    fancyboxElem.remove(); // 现代浏览器支持（IE！我兼容你的那个！给我进垃圾堆吧！）
+    console.log('移除fancyboxElem');
+  }
+  Fluid.utils.createScriptST('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', 'fancybox-js-api', function() {
     Fluid.plugins.fancyBox();
   });
 </script>
 
 
-  <script>Fluid.plugins.imageCaption();</script>
+  <script data-pjax>Fluid.plugins.imageCaption();</script>
 
   <script data-pjax src="/js/local-search.js" ></script>
 
@@ -1183,8 +1205,7 @@
 <script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/Cherry.min.js"></script>
 <script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/DynamicLine.min.js"></script>
 <script src="//lib.baomitu.com/aplayer/1.10.1/APlayer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
-<script src="//lib.baomitu.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
 
 
 
@@ -1202,5 +1223,5 @@
 <!-- hexo injector body_end start --><script src="/js/responsive-background.js" data-pjax></script>
   <div id="aplayer"></div>
   <script defer src="/js/aplayer.js"></script>
-<!-- hexo injector body_end end --></body>
+<script src="/js/pjax-related.js"></script><!-- hexo injector body_end end --></body>
 </html>

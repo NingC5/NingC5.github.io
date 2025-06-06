@@ -148,13 +148,13 @@ Fluid.utils = {
     e.parentNode.insertBefore(s, e.nextSibling);
   },
   
-  createScriptST: function(url, funcParam, onload) {
+  createScriptST: function(url, funcDesc, onload) {
     var s = document.createElement('script');
     s.setAttribute('src', url);
     s.setAttribute('type', 'text/javascript');
     s.setAttribute('charset', 'UTF-8');
     s.async = false;
-	  if (funcParam) s.setAttribute('func', funcParam);
+	  if (funcDesc) s.setAttribute('funcDesc', funcDesc);
     if (typeof onload === 'function') {
       if (window.attachEvent) {
         s.onreadystatechange = function() {

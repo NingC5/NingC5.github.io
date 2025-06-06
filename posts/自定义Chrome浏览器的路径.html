@@ -8,8 +8,8 @@
 <head>
   <meta charset="UTF-8">
 
-  <link rel="apple-touch-icon" sizes="76x76" href="/image/favicon/shaton.ico">
-  <link rel="icon" href="/image/favicon/shaton.ico">
+  <link rel="apple-touch-icon" sizes="76x76" href="/image/favicon/ST.ico">
+  <link rel="icon" href="/image/favicon/ST.ico">
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
@@ -29,7 +29,7 @@
 <meta property="og:description" content="自定义 Chrome 浏览器的安装目录、用户数据目录和磁盘缓存目录。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-05-12T03:05:58.000Z">
-<meta property="article:modified_time" content="2025-05-27T03:27:43.050Z">
+<meta property="article:modified_time" content="2025-06-02T04:33:20.217Z">
 <meta property="article:author" content="shaton">
 <meta property="article:tag" content="软件安装">
 <meta property="article:tag" content="Chrome">
@@ -106,8 +106,8 @@
 <body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
   
 
-<div id="container-pjax">
 
+<div id="container-pjax">
   <header>
     
 
@@ -283,7 +283,7 @@
   </div>
 </div>
 
-</div>
+</>
 
   </header>
 
@@ -307,7 +307,7 @@
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年5月27日 上午
+                    本文最后更新于 2025年6月2日 下午
                   
                 
               </p>
@@ -328,7 +328,7 @@
 </ol>
 <p>因 C 盘容量不够，将 Chrome 浏览器安装到其他盘。（修改完后删除默认路径）</p>
 <hr>
-<p>【缺陷】：鼠标右键单机文件，打开方式，只能使用默认 Chrome 浏览器。除非你设置自定义 Chrome 浏览器为默认浏览器，鼠标左键双击文件。可能参考链接的软链接方式无此缺陷。</p>
+<p>【缺陷】：鼠标右键单击文件，打开方式，只能使用默认 Chrome 浏览器。除非你设置自定义 Chrome 浏览器为默认浏览器，鼠标左键双击文件。可能参考链接的软链接方式无此缺陷。</p>
 <ol>
 <li>下载 Google Chrome 离线安装包</li>
 </ol>
@@ -445,7 +445,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年5月27日</div>
+          <div>2025年6月2日</div>
         </div>
       
       
@@ -532,6 +532,7 @@
 
 
   
+
 
 
 
@@ -631,8 +632,9 @@
 </div>
 
   </footer>
-  
+
 </div>
+
 
   <!-- Scripts -->
   
@@ -652,6 +654,36 @@
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+<script  src="https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -681,22 +713,8 @@
 
   
 <script>
-  /*
-  创建script元素，回调函数绑定onload事件（IE是直接执行回调函数）。
-  发起pjax请求，该元素会再次被新建。为了避免元素堆叠，移除已存在的该元素。
-	为了方便获取该元素，创建该元素时添加属性func="tocbot"
-	更改原函数，添加参数，用于设置该元素的属性func="tocbot"
-  */
-  /*
-  var tocbotElem = document.querySelector('script[func="tocbot-js-func"]')
-  if (tocbotElem) {
-    // tocbotElem.parentNode.removeChild(tocbotElem); // 兼容IE
-    tocbotElem.remove(); // 现代浏览器支持（IE！我兼容你的那个！给我进垃圾堆吧！）
-    console.log("移除tocbotElem");
-  }
-  */
-  Fluid.utils.createScriptST('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', 'tocbot-js-func', function() {
-    
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+  
     var toc = jQuery('#toc');
     if (toc.length === 0 || !window.tocbot) { return; }
     var boardCtn = jQuery('#board-ctn');
@@ -742,11 +760,11 @@
 
   
 <script data-pjax>
-  var tocbotElem = document.querySelector('script[func="anchor"]')
-  if (tocbotElem) {
-    tocbotElem.parentNode.removeChild(tocbotElem);
-  }
-  Fluid.utils.createScriptST('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', 'anchor', function() {
+  
+  var anchorElem = document.querySelector('script[funcDesc="anchor-js-api"]')
+  if (anchorElem) anchorElem.remove();
+
+  Fluid.utils.createScriptST('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', 'anchor-js-api', function() {
     window.anchors.options = {
       placement: CONFIG.anchorjs.placement,
       visible  : CONFIG.anchorjs.visible
@@ -783,14 +801,27 @@
 
 
   
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+<script data-pjax>
+
+  /*
+  创建script元素，回调函数绑定onload事件（IE是直接执行回调函数）。
+  发起pjax请求，该元素会再次被新建。为了避免元素堆叠，移除已存在的该元素。
+	为了方便获取该元素，创建该元素时添加属性funcDesc="fancybox-js-api"
+	为了方便获取该元素，创建该元素时添加属性funcDesc="fancybox-js-api"
+  */
+  var fancyboxElem = document.querySelector('script[funcDesc="fancybox-js-api"]')
+  if (fancyboxElem) {
+    // fancyboxElem.parentNode.removeChild(tocbotElem); // 兼容IE
+    fancyboxElem.remove(); // 现代浏览器支持（IE！我兼容你的那个！给我进垃圾堆吧！）
+    console.log('移除fancyboxElem');
+  }
+  Fluid.utils.createScriptST('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', 'fancybox-js-api', function() {
     Fluid.plugins.fancyBox();
   });
 </script>
 
 
-  <script>Fluid.plugins.imageCaption();</script>
+  <script data-pjax>Fluid.plugins.imageCaption();</script>
 
   <script data-pjax src="/js/local-search.js" ></script>
 
@@ -804,8 +835,7 @@
 <script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/Cherry.min.js"></script>
 <script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/DynamicLine.min.js"></script>
 <script src="//lib.baomitu.com/aplayer/1.10.1/APlayer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
-<script src="//lib.baomitu.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
 
 
 
@@ -823,5 +853,5 @@
 <!-- hexo injector body_end start --><script src="/js/responsive-background.js" data-pjax></script>
   <div id="aplayer"></div>
   <script defer src="/js/aplayer.js"></script>
-<!-- hexo injector body_end end --></body>
+<script src="/js/pjax-related.js"></script><!-- hexo injector body_end end --></body>
 </html>

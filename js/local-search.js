@@ -153,7 +153,7 @@
   modal.on('shown.bs.modal', function() {
     jQuery('#local-search-input').focus();
   });
-  modal.on('hidden.bs.modal', function() {
-    localSearchReset(searchSelector, resultSelector);
-  });
+  // modal.on('hidden.bs.modal', function() {
+  //   localSearchReset(searchSelector, resultSelector);
+  // });
 })();
