@@ -361,6 +361,7 @@
 <script  src="/js/plugins.js" ></script>
 
 
+<!-- 使用markdown-plugins.ejs模板，使得所有页面都有文章页独有的JS和CSS -->
 
 
 
@@ -387,8 +388,17 @@
 
 
 
+<!-- 模板线上存在问题，未引入github-markdown.min.css和hint.min.css，直接copy过来 -->
 
+
+
+<!-- layout\_partials\post\toc.ejs -->
 <script  src="https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js" ></script>
+
+<!-- layout\_partials\plugins\fancybox.ejs -->
+<link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+<script  src="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -420,9 +430,9 @@
 
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
-  <script func="clipboard" src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
 
-  <script data-pjax func="codeWidget">Fluid.plugins.codeWidget();</script>
+  <script data-pjax>Fluid.plugins.codeWidget();</script>
 
 
   
@@ -468,21 +478,8 @@
 
 
   
-<script data-pjax>
-
-  /*
-  创建script元素，回调函数绑定onload事件（IE是直接执行回调函数）。
-  发起pjax请求，该元素会再次被新建。为了避免元素堆叠，移除已存在的该元素。
-	为了方便获取该元素，创建该元素时添加属性funcDesc="fancybox-js-api"
-	为了方便获取该元素，创建该元素时添加属性funcDesc="fancybox-js-api"
-  */
-  var fancyboxElem = document.querySelector('script[funcDesc="fancybox-js-api"]')
-  if (fancyboxElem) {
-    // fancyboxElem.parentNode.removeChild(tocbotElem); // 兼容IE
-    fancyboxElem.remove(); // 现代浏览器支持（IE！我兼容你的那个！给我进垃圾堆吧！）
-    console.log('移除fancyboxElem');
-  }
-  Fluid.utils.createScriptST('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', 'fancybox-js-api', function() {
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
     Fluid.plugins.fancyBox();
   });
 </script>

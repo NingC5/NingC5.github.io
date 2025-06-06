@@ -51,18 +51,5 @@ if (fancybox_js_func.length === 0) {
 }
 
 	
-  if ($('script[func="clipboard"]').length === 0) {
-    console.log("clipboard");
-    var script = $('<script func="clipboard" src="https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js"></script>');
-    $("body").append(script);
-  }
-
-  if ($('script[func="codeWidget"]').length === 0) {
-    console.log("codeWidget");
-    var script = $('<script data-pjax func="codeWidget">Fluid.plugins.codeWidget();</script>');
-    $("body").append(script);
-    // Fluid.plugins.codeWidget();
-  }
-
  
 } 

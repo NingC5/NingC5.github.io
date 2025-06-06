@@ -1,3 +1,5 @@
+
+
 $(document).on("pjax:send", function () {
   NProgress.start(); // NProgress进度条
 });
@@ -6,14 +8,17 @@ $(document).on("pjax:complete", function () {
   NProgress.done();
 });
 
+
 /*
 点击<a>链接在当前窗口打开时，通过AJAX请求对应页面的内容;
 提取请求返回内容中的#container-pjax部分，插入到当前页面的#container-pjax容器内，8秒请求超时。
 */
-$(document).pjax('a[target!="_blank"]:not(.fancybox-image)', "#container-pjax", {
-  fragment: "#container-pjax",
-  timeout: 8000,
-});
+
+$(document).pjax('a[target!="_blank"]:not(.fancybox-image)',"#container-pjax",{
+    fragment: "#container-pjax",
+    timeout: 8000,
+  }
+);
 // "a[target!=_blank]"
 $(document).on("pjax:end", function () {
   // reload necessary scripts（麻烦！）
@@ -38,13 +43,12 @@ function pjax_reload() {
 
   // loadFuncAndRemoveScriptExists(injectTocbotAndApply, 'script[funcDesc="tocbot-js-api"]');
 
-  /*
-  当刷新页为"非文章页"，请求"文章页"时，额外注入文章页独有的 JS、CSS（必要scripts）。
-  如果页面没有此元素，则创建此元素并插入到页面。
-  */
-
   // 如果元素（id="toc"）存在，即目标页面为文章页，则生成文章目录
   if ($("#toc").length > 0) applyTocbot();
+
+  // 无条件执行函数fancyBox()，可能存在问题
+  // 
+  Fluid.plugins.fancyBox();
 
   /*
   打开搜索框，页面插入div元素：<div class="modal-backdrop fade show"></div>
@@ -52,8 +56,8 @@ function pjax_reload() {
   pjax请求搜索到的博文，页面存在该div元素导致页面无法点击
   故采用以下方式临时处理（暂时找不到该元素是哪个函数注入到页面的）
   */
-  var $modalBackdrop = $('.modal-backdrop');
-  if($modalBackdrop.length > 0) $modalBackdrop.remove();
+  var $modalBackdrop = $(".modal-backdrop");
+  if ($modalBackdrop.length > 0) $modalBackdrop.remove();
 }
 
 // 生成文章目录
@@ -165,6 +169,16 @@ function injectTocbotAndApply() {
   );
 }
 
+
+
+
+
+
+
+
+
+
+
 /*
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -194,7 +208,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const pjax = new Pjax({
     elements: 'a:not([target="_blank"])',
-// elements: 'a:not([target="_blank"]), a[class*="search-list-title"]',
 // selectors: ["#banner", "main"],
 // selectors: ["main"],
     selectors: ["#container-pjax"],
@@ -261,6 +274,12 @@ document.addEventListener("pjax:success", function () {
   );
 });
 */
+
+/*
+  当刷新页为"非文章页"，请求"文章页"时，额外注入文章页独有的 JS、CSS（必要scripts）。
+  如果页面没有此元素，则创建此元素并插入到页面。
+  */
+
 /*
 加载功能模块，并移除已存在的script元素。针对函数Fluid.utils.createScriptSt设计。
 PJAX请求后，删除已存在的script元素，避免元素堆积。
