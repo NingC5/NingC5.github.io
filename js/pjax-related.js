@@ -1,5 +1,3 @@
-
-
 $(document).on("pjax:send", function () {
   NProgress.start(); // NProgress进度条
 });
@@ -8,13 +6,15 @@ $(document).on("pjax:complete", function () {
   NProgress.done();
 });
 
-
 /*
 点击<a>链接在当前窗口打开时，通过AJAX请求对应页面的内容;
 提取请求返回内容中的#container-pjax部分，插入到当前页面的#container-pjax容器内，8秒请求超时。
 */
 
-$(document).pjax('a[target!="_blank"]:not(.fancybox-image)',"#container-pjax",{
+$(document).pjax(
+  'a[target!="_blank"]:not(.fancybox-image)',
+  "#container-pjax",
+  {
     fragment: "#container-pjax",
     timeout: 8000,
   }
@@ -40,8 +40,6 @@ function pjax_reload() {
   $.getScript(
     "https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
   );
-
-  // loadFuncAndRemoveScriptExists(injectTocbotAndApply, 'script[funcDesc="tocbot-js-api"]');
 
   // 如果元素（id="toc"）存在，即目标页面为文章页，则生成文章目录
   if ($("#toc").length > 0) applyTocbot();
@@ -108,6 +106,8 @@ function applyTocbot() {
   });
 }
 
+// loadFuncAndRemoveScriptExists(injectTocbotAndApply, 'script[funcDesc="tocbot-js-api"]');
+
 function loadFuncAndRemoveScriptExists(funcItem, scriptFuncDesc) {
   console.log(scriptFuncDesc);
   var $el = $(scriptFuncDesc);
@@ -172,16 +172,6 @@ function injectTocbotAndApply() {
     }
   );
 }
-
-
-
-
-
-
-
-
-
-
 
 /*
 document.addEventListener("DOMContentLoaded", function () {
