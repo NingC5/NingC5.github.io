@@ -46,8 +46,12 @@ function pjax_reload() {
   // 如果元素（id="toc"）存在，即目标页面为文章页，则生成文章目录
   if ($("#toc").length > 0) applyTocbot();
 
-  // 无条件执行函数fancyBox()，可能存在问题
-  // 
+  /* 无条件执行函数fancyBox()，可能存在问题。
+  本地测试时，借助"data-pjax"属性遍历，虽然浏览器控制台报错（fancyBox已初始化），但未发现问题。
+  上线测试时，点击文章页的图片打开fancyBox，该文章页的所有图片都在文章页底部爆了。
+  那只能将fancyBox的JS和CSS注入到所有页面，直接执行函数fancyBox()，以避免遍历时的重复初始化了。
+  （函数fancyBox()是调用fancyBox提供的API作用于页面图片。）
+  */
   Fluid.plugins.fancyBox();
 
   /*
