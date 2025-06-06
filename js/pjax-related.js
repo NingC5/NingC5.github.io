@@ -10,11 +10,11 @@ $(document).on("pjax:complete", function () {
 点击<a>链接在当前窗口打开时，通过AJAX请求对应页面的内容;
 提取请求返回内容中的#container-pjax部分，插入到当前页面的#container-pjax容器内，8秒请求超时。
 */
-$(document).pjax("a[target!=_blank]:not([pjax-fancybox]", "#container-pjax", {
+$(document).pjax('a[target!="_blank"]:not(.fancybox-image)', "#container-pjax", {
   fragment: "#container-pjax",
   timeout: 8000,
 });
-
+// "a[target!=_blank]"
 $(document).on("pjax:end", function () {
   // reload necessary scripts（麻烦！）
   pjax_reload(); // 在此函数中集中设置必要的scripts

@@ -1,7 +1,7 @@
 (function() {
-  // var oldLoadAp = window.onload;
-  // window.onload = function () {
-    // oldLoadAp && oldLoadAp();
+  var oldLoadAp = window.onload;
+  window.onload = function () {
+    oldLoadAp && oldLoadAp();
     new APlayer({
       container: document.getElementById('aplayer'),
       fixed: true,	// 开启吸底模式
@@ -75,5 +75,5 @@
         }
       ]
     });
-  // }
+  }
 })();
