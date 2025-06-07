@@ -33,7 +33,7 @@
     <link href="/posts/%E8%BF%9B%E5%BA%A6%E8%AF%B4%E6%98%8E.html"/>
     <url>/posts/%E8%BF%9B%E5%BA%A6%E8%AF%B4%E6%98%8E.html</url>
     
-    <content type="html"><![CDATA[<p>《博客搭建与运维指南》还有很多 todo，但是 no time！操作比较快，但写出来比较麻烦。（直接给个官方文档链接得了！自己去看吧！）</p><ol><li>内容不连贯。以第一篇“个人博客”为例，在该篇的域名和 IP 部分，只是死板地列出两者的定义。应该先介绍主机——连入因特网（通常泛称为互联网）的设备都称为主机 …balabala…</li><li>内容布局不合理…</li><li>内容详略不得当…</li></ol><hr><p>海星是一个美丽的全海星球。</p><p>平台在某处扎了根，依附于平台的博客迁土填海，使得平台发展成中心化聚集地。作为中心化聚集地附属点的博客通过其广泛地关联。</p><p>私人博客是荒海中一个个孤岛，作为无中心化的离散点可以通过评论、友链等方式单一的连接。</p><p>（P.S.：可能会加个评论区？方便交流？）</p>]]></content>
+    <content type="html"><![CDATA[<p>《博客搭建与运维指南》还有很多 todo，但是 no time！操作比较快，但写出来比较麻烦。（直接给个官方文档链接得了！自己去看吧！）</p><ol><li>内容不连贯。以第一篇“个人博客”为例，在该篇的域名和 IP 部分，只是死板地列出两者的定义。应该先介绍主机——连入因特网（通常泛称为互联网）的设备都称为主机 …balabala…</li><li>内容布局不合理…</li><li>内容详略不得当…</li></ol><hr><p>海星是一个美丽的全海星球。</p><p>平台在某处扎了根，依附于平台的博客迁土填海，使得平台发展成中心化聚集地。作为中心化聚集地附属点的博客通过其广泛地关联。</p><p>私人博客是荒海中一个个孤岛，作为无中心化的离散点可以通过评论、友链等方式单一的连接。</p><p>（P.S.：可能会加个评论区？方便交流？）</p><hr><p>虽然 Fluid 主题不支持 PJAX，但是博客已用上丐版 PJAX——刷新页非文章页，首次请求文章页时，采用完全刷新；其余采用 PJAX。丐版仅是因为样式问题（<code>github-markdown.min.css</code> 之流）无法解决，只好折中。有人懂 Fluid 主题样式吗？</p>]]></content>
     
     
     <categories>
@@ -204,7 +204,7 @@
     <link href="/posts/Hexo&amp;Fluid%E3%81%AE%E7%A2%8E%E8%AF%AD.html"/>
     <url>/posts/Hexo&amp;Fluid%E3%81%AE%E7%A2%8E%E8%AF%AD.html</url>
     
-    <content type="html"><![CDATA[<p>简陋是 Hexo 的优势也是其劣势。想要符合要求的博客样式，需要能力去发现，也需要精力去改造；但这些还符合建立博客的初衷吗？</p><p>Hexo 静态博客框架自 2013 年发布以来维护至今，最新版本为 7.3.0，笔者很荣幸能够享用到这一开源果实。这里给出一个建议，可以使用其他功能更强大的 Markdown 渲染插件替换默认的插件——marked。marked 插件在图片路径处理方面存在逻辑错误，笔者在  <a href="/posts/Hexo&GitHubPages%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2.html" title="Hexo+GitHubPages搭建静态博客">Hexo+GitHubPages搭建静态博客</a>：文件管理与附属资源显示—— shit 小节的彩蛋中指出。</p><p>至于 Fluid 主题，它除了简陋，和别的通用主题没差。如果需要注入静态代码片段到生成的 HTML 文件，可以使用 Hexo 框架提供的 Injector（注入器）钩子函数。</p><p>P.S.：Fluid 主题不支持 PJAX，详情见链接：<a href="https://github.com/fluid-dev/hexo-theme-fluid/issues/189">https://github.com/fluid-dev/hexo-theme-fluid/issues/189</a> 。如果想要使用 AJAX，请选择其他主题。</p>]]></content>
+    <content type="html"><![CDATA[<p>简陋是 Hexo 的优势也是其劣势。想要符合要求的博客样式，需要能力去发现，也需要精力去改造；但这些还符合建立博客的初衷吗？</p><p>Hexo 静态博客框架自 2013 年发布以来维护至今，最新版本为 7.3.0，笔者很荣幸能够享用到这一开源果实。这里给出一个建议，可以使用其他功能更强大的 Markdown 渲染插件替换默认的插件——marked。marked 插件在图片路径处理方面存在逻辑错误，笔者在  <a href="/posts/Hexo&GitHubPages%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2.html" title="Hexo+GitHubPages搭建静态博客">Hexo+GitHubPages搭建静态博客</a>：文件管理与附属资源显示—— shit 小节的彩蛋中指出。</p><p>至于 Fluid 主题，它除了简陋，和别的通用主题没差。如果需要注入静态代码片段到生成的 HTML 文件，可以使用 Hexo 框架提供的 Injector（注入器）钩子函数。</p><p>P.S.：Fluid 主题不支持 PJAX，详情见链接：<a href="https://github.com/fluid-dev/hexo-theme-fluid/issues/189">https://github.com/fluid-dev/hexo-theme-fluid/issues/189</a> 。如果想要使用 PJAX，请选择其他主题。</p>]]></content>
     
     
     <categories>

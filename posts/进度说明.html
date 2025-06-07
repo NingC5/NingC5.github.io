@@ -29,7 +29,7 @@
 <meta property="og:description" content="《博客搭建与运维指南》还有很多 todo，但是 no time！操作比较快，但写出来比较麻烦。（直接给个官方文档链接得了！自己去看吧！）  内容不连贯。以第一篇“个人博客”为例，在该篇的域名和 IP 部分，只是死板地列出两者的定义。应该先介绍主机——连入因特网（通常泛称为互联网）的设备都称为主机 …balabala… 内容布局不合理… 内容详略不得当…   海星是一个美丽的全海星球。 平台在某处扎">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-05-26T08:56:20.000Z">
-<meta property="article:modified_time" content="2025-05-27T10:07:01.205Z">
+<meta property="article:modified_time" content="2025-06-07T03:28:47.165Z">
 <meta property="article:author" content="shaton">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -37,7 +37,8 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-     <meta name="key" content="value"> 
+    
+
   
   <title>进度说明 - shaton沙桐</title>
 
@@ -243,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          247 字
+          324 字
         
       </span>
     
@@ -465,7 +466,7 @@
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年5月27日 晚上
+                    本文最后更新于 2025年6月7日 上午
                   
                 
               </p>
@@ -484,6 +485,8 @@
 <p>平台在某处扎了根，依附于平台的博客迁土填海，使得平台发展成中心化聚集地。作为中心化聚集地附属点的博客通过其广泛地关联。</p>
 <p>私人博客是荒海中一个个孤岛，作为无中心化的离散点可以通过评论、友链等方式单一的连接。</p>
 <p>（P.S.：可能会加个评论区？方便交流？）</p>
+<hr>
+<p>虽然 Fluid 主题不支持 PJAX，但是博客已用上丐版 PJAX——刷新页非文章页，首次请求文章页时，采用完全刷新；其余采用 PJAX。丐版仅是因为样式问题（<code>github-markdown.min.css</code> 之流）无法解决，只好折中。有人懂 Fluid 主题样式吗？</p>
 
                 
               </div>
@@ -541,7 +544,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年5月27日</div>
+          <div>2025年6月7日</div>
         </div>
       
       
@@ -683,7 +686,8 @@
     
       <div class="col-lg-7 mx-auto nopadding-x-md">
         <div class="container custom mx-auto">
-           <link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css"> 
+          
+
         </div>
       </div>
     
@@ -753,20 +757,8 @@
 
 
 <!-- 使用markdown-plugins.ejs模板，使得所有页面都有文章页独有的JS和CSS -->
-
-
-
-
-  
-
-
-
-  
-
-
-
-
-  
+<!-- 无法引入github-markdown.min.css和hint.min.css。如果使用函数css_ex直接注入，样式错误 -->
+<!-- 
 
 
 
@@ -779,14 +771,22 @@
 
 
 
+  
 
+
+
+  
+
+
+
+  
+
+
+
+ -->
+<!-- 因为暂时使用丐版PJAX，文章页独有的JS和CSS也没必要注入所有页面 -->
 <!-- layout\_partials\post\toc.ejs -->
-<script  src="https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js" ></script>
-
-<!-- layout\_partials\plugins\fancybox.ejs -->
-<link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
-<script  src="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
-
+<!-- <script  src="https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js" ></script> -->
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -817,7 +817,6 @@
   
 <script>
   Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
-  
     var toc = jQuery('#toc');
     if (toc.length === 0 || !window.tocbot) { return; }
     var boardCtn = jQuery('#board-ctn');
@@ -852,7 +851,6 @@
       }
     });
   });
-  console.log("刷新页为post页：tocbot-js-func");
 </script>
 
 

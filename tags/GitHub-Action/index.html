@@ -33,7 +33,8 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-     <meta name="key" content="value"> 
+    
+
   
   <title>标签 - GitHub Action - shaton沙桐</title>
 
@@ -296,7 +297,8 @@
     
       <div class="col-lg-7 mx-auto nopadding-x-md">
         <div class="container custom mx-auto">
-           <link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css"> 
+          
+
         </div>
       </div>
     
@@ -366,20 +368,8 @@
 
 
 <!-- 使用markdown-plugins.ejs模板，使得所有页面都有文章页独有的JS和CSS -->
-
-
-
-
-  
-
-
-
-  
-
-
-
-
-  
+<!-- 无法引入github-markdown.min.css和hint.min.css。如果使用函数css_ex直接注入，样式错误 -->
+<!-- 
 
 
 
@@ -392,14 +382,22 @@
 
 
 
+  
 
+
+
+  
+
+
+
+  
+
+
+
+ -->
+<!-- 因为暂时使用丐版PJAX，文章页独有的JS和CSS也没必要注入所有页面 -->
 <!-- layout\_partials\post\toc.ejs -->
-<script  src="https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js" ></script>
-
-<!-- layout\_partials\plugins\fancybox.ejs -->
-<link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
-<script  src="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
-
+<!-- <script  src="https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js" ></script> -->
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>

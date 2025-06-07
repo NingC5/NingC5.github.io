@@ -29,7 +29,7 @@
 <meta property="og:description" content="简陋是 Hexo 的优势也是其劣势。想要符合要求的博客样式，需要能力去发现，也需要精力去改造；但这些还符合建立博客的初衷吗？ Hexo 静态博客框架自 2013 年发布以来维护至今，最新版本为 7.3.0，笔者很荣幸能够享用到这一开源果实。这里给出一个建议，可以使用其他功能更强大的 Markdown 渲染插件替换默认的插件——marked。marked 插件在图片路径处理方面存在逻辑错误，笔者在">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-05-03T07:43:12.000Z">
-<meta property="article:modified_time" content="2025-05-29T15:46:49.559Z">
+<meta property="article:modified_time" content="2025-06-07T04:29:17.879Z">
 <meta property="article:author" content="shaton">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Fluid">
@@ -39,7 +39,8 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-     <meta name="key" content="value"> 
+    
+
   
   <title>Hexo与Fluidの碎语（弃Fluid or 弃AJAX） - shaton沙桐</title>
 
@@ -467,7 +468,7 @@
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年5月29日 晚上
+                    本文最后更新于 2025年6月7日 中午
                   
                 
               </p>
@@ -478,7 +479,7 @@
                 <p>简陋是 Hexo 的优势也是其劣势。想要符合要求的博客样式，需要能力去发现，也需要精力去改造；但这些还符合建立博客的初衷吗？</p>
 <p>Hexo 静态博客框架自 2013 年发布以来维护至今，最新版本为 7.3.0，笔者很荣幸能够享用到这一开源果实。这里给出一个建议，可以使用其他功能更强大的 Markdown 渲染插件替换默认的插件——marked。marked 插件在图片路径处理方面存在逻辑错误，笔者在  <a href="/posts/Hexo&GitHubPages%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2.html" title="Hexo+GitHubPages搭建静态博客">Hexo+GitHubPages搭建静态博客</a>：文件管理与附属资源显示—— shit 小节的彩蛋中指出。</p>
 <p>至于 Fluid 主题，它除了简陋，和别的通用主题没差。如果需要注入静态代码片段到生成的 HTML 文件，可以使用 Hexo 框架提供的 Injector（注入器）钩子函数。</p>
-<p>P.S.：Fluid 主题不支持 PJAX，详情见链接：<a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid/issues/189">https://github.com/fluid-dev/hexo-theme-fluid/issues/189</a> 。如果想要使用 AJAX，请选择其他主题。</p>
+<p>P.S.：Fluid 主题不支持 PJAX，详情见链接：<a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid/issues/189">https://github.com/fluid-dev/hexo-theme-fluid/issues/189</a> 。如果想要使用 PJAX，请选择其他主题。</p>
 
                 
               </div>
@@ -545,7 +546,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年5月29日</div>
+          <div>2025年6月7日</div>
         </div>
       
       
@@ -687,7 +688,8 @@
     
       <div class="col-lg-7 mx-auto nopadding-x-md">
         <div class="container custom mx-auto">
-           <link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css"> 
+          
+
         </div>
       </div>
     
@@ -757,20 +759,8 @@
 
 
 <!-- 使用markdown-plugins.ejs模板，使得所有页面都有文章页独有的JS和CSS -->
-
-
-
-
-  
-
-
-
-  
-
-
-
-
-  
+<!-- 无法引入github-markdown.min.css和hint.min.css。如果使用函数css_ex直接注入，样式错误 -->
+<!-- 
 
 
 
@@ -783,14 +773,22 @@
 
 
 
+  
 
+
+
+  
+
+
+
+  
+
+
+
+ -->
+<!-- 因为暂时使用丐版PJAX，文章页独有的JS和CSS也没必要注入所有页面 -->
 <!-- layout\_partials\post\toc.ejs -->
-<script  src="https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js" ></script>
-
-<!-- layout\_partials\plugins\fancybox.ejs -->
-<link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
-<script  src="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
-
+<!-- <script  src="https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js" ></script> -->
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -821,7 +819,6 @@
   
 <script>
   Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
-  
     var toc = jQuery('#toc');
     if (toc.length === 0 || !window.tocbot) { return; }
     var boardCtn = jQuery('#board-ctn');
@@ -856,7 +853,6 @@
       }
     });
   });
-  console.log("刷新页为post页：tocbot-js-func");
 </script>
 
 
