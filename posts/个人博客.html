@@ -1,0 +1,1123 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/image/favicon/ST.ico">
+  <link rel="icon" href="/image/favicon/ST.ico">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="shaton沙桐">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Web Log（网络日志），简称 Blog（博客）。 笔者使用 Typora 做学习记录。苦恼的是，md 文档的大量开启会导致计算机运行内存占用陡增，遂产生了建立博客的念头——在网站上浏览自己的记录。 【注】：只看前两章即可。 1. Personal Choices记录可以使用笔记软件&#x2F;工具，也可以发布在平台社区或个人博客网站上，方式各有优劣。  笔记工具，诸如 Notion、Wolai">
+<meta property="og:type" content="article">
+<meta property="og:title" content="个人博客">
+<meta property="og:url" content="https://www.cornst.com/posts/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2.html">
+<meta property="og:site_name" content="shaton沙桐">
+<meta property="og:description" content="Web Log（网络日志），简称 Blog（博客）。 笔者使用 Typora 做学习记录。苦恼的是，md 文档的大量开启会导致计算机运行内存占用陡增，遂产生了建立博客的念头——在网站上浏览自己的记录。 【注】：只看前两章即可。 1. Personal Choices记录可以使用笔记软件&#x2F;工具，也可以发布在平台社区或个人博客网站上，方式各有优劣。  笔记工具，诸如 Notion、Wolai">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-04-27T09:15:38.000Z">
+<meta property="article:modified_time" content="2025-06-08T14:41:42.677Z">
+<meta property="article:author" content="shaton">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+    
+
+  
+  <title>个人博客 - shaton沙桐</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css">
+<link rel="stylesheet" href="https://jsd.cdn.zzko.cn/gh/EmoryHuang/BlogBeautify@1.1/gradient.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/shubiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/gundongtiao.css">
+<link rel="stylesheet" href="//lib.baomitu.com/aplayer/1.10.1/APlayer.min.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"www.cornst.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":true,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script data-pjax src="/js/color-schema.js" ></script>
+  
+
+ 
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
+  
+
+
+<div id="container-pjax">
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>shaton沙桐的乐色桶</strong>
+    </a>
+	
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/image/banner/%E7%B2%89%E5%A5%B3.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="个人博客"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        shaton沙桐
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-04-27 17:15" pubdate>
+          2025年4月27日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.5k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          30 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar category-bar" style="margin-right: -1rem">
+    
+
+
+
+
+
+<div class="category-list">
+  
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item 
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="博客搭建与运维指南"
+        id="heading-fea7a4583b0dce4c2adcc9d00a4f05e7" role="tab" data-toggle="collapse" href="#collapse-fea7a4583b0dce4c2adcc9d00a4f05e7"
+        aria-expanded="true"
+      >
+        博客搭建与运维指南
+        <span class="list-group-count">(13)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse show" id="collapse-fea7a4583b0dce4c2adcc9d00a4f05e7"
+           role="tabpanel" aria-labelledby="heading-fea7a4583b0dce4c2adcc9d00a4f05e7">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/posts/%E8%BF%9B%E5%BA%A6%E8%AF%B4%E6%98%8E.html" title="进度说明"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">进度说明</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2.html" title="个人博客"
+           class="list-group-item list-group-item-action
+           active">
+          <span class="category-post">个人博客</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/Hexo%E3%81%A8GitHubPages%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2.html" title="HexoとGitHubPages搭建静态博客"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">HexoとGitHubPages搭建静态博客</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/Fluid%E4%B8%BB%E9%A2%98%E3%81%AE%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96.html" title="Fluid主题の博客美化"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Fluid主题の博客美化</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/Hexo%E3%81%A8Fluid%E8%8D%89%E8%88%B9%E5%80%9F%E7%AE%AD.html" title="HexoとFluid草船借箭"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">HexoとFluid草船借箭</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/marked%EF%BC%88Hexo%E9%BB%98%E8%AE%A4%E7%9A%84Markdown%E6%B8%B2%E6%9F%93%E6%8F%92%E4%BB%B6%EF%BC%89%E7%9A%84%E9%83%A8%E5%88%86%E6%BA%90%E7%A0%81%E6%B3%A8%E9%87%8A.html" title="marked（Hexo默认的Markdown渲染插件）的部分源码注释"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">marked（Hexo默认的Markdown渲染插件）的部分源码注释</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/Hexo%E3%81%A8Fluid%E3%81%AE%E7%A2%8E%E8%AF%AD.html" title="HexoとFluidの碎语（PJAX? Just Decide!）"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">HexoとFluidの碎语（PJAX? Just Decide!）</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/GitHub%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E4%B8%8EGit%E8%BF%9E%E6%8E%A5GitHubPages%E4%BB%93%E5%BA%93.html" title="GitHub身份验证与Git连接GitHubPages仓库"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">GitHub身份验证与Git连接GitHubPages仓库</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/GitHubPages%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D.html" title="GitHubPages自定义域名"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">GitHubPages自定义域名</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E7%BD%91%E7%AB%99%E9%98%B2%E6%8A%A4%EF%BC%9ACloudflare.html" title="网站防护：Cloudflare"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">网站防护：Cloudflare</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8APlayer.html" title="音乐播放器APlayer"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">音乐播放器APlayer</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/GitHubPages%E8%AE%BF%E9%97%AE%E4%BC%98%E5%8C%96.html" title="GitHubPages访问优化"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">GitHubPages访问优化</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E5%BE%85%E5%AE%9E%E7%8E%B0.html" title="待实现"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">待实现</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+</div>
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">个人博客</h1>
+            
+              <p id="updated-time" class="note note-info" style="">
+                
+                  
+                    本文最后更新于 2025年6月8日 晚上
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <p>Web Log（网络日志），简称 Blog（博客）。</p>
+<p>笔者使用 Typora 做学习记录。苦恼的是，md 文档的大量开启会导致计算机运行内存占用陡增，遂产生了建立博客的念头——在网站上浏览自己的记录。</p>
+<p>【注】：只看前两章即可。</p>
+<h1 id="1-Personal-Choices"><a href="#1-Personal-Choices" class="headerlink" title="1. Personal Choices"></a>1. Personal Choices</h1><p>记录可以使用笔记软件&#x2F;工具，也可以发布在平台社区或个人博客网站上，方式各有优劣。</p>
+<hr>
+<p><strong>笔记工具</strong>，诸如 Notion、Wolai、语雀、Obsidian 和 Typora 等。笔记工具使用门槛低，适合个人整理、快速记录。笔记工具不要随意切换，数据迁移比较繁琐。如果是本地编辑，个人推荐 Obsidian 或 Typora；如果偶尔需要网页编辑，可以使用语雀。</p>
+<ul>
+<li><p>Notion：互联工作站。</p>
+</li>
+<li><p>Wolai：Notion 的本土化版本，云笔记且支持本地存储。</p>
+</li>
+<li><p>语雀：云端知识库。</p>
+</li>
+<li><p>Obsidian：本地知识库。</p>
+</li>
+<li><p>Typora：原始的 MarkDown 编辑器。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.yuque.com/">语雀云端知识库</a>：支持诸如定制 URL、在线编辑、自带评论功能等，还具备一定的社区环境（社交）。缺点是占用内存且卡顿、审核、付费、非自建等。【语雀停机事件】也引发用户对数据安全问题的广泛关注。</p>
+</li>
+</ul>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://ld246.com/article/1738580142674">DeepSeek 锐评各大笔记软件：Obsidian、Notion、flomo、思源笔记、语雀、OneNote - 链滴</a></p>
+<p><a target="_blank" rel="noopener" href="https://sspai.com/post/57704">快速拥有自己的博客，语雀或许是不错的选择 - 少数派</a></p>
+<p><a target="_blank" rel="noopener" href="https://sspai.com/post/96863">为什么笔记用户要保卫自己的「数字主权」？ - 少数派</a></p>
+</blockquote>
+<hr>
+<p><strong>平台社区</strong>，诸如 CSDN、ITeye、博客园、开源中国、微信公众号、简书、知乎专栏、稀土掘金、SegmentFault、GitHub 等。平台社区的好处在于“社区”二字——交流反馈以及打造商业价值。需要注意的是，博主受制于平台政策。平台可能会要求博主整改博文，甚至删帖。因此，平台仅适合作为内容的“分发渠道”，但不建议作为主阵地。此外，平台社区人员混杂。个人很喜欢 ITeye 的 RednaxelaFX，他现在偶尔在知乎回答问题。</p>
+<ul>
+<li>CSDN：SEO 好，阅读量高，内容限定计算机领域。布局差，广告多。（不是很推荐，个人希望搜浏览器少显示 CSDN 的内容！）</li>
+<li>ITeye：原 JavaEye，old school，现已迁移到 CSDN。（shit! ITeye died!）</li>
+<li>博客园：SEO 好，阅读量有保证，内容限定计算机领域，可以定制主题界面。平台陈旧，有广告。</li>
+<li>开源中国</li>
+<li>微信公众号：个人引流，只是平台。</li>
+<li>简书：界面简洁，双端适配。SEO 差，故事会多，无法定制。</li>
+<li>知乎专栏：商业价值高，界面设计现代。SEO 一般，内容混杂，无法定制（原界面就够好）。</li>
+<li>稀土掘金：开发者的技术内容分享与交流平台，抄袭 panda。</li>
+<li>SegmentFault：开发者技术社区。</li>
+<li>GitHub：全球同性交友平台。（Nicccccce!!!!!!）</li>
+</ul>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/dadaozhijian22/p/9590703.html">个人技术博客的选择：CSDN、博客园、简书、知乎专栏还是 Github Page？ - Carzy_Learner - 博客园</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/25042028">【资料合集】 RednaxelaFX 写的文章&#x2F;回答的导航帖（work in progress） - 知乎</a></p>
+</blockquote>
+<hr>
+<p><strong>个人博客网站</strong>，可使用动态&#x2F;静态博客框架。动态博客框架，诸如 WordPress、Ghost、Typecho 等，适合追求一定自由度又不想从零搭建的人，功能需要付费（$: NO WAY!）。静态博客框架，诸如 Hexo、Hugo 等，需要一定的配置和部署，自主性高。</p>
+<p>如果还不清楚，可以参考这些博文：<a target="_blank" rel="noopener" href="https://sspai.com/post/59504">2020 年，如何才能拥有一个个人网站？ - 少数派</a> 、<a target="_blank" rel="noopener" href="https://ednovas.xyz/2021/07/03/blog/">如何挑选博客框架、在线博客平台 | EdNovas 的小站</a> 、<a target="_blank" rel="noopener" href="https://mantyke.icu/posts/2021/hugo-build-blog/">Hugo | 一起动手搭建个人博客吧 | 小球飞鱼</a> 。</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.konata.vip/?p=148">【新手向】你究竟需要什么样的博客方案 – 此方方有限公司</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/twg666/article/details/124748337">静态&#x2F;动态博客 Blog 框架简介_静态博客-CSDN 博客</a></p>
+</blockquote>
+<hr>
+<p>笔者决定搭建静态博客，因为其自主性高，“水形依器”。静态博客的维护成本相对较低（比较动态），能够让笔者更专注于写作（impossible）。</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo</a> 是一个基于 Node.js 的快速、简洁且高效的静态博客框架。Hexo 支持 Markdown 解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</li>
+<li><a target="_blank" rel="noopener" href="https://gohugo.com.cn/">Hugo</a> 是一个快速且灵活的静态站点生成器，采用 Go 语言编写，简单、易用、高效、易扩展、快速部署。</li>
+<li><a target="_blank" rel="noopener" href="https://valaxy.site/">Valaxy</a> is Next Generation Static Blog Framework.</li>
+</ol>
+<p>Hugo 生成静态网页的速度快。Valaxy 新！新手友好！笔者暂时使用 Hexo，因为它比较 old，适合探索。</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://atpx.com/blog/dynamic-to-static-website/">个人博客的最终归宿是静态网站吗 - atpX</a></p>
+<p><a target="_blank" rel="noopener" href="https://sspai.com/post/59904">浅谈我为什么从 HEXO 迁移到 HUGO - 少数派</a></p>
+</blockquote>
+<p>静态博客（前端）只是开始，你可以自行增加功能，使之成为动态博客（前后端）。比如：评论系统（可能需要连接数据库）、登录系统（Flask, Django, Next.js）等。</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903959635705870">Next.js 实践总结 - 登录授权验证最佳方案 - 掘金</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/gitblog_00061/article/details/137219220">探索微博客平台：microblog——一个轻量级、强大的个人博客系统-CSDN 博客</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_48191864/article/details/141039166">如何使用 Next.js 和 GitHub Issues 构建个人博客:从零到上线的完整指南-CSDN 博客</a></p>
+</blockquote>
+<h1 id="2-建站流程与-Github-Pages"><a href="#2-建站流程与-Github-Pages" class="headerlink" title="2. 建站流程与 Github Pages"></a>2. 建站流程与 Github Pages</h1><blockquote>
+<p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%9F%9F%E5%90%8D%E7%B3%BB%E7%BB%9F">域名系统 - 维基百科，自由的百科全书</a></p>
+</blockquote>
+<p>个人网站的一般建站流程如下：</p>
+<ol>
+<li>注册域名（Domain Name）。（域名注册商一般也提供域名解析服务。 ）</li>
+<li>获取服务器。</li>
+<li>将个人网站部署到服务器上，服务器分配独立 IP。（通过独立 IP 可直接定位到个人 Web 网站。）</li>
+<li>DNS（Domain Name System，域名系统）解析域名——名称服务器（Name Server，简称 NS）添加 DNS 记录，绑定个人域名和服务器分配的独立 IP。</li>
+<li>通过个人域名访问部署在服务器上的个人网站。</li>
+<li>注册数字证书，并部署到服务器的个人网站上 balabala ……</li>
+</ol>
+<p>服务器也可能分配的是域名，而不是独立 IP。可以使用服务器分配的域名访问个人网站；或者 DNS 将个人域名指向服务器分配的域名，然后使用个人域名访问个人网站。</p>
+<blockquote>
+<p>Tips：若服务器分配域名，意味者用户使用的是服务器提供的公用 IP，服务器必须通过域名部分定位特定用户的资源。Github Pages 就是采用该模式。</p>
+</blockquote>
+<h2 id="2-1-域名与-IP-地址"><a href="#2-1-域名与-IP-地址" class="headerlink" title="2.1 域名与 IP 地址"></a>2.1 域名与 IP 地址</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%9F%9F%E5%90%8D">域名 - 维基百科，自由的百科全书</a></p>
+</blockquote>
+<p><strong>IP 地址</strong>（Internet Protocol Address）是分配给每台连接互联网的计算机或网络设备的唯一数字标识，通常以点分十进制（IPv4，例如 192.168.1.1）或冒号分隔的十六进制（IPv6，例如 2001:0db8::1）表示。主机之间通过 IP 地址来定位和通信。</p>
+<p><strong>域名</strong>（Domain Name，简称 Domain）是互联网中用来唯一标识网站或资源的字符地址，更便于人类记忆和使用。</p>
+<p>域名通过 DNS 映射到对应的 IP 地址，用户通过域名访问网站，背后由 DNS 将其解析为实际的 IP 地址，完成与目标服务器的通信。</p>
+<hr>
+<p><strong>域名是一个由字母、数字和连字符组成的字符串，用点（.）分隔。域名从右到左依次是顶级域、二级域、子域（可选）。</strong> 以 <code>www.google.com</code> 为例 ，<code>.com</code> 是顶级域，google 是二级域，www 是子域。</p>
+<p><strong>顶级域</strong>（Top-Level Domain，简称 TLD）位于域名的最右端部分，用于划分互联网域名的类别或区域。顶级域主要分为以下几类：</p>
+<ol>
+<li>通用顶级域（gTLD，generic TLD），适用于各种用途。例如：<code>.com</code>（商业），<code>.org</code>（组织），<code>.net</code>（网络相关），<code>.info</code>（信息），<code>.biz</code>（商务） 等。</li>
+<li>国家和地区顶级域（ccTLD，country code TLD），代表特定国家或地区。例如：<code>.cn</code>（中国），<code>.us</code>（美国），<code>.uk</code>（英国），<code>.jp</code>（日本）等。</li>
+<li>新通用顶级域（new gTLD），近年来新增的多样化域名，涵盖行业、兴趣、品牌等。例如：<code>.app</code>（应用），<code>.tech</code>（科技），<code>.shop</code>（商店），<code>.中国</code>（中文通用顶级域名）等。</li>
+</ol>
+<p><strong>二级域</strong>（Second-Level Domain）位于顶级域的左侧，通常是由企业、组织或个人注册的名字，用于标识具体的实体或网站。</p>
+<p><u>一般我们付费注册的域名是 Apex Domain（顶级域名&#x2F;根域名）。Apex Domain 是没有子域的二级域名本身，由【二级域 + 顶级域】组成。</u></p>
+<blockquote>
+<p>Tip：Apex Domain 强调的是域名的最高层级，TLD 强调的是顶级域的类型。不要使用“一级域名”这种非正式用词来描述顶级域名。</p>
+</blockquote>
+<p><strong>子域</strong>（Subdomain）位于域名的左侧，通常在二级域名前面，用点（.）隔开。子域可以用来划分网站的不同部分或服务，例如：<code>mail</code> 用于邮件系统，<code>shop</code> 用于电子商务。子域名可以有多级，形成更复杂的层级结构。</p>
+<blockquote>
+<p>Tip：Github Pages 的顶级域名是 <code>github.io</code>，它分配给用户的固定子域名是 <code>&lt;username&gt;.github.io</code>。</p>
+</blockquote>
+<p>完整的域名由【子域（可选）+ 二级域 + 顶级域】组成。这三者结合起来，构成了完整的互联网域名体系，方便用户访问、组织和管理网站资源。</p>
+<h2 id="2-2-服务器"><a href="#2-2-服务器" class="headerlink" title="2.2 服务器"></a>2.2 服务器</h2><p>（没空整理！）</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%9C%8D%E5%8A%A1%E5%99%A8">服务器 - 维基百科，自由的百科全书</a></p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-cn/%E7%B6%B2%E9%A0%81%E5%AF%84%E5%AD%98%E6%9C%8D%E5%8B%99">网页托管服务 - 维基百科，自由的百科全书</a></p>
+<h2 id="2-3-Github-Pages"><a href="#2-3-Github-Pages" class="headerlink" title="2.3 Github Pages"></a>2.3 Github Pages</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/GitHub">GitHub - 维基百科，自由的百科全书</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.github.com/zh/pages">GitHub Pages 文档 - GitHub 文档</a></p>
+</blockquote>
+<p>GitHub 是一个在线软件源代码托管服务平台，开源免费。<u>GitHub Pages 是 GitHub 提供的一个<strong>静态</strong>网站托管服务，它直接从 GitHub Pages 仓库获取 HTML、CSS 和 JavaScript 静态资源文件。</u></p>
+<blockquote>
+<p>Note：GitHub Pages 仓库是指 name 固定的 GitHub 仓库——<code>&lt;username&gt;.github.io</code>。</p>
+</blockquote>
+<p>GitHub Pages 提供固定的子域名 <code>&lt;username&gt;.github.io</code> 。用户可以通过该域名访问 GitHub Pages 仓库的静态资源文件。GitHub Pages 支持自定义域名。</p>
+<hr>
+<p>GitHub Pages 网站受以下使用限制的约束：</p>
+<ol>
+<li>每个账号只能创建一个 GitHub Pages 网站。</li>
+<li>GitHub Pages 源仓库的建议限制为 1 GB。</li>
+<li>已发布的 GitHub Pages 网站不能大于 1 GB。</li>
+<li>GitHub Pages 站点的软带宽限制为每月 100 GB。“软带宽限制”指的是该网站每月允许的最大数据传输量限制，超过此限制可能会受到限制或额外收费。</li>
+<li>GitHub Pages 站点的软限制为每小时 10 次构建（可超）。如果您使用自定义 GitHub Actions 工作流程构建和发布站点，则此限制不适用。</li>
+</ol>
+<hr>
+<p>“Hexo - Git - Github Pages 仓库（public）” 是一种常用的静态博客架构，简单、免费（$: SAY NO!），但公开。</p>
+<p>先使用 Hexo 生成本地静态博客，再使用 Git 将静态站点 push 到 Github Pages 仓库。这样，一个静态网络博客就构建好了。你可以通过 <code>https://&lt;username&gt;.github.io</code> 访问自己的博客。</p>
+<blockquote>
+<p>Add：早期，很多站主&#x2F;博主考虑到个人网站&#x2F;博客在国内的可访性和访问速度，使用 coding pages 而不是 Github Pages 来部署源站（个人网站&#x2F;博客）。后来，coding pages 项目终止，由此产生的数据丢失及其他问题致使不少博主终止博客，很多有价值的博文也随之消散。部分博文因为 CSDN 的偷取而保留了下来，后来者几乎只能付费从 CSDN 获取早期博主的智慧结晶，见 <a target="_blank" rel="noopener" href="https://linux.do/t/topic/494834">如何获取 CSDN 付费文件？ - 开发调优 - LINUX DO</a> 评论区。如果你想要自己的博文还附带分享价值——首先，请备份好数据（Git 是个好选择，Github 勉强够用）；其次，分享精神不懈怠（Github Pages 免去烦恼，Cloudflare Pages 也推荐）。</p>
+</blockquote>
+<p>该架构还有很大的改动空间，取决于你的需求和 money。</p>
+<ul>
+<li><p>如果博客需要评论系统 Waline，可以将它部署到 Vercel。</p>
+<blockquote>
+<p>Tip：GitHub Pages 只支持托管静态资源，而 Waline 涉及数据库交互，是动态的。</p>
+</blockquote>
+</li>
+<li><p>考虑到 GitHub Pages 源仓库的容量限制，博客的图片等资源可以存储到其他位置，在博客中使用链接引用它们。比如，使用阿里云 OSS（Object Storage Service）存储博客的图片等资源。</p>
+</li>
+<li><p>……</p>
+</li>
+</ul>
+<h1 id="3-Blog-Design-Optimization"><a href="#3-Blog-Design-Optimization" class="headerlink" title="3. Blog Design &amp; Optimization"></a>3. Blog Design &amp; Optimization</h1><p>对个人博客而言，<strong>数据安全</strong>、<strong>隐私保护</strong>与<strong>页面性能</strong>（如渲染效率、资源优化等）也是三大核心焦点。</p>
+<blockquote>
+<p>Tip：在博客未商用仅作交流的角度下考虑。如果是商业化项目，用户几乎没有隐私权。</p>
+</blockquote>
+<p><strong>数据安全</strong>是确保数据的<strong>机密性</strong>、<strong>完整性</strong>、<strong>可用性</strong>。（CIA 三元组：Confidentiality，Integrity 和 Availability）</p>
+<ul>
+<li><strong>数据丢失</strong>（如存储故障、误删除）—— 属于可用性问题。</li>
+<li><strong>数据泄露</strong>（如黑客攻击、内部人员窃取）—— 属于机密性问题。</li>
+<li><strong>数据篡改</strong>（如恶意修改）—— 属于完整性问题。</li>
+</ul>
+<p>可以通过加密、访问控制、备份、防篡改机制等技术手段确保数据安全。</p>
+<hr>
+<p><strong>隐私保护</strong>是保障个人对自身数据的<strong>控制权</strong>，确保数据收集、处理、共享符合法律法规（如 GDPR）和用户授权。</p>
+<ul>
+<li>避免过度收集用户数据（如 APP 权限滥用）。</li>
+<li>匿名化&#x2F;去标识化处理（如医疗数据研究）。</li>
+<li>用户知情权与选择权（如隐私政策透明）。</li>
+</ul>
+<p>可以通过数据脱敏、差分隐私、最小化收集原则等技术手段实现隐私保护。</p>
+<p>当个人博客集成第三方服务时需要注意这点。比如评论系统，Disqus 侵犯用户隐私，Valine 存在隐私泄露问题。</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.uniconsent.com/zh/blog/disqus-gdpr-consent">Disqus 因违反 GDPR 许可规则被罚款 250 万欧元</a></p>
+</blockquote>
+<hr>
+<p><strong>页面性能</strong>主要关乎用户体验，比如网页加载速度、交互流畅度等。</p>
+<ul>
+<li>CDN（Content Delivery Network），内容分发网络。简单地说，CDN 就是节点服务器缓存数据，供用户就近获取。</li>
+<li>可以通过资源优化（压缩资源，CDN 等）来减少浏览器渲染时间。</li>
+<li>……</li>
+</ul>
+<h1 id="4-Further-use-of-GitHub"><a href="#4-Further-use-of-GitHub" class="headerlink" title="4. Further use of GitHub"></a>4. Further use of GitHub</h1><p>【待实现】GitHub Issues can be used as micro blog.</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/gitblog_00098/article/details/137067617">探索创新：使用 GitHub Issues 构建个人博客的新方式-CSDN 博客</a></p>
+<p><a target="_blank" rel="noopener" href="https://io-oi.me/tech/continuous-writing-with-github-issues/">使用 GitHub Issues 持续写作 | reuixiy</a></p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/400962805">使用 GitHub Issues 来写博客 - 知乎</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/687430865">使用 VS Code + Github 搭建个人博客 - 知乎</a></p>
+<p><a target="_blank" rel="noopener" href="https://githubrsp.com/2955.html">使用 GitHub Issues 打造个人博客的终极指南 - github 中文站</a></p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.ichr.me/post/blog-with-github-issues/">尝试在 GitHub Issues 上写文章并自动同步至博客 | ChrAlpha’s blog</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.ichr.me/post/github-issues-nextjs-blog/">再谈在 GitHub Issues 写作，顺带算是样式开源 | ChrAlpha’s blog</a></p>
+</blockquote>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B8%8E%E8%BF%90%E7%BB%B4%E6%8C%87%E5%8D%97/" class="category-chain-item">博客搭建与运维指南</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>个人博客</div>
+      <div>https://www.cornst.com/posts/个人博客.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>shaton沙桐</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年4月27日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2025年6月8日</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/%E5%BE%85%E5%AE%9E%E7%8E%B0.html" title="待实现">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">待实现</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/Fluid%E4%B8%BB%E9%A2%98%E3%81%AE%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96.html" title="Fluid主题の博客美化">
+                        <span class="hidden-mobile">Fluid主题の博客美化</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+      <div class="col-lg-7 mx-auto nopadding-x-md">
+        <div class="container custom mx-auto">
+          
+
+        </div>
+      </div>
+    
+  </main>
+
+</div>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+<div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":true,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+<!-- 使用markdown-plugins.ejs模板，使得所有页面都有文章页独有的JS和CSS -->
+<!-- 无法引入github-markdown.min.css和hint.min.css。如果使用函数css_ex直接注入，样式错误 -->
+<!-- 
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+ -->
+<!-- 因为暂时使用丐版PJAX，文章页独有的JS和CSS也没必要注入所有页面 -->
+<!-- layout\_partials\post\toc.ejs -->
+<!-- <script  src="https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js" ></script> -->
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script data-pjax>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script data-pjax src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script data-pjax>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script data-pjax>
+  
+  var anchorElem = document.querySelector('script[funcDesc="anchor-js-api"]')
+  if (anchorElem) anchorElem.remove();
+
+  Fluid.utils.createScriptST('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', 'anchor-js-api', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script data-pjax>Fluid.plugins.imageCaption();</script>
+
+  <script data-pjax src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/love.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/Cherry.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/DynamicLine.min.js"></script>
+<script src="//lib.baomitu.com/aplayer/1.10.1/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+
+<!-- hexo injector body_end start --><script src="/js/responsive-background.js" data-pjax></script>
+  <div id="aplayer"></div>
+  <script defer src="/js/aplayer.js"></script>
+<script src="/js/pjax-related.js"></script><!-- hexo injector body_end end --></body>
+</html>

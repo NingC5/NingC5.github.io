@@ -1,0 +1,996 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/image/favicon/ST.ico">
+  <link rel="icon" href="/image/favicon/ST.ico">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="shaton">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Cloudflare 作为反代理服务器能够增强网站安全性，如果你使用 Cloudflare 代理你的网站。  Tip：在 Cloudflare 上添加 DNS 记录时勾选小黄云，就是使用 Cloudflare 代理你的网站。如果你不想更改主域名的 NS 为 Cloudflare，那就只能在 Cloudflare 上牺牲备用域名，然后主域名 CNAME 副域名。   代理服务器是请求发起方与目标资源">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网站防护：Cloudflare">
+<meta property="og:url" content="https://www.cornst.com/posts/%E7%BD%91%E7%AB%99%E9%98%B2%E6%8A%A4%EF%BC%9ACloudflare.html">
+<meta property="og:site_name" content="shaton沙桐">
+<meta property="og:description" content="Cloudflare 作为反代理服务器能够增强网站安全性，如果你使用 Cloudflare 代理你的网站。  Tip：在 Cloudflare 上添加 DNS 记录时勾选小黄云，就是使用 Cloudflare 代理你的网站。如果你不想更改主域名的 NS 为 Cloudflare，那就只能在 Cloudflare 上牺牲备用域名，然后主域名 CNAME 副域名。   代理服务器是请求发起方与目标资源">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-05-31T04:00:00.000Z">
+<meta property="article:modified_time" content="2025-06-01T11:36:35.426Z">
+<meta property="article:author" content="shaton">
+<meta property="article:tag" content="Cloudflare">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+    
+
+  
+  <title>网站防护：Cloudflare - shaton沙桐</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css">
+<link rel="stylesheet" href="https://jsd.cdn.zzko.cn/gh/EmoryHuang/BlogBeautify@1.1/gradient.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/shubiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/gundongtiao.css">
+<link rel="stylesheet" href="//lib.baomitu.com/aplayer/1.10.1/APlayer.min.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"www.cornst.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":true,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script data-pjax src="/js/color-schema.js" ></script>
+  
+
+ 
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
+  
+
+
+<div id="container-pjax">
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>shaton沙桐的乐色桶</strong>
+    </a>
+	
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/image/banner/%E7%B2%89%E5%A5%B3.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="网站防护：Cloudflare"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        shaton
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-05-31 12:00" pubdate>
+          2025年5月31日 中午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          699 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          6 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar category-bar" style="margin-right: -1rem">
+    
+
+
+
+
+
+<div class="category-list">
+  
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item 
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="博客搭建与运维指南"
+        id="heading-fea7a4583b0dce4c2adcc9d00a4f05e7" role="tab" data-toggle="collapse" href="#collapse-fea7a4583b0dce4c2adcc9d00a4f05e7"
+        aria-expanded="true"
+      >
+        博客搭建与运维指南
+        <span class="list-group-count">(13)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse show" id="collapse-fea7a4583b0dce4c2adcc9d00a4f05e7"
+           role="tabpanel" aria-labelledby="heading-fea7a4583b0dce4c2adcc9d00a4f05e7">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/posts/%E8%BF%9B%E5%BA%A6%E8%AF%B4%E6%98%8E.html" title="进度说明"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">进度说明</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2.html" title="个人博客"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">个人博客</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/Hexo%E3%81%A8GitHubPages%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2.html" title="HexoとGitHubPages搭建静态博客"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">HexoとGitHubPages搭建静态博客</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/Fluid%E4%B8%BB%E9%A2%98%E3%81%AE%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96.html" title="Fluid主题の博客美化"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Fluid主题の博客美化</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/Hexo%E3%81%A8Fluid%E8%8D%89%E8%88%B9%E5%80%9F%E7%AE%AD.html" title="HexoとFluid草船借箭"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">HexoとFluid草船借箭</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/marked%EF%BC%88Hexo%E9%BB%98%E8%AE%A4%E7%9A%84Markdown%E6%B8%B2%E6%9F%93%E6%8F%92%E4%BB%B6%EF%BC%89%E7%9A%84%E9%83%A8%E5%88%86%E6%BA%90%E7%A0%81%E6%B3%A8%E9%87%8A.html" title="marked（Hexo默认的Markdown渲染插件）的部分源码注释"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">marked（Hexo默认的Markdown渲染插件）的部分源码注释</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/Hexo%E3%81%A8Fluid%E3%81%AE%E7%A2%8E%E8%AF%AD.html" title="HexoとFluidの碎语（PJAX? Just Decide!）"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">HexoとFluidの碎语（PJAX? Just Decide!）</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/GitHub%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E4%B8%8EGit%E8%BF%9E%E6%8E%A5GitHubPages%E4%BB%93%E5%BA%93.html" title="GitHub身份验证与Git连接GitHubPages仓库"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">GitHub身份验证与Git连接GitHubPages仓库</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/GitHubPages%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D.html" title="GitHubPages自定义域名"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">GitHubPages自定义域名</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E7%BD%91%E7%AB%99%E9%98%B2%E6%8A%A4%EF%BC%9ACloudflare.html" title="网站防护：Cloudflare"
+           class="list-group-item list-group-item-action
+           active">
+          <span class="category-post">网站防护：Cloudflare</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8APlayer.html" title="音乐播放器APlayer"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">音乐播放器APlayer</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/GitHubPages%E8%AE%BF%E9%97%AE%E4%BC%98%E5%8C%96.html" title="GitHubPages访问优化"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">GitHubPages访问优化</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E5%BE%85%E5%AE%9E%E7%8E%B0.html" title="待实现"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">待实现</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+</div>
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">网站防护：Cloudflare</h1>
+            
+              <p id="updated-time" class="note note-info" style="">
+                
+                  
+                    本文最后更新于 2025年6月1日 晚上
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <p>Cloudflare 作为反代理服务器能够增强网站安全性，如果你使用 Cloudflare 代理你的网站。</p>
+<blockquote>
+<p>Tip：在 Cloudflare 上添加 DNS 记录时勾选小黄云，就是使用 Cloudflare 代理你的网站。如果你不想更改主域名的 NS 为 Cloudflare，那就只能在 Cloudflare 上牺牲备用域名，然后主域名 CNAME 副域名。</p>
+</blockquote>
+<blockquote>
+<p>代理服务器是请求发起方与目标资源之间的中介。正向与反向只是概念上的差异——架设者与架设目的。正向代理服务器着重于监管（保护|控制）前者，由监管者架设；反向代理服务器聚焦于保护后者所在的 Web 服务器，由站主架设。</p>
+<ol>
+<li>随便看看：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/163948996">一文帮你梳理清楚「正向代理和反向代理的区别与联系」 - 知乎</a></li>
+<li>比上个链接详细点：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/wzh2010/p/18031168">图文总结：正向代理与反向代理 - Hello-Brand - 博客园</a></li>
+<li>直接 WIKI 吧：<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86">反向代理 - 维基百科，自由的百科全书</a></li>
+</ol>
+</blockquote>
+<p>请参考以下链接：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://www.chia1104.dev/posts/website-attack-cloudflare-protection">我的網站被攻擊了，該怎麼透過 Cloudflare 來保護網站 | Chia1104</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.dejavu.moe/posts/cloudflare-waf-set-up-guide/">Cloudflare WAF 防护策略简易指南 · Dejavu’s Blog</a></li>
+<li>Cloudflare 官方文档，设置界面也有部分参数说明。</li>
+</ol>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://jamesqi.com/%E5%8D%9A%E5%AE%A2/Cloudflare%E7%9A%84%E6%B5%81%E9%87%8F%E9%A1%BA%E5%BA%8F">Cloudflare的流量顺序 | 祁劲松的博客👨‍💻</a></p>
+</blockquote>
+<p>知道 Cloudflare 在 proxy 流量时的顺序后，就按照个人需求搜索文章进行设置吧！</p>
+<h1 id="Part-1"><a href="#Part-1" class="headerlink" title="Part 1"></a>Part 1</h1><p>……</p>
+<h1 id="Part-2"><a href="#Part-2" class="headerlink" title="Part 2"></a>Part 2</h1><p>……</p>
+<h1 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h1><p><a target="_blank" rel="noopener" href="https://ping0.cc/">高精度IP地址归属地查询-IP风控值查询-原生IP查询-IP类型查询-家庭宽带IP查询-全球小鸡监控平台</a></p>
+<p><a target="_blank" rel="noopener" href="https://iplark.com/">IPLark - IP地址信息查询</a></p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://medium.com/chouhsiang/cloudflare-30-days/home">系列文章：30 天入門 Cloudflare</a></p>
+</blockquote>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://im88.tw/50261/cloudflare-bot-mode.html">Cloudflare 機器人對抗模式 預防網站被爬蟲佔據所有資源 - 小博數位生活</a></p>
+<p><a target="_blank" rel="noopener" href="https://im88.tw/50266/cloudways-antibot.html">如何防止惡意機器人導致 Cloudways 主機當機？小博的經驗分享 - 小博數位生活</a></p>
+</blockquote>
+<blockquote>
+<p>【添加白名单啊！】<a target="_blank" rel="noopener" href="https://carlos.mynet.tw/%E9%97%9C%E9%96%89Cloudflare%E7%9A%84%E6%A9%9F%E5%99%A8%E4%BA%BA%E5%B0%8D%E6%8A%97%E6%A8%A1%E5%BC%8F/">關閉Cloudflare的機器人對抗模式 | Carlos Life Book</a></p>
+</blockquote>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/kjcy8/articles/17034342.html">Cloudflare 防 CC 攻击设置 - kjcy8 - 博客园</a></p>
+</blockquote>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.sakamoto.blog/cloudflare-setup-ddos/">Cloudflare 設定防禦 DDoS 方法 – Sakamoto.blog – 探究科技未知領域</a></p>
+</blockquote>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://cloudflare.zendesk.com/hc/en-us/categories/200276257">Page Rules – Cloudflare Help Center</a></p>
+<p><a target="_blank" rel="noopener" href="https://justyy.com/archives/3393">CloudFlare页面规则终级使用指南 | 小赖子的英国生活和资讯</a></p>
+<p><a target="_blank" rel="noopener" href="https://hostloc.com/thread-619429-1-1.html">已解决：CloudFlare 的页面规则 Page Rules 规则顺序-美国VPS综合讨论-全球主机交流论坛 - Powered by Discuz!</a></p>
+</blockquote>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://jamesqi.com/comment/2839#comment-2839">关于Cloudflare的2a06:98c0:3600::103这个IPv6地址 | 祁劲松的博客👨‍💻</a></p>
+<p><a target="_blank" rel="noopener" href="https://bbs.itzmx.com/thread-100054-1-1.html">Cloudflare cf使用workers搭建一个简单的免费页面反代系统，不符合HTTP协议标准规范但是能凑合用，腾讯云函数已经收费 - 各类教程 - ZMX - IT技术交流论坛 - 无限Perfect，追求梦想 - itzmx.com</a></p>
+</blockquote>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://tech.imydl.com/ty/1082.html">分享一个Typecho博客系统专用的CloudFlare缓存规则，优化加速一下下！ - 明月的运维学习笔记Blog</a></p>
+<p><a target="_blank" rel="noopener" href="https://tech.imydl.com/ty/1107.html">自己写了个Typecho博客自动清理CloudFlare缓存插件 - 明月的运维学习笔记Blog</a></p>
+</blockquote>
+<p>……</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B8%8E%E8%BF%90%E7%BB%B4%E6%8C%87%E5%8D%97/" class="category-chain-item">博客搭建与运维指南</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Cloudflare/" class="print-no-link">#Cloudflare</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>网站防护：Cloudflare</div>
+      <div>https://www.cornst.com/posts/网站防护：Cloudflare.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>shaton</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年5月31日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2025年6月1日</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/Hexo%E3%81%A8Fluid%E8%8D%89%E8%88%B9%E5%80%9F%E7%AE%AD.html" title="HexoとFluid草船借箭">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">HexoとFluid草船借箭</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/%E8%BF%9B%E5%BA%A6%E8%AF%B4%E6%98%8E.html" title="进度说明">
+                        <span class="hidden-mobile">进度说明</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+      <div class="col-lg-7 mx-auto nopadding-x-md">
+        <div class="container custom mx-auto">
+          
+
+        </div>
+      </div>
+    
+  </main>
+
+</div>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+<div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":true,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+<!-- 使用markdown-plugins.ejs模板，使得所有页面都有文章页独有的JS和CSS -->
+<!-- 无法引入github-markdown.min.css和hint.min.css。如果使用函数css_ex直接注入，样式错误 -->
+<!-- 
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+ -->
+<!-- 因为暂时使用丐版PJAX，文章页独有的JS和CSS也没必要注入所有页面 -->
+<!-- layout\_partials\post\toc.ejs -->
+<!-- <script  src="https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js" ></script> -->
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script data-pjax>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script data-pjax src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script data-pjax>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script data-pjax>
+  
+  var anchorElem = document.querySelector('script[funcDesc="anchor-js-api"]')
+  if (anchorElem) anchorElem.remove();
+
+  Fluid.utils.createScriptST('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', 'anchor-js-api', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script data-pjax>Fluid.plugins.imageCaption();</script>
+
+  <script data-pjax src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/love.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/Cherry.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/DynamicLine.min.js"></script>
+<script src="//lib.baomitu.com/aplayer/1.10.1/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+
+<!-- hexo injector body_end start --><script src="/js/responsive-background.js" data-pjax></script>
+  <div id="aplayer"></div>
+  <script defer src="/js/aplayer.js"></script>
+<script src="/js/pjax-related.js"></script><!-- hexo injector body_end end --></body>
+</html>

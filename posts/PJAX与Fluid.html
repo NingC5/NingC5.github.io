@@ -1,0 +1,1100 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/image/favicon/ST.ico">
+  <link rel="icon" href="/image/favicon/ST.ico">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="shaton">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="前言【注】：PJAX 可以增强用户体验，但如果你不清楚页面使用的脚本，则不推荐使用它。 【注】：本篇暂无丝毫参考价值，全是错误。 1234567&lt;div class&#x3D;&quot;modal fade show&quot; id&#x3D;&quot;modalSearch&quot; tabindex&#x3D;&quot;-1&quot; aria-labelledby&#x3D;&quot;ModalLabel&amp;qu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PJAX与Fluid">
+<meta property="og:url" content="https://www.cornst.com/posts/PJAX%E4%B8%8EFluid.html">
+<meta property="og:site_name" content="shaton沙桐">
+<meta property="og:description" content="前言【注】：PJAX 可以增强用户体验，但如果你不清楚页面使用的脚本，则不推荐使用它。 【注】：本篇暂无丝毫参考价值，全是错误。 1234567&lt;div class&#x3D;&quot;modal fade show&quot; id&#x3D;&quot;modalSearch&quot; tabindex&#x3D;&quot;-1&quot; aria-labelledby&#x3D;&quot;ModalLabel&amp;qu">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.cornst.com/posts/PJAX%E4%B8%8EFluid/image-20250528103744172.png">
+<meta property="og:image" content="https://www.cornst.com/posts/PJAX%E4%B8%8EFluid/image-20250528104040792.png">
+<meta property="og:image" content="https://www.cornst.com/posts/PJAX%E4%B8%8EFluid/image-20250528163045652.png">
+<meta property="og:image" content="https://www.cornst.com/posts/PJAX%E4%B8%8EFluid/image-20250528170558608.png">
+<meta property="og:image" content="https://www.cornst.com/posts/PJAX%E4%B8%8EFluid/image-20250528175348427.png">
+<meta property="og:image" content="https://www.cornst.com/posts/PJAX%E4%B8%8EFluid/image-20250528214801768.png">
+<meta property="og:image" content="https://www.cornst.com/posts/PJAX%E4%B8%8EFluid/image-20250528230418520.png">
+<meta property="og:image" content="https://www.cornst.com/posts/PJAX%E4%B8%8EFluid/image-20250529202117668.png">
+<meta property="article:published_time" content="2025-05-30T08:43:12.000Z">
+<meta property="article:modified_time" content="2025-06-08T10:19:29.599Z">
+<meta property="article:author" content="shaton">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="Fluid">
+<meta property="article:tag" content="PJAX">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.cornst.com/posts/PJAX%E4%B8%8EFluid/image-20250528103744172.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+    
+
+  
+  <title>PJAX与Fluid - shaton沙桐</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css">
+<link rel="stylesheet" href="https://jsd.cdn.zzko.cn/gh/EmoryHuang/BlogBeautify@1.1/gradient.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/shubiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/gundongtiao.css">
+<link rel="stylesheet" href="//lib.baomitu.com/aplayer/1.10.1/APlayer.min.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"www.cornst.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":true,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script data-pjax src="/js/color-schema.js" ></script>
+  
+
+ 
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
+  
+
+
+<div id="container-pjax">
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>shaton沙桐的乐色桶</strong>
+    </a>
+	
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/image/banner/%E7%B2%89%E5%A5%B3.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="PJAX与Fluid"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        shaton
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-05-30 16:43" pubdate>
+          2025年5月30日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          6.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          51 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">PJAX与Fluid</h1>
+            
+              <p id="updated-time" class="note note-info" style="">
+                
+                  
+                    本文最后更新于 2025年6月8日 晚上
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>【注】：PJAX 可以增强用户体验，但如果你不清楚页面使用的脚本，则不推荐使用它。</p>
+<p>【注】：本篇暂无丝毫参考价值，全是错误。</p>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs abnf">&lt;div class<span class="hljs-operator">=</span><span class="hljs-string">&quot;modal fade show&quot;</span> id<span class="hljs-operator">=</span><span class="hljs-string">&quot;modalSearch&quot;</span> tabindex<span class="hljs-operator">=</span><span class="hljs-string">&quot;-1&quot;</span> aria-labelledby<span class="hljs-operator">=</span><span class="hljs-string">&quot;ModalLabel&quot;</span> style<span class="hljs-operator">=</span><span class="hljs-string">&quot;display: block; padding-right: 10px;&quot;</span> aria-modal<span class="hljs-operator">=</span><span class="hljs-string">&quot;true&quot;</span> role<span class="hljs-operator">=</span><span class="hljs-string">&quot;dialog&quot;</span>&gt;<br>  <br>&lt;/div&gt;<br><br><br>&lt;div class<span class="hljs-operator">=</span><span class="hljs-string">&quot;modal fade&quot;</span> id<span class="hljs-operator">=</span><span class="hljs-string">&quot;modalSearch&quot;</span> tabindex<span class="hljs-operator">=</span><span class="hljs-string">&quot;-1&quot;</span> aria-labelledby<span class="hljs-operator">=</span><span class="hljs-string">&quot;ModalLabel&quot;</span> style<span class="hljs-operator">=</span><span class="hljs-string">&quot;display: none;&quot;</span> aria-hidden<span class="hljs-operator">=</span><span class="hljs-string">&quot;true&quot;</span>&gt;<br>&lt;/div&gt;<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<p>AJAX（Asynchronous JavaScript and XML）：</p>
+<ul>
+<li><p>允许网页在不重新加载整个页面的情况下，异步请求服务器获取数据（如 JSON、HTML 等）并动态更新网页内容。</p>
+</li>
+<li><p>常用于实现表单提交、数据刷新等功能。</p>
+</li>
+<li><p>需要手动编写代码处理请求和内容更新。</p>
+</li>
+</ul>
+<p>PJAX（PushState + AJAX）：</p>
+<ul>
+<li>在 AJAX 基础上结合了浏览器的历史管理（History API），实现无刷新页面切换，同时保持浏览器地址栏的URL更新。</li>
+<li>常用于单页应用（SPA）或提升网站导航体验。</li>
+<li>通过AJAX 加载部分内容，然后用 JavaScript（如 pushState）更新地址栏。</li>
+</ul>
+<p>PJAX 是一种结合了 AJAX 和 HTML5 的 History API（pushState）的网页开发组合技术，用于实现网页局部刷新和无刷新加载内容的效果，同时更新浏览器地址的 URL。用户点击链接或进行导航时，只更新页面的一部分内容，而无需重新加载整个页面。</p>
+<ul>
+<li><p>通过 AJAX 请求实现网页局部刷新。</p>
+</li>
+<li><p>通过 pushState，可以在不刷新页面的情况下，改变浏览器地址栏的 URL，保持浏览器历史记录。用户可以使用后退、前进按钮正常导航。</p>
+</li>
+</ul>
+<p>PJAX 典型的工作流程：</p>
+<ol>
+<li>用户点击链接。（链接通常指向同一站点的不同页面）</li>
+<li>捕获点击事件并阻止默认行为。（阻止浏览器的默认导航行为，即页面完全刷新）</li>
+<li>通过 Ajax 请求目标页面指定部分的内容。（只请求部分内容，能减少服务器负载）</li>
+<li>获取新内容后，通过 JavaScript 动态替换当前页面指定部分的内容。（无需重新加载整个页面）</li>
+<li>使用 <code>pushState()</code> 更新 URL。（保持导航的一致性）</li>
+<li>页面内容无刷新切换。（PJAX 使得页面切换更加流畅，用户体验一级棒！）</li>
+</ol>
+<hr>
+<p>PJAX 链接：</p>
+<ol>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/defunkt/jquery-pjax">GitHub - defunkt&#x2F;jquery-pjax：pushState + ajax &#x3D; pjax</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax#Pjax">GitHub - MoOx&#x2F;pjax: Easily enable fast Ajax navigation on any website (using pushState + xhr)</a></p>
+</li>
+</ol>
+<p><code>jquery-pjax</code> 使用 jQuery 库。其限制是单容器，不够灵活。</p>
+<blockquote>
+<p>Tip：jQuery 库是 JavaScript 框架，对很多原生操作做了封装，使用很便利。</p>
+</blockquote>
+<p><code>MoOx/pjax</code> 使用原生 JavaScript。虽然没有 JQuery，但是不局限于一个容器。</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903673869369358">GitHub：我们为什么会弃用jQuery？ - 掘金</a></p>
+</blockquote>
+<hr>
+<p>本博客暂时是 Hexo &amp; Fluid。 </p>
+<p>Fluid 主题默认不支持 PJAX，见链接：<a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid/issues/189">https://github.com/fluid-dev/hexo-theme-fluid/issues/189</a> 。<a target="_blank" rel="noopener" href="https://github.com/Mr-Smilin">Mr-Smilin</a> 和 <a target="_blank" rel="noopener" href="https://github.com/stalomeow">stalomeow</a> 以不同方式解决了此问题，这是 <code>Mr-Smilin</code> 的源码分享：<a target="_blank" rel="noopener" href="https://smilin.net/2021/11/16/fluidThemeShare/">fluid支持pjax主題源碼分享</a> 。</p>
+<p>本博客使用 PJAX 技术起因于 APlayer 音乐播放器——访问新页面，APlayer 重载，音乐播放进度消失。PJAX 能改善网站性能，顺带解决音乐播放进度问题。</p>
+<p>正常跳转新页面时，音乐播放器、看板娘等页面功能会重新加载，十分耗性能。如果你的网站没有这类耗性能又无需重新加载的“大脚本”，可以不使用 PJAX。</p>
+<p>（如果你的博客想使用 APlayer 而又拒绝 PJAX，那就将 APlayer 单独集成到某个页面中吧。）</p>
+<blockquote>
+<p>另一个倒霉蛋：<a target="_blank" rel="noopener" href="https://wwwhisperr-github-io.vercel.app/2022/07/14/demo04/">Fluid主题下Pjax实现Aplayer音乐播放器全局不中断</a></p>
+</blockquote>
+<hr>
+<p>在 Fluid 主题中，“文章页”（post）与“非文章页”的布局是不一致的（其实没多大差）。简单地说，文章页被注入更多的 JS、CSS，因此具备更多的功能模块。</p>
+<p>Fluid 主题集成的功能模块，如下：</p>
+<p>（功能模块不难找，你能看到的页面功能就是 Fluid 主题集成的。或者，查看主题配置文件最底下的依赖项。）</p>
+<ol>
+<li>打字机特效：在 <code>layout\_partials\plugins\typed.ejs</code> 中设置注入 typed.js，调用其 API 作用于页面元素</li>
+<li>鼠标点击箭头，向下滚动（banner，横幅&#x2F;顶部图）</li>
+<li>鼠标点击箭头，滚动到顶部（page）</li>
+<li>搜索功能：在 <code>layout\_partials\header\navigation.ejs</code> 中设置注入 local-search.js，</li>
+<li>暗色模式：在 <code>layout\_partials\head.ejs</code> 中设置注入 color-schema.js，</li>
+<li>banner 特效：视差滚动效果（没看出特效）</li>
+<li>导航栏特效：鼠标向下滚动一定距离，导航栏采用深色样式</li>
+<li>加载懒图片：“懒”就是 Fluid 主题为 <code>&lt;img&gt;</code> 标签添加 <code>srcset</code> 属性值，“加载”就是移除该属性，显示原图</li>
+<li>在页面加载过程中，通过监听背景图和非懒加载图片的加载状态，逐步更新加载进度条（NProgress）</li>
+<li>……</li>
+</ol>
+<p>文章页独有的功能模块，如下：</p>
+<ol>
+<li><code>tocbot</code>：生成文章目录</li>
+<li><code>anchor</code>：锚点，目录锚 &amp; 标题锚。在 layout_partials\plugins\anchorjs.ejs 被设置注入，且生效</li>
+<li><code>fancybox</code>：实现网页图片和内容弹出效果的一个强大工具</li>
+<li>代码块样式</li>
+<li>……</li>
+</ol>
+<hr>
+<p>因为 PJAX 请求只会替换当前页面部分内容，浏览器并不会重新解析渲染整个页面。这些功能模块在 PJAX 请求后，都需要重新加载才会生效。</p>
+<p>在博客全局使用 PJAX 的情况下：</p>
+<ol>
+<li>重构 Fluid 主题代码，统一 page 和 post 的页面布局。（stalomeow 做法，推荐）</li>
+<li>不重构 Fluid 主题代码来统一页面布局，而是在 PJAX 请求时做额外处理。当刷新页为”非文章页”，请求”文章页”时，额外注入文章页独有的 JS、CSS。这种操作比较繁琐，但不注入又会缺失功能。</li>
+</ol>
+<blockquote>
+<p>Tip：如果不想统一 Fluid 主题的页面布局，也不想在 PJAX 请求时做额外处理，则在非文章页访问文章页时，采用完全刷新，否则采用 PJAX。这样，就“忽略”文章页与非文章页的布局差异。（funny 半成品！）</p>
+</blockquote>
+<p>当然，你也可以放弃 Fluid，使用支持 PJAX 的主题。或者，放弃 PJAX。</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.gsgundam.com/2023/01/2023-01-28-z23-try-to-make-hexo-theme-compatible-with-pjax/">尝试改造Hexo主题以兼容Pjax</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.gsgundam.com/2023/12/2023-12-24-make-hexo-gacman-theme-compatible-with-pjax/">成功改造自用Hexo主题Gacman兼容Pjax</a></p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://zhangshuqiao.org/2020-06/NexT%E9%80%82%E9%85%8DPJAX%E7%9A%84%E6%96%B9%E6%A1%88/">NexT 适配 PJAX 的方案 | 米米的博客</a></p>
+<p><a target="_blank" rel="noopener" href="https://liuyib.github.io/2019/09/24/use-pjax-to-your-site/">集成 Pjax 实现网站无刷新加载 | Liuyib’s Blog</a></p>
+<p>然后，我发现页面部分功能在使用 AJAX 后失效，我又去修改 Fluid 主题源码，定义函数绑定 <code>pjax:end</code> 事件，在函数中调用必要的 scripts。</p>
+<h1 id="PJAX"><a href="#PJAX" class="headerlink" title="PJAX"></a>PJAX</h1><blockquote>
+<p><a target="_blank" rel="noopener" href="https://paugram.com/coding/add-pjax-to-your-website.html">让你的网站实现 PJAX 无刷新 - 保罗的小宇宙</a></p>
+<p><a target="_blank" rel="noopener" href="https://onecanx.top/2022/06/01/%E4%B8%80%E6%96%87%E8%A7%A3%E5%86%B3hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%88%B3%E4%B8%AD%E7%97%9B%E7%82%B9%E7%9A%84pjax%E9%97%AE%E9%A2%98/">一文解决hexo博客中戳中痛点的pjax问题 | Only My Ego</a></p>
+<p>【函数说明】<a target="_blank" rel="noopener" href="https://www.mulingyuer.com/archives/356/">jq pjax笔记 - 木灵鱼儿</a></p>
+<p>【不依赖 jQuery 的 PJAX 版本】<a target="_blank" rel="noopener" href="https://www.zdynb.cn/2022/pjax-shi-yong-shi-li.html">Pjax使用实例 | 理想的彼岸</a></p>
+<p>【暂未遇到插件与 PJAX 冲突】<a target="_blank" rel="noopener" href="https://keisawaakira.github.io/_posts/2020-06-01-pjax/">pjax实现网站无刷新化和个人遇到的无数坑 | keisawaakira</a></p>
+<p>【文字说明】<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/557cad38e7dd">pjax 使用小结 - 简书</a></p>
+<p>【仅文字】<a target="_blank" rel="noopener" href="https://blog.heylie.cn/archives/289/comment-page-1">深入理解PJAX技术及其工作流程 - 顾渊渡-探索未知，提升见解</a></p>
+<p>【播放器样式】<a target="_blank" rel="noopener" href="https://hzbk.net/archives/159.html">整合全站PJAX无刷新简易教程 - 耗子博客</a></p>
+<p>你可能会参考的链接：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/b5ccf130f2ac">Pjax加持APlayer，音乐无间断 - 简书</a></p>
+</blockquote>
+<h2 id="your-work-in-html"><a href="#your-work-in-html" class="headerlink" title="your work in html"></a>your work in html</h2><ol start="3">
+<li>PJAX 请求的善后处理</li>
+</ol>
+<p>正常获取新页面内容都是完全刷新页面，执行页面 scripts 以集成功能模块。PJAX 请求只负责替换新页面的内容到当前页面，而不会自动加载替换内容中的 <code>&lt;script&gt;</code> 。此外，当前页面中原有的  <code>&lt;script&gt;</code> 也并不会被再次执行。这可能会导致页面部分功能缺失。因此，你需要在 PJAX 请求后重新加载必要的 scripts（烦躁！），推荐使用 <code>pjax:end</code> 事件。</p>
+<blockquote>
+<p><code>&lt;link&gt;</code> 同理？</p>
+</blockquote>
+<p>（慎重使用 AJAX！页面小崩坏是常有的事！但知道 AJAX 还不用的，也是神人了！）</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript">    <span class="hljs-comment">// PJAX请求结束后，重新加载必要的scripts</span></span><br><span class="language-javascript">    $(<span class="hljs-variable language_">document</span>).<span class="hljs-title function_">on</span>(<span class="hljs-string">&#x27;pjax:end&#x27;</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">      	<span class="hljs-comment">// 通过函数集中设置必要的 scripts</span></span><br><span class="language-javascript">    	<span class="hljs-title function_">pajx_reload</span>();</span><br><span class="language-javascript">    &#125;);</span><br><span class="language-javascript"></span><br><span class="language-javascript">	<span class="hljs-keyword">function</span> <span class="hljs-title function_">pajx_reload</span>(<span class="hljs-params"></span>)&#123;</span><br><span class="language-javascript">    	<span class="hljs-comment">// The necessary scripts need to be reloaded（麻烦！）</span></span><br><span class="language-javascript">        ...your scripts...</span><br><span class="language-javascript">    &#125;</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>首先，请不要在【提取的内容】和【PJAX 容器】中内嵌 <code>&lt;script&gt;</code>（简单粗暴！如果内嵌就按自己想法操作吧……）然后，查看当前页面原有的 <code>&lt;script&gt;</code>（网页 F12 元素）。最后，将【必要的 JS 程序】添加到 <code>pajx_reload</code> 函数中，在 <code>pjax:end</code> 事件发生时调用。</p>
+<p><code>&lt;script&gt;</code> 为内联代码，或者是引入外部 JS 文件。在发起 PJAX 请求后，原页面在 <code>&lt;script&gt;</code> 中定义的全局函数和变量通常还能访问到，只要没有在内容替换过程中被删除或重置。页面集成的功能模块一般以函数的形式存在，函数执行时，功能模块生效。这些函数的执行方式是我们的焦点，我将其简单地划分为调用和事件驱动。</p>
+<ol>
+<li><u>如果功能模块函数仅是调用（手动调用，or 使用 <code>call()</code>&#x2F;<code>apply()</code> 等），或者绑定了 <code>DOMContentLoaded</code>、<code>load</code> 之类的事件，那么这些函数只会执行一次。PJAX 请求后，这些功能模块就会失效。我们的工作就是将这些函数添加到 <code>pajx_reload</code> 函数中。（necessary scripts!）</u></li>
+<li>如果功能模块函数绑定 <code>click</code>、<code>scroll</code> 之类的事件，这些事件可以重复触发，触发时功能模块即生效。（no need!）</li>
+</ol>
+<p><u>如果必要的 scripts 是整个内联代码（是人类吗？），重新插入该 <code>&lt;script&gt;</code> 到 DOM 中。</u> 设置该 <code>&lt;script&gt;</code> 带有 <code>date-pjax</code> 属性，方便 JS 获取。或者，使用 <code>&lt;div class=&quot;pjax-reload&quot;&gt;&lt;/div&gt;</code> 包裹该 <code>&lt;script&gt;</code>。（自调用函数同理。）</p>
+<blockquote>
+<p><strong>Tip：将 <code>&lt;script&gt;</code> 标签重新插入到 DOM 后，浏览器会自动解析并执行。</strong></p>
+</blockquote>
+<p>（感觉上面废话连篇！具体情况具体操作吧！）</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-handlebars"><span class="language-xml"></span></span><br><span class="language-xml"><span class="language-handlebars">    function pjax_reload() &#123;</span></span><br><span class="language-xml"><span class="language-handlebars">        /*（jQuery语法）</span></span><br><span class="language-xml"><span class="language-handlebars">        获取所有带有data-pjax属性的<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-handlebars"><span class="language-xml">标签，</span></span></span></span><br><span class="language-xml"><span class="language-handlebars"><span class="language-xml"><span class="language-handlebars">        	以及所有位于类名为pjax-reload的元素内部的<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-handlebars"><span class="language-xml">标签。</span></span></span></span></span></span><br><span class="language-xml"><span class="language-handlebars"><span class="language-xml"><span class="language-handlebars"><span class="language-xml"><span class="language-handlebars">        对于每个匹配的<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">，先移除它（在原位置），然后将它插入到父元素的末尾（触发<span class="hljs-variable constant_">HTML</span>解析执行）。</span></span></span></span></span></span></span><br><span class="language-javascript"><span class="language-xml"><span class="language-handlebars"><span class="language-xml"><span class="language-handlebars"><span class="language-xml"><span class="language-handlebars">        */</span></span></span></span></span></span></span><br><span class="language-javascript"><span class="language-xml"><span class="language-handlebars"><span class="language-xml"><span class="language-handlebars"><span class="language-xml"><span class="language-handlebars">        $(<span class="hljs-string">&quot;script[data-pjax], .pjax-reload script&quot;</span>).<span class="hljs-title function_">each</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;</span></span></span></span></span></span></span><br><span class="language-javascript"><span class="language-xml"><span class="language-handlebars"><span class="language-xml"><span class="language-handlebars"><span class="language-xml"><span class="language-handlebars">            $(<span class="hljs-variable language_">this</span>).<span class="hljs-title function_">parent</span>().<span class="hljs-title function_">append</span>($(<span class="hljs-variable language_">this</span>).<span class="hljs-title function_">remove</span>());</span></span></span></span></span></span></span><br><span class="language-javascript"><span class="language-xml"><span class="language-handlebars"><span class="language-xml"><span class="language-handlebars"><span class="language-xml"><span class="language-handlebars">        &#125;);</span></span></span></span></span></span></span><br><span class="language-javascript"><span class="language-xml"><span class="language-handlebars"><span class="language-xml"><span class="language-handlebars"><span class="language-xml"><span class="language-handlebars">        <span class="hljs-comment">// call necessary functions</span></span></span></span></span></span></span></span><br><span class="language-javascript"><span class="language-xml"><span class="language-handlebars"><span class="language-xml"><span class="language-handlebars"><span class="language-xml"><span class="language-handlebars">        <span class="hljs-title function_">func1</span>();</span></span></span></span></span></span></span><br><span class="language-javascript"><span class="language-xml"><span class="language-handlebars"><span class="language-xml"><span class="language-handlebars"><span class="language-xml"><span class="language-handlebars">        <span class="hljs-title function_">func2</span>();</span></span></span></span></span></span></span><br><span class="language-javascript"><span class="language-xml"><span class="language-handlebars"><span class="language-xml"><span class="language-handlebars"><span class="language-xml"><span class="language-handlebars">    &#125; </span></span></span></span></span></span></span><br><span class="language-javascript"><span class="language-xml"><span class="language-handlebars"><span class="language-xml"><span class="language-handlebars"><span class="language-xml"><span class="language-handlebars"></span></span></span></span></span></span></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>（Over!）</p>
+<h2 id="your-work-in-Hexo-Fluid"><a href="#your-work-in-Hexo-Fluid" class="headerlink" title="your work in Hexo&amp;Fluid"></a>your work in Hexo&amp;Fluid</h2><ol start="3">
+<li>设置 <code>pjax:end</code> 事件要触发的必要 scripts</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// source\js\pjax-reload.js</span><br><br><span class="hljs-comment">// 在此函数集中设置必要的scripts</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">pjax_reload</span>(<span class="hljs-params"></span>) &#123;<br>    $(<span class="hljs-string">&quot;script[data-pjax], .pjax-reload script&quot;</span>).<span class="hljs-title function_">each</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>    	$(<span class="hljs-variable language_">this</span>).<span class="hljs-title function_">parent</span>().<span class="hljs-title function_">append</span>($(<span class="hljs-variable language_">this</span>).<span class="hljs-title function_">remove</span>());<br>    &#125;);<br>    <span class="hljs-comment">// call necessary functions</span><br>    <span class="hljs-title function_">func1</span>();<br>    <span class="hljs-title function_">func2</span>();<br>&#125; <br></code></pre></td></tr></table></figure>
+
+<p>网页 F12 元素，查看原页面必要的脚本，添加到函数 <code>pjax_reload</code> 中。</p>
+<ol>
+<li>如果必要 scripts 是函数，在函数 <code>pjax_reload</code> 中执行这些必要函数。</li>
+<li>如果必要 scripts 是整个 <code>&lt;script&gt;</code>，为这些 <code>&lt;script&gt;</code> 添加属性 <code>data-pjax</code>（修改 Fluid 主题源码），以便于获取。在函数 <code>pjax_reload</code> 中获取这些 <code>&lt;script&gt;</code> 并添加到 DOM，触发 HTML 解析执行。</li>
+</ol>
+<blockquote>
+<p>Fluid 主题的布局模板文件中采用两种写法注入 <code>&lt;script&gt;</code> 脚本（具体内容请自行看 Fluid 主题文件）。</p>
+<ol>
+<li>自定义函数 <code>import_script()</code>，参数内容为 <code>&lt;script&gt;</code> 脚本。直接一个 <code>date-pjax</code> 属性的加！</li>
+<li>自定义函数 <code>js_ex()</code>，传入参数，参数作为 <code>&lt;script&gt;</code> 的 <code>src</code> 属性值以及其他属性。</li>
+</ol>
+</blockquote>
+<hr>
+<p>这里给出三个例子（其他自行解决）。</p>
+<p>示例 1：<code>&lt;script src=&quot;/js/boot.js&quot;&gt;&lt;/script&gt;</code></p>
+<ol>
+<li>函数 <code>Fluid.boot.registerEvents();</code> 在 HTML 解析完成（DOM 树建立完毕）后执行。PJAX 请求后，该函数失效。<ul>
+<li>函数 <code>Fluid.events.billboard();</code> 只是在控制台输出 Fluid 字符，属于非必要 script。</li>
+<li>函数 <code>Fluid.events.registerNavbarEvent();</code> 是导航栏特效（鼠标向下滚动一定距离，导航栏采用深色样式），属于必要 script。</li>
+<li>……</li>
+</ul>
+</li>
+<li>函数 <code>Fluid.boot.refresh</code> 在生成 HTML 时调用，它与页面功能模块生效无关。</li>
+</ol>
+<p><img src="PJAX%E4%B8%8EFluid/image-20250528103744172.png" srcset="/img/loading.gif" lazyload></p>
+<p>直接在函数 <code>pjax_reload</code> 中调用这些必要 scripts。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// source\js\pjax-reload.js</span><br><br><span class="hljs-comment">// 在此函数集中设置必要的scripts</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">pjax_reload</span>(<span class="hljs-params"></span>) &#123;<br>    <br>    <span class="hljs-comment">// call necessary functions</span><br>    <span class="hljs-comment">// 导航栏特效：鼠标向下滚动一定距离，导航栏采用深色样式</span><br>    <span class="hljs-title class_">Fluid</span>.<span class="hljs-property">events</span>.<span class="hljs-title function_">registerNavbarEvent</span>();<br>    <span class="hljs-comment">// banner（横幅/顶部图）特效：视差滚动效果（没看出）</span><br>    <span class="hljs-title class_">Fluid</span>.<span class="hljs-property">events</span>.<span class="hljs-title function_">registerParallaxEvent</span>();<br>    <span class="hljs-comment">// 鼠标点击箭头，向下滚动（banner）</span><br>    <span class="hljs-title class_">Fluid</span>.<span class="hljs-property">events</span>.<span class="hljs-title function_">registerScrollDownArrowEvent</span>();<br>    <span class="hljs-comment">// 鼠标点击箭头，滚动到顶部（页面）</span><br>    <span class="hljs-title class_">Fluid</span>.<span class="hljs-property">events</span>.<span class="hljs-title function_">registerScrollTopArrowEvent</span>();<br>    <span class="hljs-comment">// 在页面加载过程中，通过监听背景图和非懒加载图片的加载状态，逐步更新加载进度条（NProgress）。</span><br>    <span class="hljs-title class_">Fluid</span>.<span class="hljs-property">events</span>.<span class="hljs-title function_">registerImageLoadedEvent</span>();<br>&#125; <br></code></pre></td></tr></table></figure>
+
+<p>示例 2：<code>&lt;script src=&quot;/js/img-lazyload.js&quot;&gt;&lt;/script&gt;</code></p>
+<p>引用的外部 JS 文件——<code>img-lazyload.js</code>，整个 JS 程序是自调用函数，用于显示懒加载图片，属于必要 script。</p>
+<p><img src="PJAX%E4%B8%8EFluid/image-20250528104040792.png" srcset="/img/loading.gif" lazyload></p>
+<p>因为该必要 script 是自调用函数，是 <code>&lt;script&gt;</code> 的外部引用脚本。</p>
+<p>先直接给 <code>&lt;script&gt;</code> 标签添加 <code>data-pjax</code> 属性，方便获取。<code>layout\_partials\scripts.ejs</code> 中使用 <code>scripts\helpers\url.js</code> 中的函数 <code>js_ex</code> 注入 <code>&lt;script&gt;</code>，刚好该函数多设计了一个 ex 参数，直接修改代码传参 <code>date-pjax</code>——<code>js_ex(theme.static_prefix.internal_js, &#39;img-lazyload.js&#39;, &#39;data-pjax&#39;)</code>。</p>
+<p><img src="PJAX%E4%B8%8EFluid/image-20250528163045652.png" srcset="/img/loading.gif" lazyload></p>
+<p>然后在函数 <code>pjax_reload</code> 中获取它，并将它重新添加到 DOM，触发 HTML 解析执行。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// source\js\pjax-reload.js</span><br><br><span class="hljs-comment">// 在此函数集中设置必要的scripts</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">pjax_reload</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-comment">/*（jQuery语法）</span><br><span class="hljs-comment">    获取带date-pjax属性的&lt;script&gt;，</span><br><span class="hljs-comment">    对于每个匹配的&lt;script&gt;，先移除它（在原位置），然后将它插入到父元素的末尾（触发HTML解析执行）。</span><br><span class="hljs-comment">    */</span><br>    $(<span class="hljs-string">&quot;script[data-pjax]&quot;</span>).<span class="hljs-title function_">each</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>    	$(<span class="hljs-variable language_">this</span>).<span class="hljs-title function_">parent</span>().<span class="hljs-title function_">append</span>($(<span class="hljs-variable language_">this</span>).<span class="hljs-title function_">remove</span>());<br>    &#125;);<br>    <br>    <span class="hljs-comment">// call necessary functions</span><br>    <span class="hljs-comment">// &quot;/js/boot.js&quot;中必要的scripts </span><br>    <span class="hljs-title class_">Fluid</span>.<span class="hljs-property">events</span>.<span class="hljs-title function_">registerNavbarEvent</span>();<br>    <span class="hljs-title class_">Fluid</span>.<span class="hljs-property">events</span>.<span class="hljs-title function_">registerParallaxEvent</span>();<br>    <span class="hljs-title class_">Fluid</span>.<span class="hljs-property">events</span>.<span class="hljs-title function_">registerScrollDownArrowEvent</span>();<br>    <span class="hljs-title class_">Fluid</span>.<span class="hljs-property">events</span>.<span class="hljs-title function_">registerScrollTopArrowEvent</span>();<br>    <span class="hljs-title class_">Fluid</span>.<span class="hljs-property">events</span>.<span class="hljs-title function_">registerImageLoadedEvent</span>();<br>&#125; <br></code></pre></td></tr></table></figure>
+
+<p>示例 3：<code>&lt;script src=&quot;https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js&quot; type=&quot;text/javascript&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;</code></p>
+<p>引用的外部 JS 文件——<code>tocbot.min.js</code>，整个 JS 程序是自调用函数，用于生成文章目录，属于必要 script。</p>
+<p><img src="PJAX%E4%B8%8EFluid/image-20250528170558608.png" srcset="/img/loading.gif" lazyload></p>
+<p>因为该必要 script 是自调用函数，是 <code>&lt;script&gt;</code> 的外部引用脚本。（处理思路和示例 2 一样，但略复杂）</p>
+<p>函数 <code>import_script</code> 将【<code>&lt;script&gt;</code> 参数】注入到生成的 HTML。 <code>&lt;script&gt;</code> 参数内部执行函数 <code>Fluid.utils.createScript</code>，通过创建 script 元素的方式引入<code>tocbot.min.js</code> 必要 script；回调函数（绑定 <code>load</code> 事件）在页面所有资源（图片、样式表、脚本等）都加载完后执行。</p>
+<p>只要重载一次【<code>&lt;script&gt;</code> 参数】即可使 <code>tocbot</code> 生效，为【<code>&lt;script&gt;</code> 参数】添加 <code>data-pjax</code> 属性，然后函数 <code>pjax_reload</code> 做后续处理（示例 2 已经处理）。（执行时机与示例 2 不同，示例 3 是为了触发 HTML 解析）。</p>
+<p>因为是通过新建 script 元素的方式引入 <code>tocbot.min.js</code> 必要 script，如果不断发起 PJAX 请求，<code>&lt;script src=&quot;tocbot.min.js&quot;&gt;</code> 元素会不断堆积。可以简单地修改一下函数 <code>createScript</code>，防止元素堆积。</p>
+<p><img src="PJAX%E4%B8%8EFluid/image-20250528175348427.png" srcset="/img/loading.gif" lazyload></p>
+<p>声明函数 <code>createScriptST</code>，内容 copy 函数 <code>createScript</code>，新增参数来设置 script 属性，以方便获取。（暂时新建函数，以免其他调用函数 <code>createScript</code> 的地方出问题）</p>
+<p>【<code>&lt;script&gt;</code> 参数】部分改为调用函数 <code>createScriptST</code>，多传入一个参数 <code>&#39;tocbot&#39;</code>。在调用此函数前，删除页面已有的<code>&lt;script func=&quot;tocbot&quot; src=&quot;tocbot.min.js&quot;&gt;</code>，防止 PJAX 请求导致该元素堆积。</p>
+<p><img src="PJAX%E4%B8%8EFluid/image-20250528214801768.png" srcset="/img/loading.gif" lazyload></p>
+<p>其他的功能模块，自行处理：</p>
+<ul>
+<li>code-widget，代码窗口小部件，使用 <code>clipboard.js</code> 粘贴复制插件，<code>fluid\layout\_partials\plugins\code-widget.ejs</code></li>
+<li>anchor，小标题锚点，<code>fluid\layout\_partials\plugins\anchorjs.ejs</code></li>
+<li><code>/js/local-search.js</code>，搜索功能，<code>fluid\layout\_partials\header\navigation.ejs</code></li>
+<li><code>/js/color-scheme.js</code>，白天黑夜模式切换，<code>fluid\layout\_partials\head.ejs</code></li>
+<li>……</li>
+</ul>
+<hr>
+<p>【补充】：函数 <code>Fluid.events.registerScrollTopArrowEvent</code> 有点小问题，PJAX 请求后重新执行该函数。 左右拉伸浏览器窗口，控制台疯狂报错：<code>events.js:90  Uncaught TypeError: Cannot read properties of undefined (reading &#39;right&#39;)</code>。</p>
+<p>按紫框修改其代码，【鼠标点击箭头，滚动到顶部（页面）】功能恢复正常。</p>
+<p><img src="PJAX%E4%B8%8EFluid/image-20250528230418520.png" srcset="/img/loading.gif" lazyload></p>
+<p>列举：</p>
+<ol>
+<li>github-markdown.min.css，及 source\css_pages_post\markdown.styl</li>
+<li></li>
+</ol>
+<p><img src="PJAX%E4%B8%8EFluid/image-20250529202117668.png" srcset="/img/loading.gif" lazyload></p>
+<h1 id="jquery-pjax"><a href="#jquery-pjax" class="headerlink" title="jquery-pjax"></a>jquery-pjax</h1><p>官网：<a target="_blank" rel="noopener" href="https://github.com/defunkt/jquery-pjax">GitHub - defunkt&#x2F;jquery-pjax：pushState + ajax &#x3D; pjax</a></p>
+<h2 id="your-work-in-HTML"><a href="#your-work-in-HTML" class="headerlink" title="your work in HTML"></a>your work in HTML</h2><ol>
+<li>HTML 引入 <code>jquery-pjax</code> 库</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>发起 PJAX 请求，获取目标页面指定内容，替换当前页面指定区域</li>
+</ol>
+<p><code>$.fn.pjax</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">$(<span class="hljs-variable language_">document</span>).<span class="hljs-title function_">pjax</span>(selector, [container], options);<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><code>selector</code>：指定触发 PJAX 请求的 click 事件绑定的元素。CSS 选择器或 jQuery 选择器。</li>
+<li><code>[container]</code>：PJAX 容器且<strong>唯一</strong>，指定加载内容的目标 DOM 元素。CSS 选择器。</li>
+<li><code>options</code> 选项：<ol>
+<li><code>fragment</code>：从 ajax 响应中提取的内容。CSS 选择器。</li>
+<li><code>timeout</code>：ajax 超时时间（以毫秒为单位），超时则强制进行完全刷新。</li>
+<li><code>push</code>：默认 true，使用 <code>window.history.pushState</code> 改变地址栏 url（更新历史记录 ）。</li>
+<li><code>replace</code>：默认 false，使用 <code>window.history.replaceState</code> 改变地址栏 url（不添加历史记录 ）。</li>
+<li>……</li>
+</ol>
+</li>
+</ul>
+<p>（一般地，PJAX 请求的目标页面与当前页面布局一致，PJAX 容器与 fragment 一致。）</p>
+<hr>
+<p>示例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;container-pjax&quot;</span> <span class="hljs-attr">data-pjax-container</span>&gt;</span><br>    提取的内容（options.fragment），同时也是 PJAX 容器(container)。<br>    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;url&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><code>$.fn.pjax</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">/*</span><br><span class="hljs-comment">点击&lt;a&gt;链接在当前窗口打开时，通过pjax请求新页面内容;</span><br><span class="hljs-comment">提取响应中的&#x27;#container-pjax&#x27;部分，替换当前页面的&#x27;#container-pjax&#x27;部分；</span><br><span class="hljs-comment">8秒后，pjax请求超时，完全刷新页面。</span><br><span class="hljs-comment">*/</span><br>$(<span class="hljs-variable language_">document</span>).<span class="hljs-title function_">pjax</span>(<span class="hljs-string">&#x27;a[target!=_blank]&#x27;</span>, <span class="hljs-string">&#x27;#container-pjax&#x27;</span>, &#123;<br>  <span class="hljs-attr">fragment</span>: <span class="hljs-string">&#x27;#container-pjax&#x27;</span>,<br>  <span class="hljs-attr">timeout</span>: <span class="hljs-number">8000</span><br>&#125;);<br></code></pre></td></tr></table></figure>
+
+<p>or</p>
+<p><code>$.pjax.click</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 判断当前浏览器是否支持PJAX功能（由jQuery-pjax插件提供的检测）。</span><br><span class="hljs-keyword">if</span> ($.support.<span class="hljs-property">pjax</span>) &#123;<br>  $(<span class="hljs-variable language_">document</span>).<span class="hljs-title function_">on</span>(<span class="hljs-string">&#x27;click&#x27;</span>, <span class="hljs-string">&#x27;a[target!=_blank]&#x27;</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) &#123;<br>    $.pjax.<span class="hljs-title function_">click</span>(event, &#123;<br>      <span class="hljs-comment">// 替换的容器（替换当前页面）</span><br>      <span class="hljs-attr">container</span>: <span class="hljs-string">&#x27;#container-pjax&#x27;</span>,<br>      <span class="hljs-comment">// 提取的容器（提取目标页面内容）</span><br>      <span class="hljs-attr">fragment</span>: <span class="hljs-string">&#x27;#container-pjax&#x27;</span>,<br>      <span class="hljs-comment">// pjax请求时间限制，单位：毫秒。8秒后，pjax请求超时，采用完全刷新。</span><br>      <span class="hljs-attr">timeout</span>: <span class="hljs-number">8000</span><br>    &#125;);<br>  &#125;);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>官网示例改正：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js">&gt;<span class="hljs-keyword">var</span> container = $(<span class="hljs-variable language_">this</span>).<span class="hljs-title function_">closest</span>(<span class="hljs-string">&#x27;[data-pjax-container]&#x27;</span>);<br>&gt;<span class="hljs-comment">// jQuery对象不是DOM对象，无法通过`.id`直接获取属性值，应使用`.attr(&#x27;id&#x27;)`。</span><br>&gt;<span class="hljs-keyword">var</span> containerSelector = <span class="hljs-string">&#x27;#&#x27;</span> + container.<span class="hljs-title function_">attr</span>(<span class="hljs-string">&#x27;id&#x27;</span>);<br>&gt;$.pjax.<span class="hljs-title function_">click</span>(event, &#123;<span class="hljs-attr">container</span>: containerSelector&#125;);<br></code></pre></td></tr></table></figure></blockquote>
+<hr>
+<ol start="3">
+<li>PJAX 请求结束后，重新加载必要的scripts（善后处理）</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js">$(<span class="hljs-variable language_">document</span>).<span class="hljs-title function_">on</span>(<span class="hljs-string">&#x27;pjax:end&#x27;</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-comment">// The necessary scripts need to be reloaded（麻烦！）</span><br>    <span class="hljs-comment">// JS &amp; CSS</span><br>&#125;);<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="your-work-in-Hexo-Fluid-1"><a href="#your-work-in-Hexo-Fluid-1" class="headerlink" title="your work in Hexo&amp;Fluid"></a>your work in Hexo&amp;Fluid</h2><p>（就按照上面的流程操作吧！）</p>
+<ol>
+<li>所有页面注入 <code>jquery-pjax</code> 库</li>
+</ol>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># _config.fluid.yml</span><br><br><span class="hljs-attr">custom_js:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js</span><br></code></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>编写 JS，发起 PJAX 请求，局部替换页面内容（博文内容），将 <code>#aplayer</code> 元素排除在外。</li>
+</ol>
+<blockquote>
+<p>Tip：《Fluid主题の博客美化》| “其他：注入静态代码片段”，有简单地提到 Fluid 主题文件。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs ejs">// themes\fluid\layout\layout.ejs<br><br>// 设置&lt;div&gt;块包裹要替换的内容，方便 JS 获取，作为【提取的内容】和【插入的容器】。<br>&lt;div id=&quot;container-pjax&quot;&gt;<br>    &lt;header&gt;...&lt;/header&gt;<br>    &lt;main&gt;...&lt;/main&gt;<br>    &lt;footer&gt;...&lt;/footer&gt;<br>&lt;/div&gt;<br><br>// #aplayer 在 #content 下方，被其排除在外。<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// scripts\inject.js</span><br><br><span class="hljs-comment">// 注入到所有页面。采用外部文件，方便编写与pjax相关的程序代码。</span><br>hexo.<span class="hljs-property">extend</span>.<span class="hljs-property">injector</span>.<span class="hljs-title function_">register</span>(<span class="hljs-string">&#x27;body_end&#x27;</span>,<span class="hljs-string">`&lt;script src=&quot;/js/pjax-related.js&quot;&gt;&lt;/script&gt;`</span>);<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// source\js\pjax-related.js</span><br><br><span class="hljs-comment">// 点击元素触发pjax请求</span><br>$(<span class="hljs-variable language_">document</span>).<span class="hljs-title function_">pjax</span>(<span class="hljs-string">&#x27;a[target!=_blank]&#x27;</span>, <span class="hljs-string">&#x27;#container-pjax&#x27;</span>, &#123;<br>  <span class="hljs-attr">fragment</span>: <span class="hljs-string">&#x27;#container-pjax&#x27;</span>,<br>  <span class="hljs-attr">timeout</span>: <span class="hljs-number">8000</span><br>&#125;);<br><span class="hljs-comment">// 此时，已经实现获取新页面内容不影响音乐播放</span><br></code></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>PJAX 请求结束后，重新加载必要的scripts（善后处理）</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// source\js\pjax-related.js</span><br><br><span class="hljs-comment">// PJAX请求结束后，重新加载必要的scripts</span><br>$(<span class="hljs-variable language_">document</span>).<span class="hljs-title function_">on</span>(<span class="hljs-string">&quot;pjax:end&quot;</span>, <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-comment">// reload necessary scripts（麻烦！）</span><br>  <span class="hljs-title function_">pjax_reload</span>();<span class="hljs-comment">// 在此函数中集中设置必要的scripts</span><br>&#125;);<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">pjax_reload</span>(<span class="hljs-params"></span>) &#123;<br>    <br>  $(<span class="hljs-string">&quot;script[data-pjax]&quot;</span>).<span class="hljs-title function_">each</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>    $(<span class="hljs-variable language_">this</span>).<span class="hljs-title function_">parent</span>().<span class="hljs-title function_">append</span>($(<span class="hljs-variable language_">this</span>).<span class="hljs-title function_">remove</span>());<br>  &#125;);<br>    <br>  <span class="hljs-comment">// call necessary functions</span><br>  <span class="hljs-title class_">Fluid</span>.<span class="hljs-property">events</span>.<span class="hljs-title function_">registerNavbarEvent</span>();<br>  <span class="hljs-title class_">Fluid</span>.<span class="hljs-property">events</span>.<span class="hljs-title function_">registerParallaxEvent</span>();<br>  <span class="hljs-title class_">Fluid</span>.<span class="hljs-property">events</span>.<span class="hljs-title function_">registerScrollDownArrowEvent</span>();<br>  <span class="hljs-title class_">Fluid</span>.<span class="hljs-property">events</span>.<span class="hljs-title function_">registerScrollTopArrowEvent</span>();<br>  <span class="hljs-title class_">Fluid</span>.<span class="hljs-property">events</span>.<span class="hljs-title function_">registerImageLoadedEvent</span>();<br>    <br>  $.<span class="hljs-title function_">getScript</span>(<br>    <span class="hljs-string">&quot;https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;</span><br>  );<br>  <br>    <br>  <br>  <span class="hljs-comment">/*</span><br><span class="hljs-comment">  当刷新页为&quot;非文章页&quot;，请求&quot;文章页&quot;时，额外注入文章页独有的 JS、CSS（必要scripts）。</span><br><span class="hljs-comment">  如果页面没有此元素，则创建此元素并插入到页面。</span><br><span class="hljs-comment">  */</span><br>&#125;<br><br><br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">loadFuncAndRemoveScriptExists</span>(<span class="hljs-params">scriptFuncDesc, funcItem</span>) &#123;<br>  <span class="hljs-keyword">var</span> $el = $(scriptFuncDesc);<br>  <span class="hljs-keyword">if</span> ($el.<span class="hljs-property">length</span> === <span class="hljs-number">0</span>) &#123;<br>    <span class="hljs-title function_">funcItem</span>();<br>  &#125; <span class="hljs-keyword">else</span> &#123;<br>    $el.<span class="hljs-title function_">remove</span>();<br>    <span class="hljs-title function_">funcItem</span>();<br>  &#125;<br>&#125;<br><br><span class="hljs-comment">/* 抽取Fluid主题集成的功能模块：加载tocbot脚本</span><br><span class="hljs-comment">函数createScriptST通过创建script元素并插入到页面的方式引入外部JS文件——tocbot.min.js，</span><br><span class="hljs-comment">该js仅提供API；该script元素onload事件绑定的函数调用API作用于页面元素。</span><br><span class="hljs-comment">*/</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">injectTocbotAndApply</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-title class_">Fluid</span>.<span class="hljs-property">utils</span>.<span class="hljs-title function_">createScriptST</span>(<br>    <span class="hljs-string">&quot;https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js&quot;</span>,<br>    <span class="hljs-string">&quot;tocbot-js-api&quot;</span>,<br>    <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>      <span class="hljs-keyword">var</span> toc = <span class="hljs-title function_">jQuery</span>(<span class="hljs-string">&quot;#toc&quot;</span>);<br>      <span class="hljs-keyword">if</span> (toc.<span class="hljs-property">length</span> === <span class="hljs-number">0</span> || !<span class="hljs-variable language_">window</span>.<span class="hljs-property">tocbot</span>) &#123;<br>        <span class="hljs-keyword">return</span>;<br>      &#125;<br>      <span class="hljs-keyword">var</span> boardCtn = <span class="hljs-title function_">jQuery</span>(<span class="hljs-string">&quot;#board-ctn&quot;</span>);<br>      <span class="hljs-keyword">var</span> boardTop = boardCtn.<span class="hljs-title function_">offset</span>().<span class="hljs-property">top</span>;<br><br>      <span class="hljs-variable language_">window</span>.<span class="hljs-property">tocbot</span>.<span class="hljs-title function_">init</span>(<br>        <span class="hljs-title class_">Object</span>.<span class="hljs-title function_">assign</span>(<br>          &#123;<br>            <span class="hljs-attr">tocSelector</span>: <span class="hljs-string">&quot;#toc-body&quot;</span>,<br>            <span class="hljs-attr">contentSelector</span>: <span class="hljs-string">&quot;.markdown-body&quot;</span>,<br>            <span class="hljs-attr">linkClass</span>: <span class="hljs-string">&quot;tocbot-link&quot;</span>,<br>            <span class="hljs-attr">activeLinkClass</span>: <span class="hljs-string">&quot;tocbot-active-link&quot;</span>,<br>            <span class="hljs-attr">listClass</span>: <span class="hljs-string">&quot;tocbot-list&quot;</span>,<br>            <span class="hljs-attr">isCollapsedClass</span>: <span class="hljs-string">&quot;tocbot-is-collapsed&quot;</span>,<br>            <span class="hljs-attr">collapsibleClass</span>: <span class="hljs-string">&quot;tocbot-is-collapsible&quot;</span>,<br>            <span class="hljs-attr">scrollSmooth</span>: <span class="hljs-literal">true</span>,<br>            <span class="hljs-attr">includeTitleTags</span>: <span class="hljs-literal">true</span>,<br>            <span class="hljs-attr">headingsOffset</span>: -boardTop,<br>          &#125;,<br>          <span class="hljs-variable constant_">CONFIG</span>.<span class="hljs-property">toc</span><br>        )<br>      );<br>      <span class="hljs-keyword">if</span> (toc.<span class="hljs-title function_">find</span>(<span class="hljs-string">&quot;.toc-list-item&quot;</span>).<span class="hljs-property">length</span> &gt; <span class="hljs-number">0</span>) &#123;<br>        toc.<span class="hljs-title function_">css</span>(<span class="hljs-string">&quot;visibility&quot;</span>, <span class="hljs-string">&quot;visible&quot;</span>);<br>      &#125;<br><br>      <span class="hljs-title class_">Fluid</span>.<span class="hljs-property">events</span>.<span class="hljs-title function_">registerRefreshCallback</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-string">&quot;tocbot&quot;</span> <span class="hljs-keyword">in</span> <span class="hljs-variable language_">window</span>) &#123;<br>          tocbot.<span class="hljs-title function_">refresh</span>();<br>          <span class="hljs-keyword">var</span> toc = <span class="hljs-title function_">jQuery</span>(<span class="hljs-string">&quot;#toc&quot;</span>);<br>          <span class="hljs-keyword">if</span> (toc.<span class="hljs-property">length</span> === <span class="hljs-number">0</span> || !tocbot) &#123;<br>            <span class="hljs-keyword">return</span>;<br>          &#125;<br>          <span class="hljs-keyword">if</span> (toc.<span class="hljs-title function_">find</span>(<span class="hljs-string">&quot;.toc-list-item&quot;</span>).<span class="hljs-property">length</span> &gt; <span class="hljs-number">0</span>) &#123;<br>            toc.<span class="hljs-title function_">css</span>(<span class="hljs-string">&quot;visibility&quot;</span>, <span class="hljs-string">&quot;visible&quot;</span>);<br>          &#125;<br>        &#125;<br>      &#125;);<br>    &#125;<br>  );<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="pjax-JS"><a href="#pjax-JS" class="headerlink" title="pjax(JS)"></a>pjax(JS)</h1><p>官网：<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax#Pjax">GitHub - MoOx&#x2F;pjax: Easily enable fast Ajax navigation on any website (using pushState + xhr)</a></p>
+<h2 id="汉化文档"><a href="#汉化文档" class="headerlink" title="汉化文档"></a>汉化文档</h2><p><a target="_blank" rel="noopener" href="https://kmar.top/posts/dbf5bf98/">Pjax 文档汉化 | 山岳库博</a></p>
+<h1 id="funny-半成品（可略）"><a href="#funny-半成品（可略）" class="headerlink" title="funny 半成品（可略）"></a>funny 半成品（可略）</h1><p>如果不想统一 Fluid 主题的页面布局，也不想在 PJAX 请求时做额外处理，则在非文章页访问文章页时，采用<strong>一次</strong>完全刷新；其余采用 PJAX。这样，就“忽略”文章页与非文章页的布局差异。（funny 半成品！）</p>
+<h2 id="jquery-pjax：jQuery-语法"><a href="#jquery-pjax：jQuery-语法" class="headerlink" title="jquery-pjax：jQuery 语法"></a>jquery-pjax：jQuery 语法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 控制完全刷新只执行一次</span><br><span class="hljs-keyword">var</span> pjaxFlag = <span class="hljs-literal">true</span>;<br><br>$(<span class="hljs-variable language_">document</span>).<span class="hljs-title function_">on</span>(<span class="hljs-string">&quot;click&quot;</span>, <span class="hljs-string">&quot;a[target!=_blank]&quot;</span>, <span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) &#123;<br>  <span class="hljs-keyword">if</span> (pjaxFlag) &#123;<br>    <span class="hljs-comment">// 获取当前路径uriPath部分</span><br>    <span class="hljs-keyword">var</span> currentPath = <span class="hljs-variable language_">window</span>.<span class="hljs-property">location</span>.<span class="hljs-property">pathname</span>;<br>    <span class="hljs-comment">// 获取目标路径uriPath部分</span><br>    <span class="hljs-keyword">var</span> linkHref = $(<span class="hljs-variable language_">this</span>).<span class="hljs-title function_">attr</span>(<span class="hljs-string">&quot;href&quot;</span>); <span class="hljs-comment">// 获取当前&lt;a&gt;元素的href属性值</span><br>    <span class="hljs-keyword">var</span> targetPath = <span class="hljs-keyword">new</span> <span class="hljs-title function_">URL</span>(linkHref, <span class="hljs-variable language_">window</span>.<span class="hljs-property">location</span>.<span class="hljs-property">origin</span>).<span class="hljs-property">pathname</span>;<br>    <span class="hljs-comment">// 判断当前路径与目标路径是否为文章页（&quot;/posts/&quot;替换为你的文章路径部分）</span><br>    <span class="hljs-keyword">var</span> isCurrentPosts = currentPath.<span class="hljs-title function_">startsWith</span>(<span class="hljs-string">&quot;/posts/&quot;</span>);<br>    <span class="hljs-keyword">var</span> isTargetPosts = targetPath.<span class="hljs-title function_">startsWith</span>(<span class="hljs-string">&quot;/posts/&quot;</span>);<br><br>    <span class="hljs-comment">// 在非文章页访问文章页时，采用一次完全刷新</span><br>    <span class="hljs-keyword">if</span> (!isCurrentPosts &amp;&amp; isTargetPosts) &#123;<br>      <span class="hljs-variable language_">window</span>.<span class="hljs-property">location</span>.<span class="hljs-property">href</span> = targetPath;<br>      pjaxFlag = <span class="hljs-literal">false</span>;<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>      <span class="hljs-title function_">pjaxClick</span>();<br>    &#125;<br>  &#125; <span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-title function_">pjaxClick</span>();<br>  &#125;<br><br>  <span class="hljs-keyword">function</span> <span class="hljs-title function_">pjaxClick</span>(<span class="hljs-params"></span>) &#123;<br>    $.pjax.<span class="hljs-title function_">click</span>(event, &#123;<br>      <span class="hljs-attr">container</span>: <span class="hljs-string">&quot;#container-pjax&quot;</span>,<br>      <span class="hljs-attr">fragment</span>: <span class="hljs-string">&quot;#container-pjax&quot;</span>,<br>      <span class="hljs-attr">timeout</span>: <span class="hljs-number">8000</span>,<br>    &#125;);<br>  &#125;<br>&#125;);<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="pjax-JS-：JS-语法"><a href="#pjax-JS-：JS-语法" class="headerlink" title="pjax(JS)：JS 语法"></a>pjax(JS)：JS 语法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;DOMContentLoaded&quot;</span>, <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>    <br>  <span class="hljs-keyword">const</span> links = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelectorAll</span>(<span class="hljs-string">&#x27;a:not([target=&quot;_blank&quot;]&#x27;</span>);<br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; links.<span class="hljs-property">length</span>; i++) &#123;<br>    <span class="hljs-keyword">var</span> el = links[i];<br>    el.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;click&quot;</span>, <span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) &#123;<br>      <span class="hljs-comment">// 获取当前路径uriPath部分</span><br>      <span class="hljs-keyword">var</span> currentPath = <span class="hljs-variable language_">window</span>.<span class="hljs-property">location</span>.<span class="hljs-property">pathname</span>;<br>      <span class="hljs-comment">// 获取目标路径uriPath部分</span><br>      <span class="hljs-keyword">var</span> linkHref = <span class="hljs-variable language_">this</span>.<span class="hljs-property">href</span>; <span class="hljs-comment">// 获取当前&lt;a&gt;元素的href属性值</span><br>      <span class="hljs-keyword">var</span> targetPath = <span class="hljs-keyword">new</span> <span class="hljs-title function_">URL</span>(linkHref, <span class="hljs-variable language_">window</span>.<span class="hljs-property">location</span>.<span class="hljs-property">origin</span>).<span class="hljs-property">pathname</span>;<br>      <span class="hljs-comment">// 判断当前路径与目标路径是否为post页（/posts/替换为your文章路径部分）</span><br>      <span class="hljs-keyword">var</span> isCurrentPosts = currentPath.<span class="hljs-title function_">startsWith</span>(<span class="hljs-string">&quot;/posts/&quot;</span>);<br>      <span class="hljs-keyword">var</span> isTargetPosts = targetPath.<span class="hljs-title function_">startsWith</span>(<span class="hljs-string">&quot;/posts/&quot;</span>);<br><br>      <span class="hljs-comment">// 如果当前页非文章页，且目标页是文章页，则阻止 Pjax 接收该事件，采用完全刷新。</span><br>      <span class="hljs-keyword">if</span> (!isCurrentPosts &amp;&amp; isTargetPosts) &#123;<br>        <span class="hljs-variable language_">window</span>.<span class="hljs-property">location</span>.<span class="hljs-property">href</span> = targetPath;<br>        e.<span class="hljs-title function_">preventDefault</span>();<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;刷新页非文章页，访问文章页，完全刷新！&quot;</span>);<br>      &#125;<br>    &#125;);<br>  &#125;<br><br>  <span class="hljs-keyword">const</span> pjax = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Pjax</span>(&#123;<br>    <span class="hljs-attr">elements</span>: <span class="hljs-string">&#x27;a:not([target=&quot;_blank&quot;])&#x27;</span>,<br>    <span class="hljs-attr">selectors</span>: [<span class="hljs-string">&quot;#container-pjax&quot;</span>],<br>  &#125;);<br>&#125;);<br><br></code></pre></td></tr></table></figure>
+
+<p>or</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> pjax = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Pjax</span>(&#123;<br>  <span class="hljs-attr">elements</span>: <span class="hljs-string">&#x27;a:not([target=&quot;_blank&quot;])&#x27;</span>,<br>  <span class="hljs-attr">selectors</span>: [<span class="hljs-string">&quot;#container-pjax&quot;</span>],<br>&#125;);<br></code></pre></td></tr></table></figure>
+
+
+
+<h1 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h1><p>【问题：未解决 | Fluid 主题：文章内容中的标题锚图标】：如果标题带中文字符，则标题锚图标失效。</p>
+<p>在博客使用 PJAX 后才注意到该问题。在 PJAX 请求后，带中文字符的标题锚图标才生效。</p>
+<p><a target="_blank" rel="noopener" href="https://www.zhangxinxu.com/wordpress/2013/08/url-anchor-html-%E9%94%9A%E7%82%B9%E5%AE%9A%E4%BD%8D%E6%9C%BA%E5%88%B6-%E5%BA%94%E7%94%A8-%E9%97%AE%E9%A2%98/">URL锚点HTML定位技术机制、应用与问题 « 张鑫旭-鑫空间-鑫生活</a></p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/ant-design/ant-design/issues/31941">[Anchor]锚点id中带有空格会导致targetOffset失效 · Issue #31941 · ant-design&#x2F;ant-design</a></p>
+<p><a target="_blank" rel="noopener" href="https://ntnyq.github.io/page-events-and-anchor/">页面事件和锚点问题 | 程序员不好吃</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/huanlei/archive/2012/10/31/2747895.html">锚点失效问题。 - 赵小磊 - 博客园</a></p>
+</blockquote>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42009500/article/details/116129303">Hexo Next主题中文锚点失效-Hexo采坑(一)_hexo目录点击失效-CSDN博客</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/SAXX2/article/details/132804640">Vitepress outline 中文锚点链接无法跳转至指定目标位置！-CSDN博客</a></p>
+</blockquote>
+<hr>
+<p>【未遇到】<a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid/issues/1025">文章更新时间部署到Github后显示异常 · Issue #1025 · fluid-dev&#x2F;hexo-theme-fluid</a></p>
+<p><a target="_blank" rel="noopener" href="https://ilaozhu.com/archives/2073/">强烈建议为你的网站引入PJAX技术 - 老朱独立开发</a></p>
+<blockquote>
+<p>【JQuery-PJAX】<a target="_blank" rel="noopener" href="https://www.cnblogs.com/telwanggs/p/7136716.html">pjax使用小结 - 疯子110 - 博客园</a></p>
+</blockquote>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.dandyweng.com/2014/01/updating-for-camarts-on-two-year-old/">Camarts 两周年更新记 | Dandy’s Blog</a></p>
+</blockquote>
+<p>【ASN8075 | Ireland】经常攻击网站。</p>
+<ul>
+<li>不应直接定义【IP 访问规则】阻止 ASN8075，因为 bingbot  也在该 ASN 下。（其实也无所谓，bingbot 禁了拉倒！）</li>
+<li>推荐采用自定义规则：<code>(ip.src.asnum eq 8075 and ip.src.country eq &quot;IE&quot;)</code>，阻止。</li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B8%8E%E8%BF%90%E7%BB%B4%E6%8C%87%E5%8D%97/" class="category-chain-item">博客搭建与运维指南</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Hexo/" class="print-no-link">#Hexo</a>
+      
+        <a href="/tags/Fluid/" class="print-no-link">#Fluid</a>
+      
+        <a href="/tags/PJAX/" class="print-no-link">#PJAX</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>PJAX与Fluid</div>
+      <div>https://www.cornst.com/posts/PJAX与Fluid.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>shaton</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年5月30日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2025年6月8日</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+      <div class="col-lg-7 mx-auto nopadding-x-md">
+        <div class="container custom mx-auto">
+          
+
+        </div>
+      </div>
+    
+  </main>
+
+</div>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+<div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":true,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+<!-- 使用markdown-plugins.ejs模板，使得所有页面都有文章页独有的JS和CSS -->
+<!-- 无法引入github-markdown.min.css和hint.min.css。如果使用函数css_ex直接注入，样式错误 -->
+<!-- 
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+ -->
+<!-- 因为暂时使用丐版PJAX，文章页独有的JS和CSS也没必要注入所有页面 -->
+<!-- layout\_partials\post\toc.ejs -->
+<!-- <script  src="https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js" ></script> -->
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script data-pjax>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script data-pjax src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script data-pjax>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script data-pjax>
+  
+  var anchorElem = document.querySelector('script[funcDesc="anchor-js-api"]')
+  if (anchorElem) anchorElem.remove();
+
+  Fluid.utils.createScriptST('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', 'anchor-js-api', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script data-pjax>Fluid.plugins.imageCaption();</script>
+
+  <script data-pjax src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/love.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/Cherry.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/DynamicLine.min.js"></script>
+<script src="//lib.baomitu.com/aplayer/1.10.1/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+
+<!-- hexo injector body_end start --><script src="/js/responsive-background.js" data-pjax></script>
+  <div id="aplayer"></div>
+  <script defer src="/js/aplayer.js"></script>
+<script src="/js/pjax-related.js"></script><!-- hexo injector body_end end --></body>
+</html>

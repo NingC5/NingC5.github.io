@@ -1,0 +1,943 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/image/favicon/ST.ico">
+  <link rel="icon" href="/image/favicon/ST.ico">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="shaton沙桐">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="node_modules&#x2F;hexo-renderer-marked&#x2F;lib&#x2F;renderer.js 源代码： 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677">
+<meta property="og:type" content="article">
+<meta property="og:title" content="marked（Hexo默认的Markdown渲染插件）的部分源码注释">
+<meta property="og:url" content="https://www.cornst.com/posts/marked%EF%BC%88Hexo%E9%BB%98%E8%AE%A4%E7%9A%84Markdown%E6%B8%B2%E6%9F%93%E6%8F%92%E4%BB%B6%EF%BC%89%E7%9A%84%E9%83%A8%E5%88%86%E6%BA%90%E7%A0%81%E6%B3%A8%E9%87%8A.html">
+<meta property="og:site_name" content="shaton沙桐">
+<meta property="og:description" content="node_modules&#x2F;hexo-renderer-marked&#x2F;lib&#x2F;renderer.js 源代码： 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-04-24T02:32:28.000Z">
+<meta property="article:modified_time" content="2025-05-29T16:45:54.530Z">
+<meta property="article:author" content="shaton">
+<meta property="article:tag" content="Hexo">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+    
+
+  
+  <title>marked（Hexo默认的Markdown渲染插件）的部分源码注释 - shaton沙桐</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css">
+<link rel="stylesheet" href="https://jsd.cdn.zzko.cn/gh/EmoryHuang/BlogBeautify@1.1/gradient.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/shubiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/gundongtiao.css">
+<link rel="stylesheet" href="//lib.baomitu.com/aplayer/1.10.1/APlayer.min.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"www.cornst.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":true,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script data-pjax src="/js/color-schema.js" ></script>
+  
+
+ 
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
+  
+
+
+<div id="container-pjax">
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>shaton沙桐的乐色桶</strong>
+    </a>
+	
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/image/banner/%E7%B2%89%E5%A5%B3.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="marked（Hexo默认的Markdown渲染插件）的部分源码注释"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        shaton沙桐
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-04-24 10:32" pubdate>
+          2025年4月24日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          19 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar category-bar" style="margin-right: -1rem">
+    
+
+
+
+
+
+<div class="category-list">
+  
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item 
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="博客搭建与运维指南"
+        id="heading-fea7a4583b0dce4c2adcc9d00a4f05e7" role="tab" data-toggle="collapse" href="#collapse-fea7a4583b0dce4c2adcc9d00a4f05e7"
+        aria-expanded="true"
+      >
+        博客搭建与运维指南
+        <span class="list-group-count">(13)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse show" id="collapse-fea7a4583b0dce4c2adcc9d00a4f05e7"
+           role="tabpanel" aria-labelledby="heading-fea7a4583b0dce4c2adcc9d00a4f05e7">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/posts/%E8%BF%9B%E5%BA%A6%E8%AF%B4%E6%98%8E.html" title="进度说明"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">进度说明</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2.html" title="个人博客"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">个人博客</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/Hexo%E3%81%A8GitHubPages%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2.html" title="HexoとGitHubPages搭建静态博客"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">HexoとGitHubPages搭建静态博客</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/Fluid%E4%B8%BB%E9%A2%98%E3%81%AE%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96.html" title="Fluid主题の博客美化"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Fluid主题の博客美化</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/Hexo%E3%81%A8Fluid%E8%8D%89%E8%88%B9%E5%80%9F%E7%AE%AD.html" title="HexoとFluid草船借箭"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">HexoとFluid草船借箭</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/marked%EF%BC%88Hexo%E9%BB%98%E8%AE%A4%E7%9A%84Markdown%E6%B8%B2%E6%9F%93%E6%8F%92%E4%BB%B6%EF%BC%89%E7%9A%84%E9%83%A8%E5%88%86%E6%BA%90%E7%A0%81%E6%B3%A8%E9%87%8A.html" title="marked（Hexo默认的Markdown渲染插件）的部分源码注释"
+           class="list-group-item list-group-item-action
+           active">
+          <span class="category-post">marked（Hexo默认的Markdown渲染插件）的部分源码注释</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/Hexo%E3%81%A8Fluid%E3%81%AE%E7%A2%8E%E8%AF%AD.html" title="HexoとFluidの碎语（PJAX? Just Decide!）"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">HexoとFluidの碎语（PJAX? Just Decide!）</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/GitHub%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E4%B8%8EGit%E8%BF%9E%E6%8E%A5GitHubPages%E4%BB%93%E5%BA%93.html" title="GitHub身份验证与Git连接GitHubPages仓库"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">GitHub身份验证与Git连接GitHubPages仓库</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/GitHubPages%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D.html" title="GitHubPages自定义域名"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">GitHubPages自定义域名</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E7%BD%91%E7%AB%99%E9%98%B2%E6%8A%A4%EF%BC%9ACloudflare.html" title="网站防护：Cloudflare"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">网站防护：Cloudflare</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8APlayer.html" title="音乐播放器APlayer"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">音乐播放器APlayer</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/GitHubPages%E8%AE%BF%E9%97%AE%E4%BC%98%E5%8C%96.html" title="GitHubPages访问优化"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">GitHubPages访问优化</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E5%BE%85%E5%AE%9E%E7%8E%B0.html" title="待实现"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">待实现</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+</div>
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">marked（Hexo默认的Markdown渲染插件）的部分源码注释</h1>
+            
+              <p id="updated-time" class="note note-info" style="">
+                
+                  
+                    本文最后更新于 2025年5月30日 凌晨
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <p><code>node_modules/hexo-renderer-marked/lib/renderer.js</code> 源代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 在源代码中添加 `console.log()` ，执行 generate 命令时，查看控制台输出的测试数据。clean 不能漏！</span><br><span class="hljs-meta"></span><br><span class="hljs-meta">&#x27;use strict&#x27;</span>;<br><br><span class="hljs-keyword">const</span> &#123; marked &#125; = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;marked&#x27;</span>);<br><br><span class="hljs-keyword">let</span> <span class="hljs-variable constant_">JSDOM</span>,<br>  createDOMPurify;<br><br><span class="hljs-keyword">const</span> &#123; encodeURL, slugize, stripHTML, url_for, isExternalLink, <span class="hljs-attr">escapeHTML</span>: <span class="hljs-built_in">escape</span>, <span class="hljs-attr">unescapeHTML</span>: <span class="hljs-built_in">unescape</span> &#125; = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;hexo-util&#x27;</span>);<br><span class="hljs-keyword">const</span> &#123; basename, dirname, extname, join &#125; = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;path&#x27;</span>).<span class="hljs-property">posix</span>;<br><span class="hljs-keyword">const</span> rATag = <span class="hljs-regexp">/&lt;a(?:\s+?|\s+?[^&lt;&gt;]+\s+?)?href=[&quot;&#x27;](?:#)([^&lt;&gt;&quot;&#x27;]+)[&quot;&#x27;][^&lt;&gt;]*&gt;/i</span>;<br><span class="hljs-keyword">const</span> rDlSyntax = <span class="hljs-regexp">/(?:^|\s)(\S.+)&lt;br&gt;:\s+(\S.+)/</span>;<br><br><span class="hljs-keyword">const</span> <span class="hljs-title function_">anchorId</span> = (<span class="hljs-params">str, transformOption</span>) =&gt; &#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-title function_">slugize</span>(<span class="hljs-title function_">stripHTML</span>(<span class="hljs-built_in">unescape</span>(str)).<span class="hljs-title function_">trim</span>(), &#123; <span class="hljs-attr">transform</span>: transformOption &#125;);<br>&#125;;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">mangleEmail</span>(<span class="hljs-params">text</span>) &#123;<br>  <span class="hljs-keyword">let</span> out = <span class="hljs-string">&#x27;&#x27;</span>;<br>  <span class="hljs-keyword">let</span> i,<br>    ch;<br><br>  <span class="hljs-keyword">const</span> l = text.<span class="hljs-property">length</span>;<br>  <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; l; i++) &#123;<br>    ch = text.<span class="hljs-title function_">charCodeAt</span>(i);<br>    <span class="hljs-keyword">if</span> (<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() &gt; <span class="hljs-number">0.5</span>) &#123;<br>      ch = <span class="hljs-string">&#x27;x&#x27;</span> + ch.<span class="hljs-title function_">toString</span>(<span class="hljs-number">16</span>);<br>    &#125;<br>    out += <span class="hljs-string">&#x27;&amp;#&#x27;</span> + ch + <span class="hljs-string">&#x27;;&#x27;</span>;<br>  &#125;<br><br>  <span class="hljs-keyword">return</span> out;<br>&#125;<br><br><span class="hljs-keyword">const</span> renderer = &#123;<br>  <span class="hljs-comment">// Add id attribute to headings</span><br>  <span class="hljs-title function_">heading</span>(<span class="hljs-params">&#123; tokens, depth: level &#125;</span>) &#123;<br>    <span class="hljs-keyword">let</span> text = <span class="hljs-variable language_">this</span>.<span class="hljs-property">parser</span>.<span class="hljs-title function_">parseInline</span>(tokens);<br>    <span class="hljs-keyword">const</span> &#123; anchorAlias, headerIds, modifyAnchors, _headingId &#125; = <span class="hljs-variable language_">this</span>.<span class="hljs-property">options</span>;<br><br>    <span class="hljs-keyword">if</span> (!headerIds) &#123;<br>      <span class="hljs-keyword">return</span> <span class="hljs-string">`&lt;h<span class="hljs-subst">$&#123;level&#125;</span>&gt;<span class="hljs-subst">$&#123;text&#125;</span>&lt;/h<span class="hljs-subst">$&#123;level&#125;</span>&gt;`</span>;<br>    &#125;<br><br>    <span class="hljs-keyword">const</span> transformOption = modifyAnchors;<br>    <span class="hljs-keyword">let</span> id = <span class="hljs-title function_">anchorId</span>(text, transformOption);<br>    <span class="hljs-keyword">const</span> headingId = _headingId;<br><br>    <span class="hljs-keyword">const</span> anchorAliasOpt = anchorAlias &amp;&amp; text.<span class="hljs-title function_">startsWith</span>(<span class="hljs-string">&#x27;&lt;a href=&quot;#&#x27;</span>);<br>    <span class="hljs-keyword">if</span> (anchorAliasOpt) &#123;<br>      <span class="hljs-keyword">const</span> customAnchor = text.<span class="hljs-title function_">match</span>(rATag)[<span class="hljs-number">1</span>];<br>      id = <span class="hljs-title function_">anchorId</span>(customAnchor, transformOption);<br>    &#125;<br><br>    <span class="hljs-comment">// Add a number after id if repeated</span><br>    <span class="hljs-keyword">if</span> (headingId[id]) &#123;<br>      id += <span class="hljs-string">`-<span class="hljs-subst">$&#123;headingId[id]++&#125;</span>`</span>;<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>      headingId[id] = <span class="hljs-number">1</span>;<br>    &#125;<br><br>    <span class="hljs-keyword">if</span> (anchorAliasOpt) &#123;<br>      text = text.<span class="hljs-title function_">replace</span>(rATag, <span class="hljs-function">(<span class="hljs-params">str, alias</span>) =&gt;</span> &#123;<br>        <span class="hljs-keyword">return</span> str.<span class="hljs-title function_">replace</span>(alias, id);<br>      &#125;);<br>    &#125;<br><br>    <span class="hljs-comment">// add headerlink</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-string">`&lt;h<span class="hljs-subst">$&#123;level&#125;</span> id=&quot;<span class="hljs-subst">$&#123;id&#125;</span>&quot;&gt;&lt;a href=&quot;#<span class="hljs-subst">$&#123;id&#125;</span>&quot; class=&quot;headerlink&quot; title=&quot;<span class="hljs-subst">$&#123;stripHTML(text)&#125;</span>&quot;&gt;&lt;/a&gt;<span class="hljs-subst">$&#123;text&#125;</span>&lt;/h<span class="hljs-subst">$&#123;level&#125;</span>&gt;`</span>;<br>  &#125;,<br><br>  <span class="hljs-title function_">link</span>(<span class="hljs-params">&#123; tokens, href, title &#125;</span>) &#123;<br>    <span class="hljs-keyword">const</span> text = <span class="hljs-variable language_">this</span>.<span class="hljs-property">parser</span>.<span class="hljs-title function_">parseInline</span>(tokens);<br>    <span class="hljs-keyword">const</span> &#123; external_link, sanitizeUrl, hexo, mangle &#125; = <span class="hljs-variable language_">this</span>.<span class="hljs-property">options</span>;<br>    <span class="hljs-keyword">const</span> &#123; <span class="hljs-attr">url</span>: urlCfg &#125; = hexo.<span class="hljs-property">config</span>;<br><br>    <span class="hljs-keyword">if</span> (sanitizeUrl) &#123;<br>      <span class="hljs-keyword">if</span> (href.<span class="hljs-title function_">startsWith</span>(<span class="hljs-string">&#x27;javascript:&#x27;</span>) || href.<span class="hljs-title function_">startsWith</span>(<span class="hljs-string">&#x27;vbscript:&#x27;</span>) || href.<span class="hljs-title function_">startsWith</span>(<span class="hljs-string">&#x27;data:&#x27;</span>)) &#123;<br>        href = <span class="hljs-string">&#x27;&#x27;</span>;<br>      &#125;<br>    &#125;<br>    <span class="hljs-keyword">if</span> (mangle) &#123;<br>      <span class="hljs-keyword">if</span> (href.<span class="hljs-title function_">startsWith</span>(<span class="hljs-string">&#x27;mailto:&#x27;</span>)) &#123;<br>        <span class="hljs-keyword">const</span> email = href.<span class="hljs-title function_">substring</span>(<span class="hljs-number">7</span>);<br>        <span class="hljs-keyword">const</span> mangledEmail = <span class="hljs-title function_">mangleEmail</span>(email);<br><br>        href = <span class="hljs-string">`mailto:<span class="hljs-subst">$&#123;mangledEmail&#125;</span>`</span>;<br>      &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">let</span> out = <span class="hljs-string">&#x27;&lt;a href=&quot;&#x27;</span>;<br><br>    <span class="hljs-keyword">try</span> &#123;<br>      out += <span class="hljs-title function_">encodeURL</span>(href);<br>    &#125; <span class="hljs-keyword">catch</span> (e) &#123;<br>      out += href;<br>    &#125;<br><br>    out += <span class="hljs-string">&#x27;&quot;&#x27;</span>;<br><br>    <span class="hljs-keyword">if</span> (title) &#123;<br>      out += <span class="hljs-string">` title=&quot;<span class="hljs-subst">$&#123;<span class="hljs-built_in">escape</span>(title)&#125;</span>&quot;`</span>;<br>    &#125;<br>    <span class="hljs-keyword">if</span> (external_link) &#123;<br>      <span class="hljs-keyword">const</span> target = <span class="hljs-string">&#x27; target=&quot;_blank&quot;&#x27;</span>;<br>      <span class="hljs-keyword">const</span> noopener = <span class="hljs-string">&#x27; rel=&quot;noopener&quot;&#x27;</span>;<br>      <span class="hljs-keyword">const</span> nofollowTag = <span class="hljs-string">&#x27; rel=&quot;noopener external nofollow noreferrer&quot;&#x27;</span>;<br>      <span class="hljs-keyword">if</span> (<span class="hljs-title function_">isExternalLink</span>(href, urlCfg, external_link.<span class="hljs-property">exclude</span>)) &#123;<br>        <span class="hljs-keyword">if</span> (external_link.<span class="hljs-property">enable</span> &amp;&amp; external_link.<span class="hljs-property">nofollow</span>) &#123;<br>          out += target + nofollowTag;<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (external_link.<span class="hljs-property">enable</span>) &#123;<br>          out += target + noopener;<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (external_link.<span class="hljs-property">nofollow</span>) &#123;<br>          out += nofollowTag;<br>        &#125;<br>      &#125;<br>    &#125;<br><br>    out += <span class="hljs-string">`&gt;<span class="hljs-subst">$&#123;text&#125;</span>&lt;/a&gt;`</span>;<br>    <span class="hljs-keyword">return</span> out;<br>  &#125;,<br><br>  <span class="hljs-comment">// Support Basic Description Lists</span><br>  <span class="hljs-title function_">paragraph</span>(<span class="hljs-params">&#123; tokens &#125;</span>) &#123;<br>    <span class="hljs-keyword">const</span> text = <span class="hljs-variable language_">this</span>.<span class="hljs-property">parser</span>.<span class="hljs-title function_">parseInline</span>(tokens);<br>    <span class="hljs-keyword">const</span> &#123; descriptionLists = <span class="hljs-literal">true</span> &#125; = <span class="hljs-variable language_">this</span>.<span class="hljs-property">options</span>;<br><br>    <span class="hljs-keyword">if</span> (descriptionLists &amp;&amp; text.<span class="hljs-title function_">includes</span>(<span class="hljs-string">&#x27;&lt;br&gt;:&#x27;</span>)) &#123;<br>      <span class="hljs-keyword">if</span> (rDlSyntax.<span class="hljs-title function_">test</span>(text)) &#123;<br>        <span class="hljs-keyword">return</span> text.<span class="hljs-title function_">replace</span>(rDlSyntax, <span class="hljs-string">&#x27;&lt;dl&gt;&lt;dt&gt;$1&lt;/dt&gt;&lt;dd&gt;$2&lt;/dd&gt;&lt;/dl&gt;&#x27;</span>);<br>      &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-string">`&lt;p&gt;<span class="hljs-subst">$&#123;text&#125;</span>&lt;/p&gt;\n`</span>;<br>  &#125;,<br><br>  <span class="hljs-comment">// Prepend root to image path</span><br>  <span class="hljs-title function_">image</span>(<span class="hljs-params">&#123; href, title, text &#125;</span>) &#123;<br>	<span class="hljs-comment">// href 是引用路径。比如，md 文档中引用本地图片的 md 语法：![](test/1.jpg)，&quot;test/1.jpg&quot; 就是 href。</span><br>	<span class="hljs-comment">//console.log(&quot;href 0: &quot; + href );</span><br>	<br>    <span class="hljs-keyword">const</span> &#123; options &#125; = <span class="hljs-variable language_">this</span>;<br>    <span class="hljs-keyword">const</span> &#123; hexo &#125; = options;<br>    <span class="hljs-keyword">const</span> &#123; relative_link &#125; = hexo.<span class="hljs-property">config</span>;<br>    <span class="hljs-keyword">const</span> &#123; lazyload, figcaption, prependRoot, postPath &#125; = options;<br><br>	<span class="hljs-comment">// 如果 href 不是外部资源（非#锚点、非协议相对路径、非HTTP(S)绝对路径）、relative_link 未启用、prependRoot 选项启用，执行代码块。</span><br>	<span class="hljs-comment">/*</span><br><span class="hljs-comment">	锚点定位：#about；协议相对路径：//cdn.example.com/logo.png；绝对URL：&quot;http://&quot; 或 &quot;https://&quot; 开头的路径。</span><br><span class="hljs-comment">	relative_link 默认 false；prependRoot 默认 true。</span><br><span class="hljs-comment">	*/</span><br>    <span class="hljs-keyword">if</span> (!<span class="hljs-regexp">/^(#|\/\/|http(s)?:)/</span>.<span class="hljs-title function_">test</span>(href) &amp;&amp; !relative_link &amp;&amp; prependRoot) &#123;<br>	  <span class="hljs-comment">// 符合条件的例子：&quot;test/1.jpg&quot; 和 &quot;/test/2.jpg&quot;</span><br>	  <br>	  <span class="hljs-comment">// 如果 href 是相对路径格式的本地资源，且 postPath 为真值，执行代码块。</span><br>	  <span class="hljs-comment">/*</span><br><span class="hljs-comment">		postPath 参考 module.exports = function(data, options) &#123;...&#125; 部分</span><br><span class="hljs-comment">			postPath 默认声明赋值为 &#x27;&#x27;，是假值。</span><br><span class="hljs-comment">			当 marked.postAsset 选项启用时，postPath 为真值，例如 &quot;source/_posts/test&quot;。</span><br><span class="hljs-comment">	  */</span><br>      <span class="hljs-keyword">if</span> (!href.<span class="hljs-title function_">startsWith</span>(<span class="hljs-string">&#x27;/&#x27;</span>) &amp;&amp; !href.<span class="hljs-title function_">startsWith</span>(<span class="hljs-string">&#x27;\\&#x27;</span>) &amp;&amp; postPath) &#123;<br>		<span class="hljs-comment">// 符合条件的例子：&quot;test/1.jpg&quot;</span><br>		<br>		<span class="hljs-comment">// 获取文章资源文件夹的模型。</span><br>        <span class="hljs-keyword">const</span> <span class="hljs-title class_">PostAsset</span> = hexo.<span class="hljs-title function_">model</span>(<span class="hljs-string">&#x27;PostAsset&#x27;</span>);<br>        <span class="hljs-comment">// findById requires forward slash</span><br>		<span class="hljs-comment">// 通过【拼接的路径】定位资源。</span><br>		<span class="hljs-comment">/*</span><br><span class="hljs-comment">		postPath 与【常规的 md 语法引用的相对路径】拼接而得到的路径是错误的。</span><br><span class="hljs-comment">		例如：postPath 为 source/_posts/test，</span><br><span class="hljs-comment">			常规的相对路径为 test/1.jpg，</span><br><span class="hljs-comment">				source/_posts/test.md （语法格式：![](test/1.jpg)）</span><br><span class="hljs-comment">				source/_posts/test/1.jpg</span><br><span class="hljs-comment">			两者拼接得到的路径为 source/_posts/test/test/1.jpg，通过该路径是获取不到 1.jpg 资源的。</span><br><span class="hljs-comment">			换句话说，下面的 href = asset.path 并不会被执行，</span><br><span class="hljs-comment">				href 不会是资源的真实路径（posts/test/1.jpg），而仅是原值（test/1.jpg）。</span><br><span class="hljs-comment">		*/</span>	<br>        <span class="hljs-comment">/*</span><br><span class="hljs-comment">		而 postPath 与无法显示图片的相对路径拼接得到的路径才能获取到资源。</span><br><span class="hljs-comment">		例如：postPath 为 source/_posts/test，</span><br><span class="hljs-comment">			非常规的相对路径为 1.jpg，</span><br><span class="hljs-comment">				source/_posts/test.md （语法格式：![](1.jpg)，文档无法显示图片）</span><br><span class="hljs-comment">				source/_posts/test/1.jpg</span><br><span class="hljs-comment">			两者拼接得到的路径为 source/_posts/test/1.jpg，通过该路径能获取到 1.jpg 资源。</span><br><span class="hljs-comment">			然后，经过下面的 href = asset.path，href 重新赋值为资源的真实路径。</span><br><span class="hljs-comment">			这是 hexo 官方教程给出的处理方式！！！相当糟糕！！！</span><br><span class="hljs-comment">		*/</span><br>		<span class="hljs-comment">// console.log(&quot;postPath/href: &quot; + join(postPath, href.replace(/\\/g, &#x27;/&#x27;)));</span><br>		<span class="hljs-keyword">const</span> asset = <span class="hljs-title class_">PostAsset</span>.<span class="hljs-title function_">findById</span>(<span class="hljs-title function_">join</span>(postPath, href.<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/\\/g</span>, <span class="hljs-string">&#x27;/&#x27;</span>)));<br>		<br>		<span class="hljs-comment">// if (asset) console.log(&quot;---asset---&quot; + asset);</span><br>		<br>        <span class="hljs-comment">// asset.path is backward slash in Windows</span><br>		<span class="hljs-comment">/*</span><br><span class="hljs-comment">		如果资源存在，将 href 重新赋值为 asset.path。</span><br><span class="hljs-comment">		asset.path 是资源的真实全路径，例如 posts/test/1.jpg，目录部分是 【permalink结构】。</span><br><span class="hljs-comment">		*/</span><br>        <span class="hljs-keyword">if</span> (asset) href = asset.<span class="hljs-property">path</span>.<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/\\/g</span>, <span class="hljs-string">&#x27;/&#x27;</span>);<br>      &#125;<br>	  <br>	  <span class="hljs-comment">//console.log(&quot;href 1:&quot; + href );</span><br><br>	  <span class="hljs-comment">/*</span><br><span class="hljs-comment">	  核心路径处理函数。</span><br><span class="hljs-comment">	  例如：当 marked.prependRoot = true 时（默认值为 true），prepend root 值到相对路径内部。</span><br><span class="hljs-comment">	  */</span><br>	  <span class="hljs-comment">//console.log(&quot;url_for.call(hexo, href): &quot; + href );</span><br>      href = url_for.<span class="hljs-title function_">call</span>(hexo, href);<br>    &#125;<br>    <span class="hljs-keyword">let</span> out = <span class="hljs-string">`&lt;img src=&quot;<span class="hljs-subst">$&#123;encodeURL(href)&#125;</span>&quot;`</span>;<br>    <span class="hljs-keyword">if</span> (text) out += <span class="hljs-string">` alt=&quot;<span class="hljs-subst">$&#123;<span class="hljs-built_in">escape</span>(text)&#125;</span>&quot;`</span>;<br>    <span class="hljs-keyword">if</span> (title) out += <span class="hljs-string">` title=&quot;<span class="hljs-subst">$&#123;<span class="hljs-built_in">escape</span>(title)&#125;</span>&quot;`</span>;<br>    <span class="hljs-keyword">if</span> (lazyload) out += <span class="hljs-string">&#x27; loading=&quot;lazy&quot;&#x27;</span>;<br><br>    out += <span class="hljs-string">&#x27;&gt;&#x27;</span>;<br>    <span class="hljs-keyword">if</span> (figcaption &amp;&amp; text) &#123;<br>      <span class="hljs-keyword">return</span> <span class="hljs-string">`&lt;figure&gt;<span class="hljs-subst">$&#123;out&#125;</span>&lt;figcaption aria-hidden=&quot;true&quot;&gt;<span class="hljs-subst">$&#123;text&#125;</span>&lt;/figcaption&gt;&lt;/figure&gt;`</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> out;<br>  &#125;<br>&#125;;<br><br><span class="hljs-comment">// https://github.com/markedjs/marked/blob/b6773fca412c339e0cedd56b63f9fa1583cfd372/src/Lexer.js#L8-L24</span><br><span class="hljs-keyword">const</span> <span class="hljs-title function_">smartypants</span> = (<span class="hljs-params">str, quotes</span>) =&gt; &#123;<br>  <span class="hljs-keyword">const</span> [openDbl, closeDbl, openSgl, closeSgl] = <span class="hljs-keyword">typeof</span> quotes === <span class="hljs-string">&#x27;string&#x27;</span> &amp;&amp; quotes.<span class="hljs-property">length</span> === <span class="hljs-number">4</span><br>    ? quotes<br>    : [<span class="hljs-string">&#x27;\u201c&#x27;</span>, <span class="hljs-string">&#x27;\u201d&#x27;</span>, <span class="hljs-string">&#x27;\u2018&#x27;</span>, <span class="hljs-string">&#x27;\u2019&#x27;</span>];<br><br>  <span class="hljs-keyword">return</span> str<br>    <span class="hljs-comment">// em-dashes</span><br>    .<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/---/g</span>, <span class="hljs-string">&#x27;\u2014&#x27;</span>)<br>    <span class="hljs-comment">// en-dashes</span><br>    .<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/--/g</span>, <span class="hljs-string">&#x27;\u2013&#x27;</span>)<br>    <span class="hljs-comment">// opening singles</span><br>    .<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/(^|[-\u2014/([&#123;&quot;\s])&#x27;/g</span>, <span class="hljs-string">&#x27;$1&#x27;</span> + openSgl)<br>    <span class="hljs-comment">// closing singles &amp; apostrophes</span><br>    .<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/&#x27;/g</span>, closeSgl)<br>    <span class="hljs-comment">// opening doubles</span><br>    .<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/(^|[-\u2014/([&#123;\u2018\s])&quot;/g</span>, <span class="hljs-string">&#x27;$1&#x27;</span> + openDbl)<br>    <span class="hljs-comment">// closing doubles</span><br>    .<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/&quot;/g</span>, closeDbl)<br>    <span class="hljs-comment">// ellipses</span><br>    .<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/\.&#123;3&#125;/g</span>, <span class="hljs-string">&#x27;\u2026&#x27;</span>);<br>&#125;;<br><br><span class="hljs-keyword">const</span> tokenizer = &#123;<br>  <span class="hljs-comment">// Support autolink option</span><br>  <span class="hljs-title function_">url</span>(<span class="hljs-params">src</span>) &#123;<br>    <span class="hljs-keyword">const</span> &#123; autolink &#125; = <span class="hljs-variable language_">this</span>.<span class="hljs-property">options</span>;<br><br>    <span class="hljs-keyword">if</span> (!autolink) <span class="hljs-keyword">return</span>;<br>    <span class="hljs-comment">// return false to use original url tokenizer</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>  &#125;,<br><br>  <span class="hljs-comment">// Override smartypants</span><br>  <span class="hljs-title function_">inlineText</span>(<span class="hljs-params">src</span>) &#123;<br>    <span class="hljs-keyword">const</span> &#123; options, rules &#125; = <span class="hljs-variable language_">this</span>;<br>    <span class="hljs-keyword">const</span> &#123; quotes, <span class="hljs-attr">smartypants</span>: isSmarty &#125; = options;<br><br>    <span class="hljs-comment">// https://github.com/markedjs/marked/blob/b6773fca412c339e0cedd56b63f9fa1583cfd372/src/Tokenizer.js#L643-L658</span><br>    <span class="hljs-keyword">const</span> cap = rules.<span class="hljs-property">inline</span>.<span class="hljs-property">text</span>.<span class="hljs-title function_">exec</span>(src);<br>    <span class="hljs-keyword">if</span> (cap) &#123;<br>      <span class="hljs-keyword">let</span> text;<br>      <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">this</span>.<span class="hljs-property">lexer</span>.<span class="hljs-property">state</span>.<span class="hljs-property">inRawBlock</span> || <span class="hljs-variable language_">this</span>.<span class="hljs-property">rules</span>.<span class="hljs-property">inline</span>.<span class="hljs-property">url</span>.<span class="hljs-title function_">exec</span>(src)) &#123;<br>        text = cap[<span class="hljs-number">0</span>];<br>      &#125; <span class="hljs-keyword">else</span> &#123;<br>        text = <span class="hljs-built_in">escape</span>(isSmarty ? <span class="hljs-title function_">smartypants</span>(cap[<span class="hljs-number">0</span>], quotes) : cap[<span class="hljs-number">0</span>]);<br>      &#125;<br>      <span class="hljs-keyword">return</span> &#123;<br>        <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;text&#x27;</span>,<br>        <span class="hljs-attr">raw</span>: cap[<span class="hljs-number">0</span>],<br>        text<br>      &#125;;<br>    &#125;<br>  &#125;<br>&#125;;<br><br><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params">data, options</span>) &#123;<br>  <span class="hljs-keyword">const</span> &#123; post_asset_folder, <span class="hljs-attr">marked</span>: markedCfg, source_dir &#125; = <span class="hljs-variable language_">this</span>.<span class="hljs-property">config</span>;<br>  <span class="hljs-keyword">const</span> &#123; prependRoot, postAsset, dompurify &#125; = markedCfg;<br>  <span class="hljs-keyword">const</span> &#123; path, text &#125; = data;<br><br>  marked.<span class="hljs-property">defaults</span>.<span class="hljs-property">extensions</span> = <span class="hljs-literal">null</span>;<br>  marked.<span class="hljs-property">defaults</span>.<span class="hljs-property">tokenizer</span> = <span class="hljs-literal">null</span>;<br>  marked.<span class="hljs-property">defaults</span>.<span class="hljs-property">renderer</span> = <span class="hljs-literal">null</span>;<br>  marked.<span class="hljs-property">defaults</span>.<span class="hljs-property">hooks</span> = <span class="hljs-literal">null</span>;<br>  marked.<span class="hljs-property">defaults</span>.<span class="hljs-property">walkTokens</span> = <span class="hljs-literal">null</span>;<br><br>  <span class="hljs-comment">// exec filter to extend marked</span><br>  <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">execFilterSync</span>(<span class="hljs-string">&#x27;marked:use&#x27;</span>, marked.<span class="hljs-property">use</span>, &#123; <span class="hljs-attr">context</span>: <span class="hljs-variable language_">this</span> &#125;);<br><br>  <span class="hljs-comment">// exec filter to extend renderer</span><br>  <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">execFilterSync</span>(<span class="hljs-string">&#x27;marked:renderer&#x27;</span>, renderer, &#123; <span class="hljs-attr">context</span>: <span class="hljs-variable language_">this</span> &#125;);<br><br>  <span class="hljs-comment">// exec filter to extend tokenizer</span><br>  <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">execFilterSync</span>(<span class="hljs-string">&#x27;marked:tokenizer&#x27;</span>, tokenizer, &#123; <span class="hljs-attr">context</span>: <span class="hljs-variable language_">this</span> &#125;);<br><br>  <span class="hljs-keyword">const</span> extensions = [];<br>  <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">execFilterSync</span>(<span class="hljs-string">&#x27;marked:extensions&#x27;</span>, extensions, &#123; <span class="hljs-attr">context</span>: <span class="hljs-variable language_">this</span> &#125;);<br>  marked.<span class="hljs-title function_">use</span>(&#123; extensions &#125;);<br><br>  <span class="hljs-keyword">let</span> postPath = <span class="hljs-string">&#x27;&#x27;</span>;<br>  <span class="hljs-comment">// 如果文章（md文档）存在、启用文章资源文件夹、prependRoot选项启用、postAsset选项启用，执行代码块。</span><br>  <span class="hljs-comment">/*</span><br><span class="hljs-comment">  post_asset_folder 默认 false，设置 true 开启。</span><br><span class="hljs-comment">  marked.prependRoot 默认为 true。marked.postAsset 默认为 false。</span><br><span class="hljs-comment">  path是特定文章在磁盘绝对路径，例如 &quot;E:\ningc5-blog\hexo\source\_posts\test.md&quot;。</span><br><span class="hljs-comment">  */</span><br>  <span class="hljs-keyword">if</span> (path &amp;&amp; post_asset_folder &amp;&amp; prependRoot &amp;&amp; postAsset) &#123;<br>	<span class="hljs-comment">// 获取文章的模型，包含元数据、所有文章的部分数据和其他信息。</span><br>    <span class="hljs-keyword">const</span> <span class="hljs-title class_">Post</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">model</span>(<span class="hljs-string">&#x27;Post&#x27;</span>);<br>    <span class="hljs-comment">// Windows compatibility, Post.findOne() requires forward slash</span><br>	<span class="hljs-comment">// 获取特定文章的全路径（相对于资源文件夹）。</span><br>    <span class="hljs-comment">/*</span><br><span class="hljs-comment">    this.source_dir.length是资源文件夹在磁盘绝对路径的长度，例如 &quot;E:\ningc5-blog\hexo\source\&quot;，长度为 27。</span><br><span class="hljs-comment">    path.substring(this.source_dir.length)，截取文章相对于资源文件夹的路径并替换\\为/，例如 &quot;_posts/test.md&quot;。</span><br><span class="hljs-comment">    */</span><br>    <span class="hljs-keyword">const</span> source = path.<span class="hljs-title function_">substring</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">source_dir</span>.<span class="hljs-property">length</span>).<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/\\/g</span>, <span class="hljs-string">&#x27;/&#x27;</span>);<br>	<br>	<span class="hljs-comment">// 通过该路径获取特定文章数据。</span><br>	<span class="hljs-comment">/*</span><br><span class="hljs-comment">	文章数据中有该文章的输出目录（post.path），与permalink配置项的值结构有关。</span><br><span class="hljs-comment">	例如：</span><br><span class="hljs-comment">		当 &quot;permalink=posts/:name/&quot; 时，&quot;path&quot;:&quot;posts/test/&quot;；输出到该目录下的 index.html。</span><br><span class="hljs-comment">		当 &quot;permalink=posts/:name.html&quot; 时，&quot;path&quot;:&quot;posts/test.html&quot;；输出到 test.html。</span><br><span class="hljs-comment">	*/</span><br>    <span class="hljs-keyword">const</span> post = <span class="hljs-title class_">Post</span>.<span class="hljs-title function_">findOne</span>(&#123; source &#125;);<br>	<br>	<span class="hljs-comment">// if (post) console.log(&quot;if post exist, post: &quot; + post);</span><br>	<br>    <span class="hljs-keyword">if</span> (post) &#123;<br>	  <span class="hljs-comment">// 从 post 对象中提取 source 属性，并将其重命名为 postSource。post.source，例如 &quot;_posts/test.md&quot;。</span><br>	  <span class="hljs-keyword">const</span> &#123; <span class="hljs-attr">source</span>: postSource &#125; = post;<br>	  <span class="hljs-comment">// 将 source_dir（资源目录）、postSource 的目录部分、以及 postSource 的文件名（不带扩展名）拼接成一个完整路径。</span><br>	  <span class="hljs-comment">/*</span><br><span class="hljs-comment">	  source_dir 配置项，默认值为 source；</span><br><span class="hljs-comment">	  dirname(postSource) 获取 postSource 的目录部分，例如 &quot;_posts&quot;；</span><br><span class="hljs-comment">	  extname(postSource) 获取 postSource 的扩展名，例如 &quot;.md&quot;；</span><br><span class="hljs-comment">	  basename(postSource, extname(postSource)) 获取 postSource 的文件名并移除扩展名，例如 &quot;test&quot;。</span><br><span class="hljs-comment">	  路径拼接结果：&quot;source/_posts/test&quot;。</span><br><span class="hljs-comment">	  */</span><br>      postPath = <span class="hljs-title function_">join</span>(source_dir, <span class="hljs-title function_">dirname</span>(postSource), <span class="hljs-title function_">basename</span>(postSource, <span class="hljs-title function_">extname</span>(postSource)));<br>    &#125;<br>  &#125;<br>  <span class="hljs-comment">//console.log(&quot;postPath: &quot; + postPath );</span><br>  <br>  <span class="hljs-keyword">let</span> sanitizer = <span class="hljs-keyword">function</span>(<span class="hljs-params">html</span>) &#123; <span class="hljs-keyword">return</span> html; &#125;;<br><br>  <span class="hljs-keyword">if</span> (dompurify) &#123;<br>    <span class="hljs-keyword">if</span> (createDOMPurify === <span class="hljs-literal">undefined</span> &amp;&amp; <span class="hljs-variable constant_">JSDOM</span> === <span class="hljs-literal">undefined</span>) &#123;<br>      createDOMPurify = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;dompurify&#x27;</span>);<br>      <span class="hljs-variable constant_">JSDOM</span> = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;jsdom&#x27;</span>).<span class="hljs-property">JSDOM</span>;<br>    &#125;<br>    <span class="hljs-keyword">const</span> <span class="hljs-variable language_">window</span> = <span class="hljs-keyword">new</span> <span class="hljs-title function_">JSDOM</span>(<span class="hljs-string">&#x27;&#x27;</span>).<span class="hljs-property">window</span>;<br>    <span class="hljs-keyword">const</span> <span class="hljs-title class_">DOMPurify</span> = <span class="hljs-title function_">createDOMPurify</span>(<span class="hljs-variable language_">window</span>);<br>    <span class="hljs-keyword">let</span> param = &#123;&#125;;<br>    <span class="hljs-keyword">if</span> (dompurify !== <span class="hljs-literal">true</span>) &#123;<br>      param = dompurify;<br>    &#125;<br>    sanitizer = <span class="hljs-keyword">function</span>(<span class="hljs-params">html</span>) &#123; <span class="hljs-keyword">return</span> <span class="hljs-title class_">DOMPurify</span>.<span class="hljs-title function_">sanitize</span>(html, param); &#125;;<br>  &#125;<br><br>  marked.<span class="hljs-title function_">use</span>(&#123;<br>    renderer,<br>    tokenizer<br>  &#125;);<br>  <span class="hljs-keyword">return</span> <span class="hljs-title function_">sanitizer</span>(marked.<span class="hljs-title function_">parse</span>(text, <span class="hljs-title class_">Object</span>.<span class="hljs-title function_">assign</span>(&#123;<br>    <span class="hljs-comment">// headerIds was removed in marked v8.0.0, but we still need it</span><br>    <span class="hljs-attr">headerIds</span>: <span class="hljs-literal">true</span><br>  &#125;, markedCfg, options, &#123; postPath, <span class="hljs-attr">hexo</span>: <span class="hljs-variable language_">this</span>, <span class="hljs-attr">_headingId</span>: &#123;&#125; &#125;)));<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B8%8E%E8%BF%90%E7%BB%B4%E6%8C%87%E5%8D%97/" class="category-chain-item">博客搭建与运维指南</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Hexo/" class="print-no-link">#Hexo</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>marked（Hexo默认的Markdown渲染插件）的部分源码注释</div>
+      <div>https://www.cornst.com/posts/marked（Hexo默认的Markdown渲染插件）的部分源码注释.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>shaton沙桐</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年4月24日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2025年5月30日</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/%E9%93%BE%E6%8E%A5%E7%95%99%E6%A1%A3.html" title="链接留档">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">链接留档</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/Hexo%E3%81%A8GitHubPages%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2.html" title="HexoとGitHubPages搭建静态博客">
+                        <span class="hidden-mobile">HexoとGitHubPages搭建静态博客</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+      <div class="col-lg-7 mx-auto nopadding-x-md">
+        <div class="container custom mx-auto">
+          
+
+        </div>
+      </div>
+    
+  </main>
+
+</div>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+<div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":true,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+<!-- 使用markdown-plugins.ejs模板，使得所有页面都有文章页独有的JS和CSS -->
+<!-- 无法引入github-markdown.min.css和hint.min.css。如果使用函数css_ex直接注入，样式错误 -->
+<!-- 
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+ -->
+<!-- 因为暂时使用丐版PJAX，文章页独有的JS和CSS也没必要注入所有页面 -->
+<!-- layout\_partials\post\toc.ejs -->
+<!-- <script  src="https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js" ></script> -->
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script data-pjax>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script data-pjax src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script data-pjax>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script data-pjax>
+  
+  var anchorElem = document.querySelector('script[funcDesc="anchor-js-api"]')
+  if (anchorElem) anchorElem.remove();
+
+  Fluid.utils.createScriptST('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', 'anchor-js-api', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script data-pjax>Fluid.plugins.imageCaption();</script>
+
+  <script data-pjax src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/love.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/Cherry.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/DynamicLine.min.js"></script>
+<script src="//lib.baomitu.com/aplayer/1.10.1/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+
+<!-- hexo injector body_end start --><script src="/js/responsive-background.js" data-pjax></script>
+  <div id="aplayer"></div>
+  <script defer src="/js/aplayer.js"></script>
+<script src="/js/pjax-related.js"></script><!-- hexo injector body_end end --></body>
+</html>

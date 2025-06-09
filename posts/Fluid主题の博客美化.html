@@ -1,0 +1,1284 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/image/favicon/ST.ico">
+  <link rel="icon" href="/image/favicon/ST.ico">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="shaton沙桐">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="_config.yml 是本地博客项目配置文件，_config.fluid.yml 是 Fluid 主题配置文件。执行 generate 命令时，Hexo 会将配置数据渲染到 HTML 文件中。本篇仅列出一些常规设置，Fluid 配置指南 有详细的主题配置说明。 主题配置能作用于主题指定的模块，Fluid 主题将页面划分为三部分，不同页面也有些许差异：  header（页眉） navigation">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fluid主题の博客美化">
+<meta property="og:url" content="https://www.cornst.com/posts/Fluid%E4%B8%BB%E9%A2%98%E3%81%AE%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96.html">
+<meta property="og:site_name" content="shaton沙桐">
+<meta property="og:description" content="_config.yml 是本地博客项目配置文件，_config.fluid.yml 是 Fluid 主题配置文件。执行 generate 命令时，Hexo 会将配置数据渲染到 HTML 文件中。本篇仅列出一些常规设置，Fluid 配置指南 有详细的主题配置说明。 主题配置能作用于主题指定的模块，Fluid 主题将页面划分为三部分，不同页面也有些许差异：  header（页眉） navigation">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.cornst.com/image/post/girl.jpg">
+<meta property="article:published_time" content="2025-04-26T09:02:22.000Z">
+<meta property="article:modified_time" content="2025-06-08T13:22:21.833Z">
+<meta property="article:author" content="shaton">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="Fluid">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.cornst.com/image/post/girl.jpg">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+    
+
+  
+  <title>Fluid主题の博客美化 - shaton沙桐</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css">
+<link rel="stylesheet" href="https://jsd.cdn.zzko.cn/gh/EmoryHuang/BlogBeautify@1.1/gradient.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/shubiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/gundongtiao.css">
+<link rel="stylesheet" href="//lib.baomitu.com/aplayer/1.10.1/APlayer.min.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"www.cornst.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":true,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script data-pjax src="/js/color-schema.js" ></script>
+  
+
+ 
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
+  
+
+
+<div id="container-pjax">
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>shaton沙桐的乐色桶</strong>
+    </a>
+	
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/image/banner/%E7%B2%89%E5%A5%B3.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Fluid主题の博客美化"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        shaton沙桐
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-04-26 17:02" pubdate>
+          2025年4月26日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          5.5k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          47 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar category-bar" style="margin-right: -1rem">
+    
+
+
+
+
+
+<div class="category-list">
+  
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item 
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="博客搭建与运维指南"
+        id="heading-fea7a4583b0dce4c2adcc9d00a4f05e7" role="tab" data-toggle="collapse" href="#collapse-fea7a4583b0dce4c2adcc9d00a4f05e7"
+        aria-expanded="true"
+      >
+        博客搭建与运维指南
+        <span class="list-group-count">(13)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse show" id="collapse-fea7a4583b0dce4c2adcc9d00a4f05e7"
+           role="tabpanel" aria-labelledby="heading-fea7a4583b0dce4c2adcc9d00a4f05e7">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/posts/%E8%BF%9B%E5%BA%A6%E8%AF%B4%E6%98%8E.html" title="进度说明"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">进度说明</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2.html" title="个人博客"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">个人博客</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/Hexo%E3%81%A8GitHubPages%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2.html" title="HexoとGitHubPages搭建静态博客"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">HexoとGitHubPages搭建静态博客</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/Fluid%E4%B8%BB%E9%A2%98%E3%81%AE%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96.html" title="Fluid主题の博客美化"
+           class="list-group-item list-group-item-action
+           active">
+          <span class="category-post">Fluid主题の博客美化</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/Hexo%E3%81%A8Fluid%E8%8D%89%E8%88%B9%E5%80%9F%E7%AE%AD.html" title="HexoとFluid草船借箭"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">HexoとFluid草船借箭</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/marked%EF%BC%88Hexo%E9%BB%98%E8%AE%A4%E7%9A%84Markdown%E6%B8%B2%E6%9F%93%E6%8F%92%E4%BB%B6%EF%BC%89%E7%9A%84%E9%83%A8%E5%88%86%E6%BA%90%E7%A0%81%E6%B3%A8%E9%87%8A.html" title="marked（Hexo默认的Markdown渲染插件）的部分源码注释"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">marked（Hexo默认的Markdown渲染插件）的部分源码注释</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/Hexo%E3%81%A8Fluid%E3%81%AE%E7%A2%8E%E8%AF%AD.html" title="HexoとFluidの碎语（PJAX? Just Decide!）"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">HexoとFluidの碎语（PJAX? Just Decide!）</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/GitHub%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E4%B8%8EGit%E8%BF%9E%E6%8E%A5GitHubPages%E4%BB%93%E5%BA%93.html" title="GitHub身份验证与Git连接GitHubPages仓库"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">GitHub身份验证与Git连接GitHubPages仓库</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/GitHubPages%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D.html" title="GitHubPages自定义域名"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">GitHubPages自定义域名</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E7%BD%91%E7%AB%99%E9%98%B2%E6%8A%A4%EF%BC%9ACloudflare.html" title="网站防护：Cloudflare"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">网站防护：Cloudflare</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8APlayer.html" title="音乐播放器APlayer"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">音乐播放器APlayer</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/GitHubPages%E8%AE%BF%E9%97%AE%E4%BC%98%E5%8C%96.html" title="GitHubPages访问优化"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">GitHubPages访问优化</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E5%BE%85%E5%AE%9E%E7%8E%B0.html" title="待实现"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">待实现</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+</div>
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Fluid主题の博客美化</h1>
+            
+              <p id="updated-time" class="note note-info" style="">
+                
+                  
+                    本文最后更新于 2025年6月8日 晚上
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <p><code>_config.yml</code> 是本地博客项目配置文件，<code>_config.fluid.yml</code> 是 Fluid 主题配置文件。执行 generate 命令时，Hexo 会将配置数据渲染到 HTML 文件中。本篇仅列出一些常规设置，<a target="_blank" rel="noopener" href="https://fluid-dev.github.io/hexo-fluid-docs/guide/">Fluid 配置指南</a> 有详细的主题配置说明。</p>
+<p>主题配置能作用于主题指定的模块，Fluid 主题将页面划分为三部分，不同页面也有些许差异：</p>
+<ol>
+<li>header（页眉）<ul>
+<li>navigation（导航栏）</li>
+<li>banner（横幅 | 顶部大图）</li>
+</ul>
+</li>
+<li>main（主体）</li>
+<li>footer（页脚）</li>
+</ol>
+<p><img src="Fluid%E4%B8%BB%E9%A2%98%E3%81%AE%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/image-20250608173802990.png" srcset="/img/loading.gif" lazyload></p>
+<blockquote>
+<p>Tip：可以修改 Fluid 主题代码来改变页面布局及页面元素，使博客更具个人色彩。（没空！）</p>
+</blockquote>
+<p><strong>【注意】：配置文件及其他程序文件要以 utf8 编码，否则涉及中文的页面会出现乱码。</strong></p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.kevinchu.top/2023/07/17/hexo-theme-fluid-modify/">Hexo博客Fluid主题魔改记录 - KEVIN’S BLOG</a></p>
+<p><a target="_blank" rel="noopener" href="https://emoryhuang.cn/blog/1729600336.html">Hexo + Fluid 美化 | EmoryHuang’s Blog</a></p>
+<p><code>https://mrna16.github.io/2024/11/14/【Hexo】Fluid主题美化/</code></p>
+</blockquote>
+<h1 id="1-全局"><a href="#1-全局" class="headerlink" title="1. 全局"></a>1. 全局</h1><h2 id="博客标题和图标"><a href="#博客标题和图标" class="headerlink" title="博客标题和图标"></a>博客标题和图标</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://fluid-dev.github.io/hexo-fluid-docs/icon/#%E5%86%85%E7%BD%AE%E7%A4%BE%E4%BA%A4%E5%9B%BE%E6%A0%87">图标 | Hexo Fluid 用户手册</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/luohaitao/article/details/131386273">优质的10个免费icon图标网站_iconstore-CSDN博客</a></p>
+</blockquote>
+<p>标题：修改配置文件（<code>_config.yml</code>）的 <code>title</code> 属性</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">title:</span> <span class="hljs-string">shaton沙桐</span><br></code></pre></td></tr></table></figure>
+
+<p>图标：修改主题配置文件（<code>_config.fluid.yml</code>）的 <code>favicon</code> 属性</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># _config.fluid.yml</span><br><br><span class="hljs-comment"># 用于浏览器标签的图标</span><br><span class="hljs-comment"># Icon for browser tab</span><br><span class="hljs-attr">favicon:</span> <span class="hljs-string">/image/favicon/shaton.ico</span>	<span class="hljs-comment"># 对应 source/image/favicon/shaton.ico	</span><br><br><span class="hljs-comment"># 用于苹果设备的图标</span><br><span class="hljs-comment"># Icon for Apple touch</span><br><span class="hljs-attr">apple_touch_icon:</span> <span class="hljs-string">/image/favicon/shaton.ico</span>	<br></code></pre></td></tr></table></figure>
+
+<p><img src="Fluid%E4%B8%BB%E9%A2%98%E3%81%AE%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/image-20250425200933444.png" srcset="/img/loading.gif" lazyload alt="博客标题和图标"></p>
+<h2 id="导航栏：左侧的标题"><a href="#导航栏：左侧的标题" class="headerlink" title="导航栏：左侧的标题"></a>导航栏：左侧的标题</h2><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># _config.fluid.yml</span><br><br><span class="hljs-attr">navbar:</span><br>  <span class="hljs-attr">blog_title:</span> <span class="hljs-string">&quot;shaton沙桐的乐色桶&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="Fluid%E4%B8%BB%E9%A2%98%E3%81%AE%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/image-20250425094632915.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="导航栏：menu"><a href="#导航栏：menu" class="headerlink" title="导航栏：menu"></a>导航栏：menu</h2><p><a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/guide/#%E5%AF%BC%E8%88%AA%E8%8F%9C%E5%8D%95">导航菜单</a></p>
+<p>暂时没这个需求。</p>
+<h2 id="页脚：展示-PV-与-UV-统计"><a href="#页脚：展示-PV-与-UV-统计" class="headerlink" title="页脚：展示 PV 与 UV 统计"></a>页脚：展示 PV 与 UV 统计</h2><ul>
+<li>PV：Page View，页面浏览量。</li>
+<li>UV：Unique Visitor，独立访客数。</li>
+</ul>
+<p>Fluid 主题默认集成了 busuanzi | leancloud | umami，用于展示网站的 PV 与 UV 统计数。</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># _config.fluid.yml</span><br><br><span class="hljs-attr">footer:</span><br>  <span class="hljs-comment"># 展示网站的 PV、UV 统计数</span><br>  <span class="hljs-attr">statistics:</span><br>    <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span>				<span class="hljs-comment"># 设置为 true，开启。</span><br>    <span class="hljs-comment"># Options: busuanzi | leancloud | umami</span><br>    <span class="hljs-attr">source:</span> <span class="hljs-string">&quot;busuanzi&quot;</span>			<span class="hljs-comment"># 暂时使用 busuanzi，不蒜子不需要申请账号，简单易用。</span><br>    <span class="hljs-attr">pv_format:</span> <span class="hljs-string">&quot;总访问量 &#123;&#125; 次&quot;</span>	 <span class="hljs-comment"># 显示的文本，&#123;&#125;是数字的占位符（必须包含)，下同</span><br>    <span class="hljs-attr">uv_format:</span> <span class="hljs-string">&quot;总访客数 &#123;&#125; 人&quot;</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="页脚：添加博客运行时间"><a href="#页脚：添加博客运行时间" class="headerlink" title="页脚：添加博客运行时间"></a>页脚：添加博客运行时间</h2><blockquote>
+<p>Tip：可以先了解 “其他：注入静态代码片段”，或者直接设置此部分，或者暂时跳过此部分。</p>
+</blockquote>
+<p>首先，在主题配置的 <code>footer.content</code> 部分添加 <code>&lt;div&gt;</code> 标签，内容如下：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># _config.fluid.yml</span><br><br><span class="hljs-attr">footer:</span><br>  <span class="hljs-attr">content:</span> <span class="hljs-string">&#x27;</span><br><span class="hljs-string">    &lt;div&gt;</span><br><span class="hljs-string">      &lt;span id=&quot;timeDate&quot;&gt;载入天数...&lt;/span&gt;</span><br><span class="hljs-string">      &lt;span id=&quot;times&quot;&gt;载入时分秒...&lt;/span&gt;</span><br><span class="hljs-string">      &lt;script src=&quot;/js/duration.js&quot;&gt;&lt;/script&gt;</span><br><span class="hljs-string">    &lt;/div&gt;</span><br><span class="hljs-string">  &#x27;</span><br></code></pre></td></tr></table></figure>
+
+<p>然后，在站点根目录下创建 <code>source/js/duration.js</code> ，内容如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 注意：文件以 utf8 编码，否则页面中文显示乱码。</span><br><br>(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-comment">// 设置建站时间（修改为你的时间），格式：月/日/年 时:分:秒</span><br>  <span class="hljs-keyword">var</span> startTime = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>(<span class="hljs-string">&quot;04/07/2025 00:00:00&quot;</span>);<br>  <span class="hljs-keyword">function</span> <span class="hljs-title function_">updateTime</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">var</span> now = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>();<br>    <span class="hljs-comment">// 计算时间差（毫秒）</span><br>    <span class="hljs-keyword">var</span> diff = now - startTime;<br>	<br>    <span class="hljs-comment">// 转换为天、小时、分钟、秒</span><br>    <span class="hljs-keyword">var</span> totalSeconds = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(diff / <span class="hljs-number">1000</span>);<br><br>    <span class="hljs-keyword">var</span> days = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(totalSeconds / (<span class="hljs-number">60</span> * <span class="hljs-number">60</span> * <span class="hljs-number">24</span>));<br>    <span class="hljs-keyword">var</span> hours = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>((totalSeconds % (<span class="hljs-number">60</span> * <span class="hljs-number">60</span> * <span class="hljs-number">24</span>)) / (<span class="hljs-number">60</span> * <span class="hljs-number">60</span>));<br>    <span class="hljs-keyword">var</span> minutes = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>((totalSeconds % (<span class="hljs-number">60</span> * <span class="hljs-number">60</span>)) / <span class="hljs-number">60</span>);<br>    <span class="hljs-keyword">var</span> seconds = totalSeconds % <span class="hljs-number">60</span>;<br><br>    <span class="hljs-comment">// 补零</span><br>    <span class="hljs-keyword">var</span> hStr = hours.<span class="hljs-title function_">toString</span>().<span class="hljs-title function_">padStart</span>(<span class="hljs-number">2</span>, <span class="hljs-string">&quot;0&quot;</span>);<br>    <span class="hljs-keyword">var</span> mStr = minutes.<span class="hljs-title function_">toString</span>().<span class="hljs-title function_">padStart</span>(<span class="hljs-number">2</span>, <span class="hljs-string">&quot;0&quot;</span>);<br>    <span class="hljs-keyword">var</span> sStr = seconds.<span class="hljs-title function_">toString</span>().<span class="hljs-title function_">padStart</span>(<span class="hljs-number">2</span>, <span class="hljs-string">&quot;0&quot;</span>);<br><br>    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;timeDate&quot;</span>).<span class="hljs-property">innerHTML</span> =<br>      <span class="hljs-string">&quot;本站已安全运行&amp;nbsp&quot;</span> + days + <span class="hljs-string">&quot;&amp;nbsp天&amp;nbsp&quot;</span>;<br>    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;times&quot;</span>).<span class="hljs-property">innerHTML</span> =<br>      hStr + <span class="hljs-string">&quot;&amp;nbsp小时&amp;nbsp&quot;</span> + mStr + <span class="hljs-string">&quot;&amp;nbsp分&amp;nbsp&quot;</span> + sStr + <span class="hljs-string">&quot;&amp;nbsp秒&quot;</span>;<br>  &#125;<br><br>  <span class="hljs-comment">// 初次调用</span><br>  <span class="hljs-title function_">updateTime</span>();<br>  <span class="hljs-comment">// 每250毫秒刷新一次</span><br>  <span class="hljs-built_in">setInterval</span>(updateTime, <span class="hljs-number">250</span>);<br>&#125;)();<br></code></pre></td></tr></table></figure>
+
+<p><img src="Fluid%E4%B8%BB%E9%A2%98%E3%81%AE%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/image-20250427000453897.png" srcset="/img/loading.gif" lazyload alt="页脚显示博客运行时间"></p>
+<h2 id="强制全局-HTTPS"><a href="#强制全局-HTTPS" class="headerlink" title="强制全局 HTTPS"></a>强制全局 HTTPS</h2><p>将所有请求强制升级为 HTTPS。避免域名升级到 HTTPS 后，站点引用资源出现 HTTP、HTTPS 混用的情况，造成资源无法显示。如是外部资源，需要本身支持 HTTPS。</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># _config.fluid.yml</span><br><br><span class="hljs-attr">force_https:</span> <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="全局字体"><a href="#全局字体" class="headerlink" title="全局字体"></a>全局字体</h2><blockquote>
+<p>详情见：<a target="_blank" rel="noopener" href="https://fluid-dev.github.io/hexo-fluid-docs/guide/#%E5%85%A8%E5%B1%80%E5%AD%97%E4%BD%93">配置指南：全局字体</a></p>
+<p>该博文的操作比较繁琐：<a target="_blank" rel="noopener" href="https://zhul.in/2023/11/28/use-lxgw-wenkai-in-hexo-fluid/">在 Hexo Fluid 主题中使用霞鹜文楷 - 竹林里有冰的博客</a></p>
+</blockquote>
+<p>虽然官方推荐使用系统自带的字体，而不是额外引入字体（占内存导致浏览器渲染变慢），但改变字体能够让用户在浏览博客时具有更好的视觉体验。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/lxgw/LxgwWenKai">霞鹜文楷</a> 是一款开源中文字体，可免费商用。它字形漂亮，无论是做标题艺术字还是正文阅读都很舒适。</p>
+<hr>
+<p>在主题配置文件引入【霞鹜文楷】css，并应用该字体：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># _config.fluid.yml</span><br><br><span class="hljs-attr">font:</span><br>  <span class="hljs-comment"># 全局字体族启用【霞鹜文楷】字体。</span><br>  <span class="hljs-attr">font_family:</span> <span class="hljs-string">&quot;LXGW WenKai Screen&quot;</span><br><span class="hljs-attr">custom_css:</span><br>  <span class="hljs-comment"># 引入【霞鹜文楷】css。bootcdn 是稳定、快速、免费的前端开源项目 CDN 加速服务。</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="Fluid%E4%B8%BB%E9%A2%98%E3%81%AE%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/image-20250426161651277.png" srcset="/img/loading.gif" lazyload></p>
+<h1 id="2-首页"><a href="#2-首页" class="headerlink" title="2. 首页"></a>2. 首页</h1><h2 id="顶部大图"><a href="#顶部大图" class="headerlink" title="顶部大图"></a>顶部大图</h2><blockquote>
+<p>待参考：<a target="_blank" rel="noopener" href="https://zhul.in/2024/09/25/random-banner-backgroud-image-implement-for-hexo-fluid-with-javascript/#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%8D%A2%E6%8E%89%E9%9A%8F%E6%9C%BA%E5%9B%BE%E7%89%87-API">基于 JavaScript 的 Hexo Fluid 主题 banner 随机背景图实现 - 竹林里有冰的博客</a></p>
+</blockquote>
+<p>主题配置中，每个页面都有名为 <code>banner_img</code> 的属性，可以使用本地图片的路径，也可以为外站链接。</p>
+<p>指向本地图片（本地指定图片）：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># _config.fluid.yml</span><br><br><span class="hljs-comment"># 给出首页设置，其他页面同理。</span><br><span class="hljs-attr">index:</span><br>  <span class="hljs-attr">banner_img:</span> <span class="hljs-string">/image/banner/粉女.jpg</span>	<span class="hljs-comment"># 对应 source/image/banner/粉女.jpg</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="Fluid%E4%B8%BB%E9%A2%98%E3%81%AE%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/image-20250425100521695.png" srcset="/img/loading.gif" lazyload></p>
+<p>指向外站链接（外站指定图片或随机图片，取决于外链）：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># _config.fluid.yml</span><br><br><span class="hljs-comment"># 给出首页设置，其他页面同理。</span><br><span class="hljs-attr">index:</span><br>  <span class="hljs-comment"># 图库挺好，就是资源加载很耗时，导致页面性能很差。todo：建立个人图库（没空）。</span><br>  <span class="hljs-attr">banner_img:</span> <span class="hljs-string">https://api.seaya.link/web.php?type=file</span><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.jixiaob.cn/?post=93">【持续更新】75个二次元、三次元随机图API接口分享及预览 - 赵苦瓜のBlog</a></p>
+</blockquote>
+<p><img src="Fluid%E4%B8%BB%E9%A2%98%E3%81%AE%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/image-20250425105521241.png" srcset="/img/loading.gif" lazyload></p>
+<hr>
+<p>主题配置中的 <code>post.banner_img</code> 属性用于文章页统一设置所有博文的顶部大图。如果文章页的每篇博文需要单独设置顶部大图，可以在每篇文档的 Front-matter 部分指定 <code>banner_img</code> 属性值。</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs md">---<br>title: Fluid主题の博客美化<br><span class="hljs-section">banner<span class="hljs-emphasis">_img: /image/banner/粉女.jpg</span></span><br><span class="hljs-emphasis"><span class="hljs-section">---</span></span><br></code></pre></td></tr></table></figure>
+
+<p><strong>主题配置文件优先级低于 Front-matter。</strong> 如果两处都未设置，则不显示。</p>
+<p><img src="Fluid%E4%B8%BB%E9%A2%98%E3%81%AE%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/image-20250425142932942.png" srcset="/img/loading.gif" lazyload alt="博文页的顶部大图"></p>
+<h2 id="副标题打字机"><a href="#副标题打字机" class="headerlink" title="副标题打字机"></a>副标题打字机</h2><p>如果设置副标题为固定的内容，修改 <code>text</code> 字段即可：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># _config.fluid.yml</span><br><br><span class="hljs-attr">index:</span><br>  <span class="hljs-attr">slogan:</span><br>    <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span>	<span class="hljs-comment"># 默认为 true，即默认开启首页大图中的副标题文字。</span><br>    <span class="hljs-attr">text:</span> <span class="hljs-string">&quot;Cornpoppies, are you still burning, in the rain ...&quot;</span>		<span class="hljs-comment"># 副标题内容</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="Fluid%E4%B8%BB%E9%A2%98%E3%81%AE%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/image-20250425095046842.png" srcset="/img/loading.gif" lazyload alt="固定的内容"></p>
+<p>如果副标题内容需要变化，也可以通过外链获取变化的内容：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># _config.fluid.yml</span><br><br><span class="hljs-attr">index:</span><br>  <span class="hljs-attr">slogan:</span><br>    <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span>	<span class="hljs-comment"># 默认为 true，即默认开启首页大图中的副标题文字。</span><br>    <span class="hljs-attr">text:</span> <span class="hljs-string">&quot;Cornpoppies, are you still burning, in the rain ...&quot;</span>		<span class="hljs-comment"># 副标题内容 </span><br>    <span class="hljs-comment"># 通过api接口获取内容，如果请求失败则按 text 字段显示</span><br>    <span class="hljs-attr">api:</span> <br>      <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span>	<span class="hljs-comment"># 默认为 false，即仅按 text 字段显示。设置为 ture，使用外链。</span><br>      <span class="hljs-attr">url:</span> <span class="hljs-string">&quot;https://v1.hitokoto.cn/&quot;</span>	<span class="hljs-comment"># API 地址，必须返回的是一个 JSON 格式</span><br>      <span class="hljs-attr">method:</span> <span class="hljs-string">&quot;GET&quot;</span><br>      <span class="hljs-attr">headers:</span> &#123;&#125;<br>      <span class="hljs-attr">keys:</span> [<span class="hljs-string">&quot;hitokoto&quot;</span>]				<span class="hljs-comment"># 从请求结果中获取指定字段的值</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="Fluid%E4%B8%BB%E9%A2%98%E3%81%AE%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/image-20250425094714301.png" srcset="/img/loading.gif" lazyload alt="变化的内容"></p>
+<h2 id="文章摘要"><a href="#文章摘要" class="headerlink" title="文章摘要"></a>文章摘要</h2><p>Fluid 主题默认会自动截取文章开头内容作为摘要显示在首页。</p>
+<ul>
+<li>因为文章开头的内容可能并不是摘要，可以在文档的 Front-matter 部分设置 excerpt 属性来取代默认行为。如果 excerpt 属性无值，记得删除该属性。</li>
+<li>如果博文的 title 能够概括其内容，而无需单独列出摘要，可以在主题配置文件中取消自动截取。</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># _config.fluid.yml</span><br><br><span class="hljs-attr">index:</span><br>  <span class="hljs-comment"># 自动截取文章摘要</span><br>  <span class="hljs-comment"># Auto extract post</span><br>  <span class="hljs-attr">auto_excerpt:</span><br>    <span class="hljs-attr">enable:</span> <span class="hljs-literal">false</span>		<span class="hljs-comment"># 设置为 false，关闭。</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="Fluid%E4%B8%BB%E9%A2%98%E3%81%AE%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/image-20250426214125048.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="归档文章-隐藏文章-文章排序"><a href="#归档文章-隐藏文章-文章排序" class="headerlink" title="归档文章 | 隐藏文章 | 文章排序"></a>归档文章 | 隐藏文章 | 文章排序</h2><p>请看官网，略。</p>
+<hr>
+<p>在文档的 Front-matter 部分设置</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs md">hide: true		# 隐藏文章，不在首页和其他归档分类页里展示。（草稿功能被该设置取代）<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs md">archive: true	# 文章在首页隐藏，但仍需要在归档分类页里展示。<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs avrasm"><span class="hljs-symbol">sticky:</span> <span class="hljs-number">100</span> 	<span class="hljs-meta"># 置顶文章，有置顶图标。sticky 数值越大，该文章越靠前。（文章更新时可以用一下）</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h1 id="3-文章页"><a href="#3-文章页" class="headerlink" title="3. 文章页"></a>3. 文章页</h1><h2 id="文章在首页的封面图"><a href="#文章在首页的封面图" class="headerlink" title="文章在首页的封面图"></a>文章在首页的封面图</h2><p>可以在主题配置文件中统一设置所有博文在首页的封面图：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># _config.fluid.yml</span><br><br><span class="hljs-attr">post:</span><br>  <span class="hljs-comment"># 首页封面图</span><br>  <span class="hljs-attr">default_index_img:</span> 					 	 <br></code></pre></td></tr></table></figure>
+
+<p>也可以在具体文档的 Front-matter 部分单独设置每篇博文在首页的封面图：</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs md">---<br>title: 使用Hexo搭建个人博客<br><span class="hljs-section">index<span class="hljs-emphasis">_img: /image/post/girl.jpg		# 对应 source/image/post/girl.jpg</span></span><br><span class="hljs-emphasis"><span class="hljs-section">---</span></span><br></code></pre></td></tr></table></figure>
+
+<p><strong>主题配置文件优先级低于 Front-matter。</strong> 如果两处都未设置，则不显示。</p>
+<p><img src="Fluid%E4%B8%BB%E9%A2%98%E3%81%AE%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/image-20250425134722903.png" srcset="/img/loading.gif" lazyload alt="博文在首页的封面图"></p>
+<h2 id="文章标题下方的元信息"><a href="#文章标题下方的元信息" class="headerlink" title="文章标题下方的元信息"></a>文章标题下方的元信息</h2><p>文章标题下方的元信息显示【作者】和【浏览量计数】：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># _config.fluid.yml</span><br><br><span class="hljs-attr">post:</span><br>  <span class="hljs-comment"># 文章标题下方的元信息</span><br>  <span class="hljs-attr">meta:</span><br>    <span class="hljs-comment"># 作者，优先采用 front-matter 部分的 author 字段，其次是 hexo 配置中 author 值</span><br>    <span class="hljs-attr">author:</span><br>      <span class="hljs-attr">enable:</span> <span class="hljs-string">ture</span>		<span class="hljs-comment"># 设置为 ture，开启。</span><br>      <br>    <span class="hljs-comment"># 浏览量计数</span><br>    <span class="hljs-attr">views:</span><br>      <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span>		<span class="hljs-comment"># 设置为 ture，开启。</span><br>      <span class="hljs-comment"># 统计数据来源</span><br>      <span class="hljs-comment"># Options: busuanzi | leancloud | umami</span><br>      <span class="hljs-attr">source:</span> <span class="hljs-string">&quot;busuanzi&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="Fluid%E4%B8%BB%E9%A2%98%E3%81%AE%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/image-20250426211112710.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="在文章开头显示文章更新时间"><a href="#在文章开头显示文章更新时间" class="headerlink" title="在文章开头显示文章更新时间"></a>在文章开头显示文章更新时间</h2><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># _config.fluid.yml</span><br><br><span class="hljs-attr">post:</span><br>  <span class="hljs-comment"># 在文章开头显示文章更新时间，该时间默认是 md 文件更新时间，</span><br>  <span class="hljs-comment"># 可在文档的 Front-matter 部分设置 `updated` 属性手动指定（和 date 一样格式）。</span><br>  <span class="hljs-comment"># 本人不设置该属性，采用 Hexo 默认读取的时间。</span><br>  <span class="hljs-attr">updated:</span><br>    <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span>		<span class="hljs-comment"># 设置为 ture，开启。</span><br><br>    <span class="hljs-comment"># 格式参照 ISO-8601 日期格式化</span><br>    <span class="hljs-attr">date_format:</span> <span class="hljs-string">&quot;LL a&quot;</span><br><br>    <span class="hljs-comment"># 是否使用相对时间表示，比如：&quot;3 天前&quot;</span><br>    <span class="hljs-attr">relative:</span> <span class="hljs-literal">false</span><br><br>    <span class="hljs-comment"># 提示标签类型。不同的类型显示不同的颜色。</span><br>    <span class="hljs-comment"># Options: default | primary | info | success | warning | danger | light</span><br>    <span class="hljs-attr">note_class:</span> <span class="hljs-string">info</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="Fluid%E4%B8%BB%E9%A2%98%E3%81%AE%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/image-20250426211147090.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="侧边栏展示当前分类下的文章"><a href="#侧边栏展示当前分类下的文章" class="headerlink" title="侧边栏展示当前分类下的文章"></a>侧边栏展示当前分类下的文章</h2><p>侧边栏【按自定义顺序】展示当前分类下的文章。</p>
+<blockquote>
+<p>Tip：最简单的方式是设置文档 titlie 为 “数字.title” 的形式，然后按 title 顺序排序即可。</p>
+</blockquote>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># _config.fluid.yml</span><br><br><span class="hljs-attr">post:</span><br>  <span class="hljs-comment"># 侧边栏展示当前分类下的文章</span><br>  <span class="hljs-attr">category_bar:</span><br>    <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span>		<span class="hljs-comment"># 设置为 ture，开启。</span><br><br>    <span class="hljs-comment"># 开启后，只有在文章 Front-matter 部分指定 `category_bar: true` 才会展示分类，也可以通过 `category_bar: [&quot;分类A&quot;]` 来指定分类</span><br>    <span class="hljs-attr">specific:</span> <span class="hljs-literal">true</span>		<span class="hljs-comment"># 文档的 Front-matter 部分指定 `category_bar: true`</span><br><br>    <span class="hljs-comment"># 置于板块的左侧或右侧。	</span><br>    <span class="hljs-comment"># Options: left | right</span><br>    <span class="hljs-attr">placement:</span> <span class="hljs-string">left</span>		<span class="hljs-comment"># 采用默认值 left 即可，目录栏默认在右侧。</span><br><br>    <span class="hljs-comment"># 文章的排序字段，前面带减号是倒序，不带减号是正序</span><br>    <span class="hljs-comment"># Options: date | title | or other field of front-matter</span><br>    <span class="hljs-attr">post_order_by:</span> <span class="hljs-string">&quot;category_order&quot;</span>		<span class="hljs-comment"># 文档的 Front-matter 部分指定 `category_order: 数字`</span><br><br>    <span class="hljs-comment"># 单个分类中折叠展示文章数的最大值，超过限制会显示 More，0 则不限制</span><br>    <span class="hljs-attr">post_limit:</span> <span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
+
+<hr>
+<p>示例：</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs md"><span class="hljs-section"># 使用Hexo搭建个人博客.md 的 Front-matter 部分</span><br><br>category<span class="hljs-emphasis">_bar: true</span><br><span class="hljs-emphasis">category_</span>order: 1<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs md"><span class="hljs-section"># Fluid主题的博客美化.md 的 Front-matter 部分</span><br><br>category<span class="hljs-emphasis">_bar: true</span><br><span class="hljs-emphasis">category_</span>order: 2<br></code></pre></td></tr></table></figure>
+
+<p><img src="Fluid%E4%B8%BB%E9%A2%98%E3%81%AE%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/image-20250426211339288.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="Tag-插件"><a href="#Tag-插件" class="headerlink" title="Tag 插件"></a>Tag 插件</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/guide/#tag-%E6%8F%92%E4%BB%B6">文章页 | Tag 插件</a></p>
+</blockquote>
+<p>【注】：笔者很少用它们，因为它们不太符合笔者的写作习惯。</p>
+<h3 id="便签"><a href="#便签" class="headerlink" title="便签"></a>便签</h3><p>推荐使用 HTML 形式，而不是代码形式。</p>
+<p>HTML 标签格式：<code>&lt;p class=&quot;note note-primary&quot;&gt;便签内容&lt;/p&gt;</code> 。note-primary 代表一种颜色。 </p>
+<p class="note note-primary">color of primary</p>
+
+<p class="note note-secondary">color of secondary</p>
+
+<p class="note note-success">color of success</p>
+
+<p class="note note-danger">color of danger</p>
+
+<p class="note note-warning">color of warning</p>
+
+<p class="note note-info">color of info</p>
+
+<p class="note note-light">color of light</p>
+
+
+
+<h3 id="行内标签"><a href="#行内标签" class="headerlink" title="行内标签"></a>行内标签</h3><p>推荐使用 HTML 形式，而不是代码形式。</p>
+<p>HTML 标签格式：<code>&lt;span class=&quot;label label-primary&quot;&gt;标签内容&lt;/span&gt;</code> 。label-primary 代表一种颜色。 </p>
+<p><span class="label label-primary">primary</span></p>
+<p><span class="label label-default">default</span></p>
+<p><span class="label label-info">info</span></p>
+<p><span class="label label-success">success</span></p>
+<p><span class="label label-warning">warning</span></p>
+<p><span class="label label-danger">danger</span></p>
+<h3 id="折叠块"><a href="#折叠块" class="headerlink" title="折叠块"></a>折叠块</h3><p>使用折叠块，可以折叠代码、图片、文字等任何内容，你可以在 markdown 中按如下格式：</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs md">&#123;% fold info @title %&#125;<br>需要折叠的一段内容，支持 markdown<br>&#123;% endfold %&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>info：和行内标签类似的可选参数，primary | default | …</li>
+<li>title：折叠块上的标题</li>
+</ul>
+<hr>
+<p>示例 1：</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs md">&#123;% fold primary @这是一个折叠块 %&#125;<br>Hello World!<br>&#123;% endfold %&#125;<br></code></pre></td></tr></table></figure>
+
+
+    <div class="fold">
+      <div class="fold-title fold-primary collapsed" data-toggle="collapse" href="#collapse-ed076287" role="button" aria-expanded="false" aria-controls="collapse-ed076287">
+        <div class="fold-arrow">▶</div>这是一个折叠块
+      </div>
+      <div class="fold-collapse collapse" id="collapse-ed076287">
+        <div class="fold-content">
+          <p>Hello World!</p>
+        </div>
+      </div>
+    </div>
+
+<hr>
+<p>示例 2：</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs md">&#123;% fold success @这也是一个折叠块，折叠代码块 %&#125;<br>​<span class="hljs-code">```yml</span><br><span class="hljs-code"># _config.fluid.yml</span><br><span class="hljs-code">​```</span><br>&#123;% endfold %&#125;<br></code></pre></td></tr></table></figure>
+
+
+    <div class="fold">
+      <div class="fold-title fold-success collapsed" data-toggle="collapse" href="#collapse-84cc2465" role="button" aria-expanded="false" aria-controls="collapse-84cc2465">
+        <div class="fold-arrow">▶</div>这也是一个折叠块，折叠代码块
+      </div>
+      <div class="fold-collapse collapse" id="collapse-84cc2465">
+        <div class="fold-content">
+          <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># _config.fluid.yml</span><br></code></pre></td></tr></table></figure>
+        </div>
+      </div>
+    </div>
+
+
+
+<h1 id="4-其他"><a href="#4-其他" class="headerlink" title="4. 其他"></a>4. 其他</h1><h2 id="注入静态代码片段（point）"><a href="#注入静态代码片段（point）" class="headerlink" title="注入静态代码片段（point）"></a>注入静态代码片段（point）</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/plugins">插件 | Hexo</a> ，<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/api/injector">注入器（Injector） | Hexo</a></p>
+<p><a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/advance/#hexo-%E6%B3%A8%E5%85%A5%E4%BB%A3%E7%A0%81">注入代码 | Hexo Fluid 用户手册</a></p>
+<p><a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/guide/#%E8%87%AA%E5%AE%9A%E4%B9%89-js-css-html">自定义 JS &#x2F; CSS &#x2F; HTML | Hexo Fluid 用户手册</a></p>
+</blockquote>
+<p>有三种方式注入静态代码片段到生成的 HTML 文件：</p>
+<ol>
+<li>直接使用的 Hexo 提供的脚本与注入器。注入 HTML。</li>
+<li>在 Hexo 脚本中，使用 Fluid 主题提供的注入器。注入 HTML，且支持注入 <code>ejs</code> 代码。</li>
+<li>在 Fluid 主题文件中设置。引入外部的 JS、CSS，或注入 HTML。</li>
+</ol>
+<blockquote>
+<p>Tip：Fluid 主题通过对前者的封装，使得主题配置文件中的设置也能够注入到指定位置。</p>
+</blockquote>
+<h3 id="Hexo-注入"><a href="#Hexo-注入" class="headerlink" title="Hexo 注入"></a>Hexo 注入</h3><p>使用 Hexo 提供的脚本与注入器：</p>
+<ol>
+<li>在站点根目录下创建 scripts 文件夹，里面放入自定义脚本。Hexo 在生成网站时会自动加载它们。</li>
+<li>Hexo 提供 Injector（注入器）钩子函数，用于将静态代码片段注入到生成的 HTML 的 <code>&lt;head&gt;</code> 和&#x2F;或 <code>&lt;body&gt;</code> 中。Hexo 会在 <code>after_render:html</code> 过滤器（在渲染完成后对 JS 进行压缩）之前完成注入。</li>
+</ol>
+<hr>
+<p>injector 函数：<code>hexo.extend.injector.register(entry, value, to);</code></p>
+<ul>
+<li><p>entry （<code>&lt;String&gt;</code>）：在 HTML 中的注入代码的位置。</p>
+<ol>
+<li><code>head_begin</code>：注入在 <code>&lt;head&gt;</code> 之后（默认）</li>
+<li><code>head_end</code>：注入在 <code>&lt;/head&gt;</code> 之前</li>
+<li><code>body_begin</code>：注入在 <code>&lt;body&gt;</code> 之后</li>
+<li><code>body_end</code>：注入在 <code>&lt;/body&gt;</code> 之前</li>
+</ol>
+</li>
+<li><p>value（ <code>&lt;Stirng&gt;</code>|<code>&lt;Function&gt;</code>）：注入的代码片段。除了字符串，也支持返回值为字符串的函数。</p>
+</li>
+<li><p>to（<code>&lt;String&gt;</code>）：哪些页面会被注入代码。</p>
+<ol>
+<li><code>default</code>：注入到每个页面（默认值）</li>
+<li><code>post</code>：只注入到文章页面</li>
+<li>……</li>
+<li>或是其他自定义 layout 名称，比如关于页 <code>about</code></li>
+</ol>
+</li>
+</ul>
+<hr>
+<p>示例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"># scripts\inject.<span class="hljs-property">js</span> （执行 hexo g 时，<span class="hljs-title class_">Hexo</span>自动加载此脚本）<br><br># hexo.<span class="hljs-property">extend</span>.<span class="hljs-property">injector</span>.<span class="hljs-title function_">register</span>(entry, value, to);<br># 将 &lt;div id=<span class="hljs-string">&quot;custom1&quot;</span>&gt;<span class="hljs-number">1</span>&lt;/div&gt; 注入到所有页面的 &lt;body&gt; 之后<br>hexo.<span class="hljs-property">extend</span>.<span class="hljs-property">injector</span>.<span class="hljs-title function_">register</span>(<span class="hljs-string">&#x27;body_begin&#x27;</span>, <span class="hljs-string">&#x27;&lt;div id=&quot;custom1&quot;&gt;1&lt;/div&gt;&#x27;</span>);<br># 将 &lt;div id=<span class="hljs-string">&quot;custom2&quot;</span>&gt;<span class="hljs-number">2</span>&lt;<span class="hljs-regexp">/div&gt; 注入到文章页面的 &lt;/</span>body&gt; 之前<br>hexo.<span class="hljs-property">extend</span>.<span class="hljs-property">injector</span>.<span class="hljs-title function_">register</span>(<span class="hljs-string">&#x27;body_end&#x27;</span>, <span class="hljs-string">&#x27;&lt;div id=&quot;custom2&quot;&gt;2&lt;/div&gt;&#x27;</span>, <span class="hljs-string">&#x27;post&#x27;</span>);<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="Fluid-注入"><a href="#Fluid-注入" class="headerlink" title="Fluid 注入"></a>Fluid 注入</h3><p><a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/advance/#fluid-%E6%B3%A8%E5%85%A5%E4%BB%A3%E7%A0%81">Fluid 注入 | Hexo Fluid 用户手册</a></p>
+<h3 id="Fluid-主题配置文件设置注入"><a href="#Fluid-主题配置文件设置注入" class="headerlink" title="Fluid 主题配置文件设置注入"></a>Fluid 主题配置文件设置注入</h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># 指定自定义 .js 文件路径，支持列表；路径是相对 source 目录，如 /js/custom.js 对应存放目录 source/js/custom.js</span><br><span class="hljs-comment"># 注入到 `&lt;/body&gt;` 前，形式：&lt;script src=&quot;url&quot;&gt;&lt;/script&gt;</span><br><span class="hljs-attr">custom_js:</span> <span class="hljs-string">/js/custom1.js</span>	<span class="hljs-comment"># 单文件</span><br><br><span class="hljs-comment"># 指定自定义 css 文件路径，用法和 custom_js 相同</span><br><span class="hljs-comment"># 注入到 `&lt;/head&gt;` 前，形式：&lt;link rel=&quot;stylesheet&quot; href=&quot;url&quot;&gt;</span><br><span class="hljs-attr">custom_css:</span> <br>	<span class="hljs-bullet">-</span> <span class="hljs-string">/css/custom2.css</span>		<span class="hljs-comment"># 多文件，使用&quot;-&quot;分隔不同文件</span><br>	<span class="hljs-bullet">-</span> <span class="hljs-string">/css/custom3.css</span><br><br><span class="hljs-comment"># 自定义 &lt;head&gt; 节点中的 HTML 内容</span><br><span class="hljs-attr">custom_head:</span> <span class="hljs-string">&#x27;</span><br><span class="hljs-string">&lt;meta name=&quot;key&quot; content=&quot;value&quot;&gt;</span><br><span class="hljs-string">&#x27;</span><br><br><span class="hljs-comment"># 自定义底部 HTML 内容（位于 footer 上方），也可用于外部引入 js css 这些操作，注意不要和 post.custom 配置冲突</span><br><span class="hljs-attr">custom_html:</span> <span class="hljs-string">&#x27;</span><br><span class="hljs-string">&lt;link rel=&quot;stylesheet&quot; href=&quot;/css/custom4.css&quot;&gt;</span><br><span class="hljs-string">&#x27;</span><br><br><span class="hljs-comment"># 自定义 &lt;footer&gt; 节点中的 HTML 内容</span><br><span class="hljs-attr">footer:</span><br>  <span class="hljs-attr">content:</span> <span class="hljs-string">&#x27;</span><br><span class="hljs-string">    &lt;div&gt;footer.content部分的div块&lt;/div&gt;</span><br><span class="hljs-string">  &#x27;</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="两种方式注入的位置"><a href="#两种方式注入的位置" class="headerlink" title="两种方式注入的位置"></a>两种方式注入的位置</h3><p>紫色为 Hexo 注入的位置，其他颜色为 Fluid 主题配置文件设置注入的位置（Fluid 注入的位置略）。</p>
+<p><img src="Fluid%E4%B8%BB%E9%A2%98%E3%81%AE%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/image-20250527174138521.png" srcset="/img/loading.gif" lazyload></p>
+<hr>
+<p>如果你想了解 Fluid 及其主题配置文件设置注入的位置，或者变更这些位置，你可以查看或变更 Fluid 主题文件。</p>
+<ul>
+<li><code>fluid\layout\</code> ：核心布局文件夹，包含各种页面模板（如首页、文章页、标签页等）。查看 <code>layout.ejs</code> 了解大致的页面布局。</li>
+<li><code>fluid\scripts\</code> ：自定义脚本文件夹。Fluid 主题使用 Hexo API 注册的一些模板函数，以及其他通用函数，在页面布局中被使用。</li>
+<li><code>fluid\source\</code> ：主题的静态资源文件夹。<code>js\</code> 目录下的脚本涉及 Fluid 主题集成的插件模块及其他功能。</li>
+</ul>
+<p><img src="Fluid%E4%B8%BB%E9%A2%98%E3%81%AE%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/image-20250527034210100.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="一些特效"><a href="#一些特效" class="headerlink" title="一些特效"></a>一些特效</h2><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># _config.fluid.yml</span><br><br><span class="hljs-attr">custom_js:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/love.js</span> <span class="hljs-comment"># 鼠标点击小爱心❤</span><br>  <span class="hljs-comment"># - //cdn.jsdelivr.net/gh/bynotes/texiao/source/js/xiaoxuehua.js # 页面小雪花飘落 </span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/Cherry.min.js</span> <span class="hljs-comment"># 页面樱花飘落</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/DynamicLine.min.js</span> <span class="hljs-comment"># 页面动态黑色线条</span><br>  <br>  <span class="hljs-comment"># 该小星星特效是操作 DOM 元素产生的，耗性能，可改为 Canvas 实现。</span><br>  <span class="hljs-comment"># - //cdn.jsdelivr.net/gh/bynotes/texiao/source/js/xiaoxingxing.js # 鼠标跟随特效：小星星</span><br>  <span class="hljs-comment"># - //cdn.jsdelivr.net/gh/bynotes/texiao/source/js/caidai.js # 页面动态彩带</span><br>  <span class="hljs-comment"># - //cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/Ribbon.min.js # 页面静态彩带</span><br><br><span class="hljs-attr">custom_css:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">https://jsd.cdn.zzko.cn/gh/EmoryHuang/BlogBeautify@1.1/gradient.css</span> <span class="hljs-comment"># 渐变打字机</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/shubiao.css</span> <span class="hljs-comment"># 鼠标指针美化</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/gundongtiao.css</span> <span class="hljs-comment"># 滚动条美化</span><br></code></pre></td></tr></table></figure>
+
+
+
+<p>特效分享：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.bootstrapmb.com/item/15586">webgl鼠标拖着尾巴效果</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.bootstrapmb.com/item/14285">动态的边框流动css特效</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.bootstrapmb.com/item/15941">JavaScript光标跟踪特效</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.bootstrapmb.com/item/15273">canvas动态粒子特效</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.bootstrapmb.com/item/3985">鼠标跟随闪闪发光html5动画背景特效</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.bootstrapmb.com/item/3267">鼠标跟随svg尾巴特效</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.bootstrapmb.com/item/1960">jQuery炫酷前端页面动画代码</a></li>
+</ul>
+<h2 id="双端背景"><a href="#双端背景" class="headerlink" title="双端背景"></a>双端背景</h2><blockquote>
+<p>【舍去 banner，固定背景】：<a target="_blank" rel="noopener" href="https://endlesspath.icu/2024/10/12/Fluid%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/#3-2-%E8%83%8C%E6%99%AF%E5%9B%BA%E5%AE%9A%E5%92%8C%E6%AF%9B%E7%8E%BB%E7%92%83%E6%95%88%E6%9E%9C">Fluid主题安装及配置 - Endlsee-Path的学习记录</a></p>
+</blockquote>
+<p>【注】：专门为 <code>white.webp</code> 和 banner 设置的响应式。为了页面性能，也可以选择舍去 banner，固定背景。</p>
+<p>设置响应式背景：</p>
+<ul>
+<li>根据窗口尺寸区分手机端和电脑端，实时切换背景。（Shit! You can not see the background on the post pages on mobile, except for the bottom!）</li>
+<li>当 banner 占据页面小于一定比例，则显示背景；否则隐藏背景。</li>
+</ul>
+<hr>
+<p>在所有页面的 body 头部添加 div 元素。在所有页面的 body 尾部添加响应式背景程序，用于填充该 div 元素。</p>
+<p><code>scripts/injector.js</code>：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 嫌弃模板（$&#123;siteRoot&#125;）使用麻烦就去掉这个，暂时不关键。</span><br><span class="hljs-keyword">const</span> &#123; <span class="hljs-attr">root</span>: siteRoot  =  <span class="hljs-string">&quot;/&quot;</span> &#125; =  hexo.<span class="hljs-property">config</span>;<br><br><span class="hljs-comment">// &lt;div&gt; 注入到所有页面的 &lt;body&gt; 之后，用于 responsive-background.js 自适应背景切换。</span><br>hexo.<span class="hljs-property">extend</span>.<span class="hljs-property">injector</span>.<span class="hljs-title function_">register</span>(<span class="hljs-string">&#x27;body_begin&#x27;</span>, <span class="hljs-string">&#x27;&lt;div id=&quot;web_bg&quot;&gt;&lt;/div&gt;&#x27;</span>);<br><span class="hljs-comment">// &lt;script&gt; 注入到所有页面的 &lt;/body&gt; 之前</span><br>hexo.<span class="hljs-property">extend</span>.<span class="hljs-property">injector</span>.<span class="hljs-title function_">register</span>(<span class="hljs-string">&#x27;body_end&#x27;</span>,<span class="hljs-string">`&lt;script src=&quot;<span class="hljs-subst">$&#123;siteRoot&#125;</span>js/responsive-background.js&quot;&gt;&lt;/script&gt;`</span>);<br></code></pre></td></tr></table></figure>
+
+<p><code>source/js/responsive-background.js</code>：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">/* 响应式背景程序 */</span><br><br><span class="hljs-comment">// 定义背景图片链接，url(&#x27;your background address&#x27;)</span><br><span class="hljs-keyword">const</span> mobileBgImageUrl = <span class="hljs-string">&quot;url(&#x27;/image/bg/和泉纱雾mob5.jpg&#x27;)&quot;</span>;<br><span class="hljs-keyword">const</span> desktopBgImageUrl = <span class="hljs-string">&quot;url(&#x27;/image/bg/white.webp&#x27;)&quot;</span>;<br><br><span class="hljs-comment">// 获取元素</span><br><span class="hljs-keyword">const</span> webBg = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;#web_bg&#x27;</span>);<br><span class="hljs-keyword">const</span> banner = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;#banner&#x27;</span>);<br><br><span class="hljs-comment">// 控制是否在请求动画帧中执行</span><br><span class="hljs-keyword">let</span> isUpdating = <span class="hljs-literal">false</span>;<br><br><span class="hljs-comment">// 设置背景图片的函数</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">setBackground</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-comment">// window.innerWidth &lt; 768，用来区分手机端和电脑端。</span><br>  <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">window</span>.<span class="hljs-property">innerWidth</span> &lt; <span class="hljs-number">768</span>) &#123;<br>    <span class="hljs-comment">// 手机端背景</span><br>    webBg.<span class="hljs-property">style</span>.<span class="hljs-property">backgroundImage</span> = mobileBgImageUrl;<br>  &#125; <span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-comment">// 电脑端背景</span><br>    webBg.<span class="hljs-property">style</span>.<span class="hljs-property">backgroundImage</span> = desktopBgImageUrl;<br>  &#125;<br>  <span class="hljs-comment">// 保持其他样式</span><br>  webBg.<span class="hljs-property">style</span>.<span class="hljs-property">position</span> = <span class="hljs-string">&#x27;fixed&#x27;</span>;<br>  webBg.<span class="hljs-property">style</span>.<span class="hljs-property">top</span> = <span class="hljs-string">&#x27;0&#x27;</span>;<br>  webBg.<span class="hljs-property">style</span>.<span class="hljs-property">left</span> = <span class="hljs-string">&#x27;0&#x27;</span>;<br>  webBg.<span class="hljs-property">style</span>.<span class="hljs-property">width</span> = <span class="hljs-string">&#x27;100%&#x27;</span>;<br>  webBg.<span class="hljs-property">style</span>.<span class="hljs-property">height</span> = <span class="hljs-string">&#x27;100%&#x27;</span>;<br>  webBg.<span class="hljs-property">style</span>.<span class="hljs-property">zIndex</span> = <span class="hljs-string">&#x27;-1&#x27;</span>;<br>  webBg.<span class="hljs-property">style</span>.<span class="hljs-property">backgroundSize</span> = <span class="hljs-string">&#x27;cover&#x27;</span>;<br>  webBg.<span class="hljs-property">style</span>.<span class="hljs-property">backgroundRepeat</span> = <span class="hljs-string">&#x27;no-repeat&#x27;</span>;<br>&#125;<br><br><span class="hljs-comment">// 根据 banner 在页面的占比，决定显示/隐藏 web_bg（背景）。</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">updateVisibility</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-comment">// 每次滚动时获取元素在视口中的位置和尺寸。</span><br>  <span class="hljs-comment">// bottom：元素底部距离视口顶部的距离。top：元素顶部距离视口顶部的距离。height：元素高度。</span><br>  <span class="hljs-keyword">const</span> rect = banner.<span class="hljs-title function_">getBoundingClientRect</span>();<br><br>  <span class="hljs-comment">// 设置阈值。比如：视口高度（界面高度）的20%。</span><br>  <span class="hljs-keyword">const</span> threshold = <span class="hljs-variable language_">window</span>.<span class="hljs-property">innerHeight</span> * <span class="hljs-number">0.2</span>;<br><br>  <span class="hljs-keyword">if</span> (rect.<span class="hljs-property">bottom</span> &gt; threshold) &#123;<br>    <span class="hljs-comment">// 若 banner 底部距离视口顶部大于阈值，则隐藏背景。</span><br>    webBg.<span class="hljs-property">style</span>.<span class="hljs-property">display</span> = <span class="hljs-string">&#x27;none&#x27;</span>;<br>  &#125; <span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-comment">// 否则显示背景。</span><br>    webBg.<span class="hljs-property">style</span>.<span class="hljs-property">display</span> = <span class="hljs-string">&#x27;block&#x27;</span>;<br>  &#125;<br>  isUpdating = <span class="hljs-literal">false</span>; <span class="hljs-comment">// 允许下一帧更新</span><br>&#125;<br><br><span class="hljs-comment">// 绑定 load 事件，页面加载完成后调用。</span><br><span class="hljs-variable language_">window</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;load&#x27;</span>, <span class="hljs-function">() =&gt;</span> &#123;<br>  <span class="hljs-title function_">setBackground</span>();       <span class="hljs-comment">// 页面加载完成后设置背景</span><br>  <span class="hljs-title function_">updateVisibility</span>();    <span class="hljs-comment">// 初次检测</span><br>&#125;);<br><br><span class="hljs-comment">// 绑定 resize 事件，窗口变化时调用。</span><br><span class="hljs-variable language_">window</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;resize&#x27;</span>, <span class="hljs-function">() =&gt;</span> &#123;<br>  <span class="hljs-title function_">setBackground</span>();       <span class="hljs-comment">// 改变窗口时设置背景</span><br>  <span class="hljs-comment">// 立即检测 banner 位置，调整背景显示状态。</span><br>  <span class="hljs-keyword">if</span> (!isUpdating) &#123;<br>    isUpdating = <span class="hljs-literal">true</span>;<br>    <span class="hljs-variable language_">window</span>.<span class="hljs-title function_">requestAnimationFrame</span>(updateVisibility);<br>  &#125;<br>&#125;);<br><br><span class="hljs-comment">// 绑定滚动事件，鼠标滚动时调用。</span><br><span class="hljs-variable language_">window</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;scroll&#x27;</span>, <span class="hljs-function">() =&gt;</span> &#123;<br>  <span class="hljs-keyword">if</span> (!isUpdating) &#123;<br>    isUpdating = <span class="hljs-literal">true</span>;<br>    <span class="hljs-variable language_">window</span>.<span class="hljs-title function_">requestAnimationFrame</span>(updateVisibility);<br>  &#125;<br>&#125;);<br></code></pre></td></tr></table></figure>
+
+<p>说明：</p>
+<ul>
+<li>使用 <code>requestAnimationFrame</code> 确保在每一帧只调用一次 <code>updateVisibility</code> ，避免滚动频繁触发造成的性能问题。<code>isUpdating</code> 变量用来避免 <code>requestAnimationFrame</code> 重复请求动画帧。</li>
+<li>在 <code>resize</code> 事件中也调用 <code>setBackground()</code>，确保背景在窗口变化时正确设置。</li>
+</ul>
+<blockquote>
+<p>滚动事件会在用户滚动时频繁触发，可能每秒触发几十次甚至上百次。每次触发，调用 <code>getBoundingClientRect()</code> 和修改样式会触发浏览器的布局（reflow）和绘制（repaint），非常耗费性能，导致页面卡顿。</p>
+<p><code>requestAnimationFrame</code> 是浏览器提供的 API，用于在浏览器下一次重绘之前执行回调函数。它会在浏览器准备好绘制下一帧时调用，通常每秒大约 60 次（每 16 毫秒左右），但如果多次请求，浏览器会合并成一次调用，避免多次重复执行。</p>
+<p>在滚动或窗口变化事件中，设置一个标志（如<code>isUpdating</code>）。确保在一帧中只发起一次 <code>requestAnimationFrame</code> 请求。控制请求频率，防止请求堆积。最终实现每一帧最多只执行一次 <code>updateVisibility</code>。</p>
+</blockquote>
+<h2 id="文章时效性提示"><a href="#文章时效性提示" class="headerlink" title="文章时效性提示"></a>文章时效性提示</h2><blockquote>
+<p>【发布时间提示】<a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/posts/hexo-injector/#%E6%96%87%E7%AB%A0%E6%97%B6%E6%95%88%E6%80%A7%E6%8F%90%E7%A4%BA">通过 Hexo 5 注入器为主题添加新功能 - Hexo Theme Fluid</a></p>
+</blockquote>
+<p>【更新时间提示】只给出代码，笔者未使用。笔者已经在文章开头显示文章更新时间。</p>
+<p><code>scripts/injector.js</code>：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// script 注入到文章页面的 &lt;/body&gt; 之前</span><br>hexo.<span class="hljs-property">extend</span>.<span class="hljs-property">injector</span>.<span class="hljs-title function_">register</span>(<span class="hljs-string">&#x27;body_end&#x27;</span>,<span class="hljs-string">`&lt;script src=&quot;/js/articleAgeWarning.js&quot;&gt;&lt;/script&gt;`</span>, <span class="hljs-string">&#x27;post&#x27;</span>);<br></code></pre></td></tr></table></figure>
+
+<p><code>source/js/articleAgeWarning.js</code>：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs js">(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-comment">// 获取特定的meta元素</span><br>  <span class="hljs-keyword">var</span> times = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelectorAll</span>(<span class="hljs-string">&#x27;meta[property=&quot;article:modified_time&quot;]&#x27;</span>);<br>  <span class="hljs-keyword">if</span> (times.<span class="hljs-property">length</span> === <span class="hljs-number">0</span>) &#123; <span class="hljs-keyword">return</span>; &#125;<span class="hljs-comment">// 没有时间元素，退出</span><br>  <span class="hljs-comment">// 获取所有类名为&#x27;post-content&#x27;的元素</span><br>  <span class="hljs-keyword">var</span> posts = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementsByClassName</span>(<span class="hljs-string">&#x27;post-content&#x27;</span>);<br>  <span class="hljs-keyword">if</span> (posts.<span class="hljs-property">length</span> === <span class="hljs-number">0</span>) &#123; <span class="hljs-keyword">return</span>; &#125; <span class="hljs-comment">// 没有文章内容，退出</span><br><br>  <span class="hljs-keyword">var</span> updateTime = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>(times[<span class="hljs-number">0</span>].<span class="hljs-property">content</span>);  <span class="hljs-comment">// 文章更新时间</span><br>  <span class="hljs-keyword">var</span> now = <span class="hljs-title class_">Date</span>.<span class="hljs-title function_">now</span>()  <span class="hljs-comment">// 当前时间戳（毫秒）</span><br>  <span class="hljs-keyword">var</span> interval = <span class="hljs-built_in">parseInt</span>(now - updateTime)<span class="hljs-comment">// 时间差（毫秒）</span><br>   <span class="hljs-comment">// 如果发布时间超过30天（30天*24小时*3600秒*1000毫秒）</span><br>  <span class="hljs-keyword">if</span> (interval &gt; <span class="hljs-number">3600</span>*<span class="hljs-number">24</span>*<span class="hljs-number">30</span>*<span class="hljs-number">1000</span>)&#123;<br>    <span class="hljs-keyword">var</span> days = <span class="hljs-built_in">parseInt</span>(interval / <span class="hljs-number">86400000</span>)<span class="hljs-comment">// 计算天数（毫秒转天）</span><br>    <span class="hljs-comment">// 在文章内容前插入提醒信息</span><br>    posts[<span class="hljs-number">0</span>].<span class="hljs-property">innerHTML</span> = <span class="hljs-string">&#x27;&lt;div class=&quot;note note-warning&quot; style=&quot;font-size:0.9rem&quot;&gt;&lt;p&gt;&#x27;</span> +<br>      <span class="hljs-string">&#x27;&lt;div class=&quot;h6&quot;&gt;文章时效性提示&lt;/div&gt;&lt;p&gt;这是一篇更新于 &#x27;</span> + days + <span class="hljs-string">&#x27; 天前的文章，部分信息可能已发生改变，请注意甄别。&#x27;</span> +<br>      <span class="hljs-string">&#x27;&lt;/p&gt;&lt;/p&gt;&lt;/div&gt;&#x27;</span> + posts[<span class="hljs-number">0</span>].<span class="hljs-property">innerHTML</span>;<br>  &#125;<br>&#125;)();<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="页面：HTML-代码"><a href="#页面：HTML-代码" class="headerlink" title="页面：HTML 代码"></a>页面：HTML 代码</h2><p><a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/posts/fluid-write/#%E5%96%84%E7%94%A8-html">搭配 Fluid 如何优雅的写一篇文章 - Hexo Theme Fluid</a></p>
+<p>在 Markdown 中插入一些简单的 HTML 代码。</p>
+<p>【页内跳转】和【iframe 页面镶套】可能有点用，虽然它们也不符合笔者的写作习惯。</p>
+<h1 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h1><p><a target="_blank" rel="noopener" href="https://prettier.io/playground/">Prettier Playground（在线网站）</a>：支持 JavaScript、TypeScript、CSS、JSON 等多种格式化。粘贴代码，实时预览格式化效果，还可以自定义配置。</p>
+<p>（用 VSCode + Prettier 编辑文档得了！）</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B8%8E%E8%BF%90%E7%BB%B4%E6%8C%87%E5%8D%97/" class="category-chain-item">博客搭建与运维指南</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Hexo/" class="print-no-link">#Hexo</a>
+      
+        <a href="/tags/Fluid/" class="print-no-link">#Fluid</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Fluid主题の博客美化</div>
+      <div>https://www.cornst.com/posts/Fluid主题の博客美化.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>shaton沙桐</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年4月26日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2025年6月8日</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2.html" title="个人博客">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">个人博客</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/%E9%93%BE%E6%8E%A5%E7%95%99%E6%A1%A3.html" title="链接留档">
+                        <span class="hidden-mobile">链接留档</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+      <div class="col-lg-7 mx-auto nopadding-x-md">
+        <div class="container custom mx-auto">
+          
+
+        </div>
+      </div>
+    
+  </main>
+
+</div>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+<div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":true,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+<!-- 使用markdown-plugins.ejs模板，使得所有页面都有文章页独有的JS和CSS -->
+<!-- 无法引入github-markdown.min.css和hint.min.css。如果使用函数css_ex直接注入，样式错误 -->
+<!-- 
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+ -->
+<!-- 因为暂时使用丐版PJAX，文章页独有的JS和CSS也没必要注入所有页面 -->
+<!-- layout\_partials\post\toc.ejs -->
+<!-- <script  src="https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js" ></script> -->
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script data-pjax>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script data-pjax src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script data-pjax>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script data-pjax>
+  
+  var anchorElem = document.querySelector('script[funcDesc="anchor-js-api"]')
+  if (anchorElem) anchorElem.remove();
+
+  Fluid.utils.createScriptST('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', 'anchor-js-api', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script data-pjax>Fluid.plugins.imageCaption();</script>
+
+  <script data-pjax src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/love.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/Cherry.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/DynamicLine.min.js"></script>
+<script src="//lib.baomitu.com/aplayer/1.10.1/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+
+<!-- hexo injector body_end start --><script src="/js/responsive-background.js" data-pjax></script>
+  <div id="aplayer"></div>
+  <script defer src="/js/aplayer.js"></script>
+<script src="/js/pjax-related.js"></script><!-- hexo injector body_end end --></body>
+</html>
