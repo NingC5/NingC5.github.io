@@ -30,10 +30,10 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.cornst.com/posts/GitHub%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E4%B8%8EGit%E8%BF%9E%E6%8E%A5GitHubPages%E4%BB%93%E5%BA%93/image-20250507224534623.png">
 <meta property="og:image" content="https://www.cornst.com/posts/GitHub%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E4%B8%8EGit%E8%BF%9E%E6%8E%A5GitHubPages%E4%BB%93%E5%BA%93/image-20250507232428459.png">
-<meta property="og:image" content="https://www.cornst.com/posts/GitHub%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E4%B8%8EGit%E8%BF%9E%E6%8E%A5GitHubPages%E4%BB%93%E5%BA%93/image-20250508143719078.png">
-<meta property="og:image" content="https://www.cornst.com/posts/GitHub%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E4%B8%8EGit%E8%BF%9E%E6%8E%A5GitHubPages%E4%BB%93%E5%BA%93/image-20250508163319117.png">
+<meta property="og:image" content="https://www.cornst.com/posts/GitHub%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E4%B8%8EGit%E8%BF%9E%E6%8E%A5GitHubPages%E4%BB%93%E5%BA%93/image-20250610073509386.png">
+<meta property="og:image" content="https://www.cornst.com/posts/GitHub%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E4%B8%8EGit%E8%BF%9E%E6%8E%A5GitHubPages%E4%BB%93%E5%BA%93/image-20250610073607974.png">
 <meta property="article:published_time" content="2025-05-08T05:28:08.000Z">
-<meta property="article:modified_time" content="2025-05-18T09:50:08.076Z">
+<meta property="article:modified_time" content="2025-06-09T23:43:36.768Z">
 <meta property="article:author" content="shaton">
 <meta property="article:tag" content="GitHub">
 <meta property="article:tag" content="Git">
@@ -263,7 +263,7 @@
         
         
         
-          9 分钟
+          10 分钟
         
       </span>
     
@@ -474,7 +474,7 @@
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年5月18日 下午
+                    本文最后更新于 2025年6月10日 早上
                   
                 
               </p>
@@ -536,21 +536,21 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">Git Bash 执行该命令，用于测试本地 SSH 连接到 GitHub 是否成功。</span><br>ssh -T git@github.com<br></code></pre></td></tr></table></figure>
 
 <p>如果 SSH 连接成功，GitHub 会返回一个欢迎信息。</p>
-<p><img src="GitHub%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E4%B8%8EGit%E8%BF%9E%E6%8E%A5GitHubPages%E4%BB%93%E5%BA%93/image-20250508143719078.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="GitHub%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E4%B8%8EGit%E8%BF%9E%E6%8E%A5GitHubPages%E4%BB%93%E5%BA%93/image-20250610073509386.png" srcset="/img/loading.gif" lazyload></p>
 <h1 id="2-Git-连接-GitHub-Pages-仓库"><a href="#2-Git-连接-GitHub-Pages-仓库" class="headerlink" title="2. Git 连接 GitHub Pages 仓库"></a>2. Git 连接 GitHub Pages 仓库</h1><p>之前，基于 hexo-deployer-git 部署本地静态博客到 GitHub Pages 时，Git 采用【HTTPS+密码】的方式连接 GitHub Pages 仓库。现在，连接方式可改为【HTTPS+token】或【SSH】，推荐【SSH】。</p>
 <hr>
 <p>【HTTPS+密码】</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># _config.yml</span><br><span class="hljs-attr">deploy:</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>  <span class="hljs-attr">repo:</span> <span class="hljs-string">https://github.com/NingC5/NingC5.github.io.git</span>			<span class="hljs-comment"># 采用【HTTPS+密码】</span><br>  <span class="hljs-attr">branch:</span> <span class="hljs-string">main</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># _config.yml</span><br><span class="hljs-attr">deploy:</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>  <span class="hljs-attr">repo:</span> <span class="hljs-string">https://github.com/&lt;username&gt;/&lt;username&gt;.github.io.git</span>		<span class="hljs-comment"># 【HTTPS+密码】</span><br>  <span class="hljs-attr">branch:</span> <span class="hljs-string">main</span><br></code></pre></td></tr></table></figure>
 
 <hr>
 <p>【HTTPS+token】</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># _config.yml</span><br><span class="hljs-attr">deploy:</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>  <span class="hljs-attr">repo:</span> <span class="hljs-string">https://&lt;token&gt;@github.com/NingC5/NingC5.github.io.git</span>	<span class="hljs-comment"># 采用【HTTPS+token】</span><br>  <span class="hljs-attr">branch:</span> <span class="hljs-string">main</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># _config.yml</span><br><span class="hljs-attr">deploy:</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>  <span class="hljs-attr">repo:</span> <span class="hljs-string">https://&lt;token&gt;@github.com/&lt;username&gt;/&lt;username&gt;.github.io.git</span> <span class="hljs-comment"># 【HTTPS+token】</span><br>  <span class="hljs-attr">branch:</span> <span class="hljs-string">main</span><br></code></pre></td></tr></table></figure>
 
 <hr>
 <p>【SSH】</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># _config.yml</span><br><span class="hljs-attr">deploy:</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>  <span class="hljs-attr">repo:</span> <span class="hljs-string">git@github.com:NingC5/NingC5.github.io.git</span>			<span class="hljs-comment"># 采用【SSH】，SSH见下图</span><br>  <span class="hljs-attr">branch:</span> <span class="hljs-string">main</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># _config.yml</span><br><span class="hljs-attr">deploy:</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>  <span class="hljs-attr">repo:</span> <span class="hljs-string">git@github.com:&lt;username&gt;/&lt;username&gt;.github.io.git</span>			<span class="hljs-comment"># 【SSH】，SSH见下图</span><br>  <span class="hljs-attr">branch:</span> <span class="hljs-string">main</span><br></code></pre></td></tr></table></figure>
 
-<p><img src="GitHub%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E4%B8%8EGit%E8%BF%9E%E6%8E%A5GitHubPages%E4%BB%93%E5%BA%93/image-20250508163319117.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="GitHub%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E4%B8%8EGit%E8%BF%9E%E6%8E%A5GitHubPages%E4%BB%93%E5%BA%93/image-20250610073607974.png" srcset="/img/loading.gif" lazyload></p>
 <h1 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h1><ol>
 <li>SSH</li>
 </ol>
@@ -637,7 +637,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年5月18日</div>
+          <div>2025年6月10日</div>
         </div>
       
       
