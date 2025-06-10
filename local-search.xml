@@ -4,19 +4,6 @@
   
   
   <entry>
-    <title></title>
-    <link href="/posts/%E8%8D%89%E7%A8%BF.html"/>
-    <url>/posts/%E8%8D%89%E7%A8%BF.html</url>
-    
-    <content type="html"><![CDATA[<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">title:</span> <span class="hljs-string">草稿</span><br><span class="hljs-attr">author:</span> <span class="hljs-string">shaton</span><br><span class="hljs-attr">date:</span> <span class="hljs-number">2025-06-09 12:12:12</span><br><span class="hljs-attr">categories:</span><br><span class="hljs-bullet">-</span> <span class="hljs-string">博客搭建与运维指南</span><br><span class="hljs-attr">category_bar:</span> <span class="hljs-literal">true</span><br><span class="hljs-attr">category_order:</span> <span class="hljs-number">10</span><br><span class="hljs-attr">hide:</span> <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure><ol><li>后端云数据库</li></ol><p>MongoDB Atlas 是云端的 MongoDB 数据库平台。申请 MongoDB Atlas 账号，创建 MongoDB 数据库，以存储 Twikoo 的评论信息。Twikoo 前端应用通过 MongoDB 连接字符串连接到该数据库。</p><ol start="2"><li><p>前端云应用，并连接数据库</p></li><li><p><strong>申请并登录Netlify账号，创建一个Team</strong><br>作用：注册Netlify平台账号，用于托管和部署你的静态网站或前端应用。建立团队（Team）便于协作和管理多个项目。</p></li><li><p><strong>打开twikoojs&#x2F;twikoo-netlify仓库，点击fork将仓库fork到自己的账号下</strong><br>作用：复制一份Twikoo的部署模板到你的GitHub账号，方便你进行个性化配置和部署。</p></li><li><p><strong>回到Netlify，点击Add new site - Import an existing project</strong><br>作用：开始在Netlify上部署你的项目，选择已存在的Git仓库作为源。</p></li><li><p><strong>点击Deploy with GitHub，授权后选择刚刚fork的twikoo-netlify项目</strong><br>作用：将你的仓库与Netlify连接，启动自动化部署流程。</p></li><li><p><strong>点击Add environment variables - New variable，设置MONGODB_URI，部署</strong><br>作用：配置环境变量，将你的MongoDB连接字符串传递给部署的应用，使其能连接到数据库。</p></li><li><p><strong>部署完成后，设置自定义域名（可选）</strong><br>作用：为你的站点配置更易记、更专业的地址（如 <code>https://yourname.netlify.app</code>），提升品牌形象。</p></li><li><p><strong>进入Site overview，点击链接验证环境配置是否正确</strong><br>作用：确认部署成功且环境配置正确，确保云函数正常运行。</p></li><li><p><strong>云函数地址（含 <code>https://</code> 和 <code>/functions/twikoo</code> 后缀）即为你的环境ID</strong><br>作用：获得用于后续API调用或集成的云函数入口地址，便于后续开发或配置。</p></li><li><p>Twikoo 云应用，并连接云数据库</p></li></ol><p>Netlify 部署 Twikoo，使得 Twikoo 的函数逻辑（评论的存储、读取、管理等后端逻辑）交由 Netlify 的云函数（Serverless Functions）实现。云函数作为后端 API，处理评论的存储和读取请求。</p><ol start="3"><li><p>前端调用云应用提供的 API</p></li><li><p>Netlify 部署 Twikoo，并连接 MongoDB Atlas 数据库。</p></li></ol><p>简单地说，就是 Twikoo APP 上线了。页面发起评论操作请求时，云函数（Serverless Functions）处理评论请求，与 MongoDB Atlas 数据库交互。</p><ol start="3"><li><p>云函数地址设置到前端</p></li><li><p>云函数部署的版本要和前端版本一致。</p></li></ol><p>Fluid 主题使用 1.6.8 的 twikoo.all.min.js（前端），官网最新才 1.6.44（云函数部署）。</p><p>我个人使用 <code>https://cdn.jsdelivr.net/npm/twikoo@1.6.44/dist/twikoo.min.js</code>（全球 CDN）。</p><p>修改 Fluid 主题该 JS 的前缀和后缀：<br>前缀在主题配置文件底部，修改为 <code>twikoo: https://cdn.jsdelivr.net/npm/twikoo@1.6.44/dist/</code>，<br>后缀在 <code>layout\_partials\comments\twikoo.ejs</code> 第五行，<code>twikoo.all.min.js</code> 修改为 <code>twikoo.min.js</code>。</p>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>评论系统</title>
     <link href="/posts/%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F.html"/>
     <url>/posts/%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F.html</url>
