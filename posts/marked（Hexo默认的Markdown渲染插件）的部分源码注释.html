@@ -316,7 +316,7 @@
         aria-expanded="true"
       >
         博客搭建与运维指南
-        <span class="list-group-count">(13)</span>
+        <span class="list-group-count">(14)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -424,6 +424,15 @@
            class="list-group-item list-group-item-action
            ">
           <span class="category-post">音乐播放器APlayer</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F.html" title="评论系统"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">评论系统</span>
         </a>
       
     
@@ -596,6 +605,39 @@
             </div>
 
             
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="twikoo"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/twikoo@1.6.44/dist/twikoo.min.js', function() {
+        var options = Object.assign(
+          {"envId":"https://twikoo-shaton.netlify.app/.netlify/functions/twikoo","region":"ap-shanghai","path":"window.location.pathname"},
+          {
+            el: '#twikoo',
+            path: 'window.location.pathname',
+            onCommentLoaded: function() {
+              Fluid.utils.listenDOMLoaded(function() {
+                var imgSelector = '#twikoo .tk-content img:not(.tk-owo-emotion)';
+                Fluid.plugins.imageCaption(imgSelector);
+                Fluid.plugins.fancyBox(imgSelector);
+              });
+            }
+          }
+        )
+        twikoo.init(options)
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
           </article>
         </div>
       </div>
