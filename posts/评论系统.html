@@ -28,10 +28,13 @@
 <meta property="og:site_name" content="shaton沙桐">
 <meta property="og:description" content="评论系统评论系统介绍见以下连接：  第三方评论系统推荐 - Shuibaco • 水八口 第三方评论之 2023 年版 - Shuibaco • 水八口 更换评论系统——从 Disqus 到 Waline - Shuibaco • 水八口 换回原生评论系统，以及近期折腾总结 - Shuibaco • 水八口   静态博客评论系统的比较及选择 | 闲云野鹤   第三方评论系统之我见 - 云游君的小站">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://twikoo.cornst.com/images/blog/2025/06/%E9%9D%92%E6%98%A5%E6%B4%BB%E5%8A%9B/16y588-km.jpg">
+<meta property="og:image" content="https://pub-6b8fc18c45594c3fa887438d3574debe.r2.dev/images/blog/2025/06/%E9%9D%92%E6%98%A5%E6%B4%BB%E5%8A%9B/16y588-km.jpg">
 <meta property="article:published_time" content="2025-06-08T04:12:12.000Z">
-<meta property="article:modified_time" content="2025-06-10T14:00:00.093Z">
+<meta property="article:modified_time" content="2025-06-11T13:56:07.657Z">
 <meta property="article:author" content="shaton">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://twikoo.cornst.com/images/blog/2025/06/%E9%9D%92%E6%98%A5%E6%B4%BB%E5%8A%9B/16y588-km.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -245,7 +248,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          723 字
+          1.9k 字
         
       </span>
     
@@ -256,7 +259,7 @@
         
         
         
-          7 分钟
+          16 分钟
         
       </span>
     
@@ -476,7 +479,7 @@
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年6月10日 晚上
+                    本文最后更新于 2025年6月11日 晚上
                   
                 
               </p>
@@ -527,20 +530,91 @@
 </ul>
 <p>个人说明：</p>
 <ul>
-<li>serverless 和 vps 就不介绍了，Wiki 吧！总不能把个人计算机当服务器使用吧，一直开着岂不要榨干 QAQ</li>
-<li>如果选择 artalk 评论系统，推荐使用 render 部署。虽然 railway 和 render 都支持 Docker 容器，但 railway 已取消 free plan。或者，薅点免费或低费 vps。</li>
+<li>serverless 和 vps 就不介绍了，Wiki 吧！总不能把个人计算机当服务器使用吧，一直开着岂不是要榨干 QAQ</li>
+<li>如果选择 artalk 评论系统，推荐使用 render 部署。虽然 railway 和 render 都支持 Docker 容器，但 railway 已取消 free plan。或者，薅点免费或低费的 vps。</li>
 <li>太懒了，Fluid 主题已集成 twikoo，那就暂时使用它吧！官网部署方式介绍：<a target="_blank" rel="noopener" href="https://twikoo.js.org/backend.html#%E8%85%BE%E8%AE%AF%E4%BA%91%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2">云函数部署 | Twikoo 文档</a></li>
 </ul>
 <h1 id="Twikoo-评论系统"><a href="#Twikoo-评论系统" class="headerlink" title="Twikoo 评论系统"></a>Twikoo 评论系统</h1><p><a target="_blank" rel="noopener" href="https://twikoo.js.org/quick-start.html">快速上手 | Twikoo 文档</a></p>
 <p>按照官方文档快速上手吧！</p>
-<p>个人是按官网教程做的：使用 MongoDB Atlas 云数据库，使用 Netlify 部署 twikoo 并连接该数据库。</p>
+<p>个人是按官网教程做的：使用 MongoDB Atlas 云数据库，使用 Netlify 部署 Twikoo 并连接该数据库，前端启用 Twikoo 并使得版本与云函数一致。</p>
 <hr>
 <p>（或者，有时间，我再复述一遍官网流程？）</p>
 <hr>
-<p>【困惑】：MongoDB Atlas 云数据库怎么一激活就耗了 120 MB！还没使用云函数连接呢！免费额度才 500 MB！</p>
+<p>【困惑】：MongoDB Atlas 云数据库怎么一激活就耗了 120 MB！还没使用云函数连接呢！免费额度才 500 MB！可能是它莫名创建的代理 IP 偷走的流量？</p>
+<h1 id="Twikoo-评论图床"><a href="#Twikoo-评论图床" class="headerlink" title="Twikoo 评论图床"></a>Twikoo 评论图床</h1><p>Twikoo 默认支持的图床有限，但支持云开发图床，自定义图床吧！</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.oopseek.cn/2025/03/07/twikoo_image_service_based_on_python/">基于Python的Twikoo图床简单实现 - Pong’s BLOG</a></p>
+</blockquote>
+<p>图床有很多免费方案，个人倾向使用 telegram 做图床，但是就给出 CloudFlare R2 的图床链接吧！</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.pseudoyu.com/zh/2024/06/30/free_image_hosting_system_using_r2_webp_cloud_and_picgo">从零开始搭建你的免费图床系统（Cloudflare R2 + WebP Cloud）</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.pseudoyu.com/zh/2024/07/02/protect_your_image_using_webp_and_cloudflare_waf">使用 WebP Cloud 与 Cloudflare WAF 为你的图床添加隐私和版权保护</a></li>
+<li><a target="_blank" rel="noopener" href="https://yfi.moe/post/manage-website-images">把 S3 ( R2 &#x2F; OSS &#x2F; COS … ) 作为图床使用的图片管理方案 - Yunfi</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.xingchencloud.top/p/e613c591.html">使用CloudFlare-R2-PicList搭建一个免费的高速图床 | 叶玖洛の小站</a></li>
+</ul>
+<p>链接 2 有图片压缩的讨论，建议看看。</p>
+<p>提供两种方案：</p>
+<ol>
+<li>Cloudflare R2 + <a target="_blank" rel="noopener" href="https://piclist.cn/">PicList</a> + <a target="_blank" rel="noopener" href="https://tinify.com/developers">tinypng</a></li>
+<li>Cloudflare R2 + <a target="_blank" rel="noopener" href="https://docs.iport.yfi.moe/zh/">S3 Image Port</a> [+ <a target="_blank" rel="noopener" href="https://webp.se/">WebP Cloud</a>]</li>
+</ol>
+<blockquote>
+<p>Tip：教程请看 PicList 和 S3 Image Port 官网，足够清晰，或者看上方链接。</p>
+</blockquote>
+<p>各部分说明：</p>
+<ul>
+<li>Cloudflare R2：图片仓库。要求：① <a target="_blank" rel="noopener" href="https://dash.cloudflare.com/">Cloudflare</a> 账号；② 个人域名，并托管给 Cloudflare。</li>
+<li>PicList：基于 PicGo 的最新完美兼容版，多平台云存储管理，图片预处理。PicList 适配多图床，图片预处理功能丰富；但是它只能管理经由自身上传的图片，且查询默认的匹配度要求太高。</li>
+<li>tinypng：根据图片选择合适的压缩比，能大幅缩小图片体积而较小损失图片质量。它提供 500 次&#x2F;月的免费额度。PicList 采用统一压缩配置压缩所有图片， 安装 tinypng 插件，以解决其压缩不智能的缺陷。</li>
+<li>S3 Image Port：无状态的 S3 图片管理面板，适用于 S3 和兼容 S3 的服务。S3IP 仅适配 S3，图片预处理也仅限压缩；但是它能管理存储桶中所有图片，且支持模糊查询。</li>
+<li>WebP Cloud：类 CDN 的图片代理 SaaS 服务。其优点是大幅缩小图片体积而几乎无损画质。其他功能，比如，缓存、添加水印、图片滤镜、自定义 Header 等配置选项。它提供 Free Plan，Daily request quota 3000 次，cache 200 Mib。</li>
+</ul>
+<hr>
+<p>Cloudflare 付款方式可采用 Paypal：<a target="_blank" rel="noopener" href="https://xmmblog.com/register-individual-paypal-account/">如何注册PayPal个人账户，需要哪些信息？（2025更新） - Xmmblog</a></p>
+<hr>
+<p>PicList-2.9.8 版本，「设置上传路径」、「设置自定义节点」、「设置自定义域名」三个参数的说明：</p>
+<ul>
+<li><p>图片上传路径为：「自定义节点」+「上传路径」；上传图片后自动复制的 URL 为：「自定义域名」+「上传路径」。前者为图片真实路径，后者为粘贴板 URL，后者需要与前者一致，否则获取不到图片。</p>
+</li>
+<li><p>设置上传路径： <code>images/comments/&#123;year&#125;/&#123;month&#125;/&#123;fileName&#125;/&#123;timestamp&#125;.&#123;extName&#125;</code>，给评论区用，足够分明。</p>
+</li>
+<li><p>设置自定义节点：该参数设置为 R2 存储桶的 S3 Endpoint，<code>https://xxx.r2.cloudflarestorage.com</code>，路径到 <code>.com</code> 为止即可。</p>
+</li>
+<li><p>设置自定义域名：该参数设置为 R2 存储桶的自定义域名即可，刚好与 Endpoint 一致，无需后补桶名目录。</p>
+</li>
+<li><p>若 Endpoint 结尾 <code>.com</code>，比如 <code>.com/blog</code>，存储桶会创建 blog 目录。这样的话，自定义域名也需后补 <code>/blog</code>，否则粘贴板 URL 需要手动补充 <code>/blog</code> 路径。但是，设置自定义域名后补参数会导致 PicList 删除云端图片失效（需要在设置里开启）。</p>
+</li>
+<li><p>存储桶分目录可以交由「上传路径」完成。如果你有分路径上传需求，在 PicList 配置置两个除「设置上传路径」和「图床配置名」不同，其余参数完全相同的 AWS S3 图床，上传时自行选择图床即可。</p>
+</li>
+</ul>
+<hr>
+<p>PicList 使用 tinypng 插件：<a target="_blank" rel="noopener" href="https://www.lxchapu.com/posts/build-picbed-with-cloudflare-r2/">用 Cloudflare R2 搭建图床 - 柃夏chapu</a></p>
+<p>“<a target="_blank" rel="noopener" href="https://iport.yfi.moe/">https://iport.yfi.moe</a>“</p>
 <h1 id="Twikoo-评论样式"><a href="#Twikoo-评论样式" class="headerlink" title="Twikoo 评论样式"></a>Twikoo 评论样式</h1><p><a target="_blank" rel="noopener" href="https://blog.liushen.fun/posts/73765344/">twikoo 仿段落评论，实现快速评论功能 | LiuShen’s Blog</a></p>
-<h1 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h1><p>【Cloudflare worker 部署 twikoo】<a target="_blank" rel="noopener" href="https://blog.wuzm219.cn/2024/12/hexo-add-twikoo/#%E9%83%A8%E7%BD%B2Twikoo">Hexo 博客系列（二） 为你的博客添加评论系统 | 一梦一孤舟</a></p>
+<p>测试1：</p>
+<p><img src="https://twikoo.cornst.com/images/blog/2025/06/%E9%9D%92%E6%98%A5%E6%B4%BB%E5%8A%9B/16y588-km.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>测试2：</p>
+<p><img src="https://pub-6b8fc18c45594c3fa887438d3574debe.r2.dev/images/blog/2025/06/%E9%9D%92%E6%98%A5%E6%B4%BB%E5%8A%9B/16y588-km.jpg" srcset="/img/loading.gif" lazyload></p>
+<h1 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h1><p>Cloudflare worker 部署 twikoo 虽然功能受限，但冷启动快。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/twikoojs/twikoo-cloudflare">twikoojs&#x2F;twikoo-cloudflare</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.wuzm219.cn/2024/12/hexo-add-twikoo/#%E9%83%A8%E7%BD%B2Twikoo">Hexo 博客系列（二） 为你的博客添加评论系统 | 一梦一孤舟</a></p>
+<hr>
+<p><a target="_blank" rel="noopener" href="https://blog.starsharbor.com/posts/cloud-photo-album/">何为图床｜图床选择、使用小汇总 | ❖星港◎Star☆</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.anheyu.com/posts/2785.html">我的图床方案 | 安知鱼</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.mahaofei.com/post/cloudflare-r2">Cloudflare R2 个人图床 | 马浩飞丨博客</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.vvhan.com/article/zycs-img-cloud-from-cloudflare-pages">骤雨重山无限存储图床托管于（Cloudflare Pages） | 韩小韩博客</a></p>
+<hr>
+<p><a target="_blank" rel="noopener" href="https://www.panjinbo.com/blogs/system-design-twikoo-comment/">【系统设计】用 AWS 部署 Twikoo 评论和说说系统 · Jinbo Pan</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.zrf.me/p/Notes-Twikoo-Piclist-R2/">Twikoo评论+PicList+R2图床：博客评论图片上传与CDN加速最佳实践 | 周润发的博客</a></p>
 <p><a target="_blank" rel="noopener" href="https://thirdshire.com/twikoo-tutorial/">在静态博客里添加Twikoo评论系统，并配置邮箱和TG通知</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.seayj.cn/articles/86fb3576/">记录一次 Twikoo 修复工作 | SeaEpoch</a></p>
+<p><a target="_blank" rel="noopener" href="https://poiblog.com/archives/fIA5JMjg">【实用Docker项目】Twikoo 通过私有部署兰空图床实现图片上传 | Secret Home</a></p>
+<p><a target="_blank" rel="noopener" href="https://cuiyuhao.com/posts/9d5b9135/">解决hexo博客不能显示图床图片问题 - CuiYuhao’s Blog</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.cnkj.site/archives/1697175593762?preview-theme=theme-stellar">lsky-pro兰空图床自动转化WEBP图片 - 新都在</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.yuhuizhen.com/2022/11/27/image-bed/index.html#%E8%87%AA%E5%8A%A8%E5%8E%8B%E7%BC%A9%E6%8F%92%E4%BB%B6">完美解决！使用 Github 创造一个带有 CDN 加速的完美图床，并配合工具实现图片水印和压缩 | JasonYu</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.allbs.cn/posts/36172/">博客评论系统Twikoo本地化部署 | 共赴良策</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.lqbby.com/tags/%E5%9B%BE%E5%BA%8A">标签: 图床 | 小技巧日常分享</a></p>
+<p>【后记，感兴趣】<a target="_blank" rel="noopener" href="https://blog.esing.dev/2024/08/29/cloudflare-r2-ims/">使用 Cloudflare R2 存储桶搭建图床 | Esing 的小站</a></p>
 
                 
               </div>
@@ -598,7 +672,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年6月10日</div>
+          <div>2025年6月11日</div>
         </div>
       
       
