@@ -54,7 +54,7 @@
 <meta property="og:image" content="https://www.cornst.com/posts/GitHubPages%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D/image-20250517034203823.png">
 <meta property="og:image" content="https://www.cornst.com/posts/GitHubPages%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D/image-20250518180810888.png">
 <meta property="article:published_time" content="2025-04-29T14:47:02.000Z">
-<meta property="article:modified_time" content="2025-06-10T20:36:50.209Z">
+<meta property="article:modified_time" content="2025-06-19T03:47:19.365Z">
 <meta property="article:author" content="shaton">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://www.cornst.com/posts/GitHubPages%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D/image-20250514164016855.png">
@@ -271,7 +271,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.2k 字
+          3.3k 字
         
       </span>
     
@@ -282,7 +282,7 @@
         
         
         
-          27 分钟
+          28 分钟
         
       </span>
     
@@ -341,7 +341,7 @@
         aria-expanded="true"
       >
         博客搭建与运维指南
-        <span class="list-group-count">(14)</span>
+        <span class="list-group-count">(15)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -479,6 +479,15 @@
         </a>
       
     
+      
+      
+        <a href="/posts/%E6%9C%8D%E5%8A%A1%E5%99%A8.html" title="服务器"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">服务器</span>
+        </a>
+      
+    
   </div>
 
         
@@ -502,7 +511,7 @@
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年6月11日 凌晨
+                    本文最后更新于 2025年6月19日 中午
                   
                 
               </p>
@@ -590,7 +599,8 @@
 <li>添加 DNS 记录是生效于 Spaceship 名称服务器。可以更改 NS，输入 NS 地址，在 NS 处添加 DNS 记录。</li>
 </ol>
 <p><img src="GitHubPages%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D/image-20250514171001461.png" srcset="/img/loading.gif" lazyload></p>
-<h2 id="1-3-WHOIS-服务"><a href="#1-3-WHOIS-服务" class="headerlink" title="1.3 WHOIS 服务"></a>1.3 WHOIS 服务</h2><p>域名注册商一般都会提供 WHOIS 服务（付费&#x2F;免费），该服务十分重要。如果未采用该服务，则 WHOIS 数据库会公开域名注册数据目录的所有数据，这会暴露域名所有者的私人信息（name、邮箱等）。</p>
+<h2 id="1-3-WHOIS-服务"><a href="#1-3-WHOIS-服务" class="headerlink" title="1.3 WHOIS 服务"></a>1.3 WHOIS 服务</h2><p>【注】：年轻了，国内服务商是鬼精，提供的查询服务是骗人的，其并未真正执行 RDDS。</p>
+<p>域名注册商一般都会提供 WHOIS 服务（付费&#x2F;免费），该服务十分重要。如果未采用该服务，则 WHOIS 数据库会公开域名注册数据目录的所有数据，这会暴露域名所有者的私人信息（name、邮箱等）。</p>
 <p>近年来，ICANN 致力于使用 RDDS 取代 WHOIS 服务。查询者想获取域名所有者的私人信息必须联系域名注册商，域名注册商自行决定是否公开域名所有者的私人信息。</p>
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://superuser.com/questions/1366161/what-is-rdds-service-and-how-to-query-the-rdds-service">dns - What is RDDS service and how to query the RDDS service - Super User</a></p>
@@ -628,7 +638,10 @@
 <li><a target="_blank" rel="noopener" href="https://r2wind.cn/articles/20220214.html">群晖部署SSL证书实现HTTPS安全访问 | 归去如风</a></li>
 <li><a target="_blank" rel="noopener" href="https://help.aliyun.com/zh/ssl-certificate/support/resolve-certificate-deployment-issues-based-on-browser-prompts#48a828f4f39lx">根据浏览器错误提示解决证书部署问题_数字证书管理服务（原SSL证书）(SSL Certificate)-阿里云帮助中心</a></li>
 </ul>
-<p>HTTPS 是 HTTP 协议结合 SSL&#x2F;TLS 协议实现的安全版本。URL 中的 “HTTPS” 即表明该网站实施 SSL&#x2F;TLS 加密。</p>
+<p>HTTPS 是 HTTP 的安全版本，它通过 <strong>SSL&#x2F;TLS 加密</strong>来保护数据在客户端和服务器之间的传输。</p>
+<blockquote>
+<p>Tip：网站 URL以 “https:&#x2F;&#x2F;“ 开头，其 “s” 即表明该网站实施 SSL&#x2F;TLS 加密。</p>
+</blockquote>
 <p>网站部署 TLS 证书（一种数字证书）以保障用户与网站安全地连接：</p>
 <ol>
 <li>身份验证：确保用户连接到的是网站的真实身份，防止钓鱼或伪造网站。</li>
@@ -637,7 +650,7 @@
 </ol>
 <p>向证书颁发机构（CA）申请 TLS 证书，然后在网站的源站服务器上安装并激活证书。激活证书后，该网站便可通过 HTTPS 进行加载，并且往返于该网站的所有流量都将受到加密和保护。</p>
 <ul>
-<li>申请 DV 级别的免费证书即可，有效期为 3 个月，到期手动续约。腾讯云和阿里云等都提供该服务，但是网站需要备案。</li>
+<li>申请 DV 级别的免费证书即可，有效期为 3 个月，到期手动续约。腾讯云和阿里云等都提供该服务，但网站需要备案。</li>
 <li>Cloudflare 提供免费的 TLS 证书，受 Cloudflare 保护的网站（即使用 Cloudflare 托管域名解析）只需点击几次即可激活 TLS。</li>
 </ul>
 <h1 id="2-DNS-及-Github-Pages-设置"><a href="#2-DNS-及-Github-Pages-设置" class="headerlink" title="2. DNS 及 Github Pages 设置"></a>2. DNS 及 Github Pages 设置</h1><blockquote>
@@ -653,8 +666,8 @@
 <blockquote>
 <p>Tips：</p>
 <ul>
-<li>此处给出的 A 记录和 CNAME 记录就是“配置正确”。当然，CNAME 记录设置为 www → apex domain，效果一样。</li>
-<li>GitHub Pages 自动重定向到站点绑定的域名。建议站点绑定子域，而不是 apax domain，<strong>个人不建议使用裸域</strong>。</li>
+<li>此处给出的 A 记录和 CNAME 记录即为 “配置正确”。此处，CNAME 记录也可设置为 www → apex domain，也能达到相同的效果。</li>
+<li>GitHub Pages 自动重定向到站点绑定的域名。建议站点绑定子域，<strong>个人不建议直接使用裸域（apax domain）</strong>。</li>
 </ul>
 <p><a target="_blank" rel="noopener" href="https://www.quanzhan.co/archives/159">网站域名带www和不带有什么区别？ - luch的博客</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/echo1937/p/8692421.html">为什么不建议给域名裸域添加CNAME记录 - 又是火星人 - 博客园</a></p>
@@ -662,7 +675,7 @@
 </blockquote>
 <p>这样，三个域名都能访问到部署在 Github Pages 的静态博客，而 <code>shaton.online</code>、<code>&lt;username&gt;.github.io</code> 会重定向到 <code>www.shaton.online</code>。</p>
 <blockquote>
-<p>Tip：如果仅希望 blog 子域访问该站点，请设置该站点绑定 blog 子域。添加 CNAME 记录：blog → <code>&lt;username&gt;.github.io</code>。</p>
+<p>Tip：如果仅希望 blog 子域访问该站点，请设置该站点绑定 blog 子域。添加 CNAME 记录：blog → <code>&lt;username&gt;.github.io</code>。<code>&lt;username&gt;.github.io</code> 会重定向到 <code>blog.shaton.online</code>。</p>
 </blockquote>
 <p>设置完后，cmd.exe 执行命令 <code>ipconfig /flushdns</code> ，刷新本机 DNS 缓存。</p>
 <blockquote>
@@ -808,7 +821,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年6月11日</div>
+          <div>2025年6月19日</div>
         </div>
       
       

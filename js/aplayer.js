@@ -72,6 +72,16 @@
           artist: 'KOKIA',
           url: 'https://music.163.com/song/media/outer/url?id=27872014.mp3',
           cover: '/image/post/girl.jpg'
+        }, {
+          name: '天之顶',
+          artist: '王羚柔',
+          url: 'https://music.163.com/song/media/outer/url?id=301107.mp3',
+          cover: '/image/post/girl.jpg'
+        }, {
+          name: '不想',
+          artist: '王羚柔',
+          url: 'https://music.163.com/song/media/outer/url?id=301094.mp3',
+          cover: '/image/post/girl.jpg'
         }
       ]
     });
