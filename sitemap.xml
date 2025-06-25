@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.cornst.com/posts/Hexo%E3%81%A8GitHubPages%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2.html</loc>
+    <loc>https://www.cornst.com/posts/2.server.html</loc>
     
     <lastmod>2025-06-25</lastmod>
     
@@ -11,9 +11,9 @@
   </url>
   
   <url>
-    <loc>https://www.cornst.com/posts/2.server.html</loc>
+    <loc>https://www.cornst.com/posts/Hexo%E3%81%A8GitHubPages%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2.html</loc>
     
-    <lastmod>2025-06-21</lastmod>
+    <lastmod>2025-06-25</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
