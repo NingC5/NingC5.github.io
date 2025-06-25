@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.cornst.com/posts/Hexo%E3%81%A8GitHubPages%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2.html</loc>
+    
+    <lastmod>2025-06-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.cornst.com/posts/2.server.html</loc>
     
     <lastmod>2025-06-21</lastmod>
@@ -50,15 +59,6 @@
     <loc>https://www.cornst.com/posts/%E7%BD%91%E7%AB%99%E9%98%B2%E6%8A%A4%EF%BC%9ACloudflare.html</loc>
     
     <lastmod>2025-06-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.cornst.com/posts/Hexo%E3%81%A8GitHubPages%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2.html</loc>
-    
-    <lastmod>2025-06-14</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
