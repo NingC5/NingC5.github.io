@@ -28,10 +28,15 @@
 <meta property="og:site_name" content="shaton">
 <meta property="og:description" content="评论系统评论系统介绍见以下连接：  第三方评论系统推荐 - Shuibaco • 水八口 第三方评论之 2023 年版 - Shuibaco • 水八口 更换评论系统——从 Disqus 到 Waline - Shuibaco • 水八口 换回原生评论系统，以及近期折腾总结 - Shuibaco • 水八口   静态博客评论系统的比较及选择 | 闲云野鹤   第三方评论系统之我见 - 云游君的小站">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.cornst.com/posts/%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/image-20250726153715377.png">
+<meta property="og:image" content="https://www.cornst.com/posts/%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/image-20250726153832512.png">
+<meta property="og:image" content="https://www.cornst.com/posts/%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/image-20250726153559113.png">
+<meta property="og:image" content="https://www.cornst.com/posts/%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/image-20250726160303098.png">
 <meta property="article:published_time" content="2025-06-08T04:12:12.000Z">
-<meta property="article:modified_time" content="2025-06-19T14:00:54.685Z">
+<meta property="article:modified_time" content="2025-10-03T10:25:54.873Z">
 <meta property="article:author" content="shaton">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.cornst.com/posts/%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/image-20250726153715377.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -75,8 +80,8 @@
 
 
   
-<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css">
-<link rel="stylesheet" href="https://jsd.cdn.zzko.cn/gh/EmoryHuang/BlogBeautify@1.1/gradient.css">
+<link rel="stylesheet" href="//lib.baomitu.com/lxgw-wenkai-screen-webfont/1.7.0/lxgwwenkaigbscreen.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/gradient.css">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/shubiao.css">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/gundongtiao.css">
 <link rel="stylesheet" href="//lib.baomitu.com/aplayer/1.10.1/APlayer.min.css">
@@ -115,7 +120,7 @@
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>shaton沙桐的乐色桶</strong>
+      <strong>garbage bin of shaton</strong>
     </a>
 	
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -245,7 +250,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.2k 字
+          2.4k 字
         
       </span>
     
@@ -256,7 +261,7 @@
         
         
         
-          19 分钟
+          20 分钟
         
       </span>
     
@@ -476,7 +481,7 @@
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年6月19日 晚上
+                    本文最后更新于 2025年10月3日 晚上
                   
                 
               </p>
@@ -542,11 +547,12 @@
 <hr>
 <p>（或者，有时间，我再复述一遍官网流程？）</p>
 <hr>
-<p>【惑】MongoDB Atlas 云数据库怎么一激活就耗了 120 MB！还没使用云函数连接呢！免费额度才 500 MB！可能是它莫名创建的代理 IP 偷走的流量？</p>
+<p>「惑」MongoDB Atlas 云数据库怎么一激活就耗了 120 MB！还没使用云函数连接呢！免费额度才 500 MB！可能是它莫名创建的代理 IP 偷走的流量？</p>
 <h1 id="Twikoo-评论图床"><a href="#Twikoo-评论图床" class="headerlink" title="Twikoo 评论图床"></a>Twikoo 评论图床</h1><p>Twikoo 默认支持的图床有限，但支持云开发图床，自定义图床吧！</p>
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://blog.oopseek.cn/2025/03/07/twikoo_image_service_based_on_python/">基于Python的Twikoo图床简单实现 - Pong’s BLOG</a></p>
 </blockquote>
+<p>「注」评论区暂不支持图床！</p>
 <h2 id="Cloudflare-R2"><a href="#Cloudflare-R2" class="headerlink" title="Cloudflare R2"></a>Cloudflare R2</h2><p>图床有很多免费方案，比如，Github 仓库、telegram 等。但还是推荐直接使用免费、稳定、且足够个人使用的  Cloudflare R2 存储桶吧！</p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://www.pseudoyu.com/zh/2024/06/30/free_image_hosting_system_using_r2_webp_cloud_and_picgo">从零开始搭建你的免费图床系统（Cloudflare R2 + WebP Cloud）</a></li>
@@ -578,25 +584,23 @@
 <p>PicList 使用 tinypng 插件：<a target="_blank" rel="noopener" href="https://www.lxchapu.com/posts/build-picbed-with-cloudflare-r2/">用 Cloudflare R2 搭建图床 - 柃夏chapu</a></p>
 <h2 id="PicList-2-9-8-参数说明"><a href="#PicList-2-9-8-参数说明" class="headerlink" title="PicList-2.9.8 参数说明"></a>PicList-2.9.8 参数说明</h2><p>PicList-2.9.8 版本，「设置上传路径」、「设置自定义节点」、「设置自定义域名」三个参数的说明：</p>
 <ul>
-<li><p>图片上传路径为：「自定义节点」+「上传路径」；上传图片后自动复制的 URL 为：「自定义域名」+「上传路径」。前者为图片真实路径，后者为粘贴板 URL，后者需要与前者一致，否则获取不到图片。</p>
+<li><p>图片上传路径为：「自定义节点」+「上传路径」；上传图片后自动复制的 URL 为：「自定义域名」+「上传路径」。前者为图片真实路径，后者为粘贴板 URL，后者路径需要与前者一致，否则获取不到图片。</p>
 </li>
-<li><p>设置上传路径： <code>image/comment/&#123;year&#125;/&#123;month&#125;/&#123;fileName&#125;_&#123;timestamp&#125;.&#123;extName&#125;</code>，给评论区用，足够分明。</p>
+<li><p>设置上传路径： <code>image/comment/&#123;year&#125;/&#123;month&#125;/&#123;md5&#125;.&#123;extName&#125;</code>，给评论区用，足够分明。</p>
 </li>
 <li><p>设置自定义节点：该参数设置为 R2 存储桶的 S3 Endpoint，<code>https://xxx.r2.cloudflarestorage.com</code>，路径到 <code>.com</code> 为止即可。</p>
 </li>
-<li><p>设置自定义域名：该参数设置为 R2 存储桶的自定义域名即可，刚好与 Endpoint 一致，无需后补桶名目录。</p>
-</li>
-<li><p>若 Endpoint 结尾后补路径，比如 <code>.com/blog</code>，存储桶会创建 blog 目录。这样的话，「自定义域名」也需后补 <code>/blog</code>，否则粘贴板 URL 需要手动补充 <code>/blog</code> 路径。但是，设置「自定义域名」后补参数会导致 PicList 删除云端图片失效（需要在设置里开启）。</p>
+<li><p>设置自定义域名：该参数设置为 R2 存储桶绑定的域名，无需后补桶名目录。若 Endpoint 结尾后补路径，比如 <code>.com/blog</code>，存储桶会创建 blog 目录。这样的话，「自定义域名」也需后补 <code>/blog</code>，否则粘贴板 URL 需要手动补充 <code>/blog</code> 路径。但是，设置「自定义域名」后补参数会导致 PicList 删除云端图片这一功能（该功能需要在设置里开启）失效。</p>
 </li>
 <li><p>存储桶分目录可以交由「上传路径」完成。如果你有分路径上传需求，在 PicList 配置置两个除「设置上传路径」和「图床配置名」不同，其余参数完全相同的 AWS S3 图床，上传时自行选择图床即可。</p>
 </li>
 </ul>
-<h2 id="r2-存储桶图片显示说明"><a href="#r2-存储桶图片显示说明" class="headerlink" title="r2 存储桶图片显示说明"></a>r2 存储桶图片显示说明</h2><p>关于 r2 存储桶中的图片不显示的问题，请参考以下链接：</p>
+<h2 id="R2-存储桶图片显示说明"><a href="#R2-存储桶图片显示说明" class="headerlink" title="R2 存储桶图片显示说明"></a>R2 存储桶图片显示说明</h2><p>关于 R2 存储桶中的图片不显示的问题，请参考以下链接：</p>
 <ol>
 <li><a target="_blank" rel="noopener" href="https://community.cloudflare.com/t/problem-with-settings-cors-policies-on-r2/432339/80">Problem with settings CORS policies on R2 - Developers &#x2F; Storage - Cloudflare Community</a></li>
 <li><a target="_blank" rel="noopener" href="https://developers.cloudflare.com/r2/platform/troubleshooting/">Troubleshooting · Cloudflare R2 docs</a></li>
 </ol>
-<p>笔者碰到的是 JS 质询导致 r2 图片在 localhost 无法显示，其匹配规则将 r2 绑定的自定义域名排除在外即可。</p>
+<p>笔者碰到的是 JS 质询导致 R2 桶中的图片在 localhost 无法显示，质询的匹配规则将 R2 桶绑定的自定义域名排除在外即可。</p>
 <h1 id="即时通知：telegram"><a href="#即时通知：telegram" class="headerlink" title="即时通知：telegram"></a>即时通知：telegram</h1><p>twikoo 有新评论时，telegram 机器人发送消息提醒。</p>
 <p>设置流程如下：</p>
 <ol>
@@ -614,6 +618,32 @@
 <p>该博主已切换为 artalk。链接 ② 的鼠标右键挺有趣！但懒！</p>
 </blockquote>
 <p>不改样式！</p>
+<h1 id="Twikoo-重置密码"><a href="#Twikoo-重置密码" class="headerlink" title="Twikoo 重置密码"></a>Twikoo 重置密码</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://twikoo.js.org/faq.html#%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%E3%80%81%E9%87%8D%E7%BD%AE%E7%AE%A1%E7%90%86%E5%91%98%E5%AF%86%E7%A0%81">常见问题 | Twikoo 文档</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/twikoojs/twikoo/discussions/605">mongodb咋删除密码配置文件删除密码呀 · twikoojs&#x2F;twikoo · Discussion #605 · GitHub</a></li>
+</ul>
+<p>Twikoo 所使用的 mongodb 数据库的配置项 <code>ADMIN_PASS</code> ，记录了 Twikoo 密码。删除该键的值即可重新在 Twikoo 界面重新设置新密码。</p>
+<p>操作步骤如下：</p>
+<ol>
+<li>mongodb 有多种连接方式以设置，选择 VS Code 插件来连接即可</li>
+</ol>
+<p><img src="%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/image-20250726153715377.png" srcset="/img/loading.gif" lazyload></p>
+<ol start="2">
+<li>记下 mongodb 数据库链接的 URL</li>
+</ol>
+<p><img src="%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/image-20250726153832512.png" srcset="/img/loading.gif" lazyload></p>
+<ol start="3">
+<li>VS Code 下载并使用 <code>MongoDB for VS Code</code> 插件（叶子图标）</li>
+<li>按图操作，输入链接以连接 mongodb 数据库</li>
+</ol>
+<p><img src="%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/image-20250726153559113.png" srcset="/img/loading.gif" lazyload></p>
+<ol start="5">
+<li>删除 key <code>ADMIN_PASS</code> 后面的值即可（绿框），「Ctrl + S」保存以更新数据库数据</li>
+</ol>
+<p><img src="%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/image-20250726160303098.png" srcset="/img/loading.gif" lazyload></p>
+<ol start="6">
+<li>在 Twikoo 界面重新设置新密码</li>
+</ol>
 <h1 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h1><p>Cloudflare worker 部署 twikoo 虽然功能受限，但冷启动快。</p>
 <p><a target="_blank" rel="noopener" href="https://github.com/twikoojs/twikoo-cloudflare">twikoojs&#x2F;twikoo-cloudflare</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.wuzm219.cn/2024/12/hexo-add-twikoo/#%E9%83%A8%E7%BD%B2Twikoo">Hexo 博客系列（二） 为你的博客添加评论系统 | 一梦一孤舟</a></p>
@@ -691,7 +721,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年6月19日</div>
+          <div>2025年10月3日</div>
         </div>
       
       

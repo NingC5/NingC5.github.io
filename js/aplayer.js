@@ -25,12 +25,12 @@
         }, {
           name: 'Autumn Walk',
           artist: 'Brad Jacobsen',
-          url: 'https://music.163.com/song/media/outer/url?id=28661573.mp3',
+          url: '/music/Autumn Walk-Brad Jacobsen.mp3',
           cover: '/image/post/girl.jpg'
         }, {
           name: 'Angels',
           artist: 'Joshua Radin',
-          url: 'https://music.163.com/song/media/outer/url?id=29950496.mp3',
+          url: '/music/Angels-Joshua Radin.mp3',
           cover: '/image/post/girl.jpg'
         }, {
           name: 'Without You',
@@ -51,6 +51,11 @@
           name: 'Angel',
           artist: 'David Tao',
           url: '/music/Angel.mp3',
+          cover: '/image/post/girl.jpg'
+        }, {
+          name: 'It Hurts the Heart',
+          artist: 'Tim Walker',
+          url: '/music/It Hurts the Heart-Tim Walker.mp3',
           cover: '/image/post/girl.jpg'
         }, {
           name: 'current',
