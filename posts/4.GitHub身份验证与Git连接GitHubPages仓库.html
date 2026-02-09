@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://www.cornst.com/posts/4.GitHub%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E4%B8%8EGit%E8%BF%9E%E6%8E%A5GitHubPages%E4%BB%93%E5%BA%93/image-20250610073509386.png">
 <meta property="og:image" content="https://www.cornst.com/posts/4.GitHub%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E4%B8%8EGit%E8%BF%9E%E6%8E%A5GitHubPages%E4%BB%93%E5%BA%93/image-20250610073607974.png">
 <meta property="article:published_time" content="2025-05-08T05:28:08.000Z">
-<meta property="article:modified_time" content="2025-12-29T14:59:00.167Z">
+<meta property="article:modified_time" content="2026-01-07T16:41:49.815Z">
 <meta property="article:author" content="shaton">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="GitHub">
@@ -253,7 +253,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          885 字
+          891 字
         
       </span>
     
@@ -336,15 +336,6 @@
   <div class="category-post-list">
     
     
-      
-      
-        <a href="/posts/todo.html" title="todo"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">todo</span>
-        </a>
-      
-    
   </div>
 
           
@@ -373,10 +364,10 @@
     
       
       
-        <a href="/posts/marked%EF%BC%88Hexo%E9%BB%98%E8%AE%A4%E7%9A%84Markdown%E6%B8%B2%E6%9F%93%E6%8F%92%E4%BB%B6%EF%BC%89%E7%9A%84%E9%83%A8%E5%88%86%E6%BA%90%E7%A0%81%E6%B3%A8%E9%87%8A.html" title="marked（Hexo默认的Markdown渲染插件）的部分源码注释"
+        <a href="/posts/marked%E6%8F%92%E4%BB%B6%E7%9A%84renderer%E7%A8%8B%E5%BA%8F%E6%BA%90%E7%A0%81.html" title="marked插件的renderer程序源码"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">marked（Hexo默认的Markdown渲染插件）的部分源码注释</span>
+          <span class="category-post">marked插件的renderer程序源码</span>
         </a>
       
     
@@ -405,7 +396,7 @@
         aria-expanded="true"
       >
         正篇
-        <span class="list-group-count">(8)</span>
+        <span class="list-group-count">(9)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -489,6 +480,15 @@
         </a>
       
     
+      
+      
+        <a href="/posts/todo.html" title="99.todo"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">99.todo</span>
+        </a>
+      
+    
   </div>
 
         
@@ -516,7 +516,7 @@
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年12月29日 晚上
+                    本文最后更新于 2026年1月8日 凌晨
                   
                 
               </p>
@@ -544,7 +544,7 @@
 
 <h2 id="1-3-SSH-key"><a href="#1-3-SSH-key" class="headerlink" title="1.3 SSH key"></a>1.3 SSH key</h2><blockquote>
 <p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Secure_Shell">Secure Shell - 维基百科，自由的百科全书</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42310154/article/details/118340458">Github配置ssh key的步骤（大白话+包含原理解释）-CSDN博客</a></p>
+<p>「粗览原理即可」<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42310154/article/details/118340458">Github配置ssh key的步骤（大白话+包含原理解释）-CSDN博客</a></p>
 </blockquote>
 <p>按 <a target="_blank" rel="noopener" href="https://docs.github.com/zh/authentication/connecting-to-github-with-ssh">通过 SSH 连接到 GitHub - GitHub 文档</a> 操作即可。</p>
 <ol>
@@ -563,7 +563,7 @@
 <p>默认情况下，<code>ssh-keygen</code> 会在用户的主目录下的 <code>.ssh/</code> 目录中（<code>C:\Users\用户\.ssh\</code>）生成密钥对。默认的文件名取决于你选择的密钥类型：<code>id_type</code>（私钥）和 <code>id_type.pub</code>（公钥）。</p>
 <p>如果需要管理多个密钥，可以添加 <code>-f</code> 选项来覆盖默认行为，指定生成的密钥文件的路径和文件名。</p>
 <blockquote>
-<p>Tip：建议将密钥保存在 <code>.ssh/</code> 目录中，确保其权限，以保护你的私钥。私钥文件通常应该只有所有者有读写权限（<code>chmod 600</code>）。</p>
+<p>TIP: 建议将密钥保存在 <code>.ssh/</code> 目录中，确保其权限，以保护你的私钥。私钥文件通常应该只有所有者有读写权限（<code>chmod 600</code>）。</p>
 </blockquote>
 <ol start="3">
 <li><strong>新增 SSH 密钥到 GitHub 帐户</strong></li>
@@ -579,18 +579,18 @@
 
 <p>如果 SSH 连接成功，GitHub 会返回一个欢迎信息。</p>
 <p><img src="4.GitHub%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E4%B8%8EGit%E8%BF%9E%E6%8E%A5GitHubPages%E4%BB%93%E5%BA%93/image-20250610073509386.png" srcset="/img/loading.gif" lazyload></p>
-<h1 id="2-Git-连接-GitHub-Pages-仓库"><a href="#2-Git-连接-GitHub-Pages-仓库" class="headerlink" title="2. Git 连接 GitHub Pages 仓库"></a>2. Git 连接 GitHub Pages 仓库</h1><p>之前，基于 hexo-deployer-git 部署本地静态博客到 GitHub Pages 时，Git 采用【HTTPS+密码】的方式连接 GitHub Pages 仓库。现在，连接方式可改为【HTTPS+token】或【SSH】，推荐【SSH】。</p>
+<h1 id="2-Git-连接-GitHub-Pages-仓库"><a href="#2-Git-连接-GitHub-Pages-仓库" class="headerlink" title="2. Git 连接 GitHub Pages 仓库"></a>2. Git 连接 GitHub Pages 仓库</h1><p>之前，基于 hexo-deployer-git 部署本地静态博客到 GitHub Pages 时，Git 采用「HTTPS+密码」的方式连接 GitHub Pages 仓库。现在，连接方式可改为「HTTPS+token」或「SSH」，推荐「SSH」。</p>
 <hr>
-<p>【HTTPS+密码】</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># _config.yml</span><br><span class="hljs-attr">deploy:</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>  <span class="hljs-attr">repo:</span> <span class="hljs-string">https://github.com/&lt;username&gt;/&lt;username&gt;.github.io.git</span>		<span class="hljs-comment"># 【HTTPS+密码】</span><br>  <span class="hljs-attr">branch:</span> <span class="hljs-string">main</span><br></code></pre></td></tr></table></figure>
+<p>「HTTPS+密码」</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># _config.yml</span><br><span class="hljs-attr">deploy:</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>  <span class="hljs-attr">repo:</span> <span class="hljs-string">https://github.com/&lt;username&gt;/&lt;username&gt;.github.io.git</span>		<span class="hljs-comment"># 「HTTPS+密码」</span><br>  <span class="hljs-attr">branch:</span> <span class="hljs-string">main</span><br></code></pre></td></tr></table></figure>
 
 <hr>
-<p>【HTTPS+token】</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># _config.yml</span><br><span class="hljs-attr">deploy:</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>  <span class="hljs-attr">repo:</span> <span class="hljs-string">https://&lt;token&gt;@github.com/&lt;username&gt;/&lt;username&gt;.github.io.git</span> <span class="hljs-comment"># 【HTTPS+token】</span><br>  <span class="hljs-attr">branch:</span> <span class="hljs-string">main</span><br></code></pre></td></tr></table></figure>
+<p>「HTTPS+token」</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># _config.yml</span><br><span class="hljs-attr">deploy:</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>  <span class="hljs-attr">repo:</span> <span class="hljs-string">https://&lt;token&gt;@github.com/&lt;username&gt;/&lt;username&gt;.github.io.git</span> <span class="hljs-comment"># 「HTTPS+token」</span><br>  <span class="hljs-attr">branch:</span> <span class="hljs-string">main</span><br></code></pre></td></tr></table></figure>
 
 <hr>
-<p>【SSH】</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># _config.yml</span><br><span class="hljs-attr">deploy:</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>  <span class="hljs-attr">repo:</span> <span class="hljs-string">git@github.com:&lt;username&gt;/&lt;username&gt;.github.io.git</span>			<span class="hljs-comment"># 【SSH】，SSH见下图</span><br>  <span class="hljs-attr">branch:</span> <span class="hljs-string">main</span><br></code></pre></td></tr></table></figure>
+<p>「SSH」</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># _config.yml</span><br><span class="hljs-attr">deploy:</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>  <span class="hljs-attr">repo:</span> <span class="hljs-string">git@github.com:&lt;username&gt;/&lt;username&gt;.github.io.git</span>			<span class="hljs-comment"># 「SSH」，SSH见下图</span><br>  <span class="hljs-attr">branch:</span> <span class="hljs-string">main</span><br></code></pre></td></tr></table></figure>
 
 <p><img src="4.GitHub%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E4%B8%8EGit%E8%BF%9E%E6%8E%A5GitHubPages%E4%BB%93%E5%BA%93/image-20250610073607974.png" srcset="/img/loading.gif" lazyload></p>
 
@@ -668,7 +668,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年12月29日</div>
+          <div>2026年1月8日</div>
         </div>
       
       
