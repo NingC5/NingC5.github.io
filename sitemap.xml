@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.cornst.com/posts/Git%E6%89%8B%E6%8A%84.html</loc>
+    <loc>https://www.cornst.com/posts/2.Hexo%E3%81%A8GitHubPages%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2.html</loc>
     
     <lastmod>2026-02-09</lastmod>
     
@@ -12,15 +12,6 @@
   
   <url>
     <loc>https://www.cornst.com/posts/1.%E5%8D%9A%E5%AE%A2%E6%8C%87%E5%8D%97.html</loc>
-    
-    <lastmod>2026-02-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.cornst.com/posts/2.Hexo%E3%81%A8GitHubPages%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2.html</loc>
     
     <lastmod>2026-02-09</lastmod>
     
